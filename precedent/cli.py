@@ -11,6 +11,7 @@
   python -m precedent team <name> --members a@x --owns comp    owners for approvals of locked decisions
   python -m precedent lock <id>                 only the owner team can change it afterwards
   python -m precedent export-md                 DECISIONS.md, compiled from the graph
+  python -m precedent serve                     hook daemon (hook_client starts it on demand)
 """
 
 import argparse
@@ -19,6 +20,7 @@ import os
 import re
 import subprocess
 import sys
+import zlib
 from pathlib import Path
 
 from . import config
@@ -29,9 +31,10 @@ ROOT = Path(__file__).resolve().parent.parent
 def install(repo, graph):
     repo = Path(repo).resolve()
     py = (ROOT / ".venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python")).as_posix()
+    port = 7341 + zlib.crc32(graph.encode()) % 500  # one hook daemon per graph
     env = {"PRECEDENT_GRAPH": graph, "PRECEDENT_REPO": repo.as_posix(), "PRECEDENT_HARNESS": "claude-code",
-           "PYTHONPATH": ROOT.as_posix()}
-    hook = {"type": "command", "command": f'"{py}" -m precedent.hook', "timeout": 15}
+           "PYTHONPATH": ROOT.as_posix(), "PRECEDENT_DAEMON_PORT": str(port)}
+    hook = {"type": "command", "command": f'"{py}" -m precedent.hook_client', "timeout": 15}
     settings_file = repo / ".claude" / "settings.local.json"
     settings = json.loads(settings_file.read_text()) if settings_file.exists() else {}
     settings.setdefault("env", {}).update(env)
@@ -128,6 +131,7 @@ def main(argv=None):
     p = sub.add_parser("context"); p.add_argument("paths", nargs="+")
     p = sub.add_parser("query"); p.add_argument("cypher")
     p = sub.add_parser("check-staged"); p.add_argument("--strict", action="store_true")
+    p = sub.add_parser("serve"); p.add_argument("--port", type=int, default=int(os.getenv("PRECEDENT_DAEMON_PORT", "7341")))
     p = sub.add_parser("team"); p.add_argument("name"); p.add_argument("--members", nargs="*", default=[])
     p.add_argument("--owns", nargs="*", default=[])
     a = ap.parse_args(argv)
@@ -147,6 +151,10 @@ def main(argv=None):
         return 0
     if a.cmd == "check-staged":
         return check_staged(a.strict)
+    if a.cmd == "serve":
+        from . import serve
+        serve.serve(a.port)
+        return 0
     if a.cmd == "export-md":
         print(export_md())
         return 0

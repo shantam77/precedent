@@ -8,6 +8,8 @@
   PreToolUse   mcp__precedent__approve -> always ask the human (this is how a human approves from the harness)
 
 Fail-open: any error lets the tool run and shows a warning (PRECEDENT_FAIL_CLOSED=1 denies edits instead).
+Speed: Claude Code runs hook_client.py, which forwards the event to the local daemon (serve.py) that already has
+the graph connection open; handle() below is the same code either way.
 Output format: https://code.claude.com/docs/en/hooks (hookSpecificOutput, permissionDecision, additionalContext).
 """
 
@@ -20,21 +22,15 @@ from pathlib import Path
 from . import config, db, scan, store, tools
 
 
-def out(obj=None):
-    if obj:
-        print(json.dumps(obj))
-    sys.exit(0)
-
-
 def decide(event, decision, reason, context=None):
     o = {"hookEventName": event, "permissionDecision": decision, "permissionDecisionReason": reason}
     if context:
         o["additionalContext"] = context
-    out({"hookSpecificOutput": o})
+    return {"hookSpecificOutput": o}
 
 
 def add_context(event, text):
-    out({"hookSpecificOutput": {"hookEventName": event, "additionalContext": text}} if text else None)
+    return {"hookSpecificOutput": {"hookEventName": event, "additionalContext": text}} if text else None
 
 
 def edit_texts(tool, ti):
@@ -70,7 +66,7 @@ def session_start(ev, actor):
         lines += [f"- {cid} {op} by {who} ({h}): {'; '.join(ds)[:160]}" for cid, op, who, h, ds, _ in changes]
     lines.append(f"{len(pending)} proposal(s) wait for a human: " + ", ".join(f"{p['id']} {p['title'][:60]}" for p in pending[:3])
                  if pending else "No proposals are waiting for approval.")
-    add_context("SessionStart", "\n".join(lines))
+    return add_context("SessionStart", "\n".join(lines))
 
 
 def after_read(ev, actor):
@@ -81,7 +77,7 @@ def after_read(ev, actor):
         store.ensure_session(actor)
         db.write("MATCH (s:Session {id: $s}) UNWIND $ids AS i MATCH (d:Decision {id: i}) MERGE (s)-[:SAW]->(d)",
                  s=actor.session, ids=shown)
-    add_context("PostToolUse", text)
+    return add_context("PostToolUse", text)
 
 
 def after_search(ev, actor):
@@ -101,12 +97,12 @@ def after_search(ev, actor):
         shown += ids
         lines += [text] if text else []
     if not lines:
-        out()
+        return None
     store.ensure_session(actor)
     db.write("MATCH (s:Session {id: $s}) UNWIND $ids AS i MATCH (d:Decision {id: i}) MERGE (s)-[:SAW]->(d)",
              s=actor.session, ids=shown)
     head = f"Precedent: decisions related to your search ({', '.join(terms)}):" if hits else ""
-    add_context("PostToolUse", "\n".join(([head] if head else []) + lines))
+    return add_context("PostToolUse", "\n".join(([head] if head else []) + lines))
 
 
 def before_edit(ev, actor):
@@ -115,12 +111,12 @@ def before_edit(ev, actor):
     new, old = edit_texts(ev.get("tool_name"), ti)
     r = tools.check(path, new, old)
     if r["verdict"] in ("ok", "note"):
-        out()
+        return None
     store.ensure_session(actor)
     db.write("""MATCH (s:Session {id: $s}) UNWIND $ids AS i MATCH (d:Decision {id: i})
         CREATE (s)-[:FLAGGED {verdict: $v, path: $p, at: timestamp()}]->(d)""",
              s=actor.session, ids=[h["id"] for h in r["hits"]], v=r["verdict"], p=tools.rel(path))
-    decide("PreToolUse", r["verdict"], r["text"], context=r["text"] if r["verdict"] == "ask" else None)
+    return decide("PreToolUse", r["verdict"], r["text"], context=r["text"] if r["verdict"] == "ask" else None)
 
 
 def after_edit(ev, actor):
@@ -131,7 +127,7 @@ def after_edit(ev, actor):
         WITH f MATCH (c:Component {name: $c}) WHERE NOT (f)-[:IN]->(:Component) CREATE (f)-[:IN]->(c)""",
              p=path, s=actor.session, c=comp)
     if not tools.MANIFEST.search(path):
-        out()
+        return None
     new, old = edit_texts(ev.get("tool_name"), ev.get("tool_input", {}))
     added = tools.added_text(new, old if old is not None else "")
     names = [scan.pep503(m.group(1)) for m in re.finditer(r"^\s*[\"']?([A-Za-z][\w.-]+)", added, re.M)
@@ -139,10 +135,10 @@ def after_edit(ev, actor):
     known = {n for (n,) in db.read("MATCH (l:Library {present: true}) WHERE l.name IN $n RETURN l.name", n=names)}
     new_libs = [n for n in names if n not in known][:3]
     if new_libs:
-        add_context("PostToolUse", f"Precedent: you added a new dependency ({', '.join(new_libs)}) to {path}. "
+        return add_context("PostToolUse", f"Precedent: you added a new dependency ({', '.join(new_libs)}) to {path}. "
                     "If this is a deliberate choice, record it: record_decision(title, rationale, paths, chose=[...], "
                     "rejected=[alternatives you ruled out]) so other sessions and people know why.")
-    out()
+    return None
 
 
 def before_approve(ev, actor):
@@ -150,39 +146,44 @@ def before_approve(ev, actor):
     p = store.get(pid) or {}
     target = db.read("MATCH (:Decision {id: $p})-[r:PROPOSES]->(o:Decision) RETURN o.id, o.title, o.trust, r.op", p=pid)
     what = f"{target[0][3]} {target[0][0]} [{target[0][2]}] '{target[0][1]}'" if target else "activate it"
-    decide("PreToolUse", "ask", f"Precedent: approve {pid} '{p.get('title', '?')}' by {p.get('actor', '?')}? "
+    return decide("PreToolUse", "ask", f"Precedent: approve {pid} '{p.get('title', '?')}' by {p.get('actor', '?')}? "
            f"This will {what}. Only say yes if you (the human) agree.")
 
 
-def main():
-    ev = json.load(sys.stdin)
+HANDLERS = [  # (event, tool names or None for any, handler)
+    ("SessionStart", None, session_start),
+    ("PostToolUse", ("Read",), after_read),
+    ("PostToolUse", ("Grep", "Glob"), after_search),
+    ("PreToolUse", ("Edit", "Write", "MultiEdit"), before_edit),
+    ("PostToolUse", ("Edit", "Write", "MultiEdit"), after_edit),
+    ("PreToolUse", ("mcp__precedent__approve",), before_approve),
+]
+
+
+def handle(ev):
+    """One hook event in, the JSON Claude Code expects out (None = say nothing)."""
     if config.MODE == "off":
-        out()
+        return None
     if ev.get("cwd"):
         config.REPO = ev["cwd"]
     actor = store.Actor(config.actor_email(), "agent", config.HARNESS if config.HARNESS != "cli" else "claude-code",
                         ev.get("session_id", "unknown"))
     name, tool = ev.get("hook_event_name"), ev.get("tool_name", "")
     try:
-        if name == "SessionStart":
-            session_start(ev, actor)
-        elif name == "PostToolUse" and tool == "Read":
-            after_read(ev, actor)
-        elif name == "PostToolUse" and tool in ("Grep", "Glob"):
-            after_search(ev, actor)
-        elif name == "PreToolUse" and tool in ("Edit", "Write", "MultiEdit"):
-            before_edit(ev, actor)
-        elif name == "PostToolUse" and tool in ("Edit", "Write", "MultiEdit"):
-            after_edit(ev, actor)
-        elif name == "PreToolUse" and tool.endswith("__approve"):
-            before_approve(ev, actor)
-        out()
-    except SystemExit:
-        raise
+        for event, tool_names, fn in HANDLERS:
+            if name == event and (tool_names is None or tool in tool_names):
+                return fn(ev, actor)
+        return None
     except Exception as e:  # FalkorDB down, bad input...: never brick the editor unless asked to
         if config.FAIL_CLOSED and name == "PreToolUse":
-            decide("PreToolUse", "deny", f"Precedent is unavailable ({e}); PRECEDENT_FAIL_CLOSED=1 blocks edits.")
-        out({"systemMessage": f"Precedent hook error (fail-open): {e}"})
+            return decide("PreToolUse", "deny", f"Precedent is unavailable ({e}); PRECEDENT_FAIL_CLOSED=1 blocks edits.")
+        return {"systemMessage": f"Precedent hook error (fail-open): {e}"}
+
+
+def main():
+    o = handle(json.load(sys.stdin))
+    if o:
+        print(json.dumps(o))
 
 
 if __name__ == "__main__":

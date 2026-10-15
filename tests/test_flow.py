@@ -139,3 +139,25 @@ def test_agent_input_is_normalized(graph):
     assert r["status"] == "applied" and "Unverified" not in r["text"], r
     d = store.get(r["id"])
     assert d["forbid"] == [] and d["paths"] == ["src/billing/outbox/*"], d
+
+
+def test_hook_through_the_daemon(graph, repo):
+    """The fast path Claude Code uses: hook_client -> local daemon -> hook.handle()."""
+    import json
+    import threading
+    from precedent import hook_client, serve
+    threading.Thread(target=serve.serve, args=(7999,), daemon=True).start()
+    hook_client.PORT = 7999
+    ev = {"hook_event_name": "PreToolUse", "tool_name": "Edit", "session_id": "s-daemon", "cwd": str(repo),
+          "tool_input": {"file_path": str(repo / "src/cache/client.py"), "old_string": "import redis",
+                         "new_string": "import pymemcache"}}
+    for _ in range(50):
+        try:
+            out = json.loads(hook_client.via_daemon(json.dumps(ev)))
+            break
+        except OSError:
+            import time
+            time.sleep(0.1)
+    assert out["hookSpecificOutput"]["permissionDecision"] == "ask"
+    ev["tool_input"]["new_string"] = "import redis  # fine"
+    assert hook_client.via_daemon(json.dumps(ev)) == ""  # allowed: nothing to say
