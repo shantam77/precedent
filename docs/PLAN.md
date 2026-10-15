@@ -19,6 +19,44 @@ the graph on purpose: hooks attach the 3 or 4 relevant lines to what they alread
 
 ---
 
+## 0b. What building it overnight changed (05:30 IST)
+
+Everything below §1 was written before the build. What the real data taught us, already applied in the code:
+
+1. **Agents grep, they rarely Read.** In every real Claude Code run, the agent's first moves were `Grep`/`Glob`. So
+   context is attached to **grep results** too: grep "graphene|strawberry" and the graphene → Strawberry decision
+   comes back next to the matches. With that, the agent stopped *before* trying the edit (the edit guard is the backstop).
+2. **The SessionStart brief does more than we expected.** Claude called `why`/`context` on its own after reading it,
+   and a teammate's "what changed?" was answered in 1 turn from the brief alone.
+3. **False alarms come from wrong inferences, not from the guard.** The only false alarms on 3,579 real commits came
+   from one bad inference (a library that left the manifest but is still imported). Rule: never forbid something the
+   code still uses. Quoted-string matching on plain words (`'wheel'`) was tried and rejected because of the data.
+4. **FalkorDB query shape matters more than indexes.** Anchor + `WITH` barrier made checks flat (2.5 ms at 80k files).
+5. **Hook start-up dominates**, not the graph: a standard-library client + local daemon took hooks from 0.8 s to 0.25 s.
+6. **Agents fill tool arguments loosely** (`file:` prefixes, prose in `rejected`, directory globs). Normalize on the server.
+
+### Decisions only you can make (I picked a default for each, so nothing is blocked)
+
+| Question | My default | Why |
+|---|---|---|
+| Demo repo | **netbox** (real, public) for the story, the synthetic monorepo for the scale/concurrency numbers | judges trust real history |
+| New agent decisions: active right away, or proposals? | **active, trust=agent** (edits against them get "ask", not "deny") | approving every agent choice would be ignored quickly |
+| Historical (git-derived) decisions: ask or deny? | **ask** | they are inferred; 0 false alarms in replay, but still inferred |
+| Public GitHub repo | **not created** (only local commits) | creating a public repo is your call; `git remote add origin ... && git push -u origin main` |
+| Rewrite core Cypher by hand (rules 11-13) | **yours to do**: `precedent/queries/*.cypher` + `store.policy()` | they're small on purpose |
+
+### Next, in order (Fri → Sun)
+
+1. **You, Fri:** read [RESULTS.md](RESULTS.md), run `pytest tests`, run the demo below on netbox, then rewrite
+   `queries/*.cypher` and `store.policy()` by hand and log it in AI_USAGE.md.
+2. Cursor adapter: same `hook.handle()`, map Cursor's `preToolUse` / `postToolUse` / `beforeMCPExecution` fields
+   (`permission`, `agent_message`, `additional_context`). Test it in Cursor before claiming it.
+3. A small web page: graph around a file, the proposals queue with approve/reject, the change log with revert.
+4. `precedent export` → `.precedent/decisions.jsonl` for PR review; Docker compose (FalkorDB + daemon); deploy.
+5. Demo video (script in §13), README GIF, blog post.
+
+---
+
 ## 1. The three assumptions we drop
 
 | PoC assumed | Reality | v2 answer |
@@ -245,11 +283,16 @@ status: `active | proposed | superseded | retired | rejected`. Never null: open 
 - **Hooks are per harness**: the server policy is the real gate, and the hooks are UX on top.
 - **WSL RAM**: FalkorDB capped at 2 GB, and our graphs are tens of MB.
 
-## 13. Demo script (3 min, on real netbox)
+## 13. Demo script (3 min, on real netbox; every step was run tonight)
 
-1. Fresh clone of netbox → `precedent init` → 40 s, 0 tokens: components, dependencies, people, 30+ guarded decisions from history.
-2. Claude Code: "add a GraphQL type using graphene" → the **ask** prompt: "graphene was replaced by Strawberry in commit … (2024)". Say no → the agent uses Strawberry.
-3. Claude Code: "write a migration for this field" → **denied**: "AGENTS.md:141 never write migrations manually" (approved during onboarding).
-4. Agent makes a new choice → `record_decision` → a second session (another "person") sees it at SessionStart.
-5. That second agent tries to overwrite a human decision → a pending proposal; the human approves in the native prompt; then `revert` → everything is back, nothing lost.
-6. Numbers: E2 false-alarm rate on real commits, E3 zero unauthorized overwrites under concurrency, E4 hook p95.
+1. Fresh netbox clone → `python -m precedent init netbox` → 9 s, 0 tokens: 27 components, 459 people, 44 guarded
+   decisions from git history (show graphene → Strawberry with its commit).
+2. `python -m precedent install netbox`, open Claude Code, run `/precedent-onboard` → 7 proposals from AGENTS.md with
+   `AGENTS.md:line` evidence → `precedent review` → approve.
+3. "Add a graphene-django type for Site" → the grep hook surfaces the decision → the agent stops and asks.
+   Same prompt with `PRECEDENT_MODE=off` → it writes the graphene file (the decoration test).
+4. "Add Site.note and hand-write the migration" → field added, migration refused (deny: AGENTS.md rule).
+5. "Add humanize and record the decision" → D-56 recorded by the agent. New session as a teammate → the brief shows it.
+6. "Replace the migrations rule and approve it" → only a proposal; the approve prompt goes to the human; `precedent log`,
+   then `precedent revert` shows nothing is ever lost.
+7. Numbers slide: 0/3,579 real commits flagged, 28/28 caught, 0 unauthorized changes with 8 concurrent agents, 2.5 ms flat.

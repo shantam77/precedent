@@ -84,8 +84,10 @@ live successors, endings without a Change node, ended decisions without `valid_t
 How it got flat: the first version took 9 → 28 → 83 ms (linear). Cause: `(c:Component {name})<-[:ABOUT]-(d:Decision {status:'active'})`
 made FalkorDB start from all active decisions. Anchoring on the component with a `WITH` barrier: 24 ms → 0.6 ms for that query.
 
-The real end-to-end cost of a hook is the Python process start (~0.8 s with the redis client import), not the graph.
-A long-running local daemon would bring it to ~10 ms (next step).
+End to end, a hook is a process Claude Code starts. In-process (Python + redis client import + connect) that was
+**~0.8 s**. Now `hook_client.py` (standard library only) forwards the event over a socket to a local daemon that keeps
+the connection open (`precedent serve`, started on first use, exits after 30 idle minutes): **~0.25 s per hook**,
+of which ~0.11 s is a bare Python start on this laptop. The graph work itself is ~3 ms.
 
 ## E5. Real Claude Code on netbox (headless `claude -p`, MCP + hooks installed)
 
@@ -110,6 +112,6 @@ Found by these runs and fixed: agents grep more than they read (added the Grep/G
 - A strong model often notices a removed library on its own (the "off" graphene run said it wouldn't import) but
   **still wrote it**. Precedent changes the action, not just the commentary.
 - Rules that can't be checked literally (e.g. "don't reach across app boundaries") are context only.
-- Hook process start (~0.8 s) dominates the latency; graph queries are ~3 ms.
+- Hook process start (~0.25 s with the daemon) dominates the latency; graph queries are ~3 ms.
 - Structure and imports come from HEAD in the replay (only decisions are time-cut), so E2 slightly favours us on context.
 - E5 is n=1 per task.

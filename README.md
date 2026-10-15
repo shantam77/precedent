@@ -7,6 +7,11 @@ in a graph shared by many people and many harnesses.
 > Graph Hacks: Context for AI Agents (WeMakeDevs × FalkorDB), Oct 15-18 2026.
 > Tracks: **03 Company Brain** (primary), **02 Agent Memory and Coordination**, 01 Agents That Act on Connected Data.
 
+**Measured on real netbox:** cold start in 9 s with 0 LLM tokens (44 enforceable decisions from git history) ·
+**0 of 3,579** real later commits flagged · **28/28** resurrected removed libraries caught · real Claude Code declined
+3 regressions citing the rule (with Precedent off it wrote the graphene one), recorded its own decision, and couldn't
+overwrite a protected rule without a human · 8 concurrent agents with injected mistakes: **0** unauthorized changes · `check()` **2.5 ms flat** up to 80k files.
+
 - Plan and design reasoning: [docs/PLAN.md](docs/PLAN.md)
 - Measured results (real repo + synthetic volume): [docs/RESULTS.md](docs/RESULTS.md)
 - AI usage disclosure: [AI_USAGE.md](AI_USAGE.md)
@@ -98,6 +103,9 @@ Write (policy-gated): `record_decision`, `supersede`, `amend`, `retire`, `revert
 | PreToolUse `mcp__precedent__approve` | always `ask`: the human is the one approving |
 | git pre-commit | `precedent check-staged`: deny-level violations block the commit, for any harness or human |
 
+Hooks run `precedent.hook_client` (standard library only), which forwards each event to a local daemon holding the
+graph connection (`precedent serve`, started on first use, stops after 30 idle minutes): ~0.25 s per hook instead of ~0.8 s.
+
 ## FalkorDB lessons (measured)
 
 - One-pattern queries like `(c:Component {name})<-[:ABOUT]-(d:Decision {status:'active'})` made the planner start
@@ -110,7 +118,8 @@ Write (policy-gated): `record_decision`, `supersede`, `amend`, `retire`, `revert
 ## Layout
 
 ```
-precedent/  scan.py (cold start)  tools.py (read)  store.py (write + policy)  hook.py  mcp_server.py  cli.py  queries/
+precedent/  scan.py (cold start)  tools.py (read)  store.py (write + policy)  hook.py  hook_client.py  serve.py
+            mcp_server.py  cli.py  queries/  assets/precedent-onboard.md
 tests/      end-to-end tests + MCP smoke test
 sim/        world.py (synthetic monorepo)  agents.py (multi-agent simulation with injected mistakes)
 eval/       replay.py (real history replay)  bench.py (scale)  out/ (results)
