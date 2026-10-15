@@ -61,8 +61,10 @@ def session_start(ev, actor):
              "Edits that break a decision are checked automatically (deny or ask); when you Read a file, the decisions "
              "about it are added to your context. Tools: context, why, impact, who_knows, record_decision, supersede.",
              "When you make a real choice (a library, a pattern, a rule), record it with record_decision(paths, rationale, evidence)."]
-    if changes:
-        lines.append("Changed by others since your last session:")
+    if not changes:
+        lines.append(f"No decision changes by others since your last session ({tools.day(since)}).")
+    else:
+        lines.append(f"Changed by others since your last session ({tools.day(since)}):")
         lines += [f"- {cid} {op} by {who} ({h}): {'; '.join(ds)[:160]}" for cid, op, who, h, ds, _ in changes]
     lines.append(f"{len(pending)} proposal(s) wait for a human: " + ", ".join(f"{p['id']} {p['title'][:60]}" for p in pending[:3])
                  if pending else "No proposals are waiting for approval.")
@@ -161,13 +163,17 @@ HANDLERS = [  # (event, tool names or None for any, handler)
 
 
 def handle(ev):
-    """One hook event in, the JSON Claude Code expects out (None = say nothing)."""
-    if config.MODE == "off":
+    """One hook event in, the JSON Claude Code expects out (None = say nothing).
+    ev["_env"] carries the caller's PRECEDENT_* settings (added by hook_client), so a shared daemon acts for the
+    right person and mode."""
+    env = ev.get("_env") or {}
+    if (env.get("PRECEDENT_MODE") or config.MODE) == "off":
         return None
     if ev.get("cwd"):
         config.REPO = ev["cwd"]
-    actor = store.Actor(config.actor_email(), "agent", config.HARNESS if config.HARNESS != "cli" else "claude-code",
-                        ev.get("session_id", "unknown"))
+    harness = env.get("PRECEDENT_HARNESS") or config.HARNESS
+    actor = store.Actor(env.get("PRECEDENT_ACTOR") or config.actor_email(), "agent",
+                        harness if harness != "cli" else "claude-code", ev.get("session_id", "unknown"))
     name, tool = ev.get("hook_event_name"), ev.get("tool_name", "")
     try:
         for event, tool_names, fn in HANDLERS:

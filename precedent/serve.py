@@ -31,8 +31,13 @@ class Handler(BaseHTTPRequestHandler):
         pass
 
 
+class Server(ThreadingHTTPServer):
+    allow_reuse_address = False  # on Windows reuse lets a second daemon bind the same port; it must fail and exit
+    daemon_threads = True
+
+
 def serve(port=7341):
-    server = ThreadingHTTPServer(("127.0.0.1", port), Handler)
+    server = Server(("127.0.0.1", port), Handler)
 
     def stop_when_idle():
         while time.time() - last_request < IDLE_SECONDS:

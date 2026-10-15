@@ -29,15 +29,17 @@ def start_daemon():
 
 
 def main():
-    raw = sys.stdin.read()
+    import json
+    ev = json.loads(sys.stdin.read())
+    ev["_env"] = {k: v for k, v in os.environ.items() if k in ("PRECEDENT_ACTOR", "PRECEDENT_MODE", "PRECEDENT_HARNESS")}
+    raw = json.dumps(ev)
     try:
         body = via_daemon(raw)
     except OSError:
         if os.getenv("PRECEDENT_NO_DAEMON") != "1":
             start_daemon()  # ready for the next event; this one runs in-process
-        import json
         from precedent import hook
-        o = hook.handle(json.loads(raw))
+        o = hook.handle(ev)
         body = json.dumps(o) if o else ""
     if body:
         print(body)
