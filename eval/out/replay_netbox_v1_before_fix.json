@@ -1,0 +1,325 @@
+{
+ "repo": "netbox",
+ "cut": "2024-01-01",
+ "graph_at_cut": {
+  "repo": "replay",
+  "files": 2297,
+  "components": 27,
+  "depends_on": 115,
+  "libraries": 126,
+  "manifest_events": 47,
+  "decisions": 35,
+  "guarded_decisions": 31,
+  "people": 319,
+  "knows": 349,
+  "notes": 42,
+  "rules": 37,
+  "seconds": 8.3,
+  "llm_tokens": 0
+ },
+ "guarded_decisions": 31,
+ "replayed_commits": 3579,
+ "replayed_file_changes": 14079,
+ "commit_verdicts": {
+  "ok": 3574,
+  "ask": 5
+ },
+ "flag_rate_commits": 0.0014,
+ "flags": [
+  {
+   "sha": "553b97464a",
+   "subject": "Fixes #22388: Pin redis-py to <8.0 (#22389)",
+   "path": "base_requirements.txt",
+   "decision": "D-25",
+   "title": "Stop using redis",
+   "token": "lib:redis",
+   "line": "redis<8.0",
+   "verdict": "ask"
+  },
+  {
+   "sha": "553b97464a",
+   "subject": "Fixes #22388: Pin redis-py to <8.0 (#22389)",
+   "path": "requirements.txt",
+   "decision": "D-25",
+   "title": "Stop using redis",
+   "token": "lib:redis",
+   "line": "redis==7.4.0",
+   "verdict": "ask"
+  },
+  {
+   "sha": "0c26f973ff",
+   "subject": "Release v4.6.3",
+   "path": "requirements.txt",
+   "decision": "D-25",
+   "title": "Stop using redis",
+   "token": "lib:redis",
+   "line": "redis==7.4.1",
+   "verdict": "ask"
+  },
+  {
+   "sha": "2dcc98b41e",
+   "subject": "Closes #21326: Defer global search cache updates to a background job (#22481)",
+   "path": "netbox/netbox/search/deferred.py",
+   "decision": "D-25",
+   "title": "Stop using redis",
+   "token": "lib:redis",
+   "line": "from redis.exceptions import RedisError",
+   "verdict": "ask"
+  },
+  {
+   "sha": "2dcc98b41e",
+   "subject": "Closes #21326: Defer global search cache updates to a background job (#22481)",
+   "path": "netbox/netbox/tests/test_search.py",
+   "decision": "D-25",
+   "title": "Stop using redis",
+   "token": "lib:redis",
+   "line": "from redis.exceptions import ConnectionError as RedisConnectionError",
+   "verdict": "ask"
+  },
+  {
+   "sha": "74fbc90c69",
+   "subject": "Closes #23110: Upgrade to redis 8.1",
+   "path": "base_requirements.txt",
+   "decision": "D-25",
+   "title": "Stop using redis",
+   "token": "lib:redis",
+   "line": "redis",
+   "verdict": "ask"
+  },
+  {
+   "sha": "74fbc90c69",
+   "subject": "Closes #23110: Upgrade to redis 8.1",
+   "path": "requirements.txt",
+   "decision": "D-25",
+   "title": "Stop using redis",
+   "token": "lib:redis",
+   "line": "redis==8.1.0",
+   "verdict": "ask"
+  },
+  {
+   "sha": "57533dd683",
+   "subject": "Closes #23259: Coalesce search cache updates instead of enqueuing a job per change (#23378)",
+   "path": "netbox/netbox/search/deferred.py",
+   "decision": "D-25",
+   "title": "Stop using redis",
+   "token": "lib:redis",
+   "line": "from redis.exceptions import RedisError, ResponseError",
+   "verdict": "ask"
+  }
+ ],
+ "resurrections": [
+  {
+   "decision": "D-1",
+   "title": "Stop using django-extensions",
+   "edits": 1,
+   "caught": 1,
+   "example": "django-extensions==1.6.1"
+  },
+  {
+   "decision": "D-2",
+   "title": "Stop using ecdsa",
+   "edits": 1,
+   "caught": 1,
+   "example": "ecdsa==0.13"
+  },
+  {
+   "decision": "D-3",
+   "title": "Stop using lxml",
+   "edits": 1,
+   "caught": 1,
+   "example": "lxml==3.5.0"
+  },
+  {
+   "decision": "D-5",
+   "title": "Stop using pyparsing",
+   "edits": 1,
+   "caught": 1,
+   "example": "pyparsing==1.5.7"
+  },
+  {
+   "decision": "D-6",
+   "title": "Stop using six",
+   "edits": 3,
+   "caught": 3,
+   "example": "six==1.10.0"
+  },
+  {
+   "decision": "D-8",
+   "title": "Stop using pydot",
+   "edits": 2,
+   "caught": 2,
+   "example": "import pydot"
+  },
+  {
+   "decision": "D-9",
+   "title": "Stop using cffi",
+   "edits": 1,
+   "caught": 1,
+   "example": "cffi>=1.8"
+  },
+  {
+   "decision": "D-10",
+   "title": "Stop using cryptography",
+   "edits": 1,
+   "caught": 1,
+   "example": "cryptography>=1.8"
+  },
+  {
+   "decision": "D-11",
+   "title": "Stop using pycrypto",
+   "edits": 1,
+   "caught": 1,
+   "example": "pycrypto>=2.6.1"
+  },
+  {
+   "decision": "D-12",
+   "title": "Stop using sqlparse",
+   "edits": 1,
+   "caught": 1,
+   "example": "sqlparse>=0.2"
+  },
+  {
+   "decision": "D-13",
+   "title": "Stop using psycopg2",
+   "edits": 1,
+   "caught": 1,
+   "example": "psycopg2>=2.7.3"
+  },
+  {
+   "decision": "D-14",
+   "title": "Stop using django-rest-swagger",
+   "edits": 1,
+   "caught": 1,
+   "example": "django-rest-swagger>=2.1.0"
+  },
+  {
+   "decision": "D-15",
+   "title": "Stop using natsort",
+   "edits": 4,
+   "caught": 4,
+   "example": "natsort"
+  },
+  {
+   "decision": "D-16",
+   "title": "Stop using ncclient",
+   "edits": 3,
+   "caught": 3,
+   "example": "ncclient"
+  },
+  {
+   "decision": "D-17",
+   "title": "Stop using paramiko",
+   "edits": 3,
+   "caught": 3,
+   "example": "paramiko"
+  },
+  {
+   "decision": "D-18",
+   "title": "Stop using xmltodict",
+   "edits": 2,
+   "caught": 2,
+   "example": "xmltodict"
+  },
+  {
+   "decision": "D-19",
+   "title": "Stop using graphviz",
+   "edits": 4,
+   "caught": 3,
+   "example": "# Python interface to the graphviz graph rendering utility"
+  },
+  {
+   "decision": "D-20",
+   "title": "Stop using py-gfm",
+   "edits": 2,
+   "caught": 2,
+   "example": "# https://github.com/zopieux/py-gfm"
+  },
+  {
+   "decision": "D-21",
+   "title": "Stop using wheel",
+   "edits": 2,
+   "caught": 2,
+   "example": "# https://pythonwheels.com/"
+  },
+  {
+   "decision": "D-22",
+   "title": "Stop using django-taggit-serializer",
+   "edits": 10,
+   "caught": 9,
+   "example": "# https://github.com/glemmaPaul/django-taggit-serializer"
+  },
+  {
+   "decision": "D-23",
+   "title": "Replace django-cacheops with django-redis",
+   "edits": 10,
+   "caught": 8,
+   "example": "# https://github.com/Suor/django-cacheops"
+  },
+  {
+   "decision": "D-24",
+   "title": "Stop using pycryptodome",
+   "edits": 2,
+   "caught": 2,
+   "example": "# https://github.com/Legrandin/pycryptodome"
+  },
+  {
+   "decision": "D-25",
+   "title": "Stop using redis",
+   "edits": 2,
+   "caught": 2,
+   "example": "# https://github.com/andymccurdy/redis-py"
+  },
+  {
+   "decision": "D-26",
+   "title": "Stop using pytz",
+   "edits": 4,
+   "caught": 4,
+   "example": "pytz==2022.1"
+  },
+  {
+   "decision": "D-27",
+   "title": "Stop using cookie",
+   "edits": 3,
+   "caught": 2,
+   "example": "\"cookie\": \"^0.4.1\","
+  },
+  {
+   "decision": "D-28",
+   "title": "Stop using swagger-spec-validator",
+   "edits": 1,
+   "caught": 1,
+   "example": "swagger-spec-validator==2.7.6"
+  },
+  {
+   "decision": "D-29",
+   "title": "Replace drf-yasg with drf-spectacular, drf-spectacular-sidecar",
+   "edits": 15,
+   "caught": 13,
+   "example": "# https://github.com/axnsan12/drf-yasg"
+  },
+  {
+   "decision": "D-31",
+   "title": "Stop using masonry-layout",
+   "edits": 4,
+   "caught": 2,
+   "example": "\"masonry-layout\": \"^4.2.2\","
+  },
+  {
+   "decision": "D-34",
+   "title": "Replace psycopg2-binary with psycopg",
+   "edits": 2,
+   "caught": 2,
+   "example": "psycopg2-binary"
+  }
+ ],
+ "resurrection_edits": 88,
+ "resurrection_caught": 79,
+ "decisions_with_resurrection_tested": 29,
+ "decisions_caught": 29,
+ "check_ms_p50": 5.64,
+ "check_ms_p95": 9.85,
+ "read_context_files": 1500,
+ "read_context_nonempty": 97,
+ "read_context_avg_tokens_when_shown": 58,
+ "seconds": 671.9
+}

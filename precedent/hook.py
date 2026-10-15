@@ -2,6 +2,7 @@
 
   SessionStart                         -> a short brief + what changed since this person's last session
   PostToolUse  Read                    -> decisions/notes for that file, each one once per session
+  PostToolUse  Grep|Glob               -> decisions whose libraries/titles match the search pattern
   PreToolUse   Edit|Write|MultiEdit    -> check(): deny / ask / allow, with the reason and source
   PostToolUse  Edit|Write|MultiEdit    -> Session-[:EDITED]->File; nudge when a new dependency appears
   PreToolUse   mcp__precedent__approve -> always ask the human (this is how a human approves from the harness)
@@ -11,10 +12,10 @@ Output format: https://code.claude.com/docs/en/hooks (hookSpecificOutput, permis
 """
 
 import json
-import os
 import re
 import sys
 import time
+from pathlib import Path
 
 from . import config, db, scan, store, tools
 
@@ -55,7 +56,8 @@ def session_start(ev, actor):
     db.write("MATCH (p:Person) WHERE $e IN p.emails SET p.seen_at = timestamp()", e=actor.email)
     changes = db.read("""MATCH (s:Session)-[:MADE]->(ch:Change) WHERE ch.at > $since AND ch.actor <> $e
         OPTIONAL MATCH (ch)-[:ON]->(d:Decision)
-        RETURN ch.id, ch.op, ch.actor, s.harness, collect(d.id + ' ' + d.title), ch.at AS at ORDER BY at DESC LIMIT 5""",
+        RETURN ch.id, ch.op, ch.actor, s.harness, collect(d.id + ' [' + d.status + '] ' + d.title), ch.at AS at
+        ORDER BY at DESC LIMIT 6""",
                       since=since, e=actor.email)
     pending = tools.pending()
     lines = [f"Precedent: this repo's decision graph (FalkorDB) has {active[0]} active decisions "
@@ -66,8 +68,8 @@ def session_start(ev, actor):
     if changes:
         lines.append("Changed by others since your last session:")
         lines += [f"- {cid} {op} by {who} ({h}): {'; '.join(ds)[:160]}" for cid, op, who, h, ds, _ in changes]
-    if pending:
-        lines.append(f"{len(pending)} proposal(s) wait for a human: " + ", ".join(f"{p['id']} {p['title'][:60]}" for p in pending[:3]))
+    lines.append(f"{len(pending)} proposal(s) wait for a human: " + ", ".join(f"{p['id']} {p['title'][:60]}" for p in pending[:3])
+                 if pending else "No proposals are waiting for approval.")
     add_context("SessionStart", "\n".join(lines))
 
 
@@ -80,6 +82,31 @@ def after_read(ev, actor):
         db.write("MATCH (s:Session {id: $s}) UNWIND $ids AS i MATCH (d:Decision {id: i}) MERGE (s)-[:SAW]->(d)",
                  s=actor.session, ids=shown)
     add_context("PostToolUse", text)
+
+
+def after_search(ev, actor):
+    """Agents grep more than they read. Decisions whose libraries or titles match the grep pattern, plus the
+    decisions about the searched file, come back next to the grep results. Each decision once per session."""
+    ti = ev.get("tool_input", {})
+    terms = list(dict.fromkeys(t for t in re.findall(r"[A-Za-z][\w-]{3,}", ti.get("pattern", ""))
+                               if t.lower() not in tools.SEARCH_STOP))[:6]
+    seen = {i for (i,) in db.read("MATCH (:Session {id: $s})-[:SAW]->(d:Decision) RETURN d.id", s=actor.session)}
+    hits = tools.decisions_mentioning(terms, skip=seen) if terms else []
+    lines = [f"- {i} v{v} [{t} -> {tools.verdict_of({'trust': t, 'locked': lk})}] {title} ({src})"
+             for i, v, t, lk, title, src in hits]
+    shown = [h[0] for h in hits]
+    path = ti.get("path", "")
+    if path and Path(path).is_file():
+        text, ids = tools.context([path], skip_ids=seen | set(shown))
+        shown += ids
+        lines += [text] if text else []
+    if not lines:
+        out()
+    store.ensure_session(actor)
+    db.write("MATCH (s:Session {id: $s}) UNWIND $ids AS i MATCH (d:Decision {id: i}) MERGE (s)-[:SAW]->(d)",
+             s=actor.session, ids=shown)
+    head = f"Precedent: decisions related to your search ({', '.join(terms)}):" if hits else ""
+    add_context("PostToolUse", "\n".join(([head] if head else []) + lines))
 
 
 def before_edit(ev, actor):
@@ -141,6 +168,8 @@ def main():
             session_start(ev, actor)
         elif name == "PostToolUse" and tool == "Read":
             after_read(ev, actor)
+        elif name == "PostToolUse" and tool in ("Grep", "Glob"):
+            after_search(ev, actor)
         elif name == "PreToolUse" and tool in ("Edit", "Write", "MultiEdit"):
             before_edit(ev, actor)
         elif name == "PostToolUse" and tool in ("Edit", "Write", "MultiEdit"):

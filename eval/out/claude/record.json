@@ -1,0 +1,40 @@
+{
+ "task": "record",
+ "env": {},
+ "prompt": "We want human-readable byte sizes in the UI. Add a helper `humanize_bytes(n)` to netbox/utilities/string.py that uses the `humanize` package, and add `humanize` to base_requirements.txt with a comment like the other entries. This is a deliberate dependency choice: we rejected writing our own formatter and the `hurry.filesize` package. Record the decision in Precedent so other sessions know why. Do not run anything.",
+ "result": "I added `humanize_bytes()`, added `humanize` to the requirements, and recorded the decision in Precedent as **D-56**. Nothing was run, as you asked, so the code is untested.\n\n- **`netbox/utilities/string.py`:** `humanize_bytes(n)` is at line 15. It calls `humanize.naturalsize(n)` and returns `''` for `None`, the same way `humanize_duration` does. I added it to `__all__` and put `import humanize` at the top.\n- **`base_requirements.txt`:** `humanize` goes after `gunicorn` to keep the list alphabetical. Like the other entries, it has a one-line description and a link to its release notes.\n- **Precedent D-56:** \"Use humanize for human-readable byte sizes in the UI\". It covers both files, lists `humanize` as chosen and `hurry.filesize` as rejected, explains that writing our own formatter was ruled out, and quotes your instruction as evidence. Precedent flagged the file:line evidence as \"unverified\", probably because the changes aren't committed yet.\n\n**Units:** it uses `naturalsize`'s default decimal units, so 1500000 shows as \"1.5 MB\". The existing `humanize_disk_capacity` and `humanize_ram_capacity` filters in `utilities/templatetags/helpers.py` instead choose decimal (MB) or binary (MiB) from the `DISK_BASE_UNIT` / `RAM_BASE_UNIT` settings. If byte sizes should follow those settings, a `binary` argument passed to `naturalsize(n, binary=...)` would do it.\n\n**Still to do:**\n1. Install `humanize`: `pip install humanize`, or regenerate the pinned `requirements.txt`. The import fails without it.\n2. I didn't add tests. A case or two in the utilities tests would cover it.\n3. AGENTS.md says \"no new dependencies without strong justification\", so the PR should point reviewers to D-56.",
+ "turns": 10,
+ "seconds": 38.6,
+ "cost_usd": 0.41822120000000007,
+ "tokens_in_total": 309443,
+ "tokens_out": 2836,
+ "files_changed": [
+  "M base_requirements.txt",
+  " M netbox/utilities/string.py"
+ ],
+ "diff": "diff --git a/base_requirements.txt b/base_requirements.txt\nindex 42cb235a2..f29874b57 100644\n--- a/base_requirements.txt\n+++ b/base_requirements.txt\n@@ -88,6 +88,10 @@ feedparser\n # https://gunicorn.org/news/\n gunicorn\n \n+# Human-readable formatting of numbers and sizes\n+# https://github.com/python-humanize/humanize/releases\n+humanize\n+\n # Platform-agnostic template rendering engine\n # https://jinja.palletsprojects.com/changes/\n Jinja2\ndiff --git a/netbox/utilities/string.py b/netbox/utilities/string.py\nindex dd4ace10c..9765ad5e2 100644\n--- a/netbox/utilities/string.py\n+++ b/netbox/utilities/string.py\n@@ -1,7 +1,10 @@\n import re\n \n+import humanize\n+\n __all__ = (\n     'enum_key',\n+    'humanize_bytes',\n     'humanize_duration',\n     'remove_linebreaks',\n     'title',\n@@ -9,6 +12,16 @@ __all__ = (\n )\n \n \n+def humanize_bytes(n):\n+    \"\"\"\n+    Express a size in bytes in a human-friendly format using SI (decimal) units. Example: 1.5 MB.\n+    Returns an empty string for None.\n+    \"\"\"\n+    if n is None:\n+        return ''\n+    return humanize.naturalsize(n)\n+\n+\n def humanize_duration(value):\n     \"\"\"\n     Express a timedelta in a human-friendly format. Example: 1h 5m 23s. Durations of a second or\n",
+ "precedent_flagged": [],
+ "precedent_recorded": [
+  [
+   "D-56",
+   "Use humanize for human-readable byte sizes in the UI",
+   "active",
+   "agent",
+   [
+    "base_requirements.txt",
+    "netbox/utilities/string.py"
+   ],
+   [
+    "lib:hurry.filesize"
+   ],
+   "user: This is a deliberate dependency choice: we rejected writing our own formatter and the `hurry.filesize` package., file:netbox/utilities/string.py:15, file:base_requirements.txt:91"
+  ]
+ ],
+ "precedent_context_shown": [
+  "D-28",
+  "D-31",
+  "D-36",
+  "D-45",
+  "D-47"
+ ]
+}

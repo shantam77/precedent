@@ -125,7 +125,7 @@ def check_evidence(evidence):
         elif re.match(r"^(user|url|issue|pr|chat):", ev):
             ok = True
         else:
-            path, _, line = ev.partition(":")
+            path, _, line = ev.removeprefix("file:").partition(":")  # agents write "file:path:line" too
             f = Path(config.REPO) / path
             ok = f.is_file() and (not line.isdigit() or int(line) <= len(f.read_text(encoding="utf-8", errors="replace").splitlines()))
         if not ok:
@@ -178,7 +178,9 @@ def similar_active(title, chose, rejected, comps, paths):
 
 def _create(actor, status, trust, title, rationale, paths, comps, chose, rejected, forbid, evidence, bad_evidence):
     did = next_id("D", "D")
-    forbid = sorted(set(forbid) | {f"lib:{r}" for r in rejected})
+    # rejected libraries are banned automatically; prose an agent put in `rejected` is not a library name
+    forbid = sorted(set(forbid) | {f"lib:{r}" for r in rejected if re.fullmatch(r"@?[a-z0-9][\w.\-/]{0,60}", r)})
+    paths = [p + "*" if p.endswith("/") else p for p in paths]  # "netbox/*/migrations/" means everything below
     db.write("""CREATE (d:Decision {id: $id, title: $title, rationale: $rationale, status: $status, trust: $trust,
                 locked: false, version: 1, forbid: $forbid, paths: $paths, recorded_at: timestamp(),
                 actor: $e, session: $sid, harness: $h, source: $source, evidence_ok: $ok})""",

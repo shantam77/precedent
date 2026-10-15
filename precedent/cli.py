@@ -45,10 +45,13 @@ def install(repo, graph):
         "SessionStart": [{"hooks": [hook]}],
         "PreToolUse": [{"matcher": "Edit|Write|MultiEdit", "hooks": [hook]},
                        {"matcher": "mcp__precedent__approve", "hooks": [hook]}],
-        "PostToolUse": [{"matcher": "Read|Edit|Write|MultiEdit", "hooks": [hook]}],
+        "PostToolUse": [{"matcher": "Read|Grep|Glob|Edit|Write|MultiEdit", "hooks": [hook]}],
     }
     settings_file.parent.mkdir(exist_ok=True)
     settings_file.write_text(json.dumps(settings, indent=2))
+    commands = repo / ".claude" / "commands"
+    commands.mkdir(exist_ok=True)
+    (commands / "precedent-onboard.md").write_text((ROOT / "precedent" / "assets" / "precedent-onboard.md").read_text())
     mcp_file = repo / ".mcp.json"
     mcp = json.loads(mcp_file.read_text()) if mcp_file.exists() else {}
     mcp.setdefault("mcpServers", {})["precedent"] = {"command": py, "args": ["-m", "precedent.mcp_server"],
@@ -61,11 +64,15 @@ def install(repo, graph):
     pre.write_text(f'#!/bin/sh\nPRECEDENT_GRAPH="{graph}" PRECEDENT_REPO="{repo.as_posix()}" PYTHONPATH="{ROOT.as_posix()}" '
                    f'"{py}" -m precedent check-staged\n')
     pre.chmod(0o755)
-    exclude = repo / ".git" / "info" / "exclude"
+    exclude = Path(subprocess.run(["git", "rev-parse", "--git-path", "info/exclude"], cwd=repo, capture_output=True,
+                                  text=True).stdout.strip())
+    exclude = exclude if exclude.is_absolute() else repo / exclude
     if exclude.parent.exists():
         lines = exclude.read_text().splitlines() if exclude.exists() else []
-        exclude.write_text("\n".join(lines + [l for l in (".mcp.json", ".claude/settings.local.json") if l not in lines]) + "\n")
-    print(f"Installed into {repo}: .mcp.json, .claude/settings.local.json (hooks + permissions), git pre-commit.")
+        exclude.write_text("\n".join(lines + [l for l in (".mcp.json", ".claude/settings.local.json", ".claude/commands/precedent-onboard.md")
+                                                    if l not in lines]) + "\n")
+    print(f"Installed into {repo}: .mcp.json, .claude/settings.local.json (hooks + permissions), "
+          "/precedent-onboard command, git pre-commit.")
 
 
 def check_staged(strict=False):

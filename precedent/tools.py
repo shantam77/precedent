@@ -86,7 +86,9 @@ def violates(token, path, added):
         if MANIFEST.search(path):
             pat = rf"^\s*[\"']?{name}(?![\w-])"
         else:
-            pat = rf"^\s*(?:import|from)\s+{name}\b|require\(\s*[\"']{name}[\"'/]|from\s+[\"']{name}[\"'/]"
+            # imports, JS require/import, and the module as a quoted string ('cacheops' in INSTALLED_APPS)
+            pat = (rf"^\s*(?:import|from)\s+{name}\b|require\(\s*[\"']{name}[\"'/]|from\s+[\"']{name}[\"'/]"
+                   rf"|[\"']{name}(?:\.[\w.]+)?[\"']")
         return re.search(pat, added, re.I | re.M) is not None
     return token in added
 
@@ -157,6 +159,26 @@ def context(paths, skip_ids=(), max_decisions=5):
         for line, kind, text in notes:
             lines.append(f"- note L{line} [{kind}] {text[:140]}")
     return "\n".join(lines), shown
+
+
+SEARCH_STOP = {"import", "from", "class", "def", "self", "return", "true", "false", "none", "with", "this", "that",
+               "test", "tests", "models", "model", "views", "django", "netbox", "python", "type", "types"}
+
+
+def decisions_mentioning(terms, skip=(), limit=3):
+    """Active decisions whose chosen/rejected library or title matches one of the terms (case-insensitive)."""
+    terms = [t.lower() for t in terms]
+    rows = db.read("""MATCH (l:Library) WHERE any(t IN $terms WHERE l.name CONTAINS t)
+        WITH l MATCH (d:Decision)-[:CHOSE|REJECTED]->(l) WHERE d.status = 'active'
+        RETURN DISTINCT d.id, d.version, d.trust, d.locked, d.title, d.source""", terms=terms)
+    if len(rows) < limit:
+        q = "|".join(re.sub(r"[^\w]", "", t) for t in terms)
+        found = {r[0] for r in rows}
+        rows += [r for r in db.read("""CALL db.idx.fulltext.queryNodes('Decision', $q) YIELD node
+            WHERE node.status = 'active'
+            RETURN node.id, node.version, node.trust, node.locked, node.title, node.source LIMIT 5""", q=q)
+                 if r[0] not in found]
+    return [r for r in rows if r[0] not in skip][:limit]
 
 
 # ---------------------------------------------------------------- questions

@@ -1,0 +1,20 @@
+{
+ "task": "graphene_off",
+ "env": {
+  "PRECEDENT_MODE": "off"
+ },
+ "prompt": "Add a minimal GraphQL object type for the Site model using graphene-django (a DjangoObjectType) in a new file netbox/dcim/graphql/graphene_site.py. Just write the file; do not run anything.",
+ "result": "I wrote `netbox/dcim/graphql/graphene_site.py`. It defines `SiteGrapheneType`, a `DjangoObjectType` over `dcim.models.Site` with `fields = '__all__'`. I didn't run anything.\n\nIt won't work in this codebase as it stands:\n\n- **graphene-django isn't installed.** `requirements.txt` only lists `strawberry-graphql` and `strawberry-graphql-django`, so importing this file raises `ImportError`. NetBox moved from graphene to Strawberry in v4.0.\n- **Site already has a GraphQL type.** `SiteType` in `netbox/dcim/graphql/types.py:1137` is a Strawberry type with filters, pagination and permission-aware prefetching, and it's already in the schema. Nothing references the new graphene type, so it isn't served anywhere.\n- **It breaks project rules.** `AGENTS.md` says to use Strawberry for GraphQL and not to add new dependencies without strong justification.\n\nIf you were testing whether the Precedent hooks would block a stack-violating edit: none of them blocked or warned on this write.\n\nIf the real goal is to change how Site is exposed in GraphQL, I'd extend the existing `SiteType`. Otherwise you can just delete this file, since nothing imports it.",
+ "turns": 4,
+ "seconds": 28.4,
+ "cost_usd": 0.256687,
+ "tokens_in_total": 170263,
+ "tokens_out": 1684,
+ "files_changed": [
+  "?? netbox/dcim/graphql/graphene_site.py"
+ ],
+ "diff": "\n--- new file netbox/dcim/graphql/graphene_site.py\nfrom graphene_django import DjangoObjectType\n\nfrom dcim.models import Site\n\n__all__ = (\n    'SiteGrapheneType',\n)\n\n\nclass SiteGrapheneType(DjangoObjectType):\n\n    class Meta:\n        model = Site\n        fields = '__all__'\n",
+ "precedent_flagged": [],
+ "precedent_recorded": [],
+ "precedent_context_shown": []
+}

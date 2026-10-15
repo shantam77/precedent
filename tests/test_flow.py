@@ -129,3 +129,13 @@ def test_history_impact_and_readonly_query(graph):
         raise
     except Exception:
         pass
+
+
+def test_agent_input_is_normalized(graph):
+    """Found with real Claude Code runs: prose in `rejected`, 'file:' evidence prefixes, directory globs."""
+    r = store.record_decision(agent("s-norm"), "Queue webhooks through the outbox table", "Partners retry storms took us down",
+                              paths=["src/billing/outbox/"], rejected=["calling partners inline (too slow)"],
+                              evidence=["file:src/billing/invoice.py:1"])
+    assert r["status"] == "applied" and "Unverified" not in r["text"], r
+    d = store.get(r["id"])
+    assert d["forbid"] == [] and d["paths"] == ["src/billing/outbox/*"], d

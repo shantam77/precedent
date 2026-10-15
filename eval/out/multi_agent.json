@@ -1,0 +1,114 @@
+{
+ "graph": "synthetic",
+ "agents": 8,
+ "humans": 2,
+ "agent_ops": 1128,
+ "human_ops": 174,
+ "wall_seconds": 11.5,
+ "ops_per_second": 113.1,
+ "outcomes": {
+  "check_violation": {
+   "deny": 160,
+   "ask": 153
+  },
+  "supersede_stale": {
+   "stale": 76
+  },
+  "record_new": {
+   "applied": 173
+  },
+  "overwrite_high": {
+   "pending": 109
+  },
+  "supersede_low": {
+   "applied": 165,
+   "stale": 39
+  },
+  "record_conflict": {
+   "conflict": 73
+  },
+  "record_duplicate": {
+   "duplicate": 92
+  },
+  "human_reject": {
+   "applied": 63,
+   "refused": 11
+  },
+  "human_approve": {
+   "applied": 54,
+   "refused": 13,
+   "stale": 5
+  },
+  "self_approve": {
+   "refused": 43
+  },
+  "human_revert": {
+   "applied": 28
+  },
+  "revert_foreign": {
+   "refused": 45
+  }
+ },
+ "unexpected_outcomes": 0,
+ "unexpected_examples": [],
+ "latency_ms_p50_p95": {
+  "check_violation": [
+   49.2,
+   93.9
+  ],
+  "supersede_stale": [
+   57.2,
+   115.5
+  ],
+  "record_new": [
+   114.8,
+   202.7
+  ],
+  "overwrite_high": [
+   117.6,
+   185.2
+  ],
+  "supersede_low": [
+   141.1,
+   230.6
+  ],
+  "record_conflict": [
+   30.5,
+   93.5
+  ],
+  "record_duplicate": [
+   38.4,
+   87.9
+  ],
+  "human_reject": [
+   55.3,
+   118.5
+  ],
+  "human_approve": [
+   119.3,
+   280.7
+  ],
+  "self_approve": [
+   0.0,
+   0.0
+  ],
+  "human_revert": [
+   0,
+   0
+  ],
+  "revert_foreign": [
+   5.6,
+   50.2
+  ]
+ },
+ "decisions_before": 5001,
+ "decisions_after": 5448,
+ "deleted_decisions": 0,
+ "invariants (all must be 0)": {
+  "protected_ended_without_human": 0,
+  "double_successors": 0,
+  "unlogged_endings": 0,
+  "ended_without_valid_to": 0
+ },
+ "races_lost_cleanly (stale on supersede_low)": 39
+}

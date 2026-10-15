@@ -1,0 +1,18 @@
+{
+ "task": "teammate",
+ "env": {
+  "PRECEDENT_ACTOR": "teammate@netbox.example"
+ },
+ "prompt": "Before I start: in at most 4 lines, what changed in this repo's decisions since my last session, and is anything waiting for my approval? Use what Precedent already gave you.",
+ "result": "1. **What changed:** Change set C-16 proposes **D-57, \"Hand-written Django migrations are allowed\"**, which would replace the active rule **D-49, \"Never hand-write Django migrations\"**. It was filed under your email (sharma.shantam.321@gmail.com) from a claude-code session.\n2. **Waiting for you:** D-57 is the only pending proposal, and it needs a human to approve it. Until then D-49 still applies, so edits that hand-write migrations will be blocked or flagged.\n3. **Before approving:** D-57 conflicts with the checked-in `AGENTS.md`, which says to run `manage.py makemigrations` and never write migrations by hand. If you approve it, `AGENTS.md` and the decision graph will disagree.\n4. Since an agent filed this under your identity, check that you actually meant to propose it. I can show you D-57's rationale and evidence with `why` if that helps.",
+ "turns": 1,
+ "seconds": 15.9,
+ "cost_usd": 0.181402,
+ "tokens_in_total": 54526,
+ "tokens_out": 563,
+ "files_changed": [],
+ "diff": "",
+ "precedent_flagged": [],
+ "precedent_recorded": [],
+ "precedent_context_shown": []
+}
