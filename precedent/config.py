@@ -3,7 +3,7 @@
 import os
 import subprocess
 
-HOST = os.getenv("FALKOR_HOST", "localhost")
+HOST = os.getenv("FALKOR_HOST", "127.0.0.1")  # not "localhost": on Windows that tries IPv6 first (+2.5 s)
 PORT = int(os.getenv("FALKOR_PORT", "6379"))
 GRAPH = os.getenv("PRECEDENT_GRAPH", "precedent")      # one graph per repo
 REPO = os.getenv("PRECEDENT_REPO", os.getcwd())        # repo root, for evidence checks

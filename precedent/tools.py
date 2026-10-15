@@ -123,8 +123,8 @@ def check(path, new_text, old_text=None):
     if worst == "deny":
         lines.append("Do not work around this. Tell the user. Only a human can change this decision.")
     elif worst == "ask":
-        lines.append("If this is intentional, the user can approve; then record the new decision with "
-                     f"record_decision(supersedes='{hits[0]['id']}', expected_version={hits[0]['version']}).")
+        lines.append("If this is intentional, the user can approve; then record why with "
+                     f"supersede('{hits[0]['id']}', expected_version={hits[0]['version']}, title, rationale).")
     return {"verdict": worst, "hits": hits, "text": "\n".join(lines)}
 
 
