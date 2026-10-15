@@ -134,12 +134,14 @@ def check_evidence(evidence):
 
 
 def scope(paths, components):
-    """ABOUT targets: given components, else the component of each concrete path, else the repo."""
+    """ABOUT targets: the given components, plus for each path glob the component that contains its fixed prefix
+    and every component below that prefix ("netbox/*" covers netbox/dcim too). No prefix ("*/migrations/*") = repo."""
     comps = set(components)
     for p in paths:
         prefix = re.split(r"[*?\[]", p)[0].rstrip("/")
         if prefix:
             comps.add(tools.component_of(prefix))
+            comps |= {c for (c,) in db.read("MATCH (c:Component) WHERE c.name = $p OR c.name STARTS WITH $ps RETURN c.name", p=prefix, ps=prefix + "/")}
     comps.discard(".")
     return sorted(comps)
 
@@ -150,10 +152,14 @@ def words(s):
 
 def similar_active(title, chose, rejected, comps, paths):
     """Active decisions that this new one duplicates or contradicts (same scope)."""
-    rows = db.read("""MATCH (d:Decision {status: 'active'})-[:ABOUT]->(x)
-        WHERE x.name IN $comps OR x:Repo
-        RETURN d.id, d.title, d.version, d.trust, d.paths,
-               [(d)-[:CHOSE]->(c1:Library) | c1.name], [(d)-[:REJECTED]->(r1:Library) | r1.name]""", comps=comps)
+    rows = db.read("""MATCH (x:Component) WHERE x.name IN $comps
+        WITH x MATCH (x)<-[:ABOUT]-(d:Decision) WHERE d.status = 'active'
+        RETURN d.id AS id, d.title AS title, d.version AS v, d.trust AS trust, d.paths AS paths,
+               [(d)-[:CHOSE]->(c1:Library) | c1.name] AS chose, [(d)-[:REJECTED]->(r1:Library) | r1.name] AS rej
+        UNION
+        MATCH (x:Repo) WITH x MATCH (x)<-[:ABOUT]-(d:Decision) WHERE d.status = 'active'
+        RETURN d.id AS id, d.title AS title, d.version AS v, d.trust AS trust, d.paths AS paths,
+               [(d)-[:CHOSE]->(c2:Library) | c2.name] AS chose, [(d)-[:REJECTED]->(r2:Library) | r2.name] AS rej""", comps=comps)
     dup, conflict = [], []
     for did, t, v, trust, dpaths, dchose, drej in rows:
         if dpaths and paths and not any(fnmatch.fnmatch(a, b) or fnmatch.fnmatch(b, a) or a == b

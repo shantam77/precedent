@@ -50,16 +50,15 @@ def component_of(path):
         _components = [c for (c,) in db.read("MATCH (c:Component) RETURN c.name")]
     best = "."
     for c in _components:
-        if path.startswith(c + "/") and len(c) > len(best.strip(".")):
+        if (path == c or path.startswith(c + "/")) and len(c) > len(best.strip(".")):
             best = c
     return best
 
 
 def governing(path):
-    """Active decisions that apply to a file: its component's, repo-wide ones, and path-scoped ones matching it."""
+    """Active decisions that apply to a file: its component's and repo-wide ones; path-scoped ones only if a glob matches."""
     cols = ["id", "title", "rationale", "trust", "version", "forbid", "paths", "source", "since", "locked", "chose", "rejected"]
     rows = [dict(zip(cols, r)) for r in db.read(db.q("governing"), component=component_of(path))]
-    rows += [dict(zip(cols, r)) for r in db.read(db.q("path_scoped"))]
     rows = [d for d in rows if not d["paths"] or any(fnmatch.fnmatch(path, g) for g in d["paths"])]
     seen, out = set(), []
     for d in rows:

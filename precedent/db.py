@@ -43,9 +43,10 @@ def reset():
     graph.cache_clear()
 
 
+# No index on Decision.status: the planner would start from "all active decisions" instead of the one component.
 INDEXES = [
     ("Component", "name"), ("File", "path"), ("Library", "name"), ("Person", "key"), ("Team", "name"),
-    ("Decision", "id"), ("Decision", "status"), ("Session", "id"), ("Change", "id"), ("Commit", "sha"),
+    ("Decision", "id"), ("Session", "id"), ("Change", "id"), ("Commit", "sha"),
     ("Repo", "name"), ("Note", "id"),
 ]
 

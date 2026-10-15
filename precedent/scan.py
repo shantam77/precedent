@@ -358,9 +358,10 @@ def init(repo, name=None, until=None, verbose=True):
     deps, uses = scan_imports(repo, files, comp_paths)
     manifests = [f for f in files if f.endswith(PY_MANIFESTS) or f.endswith("package.json")]
     events, present = manifest_history(repo, manifests, until)
-    present_names = {p for pkgs in present.values() for p in pkgs}
-    unmapped = {m for (_, m) in uses if not any(import_matches(m, l) for l in present_names)}
-    decisions = history_decisions(repo, events, present, unmapped)
+    # a "removed" package that the code still imports by its own name was only dropped from the manifest
+    # (e.g. redis, still imported, pulled in by django-redis). Generic import names (django) never count.
+    imported = {m for (_, m) in uses if norm(m) not in STOP_TOKENS}
+    decisions = history_decisions(repo, events, present, imported)
     persons, knows = people(repo, comp_paths, until)
     found_notes = notes(repo, files)
     first_added = {}
