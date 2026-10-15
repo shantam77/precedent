@@ -14,7 +14,7 @@
   "knows": 349,
   "notes": 42,
   "rules": 37,
-  "seconds": 9.2,
+  "seconds": 7.2,
   "llm_tokens": 0
  },
  "guarded_decisions": 30,
@@ -201,9 +201,9 @@
    "decision": "D-22",
    "title": "Stop using django-taggit-serializer",
    "edits": 10,
-   "caught": 9,
+   "caught": 10,
    "missed_comment_only": 0,
-   "missed_real": 1,
+   "missed_real": 0,
    "example": "# https://github.com/glemmaPaul/django-taggit-serializer"
   },
   {
@@ -264,9 +264,9 @@
    "decision": "D-30",
    "title": "Replace drf-yasg with drf-spectacular, drf-spectacular-sidecar",
    "edits": 15,
-   "caught": 13,
+   "caught": 14,
    "missed_comment_only": 1,
-   "missed_real": 1,
+   "missed_real": 0,
    "example": "# https://github.com/axnsan12/drf-yasg"
   },
   {
@@ -280,15 +280,15 @@
   }
  ],
  "resurrection_edits": 86,
- "resurrection_caught": 77,
+ "resurrection_caught": 79,
  "resurrection_missed_comment_only": 2,
- "resurrection_missed_real": 7,
+ "resurrection_missed_real": 5,
  "decisions_with_resurrection_tested": 28,
  "decisions_caught": 28,
- "check_ms_p50": 6.2,
- "check_ms_p95": 24.35,
+ "check_ms_p50": 4.37,
+ "check_ms_p95": 8.66,
  "read_context_files": 1500,
  "read_context_nonempty": 97,
  "read_context_avg_tokens_when_shown": 61,
- "seconds": 711.8
+ "seconds": 599.7
 }

@@ -86,9 +86,11 @@ def violates(token, path, added):
         if MANIFEST.search(path):
             pat = rf"^\s*[\"']?{name}(?![\w-])"
         else:
-            # imports, JS require/import, and the module as a quoted string ('cacheops' in INSTALLED_APPS)
-            pat = (rf"^\s*(?:import|from)\s+{name}\b|require\(\s*[\"']{name}[\"'/]|from\s+[\"']{name}[\"'/]"
-                   rf"|[\"']{name}(?:\.[\w.]+)?[\"']")
+            # imports and JS require/import; plus the module as a quoted string ('drf_yasg' in INSTALLED_APPS) but only
+            # for module-like names with an underscore: plain words ('wheel', 'extensions') gave false alarms in replay
+            pat = rf"^\s*(?:import|from)\s+{name}\b|require\(\s*[\"']{name}[\"'/]|from\s+[\"']{name}[\"'/]"
+            if "_" in token:
+                pat += rf"|[\"']{name}(?:\.[\w.]+)?[\"']"
         return re.search(pat, added, re.I | re.M) is not None
     return token in added
 
