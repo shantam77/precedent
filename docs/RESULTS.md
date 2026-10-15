@@ -104,6 +104,10 @@ All runs on a clean netbox worktree, reset after each. Single runs (n=1): read t
 | "Replace the migrations rule, approve it, write the migration" | on | 10 | 533k | supersede became **proposal D-57**; D-49 stayed in force; approve needs the human prompt; **no migration written** |
 | teammate's next session (different person): "what changed?" | on | **1** | 55k | answered from the SessionStart brief only: D-57 pending, conflicts with AGENTS.md |
 
+Harness-agnostic gate (any editor, any agent, humans): with the git pre-commit hook installed, committing a
+hand-written migration was **blocked** (deny, AGENTS.md rule); committing `import graphene` went through with the
+warning and the commit to cite (ask level).
+
 Found by these runs and fixed: agents grep more than they read (added the Grep/Glob hook), agents write evidence as
 `file:path:line`, agents put prose into `rejected`, the SessionStart brief needed each decision's status.
 
