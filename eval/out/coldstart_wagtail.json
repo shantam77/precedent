@@ -1,0 +1,1221 @@
+{
+ "stats": {
+  "repo": "cs_wagtail",
+  "files": 5243,
+  "components": 34,
+  "depends_on": 177,
+  "libraries": 241,
+  "manifest_events": 147,
+  "format_migrations_skipped": 0,
+  "decisions": 103,
+  "guarded_decisions": 48,
+  "observed_only": 44,
+  "people": 1004,
+  "knows": 1331,
+  "notes": 19,
+  "rules": 7,
+  "seconds": 18.0,
+  "llm_tokens": 0
+ },
+ "decisions": [
+  {
+   "id": "D-1",
+   "title": "Stop using django-celery",
+   "forbid": [
+    "lib:celery",
+    "lib:django-celery",
+    "lib:django_celery"
+   ],
+   "sha": "d95daa5d57",
+   "subject": "remove celery from requirements in setup.py",
+   "at": 1392135188000,
+   "chose": []
+  },
+  {
+   "id": "D-3",
+   "title": "Stop using pyelasticsearch",
+   "forbid": [
+    "lib:pyelasticsearch"
+   ],
+   "sha": "a48cbd68e2",
+   "subject": "update requirements in setup.py",
+   "at": 1392288838000,
+   "chose": []
+  },
+  {
+   "id": "D-2",
+   "title": "Stop using elasticutils",
+   "forbid": [
+    "lib:elasticutils"
+   ],
+   "sha": "a48cbd68e2",
+   "subject": "update requirements in setup.py",
+   "at": 1392288838000,
+   "chose": []
+  },
+  {
+   "id": "D-4",
+   "title": "Make embedly optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "ead0ebeb4e",
+   "subject": "Remove embedly from setup.pu requirements",
+   "at": 1392295497000,
+   "chose": []
+  },
+  {
+   "id": "D-5",
+   "title": "Stop using unittest2",
+   "forbid": [
+    "lib:unittest2"
+   ],
+   "sha": "337f5d4146",
+   "subject": "unittest2 no longer an 'essential' requirement for developers",
+   "at": 1401788817000,
+   "chose": []
+  },
+  {
+   "id": "D-6",
+   "title": "Stop using beautifulsoup",
+   "forbid": [
+    "lib:beautifulsoup"
+   ],
+   "sha": "85a68a34f1",
+   "subject": "Requirements changes  - Removed Beautiful Soup 3  - Added six",
+   "at": 1404317895000,
+   "chose": []
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using unicodecsv",
+   "forbid": [
+    "lib:unicodecsv"
+   ],
+   "sha": "1cc258f404",
+   "subject": "Don't install unicodecsv on Python 3 and fallback to pythons built in csv library it it isn't installed.",
+   "at": 1404317895000,
+   "chose": []
+  },
+  {
+   "id": "D-8",
+   "title": "Stop using lxml",
+   "forbid": [
+    "lib:lxml"
+   ],
+   "sha": "ac6292d614",
+   "subject": "Replaced lxml with html5lib",
+   "at": 1405600166000,
+   "chose": []
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using south",
+   "forbid": [
+    "lib:south"
+   ],
+   "sha": "b9ce897441",
+   "subject": "Removed support for Django 1.6 and Python 2.6",
+   "at": 1420543467000,
+   "chose": []
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using gulp-pixrem",
+   "forbid": [
+    "lib:gulp-pixrem",
+    "lib:gulp_pixrem"
+   ],
+   "sha": "ddebafa119",
+   "subject": "Remove libsass dependency, precompile CSS for distribution",
+   "at": 1432052752000,
+   "chose": []
+  },
+  {
+   "id": "D-10",
+   "title": "Stop using django-libsass",
+   "forbid": [
+    "lib:django-libsass",
+    "lib:django_libsass",
+    "lib:libsass"
+   ],
+   "sha": "ddebafa119",
+   "subject": "Remove libsass dependency, precompile CSS for distribution",
+   "at": 1432052752000,
+   "chose": []
+  },
+  {
+   "id": "D-12",
+   "title": "Make django-sendfile optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "5ae5dd30e2",
+   "subject": "Remove django-sendfile from requirements and test settings",
+   "at": 1433496690000,
+   "chose": []
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using django-compressor",
+   "forbid": [
+    "lib:compressor",
+    "lib:django-compressor",
+    "lib:django_compressor"
+   ],
+   "sha": "be82fa975d",
+   "subject": "Removed django-compressor",
+   "at": 1453287122000,
+   "chose": []
+  },
+  {
+   "id": "D-14",
+   "title": "Stop using browserify",
+   "forbid": [
+    "lib:browserify"
+   ],
+   "sha": "14f02a0b50",
+   "subject": "Tooling for modern front-end components: React JS, ES6, and BEM CSS",
+   "at": 1456310654000,
+   "chose": []
+  },
+  {
+   "id": "D-15",
+   "title": "Stop using browserify-shim",
+   "forbid": [
+    "lib:browserify",
+    "lib:browserify-shim",
+    "lib:browserify_shim"
+   ],
+   "sha": "14f02a0b50",
+   "subject": "Tooling for modern front-end components: React JS, ES6, and BEM CSS",
+   "at": 1456310654000,
+   "chose": []
+  },
+  {
+   "id": "D-16",
+   "title": "Stop using jscs",
+   "forbid": [
+    "lib:jscs"
+   ],
+   "sha": "14f02a0b50",
+   "subject": "Tooling for modern front-end components: React JS, ES6, and BEM CSS",
+   "at": 1456310654000,
+   "chose": []
+  },
+  {
+   "id": "D-18",
+   "title": "Stop using flake8",
+   "forbid": [
+    "lib:flake8"
+   ],
+   "sha": "933c1385dd",
+   "subject": "Remove deprecated features for Wagtail 1.6",
+   "at": 1464013989000,
+   "chose": []
+  },
+  {
+   "id": "D-19",
+   "title": "Stop using mock",
+   "forbid": [
+    "lib:mock"
+   ],
+   "sha": "933c1385dd",
+   "subject": "Remove deprecated features for Wagtail 1.6",
+   "at": 1464013989000,
+   "chose": []
+  },
+  {
+   "id": "D-17",
+   "title": "Stop using elasticsearch",
+   "forbid": [
+    "lib:elasticsearch"
+   ],
+   "sha": "933c1385dd",
+   "subject": "Remove deprecated features for Wagtail 1.6",
+   "at": 1464013989000,
+   "chose": []
+  },
+  {
+   "id": "D-20",
+   "title": "Make sphinx-rtd-theme optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "933c1385dd",
+   "subject": "Remove deprecated features for Wagtail 1.6",
+   "at": 1464013989000,
+   "chose": []
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using isparta",
+   "forbid": [
+    "lib:isparta"
+   ],
+   "sha": "8bf2c9bf2e",
+   "subject": "Refactor explorer code with tests using Jest",
+   "at": 1466171313000,
+   "chose": []
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using redux-devtools",
+   "forbid": [
+    "lib:redux-devtools",
+    "lib:redux_devtools"
+   ],
+   "sha": "8bf2c9bf2e",
+   "subject": "Refactor explorer code with tests using Jest",
+   "at": 1466171313000,
+   "chose": []
+  },
+  {
+   "id": "D-23",
+   "title": "Stop using mocha",
+   "forbid": [
+    "lib:mocha"
+   ],
+   "sha": "8bf2c9bf2e",
+   "subject": "Refactor explorer code with tests using Jest",
+   "at": 1466171313000,
+   "chose": []
+  },
+  {
+   "id": "D-21",
+   "title": "Stop using chai",
+   "forbid": [
+    "lib:chai"
+   ],
+   "sha": "8bf2c9bf2e",
+   "subject": "Refactor explorer code with tests using Jest",
+   "at": 1466171313000,
+   "chose": []
+  },
+  {
+   "id": "D-27",
+   "title": "Stop using redux-logger",
+   "forbid": [
+    "lib:redux-logger",
+    "lib:redux_logger"
+   ],
+   "sha": "8bf2c9bf2e",
+   "subject": "Refactor explorer code with tests using Jest",
+   "at": 1466171313000,
+   "chose": []
+  },
+  {
+   "id": "D-25",
+   "title": "Stop using react-onclickoutside",
+   "forbid": [
+    "lib:react-onclickoutside",
+    "lib:react_onclickoutside"
+   ],
+   "sha": "8bf2c9bf2e",
+   "subject": "Refactor explorer code with tests using Jest",
+   "at": 1466171313000,
+   "chose": []
+  },
+  {
+   "id": "D-28",
+   "title": "Stop using sinon",
+   "forbid": [
+    "lib:sinon"
+   ],
+   "sha": "8bf2c9bf2e",
+   "subject": "Refactor explorer code with tests using Jest",
+   "at": 1466171313000,
+   "chose": []
+  },
+  {
+   "id": "D-24",
+   "title": "Stop using react-accessible-modal",
+   "forbid": [
+    "lib:react-accessible-modal",
+    "lib:react_accessible_modal"
+   ],
+   "sha": "8bf2c9bf2e",
+   "subject": "Refactor explorer code with tests using Jest",
+   "at": 1466171313000,
+   "chose": []
+  },
+  {
+   "id": "D-30",
+   "title": "Stop using moment",
+   "forbid": [
+    "lib:moment"
+   ],
+   "sha": "2ff4a5aad1",
+   "subject": "Update explorer for latest scope, UI, with tests",
+   "at": 1486913396000,
+   "chose": []
+  },
+  {
+   "id": "D-29",
+   "title": "Stop using glob (the backport: the standard library has it)",
+   "forbid": [
+    "lib:glob"
+   ],
+   "sha": "2ff4a5aad1",
+   "subject": "Update explorer for latest scope, UI, with tests",
+   "at": 1486913396000,
+   "chose": []
+  },
+  {
+   "id": "D-31",
+   "title": "Stop using react-addons-css-transition-group",
+   "forbid": [
+    "lib:react-addons-css-transition-group",
+    "lib:react_addons_css_transition_group"
+   ],
+   "sha": "f4f0e78f6a",
+   "subject": "Update React & Jest (#3611)",
+   "at": 1495997345000,
+   "chose": []
+  },
+  {
+   "id": "D-32",
+   "title": "Make babel-polyfill optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "b4f8e09e43",
+   "subject": "Replace babel-polyfill with more lightweight polyfills",
+   "at": 1496842785000,
+   "chose": []
+  },
+  {
+   "id": "D-33",
+   "title": "Make babel-cli optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "fea537566f",
+   "subject": "Remove unused Webpack loaders and babel-cli",
+   "at": 1496842994000,
+   "chose": []
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using exports-loader",
+   "forbid": [
+    "lib:exports",
+    "lib:exports-loader",
+    "lib:exports_loader"
+   ],
+   "sha": "fea537566f",
+   "subject": "Remove unused Webpack loaders and babel-cli",
+   "at": 1496842994000,
+   "chose": []
+  },
+  {
+   "id": "D-35",
+   "title": "Stop using imports-loader",
+   "forbid": [
+    "lib:imports",
+    "lib:imports-loader",
+    "lib:imports_loader"
+   ],
+   "sha": "fea537566f",
+   "subject": "Remove unused Webpack loaders and babel-cli",
+   "at": 1496842994000,
+   "chose": []
+  },
+  {
+   "id": "D-36",
+   "title": "Stop using react-addons-test-utils",
+   "forbid": [
+    "lib:react-addons-test-utils",
+    "lib:react_addons_test_utils"
+   ],
+   "sha": "e64903659e",
+   "subject": "Remove unused react-addons-test-utils",
+   "at": 1496843098000,
+   "chose": []
+  },
+  {
+   "id": "D-37",
+   "title": "Stop using redux-actions",
+   "forbid": [
+    "lib:redux-actions",
+    "lib:redux_actions"
+   ],
+   "sha": "6cfd139cc2",
+   "subject": "Inline util from redux-actions to reduce bundle size",
+   "at": 1496845260000,
+   "chose": []
+  },
+  {
+   "id": "D-38",
+   "title": "Stop using require-dir",
+   "forbid": [
+    "lib:require",
+    "lib:require-dir",
+    "lib:require_dir"
+   ],
+   "sha": "80cbef5b78",
+   "subject": "Stop using require-dir",
+   "at": 1502400742000,
+   "chose": []
+  },
+  {
+   "id": "D-42",
+   "title": "Stop using promise",
+   "forbid": [
+    "lib:promise"
+   ],
+   "sha": "1eb38a8b7c",
+   "subject": "Replace object-assign and promise polyfills with core-js",
+   "at": 1526053386000,
+   "chose": []
+  },
+  {
+   "id": "D-43",
+   "title": "Stop using react-addons-perf",
+   "forbid": [
+    "lib:react-addons-perf",
+    "lib:react_addons_perf"
+   ],
+   "sha": "28dd28187a",
+   "subject": "Update React and related dependencies to latest versions",
+   "at": 1526053386000,
+   "chose": []
+  },
+  {
+   "id": "D-41",
+   "title": "Stop using object-assign",
+   "forbid": [
+    "lib:object",
+    "lib:object-assign",
+    "lib:object_assign"
+   ],
+   "sha": "1eb38a8b7c",
+   "subject": "Replace object-assign and promise polyfills with core-js",
+   "at": 1526053386000,
+   "chose": []
+  },
+  {
+   "id": "D-40",
+   "title": "Stop using lodash",
+   "forbid": [
+    "lib:lodash"
+   ],
+   "sha": "f50ce2b19e",
+   "subject": "Remove unused lodash dependencies",
+   "at": 1526053386000,
+   "chose": []
+  },
+  {
+   "id": "D-39",
+   "title": "Make babel-plugin-lodash optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "f50ce2b19e",
+   "subject": "Remove unused lodash dependencies",
+   "at": 1526053386000,
+   "chose": []
+  },
+  {
+   "id": "D-44",
+   "title": "Stop using yargs",
+   "forbid": [
+    "lib:yargs"
+   ],
+   "sha": "ad5a3bbdc2",
+   "subject": "Remove unused React component generator",
+   "at": 1533682338000,
+   "chose": []
+  },
+  {
+   "id": "D-45",
+   "title": "Stop using mustache",
+   "forbid": [
+    "lib:mustache"
+   ],
+   "sha": "6301eb4b75",
+   "subject": "Remove unused devDependency",
+   "at": 1533682553000,
+   "chose": []
+  },
+  {
+   "id": "D-46",
+   "title": "Stop using stylelint-scss",
+   "forbid": [
+    "lib:stylelint-scss",
+    "lib:stylelint_scss"
+   ],
+   "sha": "bbbb70ae65",
+   "subject": "Remove explicit stylelint-scss requirement & upgrade config pkg to v0.1.0",
+   "at": 1557353380000,
+   "chose": []
+  },
+  {
+   "id": "D-47",
+   "title": "Stop using pytz",
+   "forbid": [
+    "lib:pytz"
+   ],
+   "sha": "6ce9f3a717",
+   "subject": "Unbundle the l18n library",
+   "at": 1567769407000,
+   "chose": []
+  },
+  {
+   "id": "D-48",
+   "title": "Stop using six",
+   "forbid": [
+    "lib:six"
+   ],
+   "sha": "6ce9f3a717",
+   "subject": "Unbundle the l18n library",
+   "at": 1567769407000,
+   "chose": []
+  },
+  {
+   "id": "D-49",
+   "title": "Stop using gulp-sass",
+   "forbid": [
+    "lib:gulp-sass",
+    "lib:gulp_sass"
+   ],
+   "sha": "7eeb44ad04",
+   "subject": "Replace gulp-sass with gulp-dart-sass",
+   "at": 1588894429000,
+   "chose": []
+  },
+  {
+   "id": "D-51",
+   "title": "Replace gulp-cssnano with cssnano",
+   "forbid": [
+    "lib:gulp-cssnano",
+    "lib:gulp_cssnano"
+   ],
+   "sha": "582b9c61fd",
+   "subject": "Replace gulp-cssnano and gulp-autoprefixer with gulp-postcss and respective packages",
+   "at": 1591182372000,
+   "chose": [
+    "cssnano"
+   ]
+  },
+  {
+   "id": "D-50",
+   "title": "Replace gulp-autoprefixer with autoprefixer",
+   "forbid": [
+    "lib:gulp-autoprefixer",
+    "lib:gulp_autoprefixer"
+   ],
+   "sha": "582b9c61fd",
+   "subject": "Replace gulp-cssnano and gulp-autoprefixer with gulp-postcss and respective packages",
+   "at": 1591182372000,
+   "chose": [
+    "autoprefixer"
+   ]
+  },
+  {
+   "id": "D-53",
+   "title": "Make babel-plugin-transform-react-remove-prop-types optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "0c2bae7941",
+   "subject": "Update to Babel 7 (#6471)",
+   "at": 1603210012000,
+   "chose": []
+  },
+  {
+   "id": "D-55",
+   "title": "Make babel-preset-react optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "0c2bae7941",
+   "subject": "Update to Babel 7 (#6471)",
+   "at": 1603210012000,
+   "chose": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+   ]
+  },
+  {
+   "id": "D-52",
+   "title": "Make babel-core optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "0c2bae7941",
+   "subject": "Update to Babel 7 (#6471)",
+   "at": 1603210012000,
+   "chose": [
+    "@babel/core"
+   ]
+  },
+  {
+   "id": "D-54",
+   "title": "Make babel-preset-es2015 optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "0c2bae7941",
+   "subject": "Update to Babel 7 (#6471)",
+   "at": 1603210012000,
+   "chose": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+   ]
+  },
+  {
+   "id": "D-56",
+   "title": "Make babel-jest optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "d316677b89",
+   "subject": "Switch from Babel to TypeScript",
+   "at": 1603269734000,
+   "chose": []
+  },
+  {
+   "id": "D-57",
+   "title": "Stop using unidecode",
+   "forbid": [
+    "lib:unidecode"
+   ],
+   "sha": "0e41104670",
+   "subject": "Rotate deprecation warnings",
+   "at": 1603474386000,
+   "chose": []
+  },
+  {
+   "id": "D-58",
+   "title": "Stop using react-streamfield",
+   "forbid": [
+    "lib:react-streamfield",
+    "lib:react_streamfield"
+   ],
+   "sha": "caf8a7f2d7",
+   "subject": "Import SCSS from react-streamfield",
+   "at": 1612899605000,
+   "chose": []
+  },
+  {
+   "id": "D-59",
+   "title": "Stop using wagtail-comment-frontend",
+   "forbid": [
+    "lib:wagtail-comment-frontend",
+    "lib:wagtail_comment_frontend"
+   ],
+   "sha": "bbbc31ff60",
+   "subject": "Merge Wagtail Comment Frontend (#6953)",
+   "at": 1617267622000,
+   "chose": []
+  },
+  {
+   "id": "D-63",
+   "title": "Make babel-eslint optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-64",
+   "title": "Stop using dotenv-webpack",
+   "forbid": [
+    "lib:dotenv",
+    "lib:dotenv-webpack",
+    "lib:dotenv_webpack"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-69",
+   "title": "Replace gulp-postcss with postcss",
+   "forbid": [
+    "lib:gulp-postcss",
+    "lib:gulp_postcss"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": [
+    "postcss"
+   ]
+  },
+  {
+   "id": "D-73",
+   "title": "Stop using gulp-util",
+   "forbid": [
+    "lib:gulp-util",
+    "lib:gulp_util"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-76",
+   "title": "Replace postcss-custom-properties with postcss",
+   "forbid": [
+    "lib:postcss-custom-properties",
+    "lib:postcss_custom_properties"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": [
+    "postcss"
+   ]
+  },
+  {
+   "id": "D-72",
+   "title": "Stop using gulp-sourcemaps",
+   "forbid": [
+    "lib:gulp-sourcemaps",
+    "lib:gulp_sourcemaps"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-75",
+   "title": "Stop using npm-run-all",
+   "forbid": [
+    "lib:npm-run-all",
+    "lib:npm_run_all"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-62",
+   "title": "Stop using @storybook/addon-links",
+   "forbid": [
+    "lib:@storybook/addon-links",
+    "lib:@storybook/addon_links"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-71",
+   "title": "Stop using gulp-size",
+   "forbid": [
+    "lib:gulp-size",
+    "lib:gulp_size"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-70",
+   "title": "Stop using gulp-rename",
+   "forbid": [
+    "lib:gulp-rename",
+    "lib:gulp_rename"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-61",
+   "title": "Stop using @storybook/addon-essentials",
+   "forbid": [
+    "lib:@storybook/addon-essentials",
+    "lib:@storybook/addon_essentials"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-68",
+   "title": "Replace gulp-dart-sass with sass",
+   "forbid": [
+    "lib:gulp-dart-sass",
+    "lib:gulp_dart_sass"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": [
+    "sass"
+   ]
+  },
+  {
+   "id": "D-74",
+   "title": "Stop using html-webpack-plugin",
+   "forbid": [
+    "lib:html-webpack-plugin",
+    "lib:html_webpack_plugin",
+    "lib:webpack_plugin"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-65",
+   "title": "Replace eslint-config-wagtail with @wagtail/eslint-config-wagtail",
+   "forbid": [
+    "lib:eslint-config-wagtail",
+    "lib:eslint_config_wagtail"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": [
+    "@wagtail/eslint-config-wagtail"
+   ]
+  },
+  {
+   "id": "D-60",
+   "title": "Stop using @storybook/addon-actions",
+   "forbid": [
+    "lib:@storybook/addon-actions",
+    "lib:@storybook/addon_actions"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-66",
+   "title": "Stop using eslint-import-resolver-webpack",
+   "forbid": [
+    "lib:eslint-import-resolver-webpack",
+    "lib:eslint_import_resolver_webpack"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-67",
+   "title": "Stop using gulp",
+   "forbid": [
+    "lib:gulp"
+   ],
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies",
+   "at": 1641504421000,
+   "chose": []
+  },
+  {
+   "id": "D-77",
+   "title": "Stop using eslint-config-airbnb",
+   "forbid": [
+    "lib:eslint-config-airbnb",
+    "lib:eslint_config_airbnb"
+   ],
+   "sha": "6bf0169e09",
+   "subject": "Upgrade Node tooling to Node v16 and npm v8",
+   "at": 1643640698000,
+   "chose": []
+  },
+  {
+   "id": "D-78",
+   "title": "Stop using eslint-config-prettier",
+   "forbid": [
+    "lib:eslint-config-prettier",
+    "lib:eslint_config_prettier"
+   ],
+   "sha": "6bf0169e09",
+   "subject": "Upgrade Node tooling to Node v16 and npm v8",
+   "at": 1643640698000,
+   "chose": []
+  },
+  {
+   "id": "D-79",
+   "title": "Stop using eslint-plugin-import",
+   "forbid": [
+    "lib:eslint-plugin-import",
+    "lib:eslint_plugin_import"
+   ],
+   "sha": "6bf0169e09",
+   "subject": "Upgrade Node tooling to Node v16 and npm v8",
+   "at": 1643640698000,
+   "chose": []
+  },
+  {
+   "id": "D-80",
+   "title": "Stop using eslint-plugin-jsx-a11y",
+   "forbid": [
+    "lib:eslint-plugin-jsx-a11y",
+    "lib:eslint_plugin_jsx_a11y"
+   ],
+   "sha": "6bf0169e09",
+   "subject": "Upgrade Node tooling to Node v16 and npm v8",
+   "at": 1643640698000,
+   "chose": []
+  },
+  {
+   "id": "D-81",
+   "title": "Stop using eslint-plugin-react",
+   "forbid": [
+    "lib:eslint-plugin-react",
+    "lib:eslint_plugin_react"
+   ],
+   "sha": "6bf0169e09",
+   "subject": "Upgrade Node tooling to Node v16 and npm v8",
+   "at": 1643640698000,
+   "chose": []
+  },
+  {
+   "id": "D-86",
+   "title": "Stop using whatwg-fetch",
+   "forbid": [
+    "lib:whatwg",
+    "lib:whatwg-fetch",
+    "lib:whatwg_fetch"
+   ],
+   "sha": "d2d4651853",
+   "subject": "Remove polyfills only installed for IE11",
+   "at": 1643672780000,
+   "chose": []
+  },
+  {
+   "id": "D-82",
+   "title": "Stop using core-js",
+   "forbid": [
+    "lib:core-js",
+    "lib:core_js"
+   ],
+   "sha": "d2d4651853",
+   "subject": "Remove polyfills only installed for IE11",
+   "at": 1643672780000,
+   "chose": []
+  },
+  {
+   "id": "D-83",
+   "title": "Stop using element-closest",
+   "forbid": [
+    "lib:element",
+    "lib:element-closest",
+    "lib:element_closest"
+   ],
+   "sha": "d2d4651853",
+   "subject": "Remove polyfills only installed for IE11",
+   "at": 1643672780000,
+   "chose": []
+  },
+  {
+   "id": "D-84",
+   "title": "Stop using formdata-polyfill",
+   "forbid": [
+    "lib:formdata",
+    "lib:formdata-polyfill",
+    "lib:formdata_polyfill"
+   ],
+   "sha": "d2d4651853",
+   "subject": "Remove polyfills only installed for IE11",
+   "at": 1643672780000,
+   "chose": []
+  },
+  {
+   "id": "D-85",
+   "title": "Stop using url-search-params-polyfill",
+   "forbid": [
+    "lib:url-search-params-polyfill",
+    "lib:url_search_params_polyfill"
+   ],
+   "sha": "d2d4651853",
+   "subject": "Remove polyfills only installed for IE11",
+   "at": 1643672780000,
+   "chose": []
+  },
+  {
+   "id": "D-87",
+   "title": "Stop using postcss-calc",
+   "forbid": [
+    "lib:postcss-calc",
+    "lib:postcss_calc"
+   ],
+   "sha": "33c5216cbd",
+   "subject": "Remove unused postcss-calc",
+   "at": 1643673259000,
+   "chose": []
+  },
+  {
+   "id": "D-88",
+   "title": "Stop using dateformat",
+   "forbid": [
+    "lib:dateformat"
+   ],
+   "sha": "f2257acc2e",
+   "subject": "Remove dateformat library usage (#7907). Fix #7904",
+   "at": 1643984028000,
+   "chose": []
+  },
+  {
+   "id": "D-89",
+   "title": "Stop using docutils",
+   "forbid": [
+    "lib:docutils"
+   ],
+   "sha": "4c2f160736",
+   "subject": "Remove docutils pin",
+   "at": 1646894074000,
+   "chose": []
+  },
+  {
+   "id": "D-90",
+   "title": "Stop using tablib",
+   "forbid": [
+    "lib:tablib"
+   ],
+   "sha": "07adb156d1",
+   "subject": "Stop using tablib & use openpyxl",
+   "at": 1657115622000,
+   "chose": []
+  },
+  {
+   "id": "D-91",
+   "title": "Stop using xlsxwriter",
+   "forbid": [
+    "lib:xlsxwriter"
+   ],
+   "sha": "07adb156d1",
+   "subject": "Stop using tablib & use openpyxl",
+   "at": 1657115622000,
+   "chose": []
+  },
+  {
+   "id": "D-92",
+   "title": "Stop using react-axe",
+   "forbid": [
+    "lib:react-axe",
+    "lib:react_axe"
+   ],
+   "sha": "d036f10e61",
+   "subject": "Remove react-axe package usage (#9865)",
+   "at": 1673349139000,
+   "chose": []
+  },
+  {
+   "id": "D-93",
+   "title": "Make sphinx-copybutton optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "3671285fa5",
+   "subject": "Update ReadTheDocs settings to v2 to resolve urllib3 issue in linkcheck extension",
+   "at": 1683267157000,
+   "chose": []
+  },
+  {
+   "id": "D-94",
+   "title": "Stop using html5lib",
+   "forbid": [
+    "lib:html5lib"
+   ],
+   "sha": "e1e3c8efde",
+   "subject": "Update tests & html whitelist to always use `html.parser` & remove `html5lib`",
+   "at": 1697035871000,
+   "chose": []
+  },
+  {
+   "id": "D-96",
+   "title": "Replace @storybook/manager-webpack5 with storybook",
+   "forbid": [
+    "lib:@storybook/manager-webpack5",
+    "lib:@storybook/manager_webpack5"
+   ],
+   "sha": "b7d2618d93",
+   "subject": "Remove Safari 14 support in Wagtail admin \u2013\u00a0update browserslist and TypeScript (#11258)",
+   "at": 1702378481000,
+   "chose": [
+    "storybook"
+   ]
+  },
+  {
+   "id": "D-95",
+   "title": "Replace @storybook/builder-webpack5 with storybook",
+   "forbid": [
+    "lib:@storybook/builder-webpack5",
+    "lib:@storybook/builder_webpack5"
+   ],
+   "sha": "b7d2618d93",
+   "subject": "Remove Safari 14 support in Wagtail admin \u2013\u00a0update browserslist and TypeScript (#11258)",
+   "at": 1702378481000,
+   "chose": [
+    "storybook"
+   ]
+  },
+  {
+   "id": "D-97",
+   "title": "Stop using l18n",
+   "forbid": [
+    "lib:l18n"
+   ],
+   "sha": "944fd02dc3",
+   "subject": "Replace l18n library with Intl-based LocaleController",
+   "at": 1735926565000,
+   "chose": []
+  },
+  {
+   "id": "D-98",
+   "title": "Make wagtailmodelsearch optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "4ee0137ee0",
+   "subject": "Revert \"Temporarily use wagtailmodelsearch package\"",
+   "at": 1761320084000,
+   "chose": [
+    "modelsearch"
+   ]
+  },
+  {
+   "id": "D-99",
+   "title": "Stop using @storybook/addon-controls",
+   "forbid": [
+    "lib:@storybook/addon-controls",
+    "lib:@storybook/addon_controls"
+   ],
+   "sha": "8b30c04493",
+   "subject": "Upgrade Storybook to v9",
+   "at": 1770052706000,
+   "chose": []
+  },
+  {
+   "id": "D-101",
+   "title": "Stop using @storybook/react",
+   "forbid": [
+    "lib:@storybook/react"
+   ],
+   "sha": "8b30c04493",
+   "subject": "Upgrade Storybook to v9",
+   "at": 1770052706000,
+   "chose": []
+  },
+  {
+   "id": "D-100",
+   "title": "Stop using @storybook/blocks",
+   "forbid": [
+    "lib:@storybook/blocks"
+   ],
+   "sha": "8b30c04493",
+   "subject": "Upgrade Storybook to v9",
+   "at": 1770052706000,
+   "chose": []
+  },
+  {
+   "id": "D-102",
+   "title": "Stop using @eslint/eslintrc",
+   "forbid": [
+    "lib:@eslint/eslintrc"
+   ],
+   "sha": "850457910a",
+   "subject": "Remove unneeded dependency",
+   "at": 1771579236000,
+   "chose": []
+  },
+  {
+   "id": "D-103",
+   "title": "Stop using python-dateutil",
+   "forbid": [
+    "lib:dateutil",
+    "lib:python-dateutil",
+    "lib:python_dateutil"
+   ],
+   "sha": "a9900b5d9b",
+   "subject": "Upgrade Python tooling, testing, and docs dependencies (#13952)",
+   "at": 1773143004000,
+   "chose": []
+  }
+ ]
+}

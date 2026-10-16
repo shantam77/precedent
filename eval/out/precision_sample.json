@@ -1,0 +1,734 @@
+{
+ "netbox": [
+  {
+   "id": "D-21",
+   "title": "Stop using wheel",
+   "sha": "17c76e413d",
+   "subject": "Install wheel before NetBox dependencies"
+  },
+  {
+   "id": "D-41",
+   "title": "Replace bleach with nh3",
+   "sha": "8254e707b6",
+   "subject": "12851 replace bleach with nh3 (#14767)"
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using exscript",
+   "sha": "5d4add119c",
+   "subject": "Cherry-pick from 13d9be4. Refactor rpc.py and removed dependency on Exscript."
+  },
+  {
+   "id": "D-38",
+   "title": "Replace slim-select with tom-select",
+   "sha": "d63e1dacbf",
+   "subject": "Closes #14917: Replace slim-select with tom-select (#15080)"
+  },
+  {
+   "id": "D-23",
+   "title": "Replace django-cacheops with django-redis",
+   "sha": "d9e27b6a82",
+   "subject": "Replace django-cacheops with django-redis"
+  },
+  {
+   "id": "D-36",
+   "title": "Stop using just-debounce-it",
+   "sha": "d63e1dacbf",
+   "subject": "Closes #14917: Replace slim-select with tom-select (#15080)"
+  },
+  {
+   "id": "D-8",
+   "title": "Stop using pydot",
+   "sha": "522a0c20e7",
+   "subject": "Replace pydot by graphviz"
+  },
+  {
+   "id": "D-44",
+   "title": "Replace django-pglocks with django-pgware",
+   "sha": "2f604551c1",
+   "subject": "Closes #22571: Migrate from django-pglocks to django-pgware (#22635)"
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using django-taggit-serializer",
+   "sha": "d0f0aef2ef",
+   "subject": "Remove django-taggit-serializer"
+  },
+  {
+   "id": "D-42",
+   "title": "Replace graphene-django with strawberry-graphql, strawberry-graphql-django",
+   "sha": "45c99e4477",
+   "subject": "9856 Replace graphene with Strawberry (#15141)"
+  },
+  {
+   "id": "D-35",
+   "title": "Stop using html-entities",
+   "sha": "0bc2bffb81",
+   "subject": "Remove obsolete dependencies"
+  },
+  {
+   "id": "D-39",
+   "title": "Stop using subscriptions-transport-ws",
+   "sha": "45c99e4477",
+   "subject": "9856 Replace graphene with Strawberry (#15141)"
+  },
+  {
+   "id": "D-24",
+   "title": "Stop using pycryptodome",
+   "sha": "6b3e0d3229",
+   "subject": "Drop pycryptodome as a Python dependency"
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using pycrypto",
+   "sha": "c300879995",
+   "subject": "Fixes #1527: Replace deprecated pycrypto library with pycryptodome"
+  },
+  {
+   "id": "D-30",
+   "title": "Replace drf-yasg with drf-spectacular, drf-spectacular-sidecar",
+   "sha": "ecd0c56554",
+   "subject": "Closes #9608: Move from drf-yasg to spectacular"
+  },
+  {
+   "id": "D-33",
+   "title": "Stop using color2k",
+   "sha": "0bc2bffb81",
+   "subject": "Remove obsolete dependencies"
+  },
+  {
+   "id": "D-19",
+   "title": "Stop using graphviz",
+   "sha": "dccda62f2d",
+   "subject": "Closes #2745: Remove topology maps"
+  },
+  {
+   "id": "D-40",
+   "title": "Stop using whatwg-fetch",
+   "sha": "45c99e4477",
+   "subject": "9856 Replace graphene with Strawberry (#15141)"
+  },
+  {
+   "id": "D-15",
+   "title": "Stop using natsort",
+   "sha": "60452a7b0c",
+   "subject": "Implemented DeviceComponentManager; removed natsort as a dependency"
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using psycopg2",
+   "sha": "ec7bbcf90d",
+   "subject": "Closes #1899: Prefer binary package of psycopg2"
+  }
+ ],
+ "mitmproxy": [
+  {
+   "id": "D-2",
+   "title": "Stop using mock",
+   "sha": "36930a6e1d",
+   "subject": "actually remove test dependencies from requirements.txt"
+  },
+  {
+   "id": "D-36",
+   "title": "Stop using typing (the backport: the standard library has it)",
+   "sha": "8366c87c57",
+   "subject": "update to latest `typing` release"
+  },
+  {
+   "id": "D-21",
+   "title": "Stop using react-tools",
+   "sha": "300868edff",
+   "subject": "clean up web builds"
+  },
+  {
+   "id": "D-71",
+   "title": "Stop using gulp-eslint",
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling"
+  },
+  {
+   "id": "D-59",
+   "title": "Stop using 3-6-0",
+   "sha": "c5eae9d752",
+   "subject": "drop support for Python 3.6 and 3.7"
+  },
+  {
+   "id": "D-48",
+   "title": "Stop using watchdog",
+   "sha": "7aa2081894",
+   "subject": "Remove watchdog, solidify script testing"
+  },
+  {
+   "id": "D-43",
+   "title": "Stop using configargparse",
+   "sha": "d742d4fb8c",
+   "subject": "Replace configargparse with argparse, enable new options loading"
+  },
+  {
+   "id": "D-75",
+   "title": "Stop using vinyl-buffer",
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling"
+  },
+  {
+   "id": "D-40",
+   "title": "Stop using six",
+   "sha": "ce98a9219e",
+   "subject": "test & examples: zap six"
+  },
+  {
+   "id": "D-1",
+   "title": "Stop using pil",
+   "sha": "e9c2c0ac3a",
+   "subject": "Migrate from Pil to the latest version of Pillow."
+  },
+  {
+   "id": "D-97",
+   "title": "Stop using types-flask",
+   "sha": "bdd1827687",
+   "subject": "fix various deprecation warnings (#7687)"
+  },
+  {
+   "id": "D-57",
+   "title": "Stop using bulma",
+   "sha": "c6393f86d7",
+   "subject": "Remove yarn/npm from docs"
+  },
+  {
+   "id": "D-67",
+   "title": "Stop using babel-preset-react",
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling"
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using grunt-react",
+   "sha": "563078df24",
+   "subject": "Client-side cleanup"
+  },
+  {
+   "id": "D-55",
+   "title": "Stop using pysftp",
+   "sha": "7075f4dfec",
+   "subject": "remove rtool's setup.py, embrace tox"
+  },
+  {
+   "id": "D-20",
+   "title": "Stop using bower",
+   "sha": "300868edff",
+   "subject": "clean up web builds"
+  },
+  {
+   "id": "D-77",
+   "title": "Stop using watchify",
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling"
+  },
+  {
+   "id": "D-45",
+   "title": "Stop using lxml",
+   "sha": "293b79af91",
+   "subject": "remove lxml-dependent code"
+  },
+  {
+   "id": "D-87",
+   "title": "Stop using blinker",
+   "sha": "f4dc2f2cfd",
+   "subject": "Replace blinker with custom implementation (#5528)"
+  },
+  {
+   "id": "D-81",
+   "title": "Replace @babel/preset-typescript with typescript",
+   "sha": "9b119c3dac",
+   "subject": "web: major upgrades"
+  }
+ ],
+ "saleor": [
+  {
+   "id": "D-126",
+   "title": "Stop using react-dropzone",
+   "sha": "bab099ad67",
+   "subject": "Remove dashboard 2.0 dependencies"
+  },
+  {
+   "id": "D-103",
+   "title": "Stop using draft-js",
+   "sha": "bab099ad67",
+   "subject": "Remove dashboard 2.0 dependencies"
+  },
+  {
+   "id": "D-138",
+   "title": "Stop using react-test-renderer",
+   "sha": "bab099ad67",
+   "subject": "Remove dashboard 2.0 dependencies"
+  },
+  {
+   "id": "D-315",
+   "title": "Stop using types-setuptools",
+   "sha": "e2afe264f0",
+   "subject": "deps: drop unused setuptools (#18166)"
+  },
+  {
+   "id": "D-52",
+   "title": "Stop using django-bootstrap3",
+   "sha": "81321dcdfd",
+   "subject": "Upgrade `django-bootstrap3` to `django-bootstrap4`"
+  },
+  {
+   "id": "D-198",
+   "title": "Stop using mobx",
+   "sha": "0f09cdbd14",
+   "subject": "Removed non-longer needed dependencies, middleware & context processors"
+  },
+  {
+   "id": "D-234",
+   "title": "Stop using maxminddb-geolite2",
+   "sha": "dceb1dad09",
+   "subject": "Drop country middleware (#6784)"
+  },
+  {
+   "id": "D-324",
+   "title": "Stop using python-http-client",
+   "sha": "e417c4efc0",
+   "subject": "Remove the deprecated Sendgrid email plugin (#19725)"
+  },
+  {
+   "id": "D-112",
+   "title": "Stop using graphql-tag",
+   "sha": "bab099ad67",
+   "subject": "Remove dashboard 2.0 dependencies"
+  },
+  {
+   "id": "D-173",
+   "title": "Stop using django-impersonate",
+   "sha": "2c1a5fdb00",
+   "subject": "Drop impersonate"
+  },
+  {
+   "id": "D-237",
+   "title": "Stop using django-render-block",
+   "sha": "6b3f088123",
+   "subject": "Remove unneeded packages"
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using hammerjs",
+   "sha": "74b93688b5",
+   "subject": "No longer depend on a fork of materialize-css"
+  },
+  {
+   "id": "D-105",
+   "title": "Stop using enzyme",
+   "sha": "bab099ad67",
+   "subject": "Remove dashboard 2.0 dependencies"
+  },
+  {
+   "id": "D-176",
+   "title": "Stop using draftjs-to-html",
+   "sha": "0f09cdbd14",
+   "subject": "Removed non-longer needed dependencies, middleware & context processors"
+  },
+  {
+   "id": "D-183",
+   "title": "Stop using eslint-plugin-import",
+   "sha": "0f09cdbd14",
+   "subject": "Removed non-longer needed dependencies, middleware & context processors"
+  },
+  {
+   "id": "D-102",
+   "title": "Stop using downshift",
+   "sha": "bab099ad67",
+   "subject": "Remove dashboard 2.0 dependencies"
+  },
+  {
+   "id": "D-325",
+   "title": "Stop using sendgrid",
+   "sha": "e417c4efc0",
+   "subject": "Remove the deprecated Sendgrid email plugin (#19725)"
+  },
+  {
+   "id": "D-212",
+   "title": "Stop using select2",
+   "sha": "0f09cdbd14",
+   "subject": "Removed non-longer needed dependencies, middleware & context processors"
+  },
+  {
+   "id": "D-127",
+   "title": "Stop using react-helmet",
+   "sha": "bab099ad67",
+   "subject": "Remove dashboard 2.0 dependencies"
+  },
+  {
+   "id": "D-45",
+   "title": "Stop using jquery-match-height",
+   "sha": "0b87fc00db",
+   "subject": "Drop unused dependencies"
+  }
+ ],
+ "paperless-ngx": [
+  {
+   "id": "D-52",
+   "title": "Stop using myst-parser",
+   "sha": "729845662f",
+   "subject": "Removes old, unused tools from develop packages, removes old Sphinx related tools"
+  },
+  {
+   "id": "D-79",
+   "title": "Stop using uvicorn",
+   "sha": "654c9ca273",
+   "subject": "Feature: Switch webserver to granian (#9218)"
+  },
+  {
+   "id": "D-38",
+   "title": "Replace karma-coverage-istanbul-reporter with @angular-builders/jest, jest",
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest"
+  },
+  {
+   "id": "D-39",
+   "title": "Replace karma-jasmine with @angular-builders/jest, jest",
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest"
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using jasmine-core",
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest"
+  },
+  {
+   "id": "D-95",
+   "title": "Stop using @angular/platform-browser-dynamic",
+   "sha": "e03b09e2ea",
+   "subject": "Chore: pnpm lockfile cleanup (#13116)"
+  },
+  {
+   "id": "D-35",
+   "title": "Stop using jasmine-spec-reporter",
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest"
+  },
+  {
+   "id": "D-40",
+   "title": "Replace karma-jasmine-html-reporter with @angular-builders/jest, jest",
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest"
+  },
+  {
+   "id": "D-94",
+   "title": "Replace whoosh-reloaded with tantivy",
+   "sha": "aed9abe48c",
+   "subject": "Feature: Replace Whoosh with tantivy search backend (#12471)"
+  },
+  {
+   "id": "D-6",
+   "title": "Stop using django-flat-responsive",
+   "sha": "39afe41f08",
+   "subject": "Drop django-flat-responsive"
+  },
+  {
+   "id": "D-88",
+   "title": "Stop using pre-commit",
+   "sha": "71663fdbe2",
+   "subject": "Chore: Switches all locations to use prek in place of pre-commit (#12002)"
+  },
+  {
+   "id": "D-90",
+   "title": "Stop using pyzbar",
+   "sha": "8db1c4e08b",
+   "subject": "Breaking: Remove pybzar as a barcode reader (#12065)"
+  },
+  {
+   "id": "D-74",
+   "title": "Replace psycopg2 with psycopg",
+   "sha": "2b85e812f8",
+   "subject": "Chore(deps): Use psycopg as recommended (#6811)"
+  },
+  {
+   "id": "D-30",
+   "title": "Stop using ng-bootstrap",
+   "sha": "39d45367d0",
+   "subject": "replace ng-bootstrap with ngx-bootstrap"
+  },
+  {
+   "id": "D-100",
+   "title": "Stop using @codecov/webpack-plugin",
+   "sha": "42908ad2b9",
+   "subject": "Chore: remove codecov/webpack-plugin (#13595)"
+  },
+  {
+   "id": "D-51",
+   "title": "Stop using tslint",
+   "sha": "551a7e606c",
+   "subject": "Migrate to eslint"
+  },
+  {
+   "id": "D-5",
+   "title": "Stop using djangodav",
+   "sha": "01fed4f49d",
+   "subject": "Removed WebDAV from dev, since it is kind of broken."
+  },
+  {
+   "id": "D-36",
+   "title": "Replace karma with @angular-builders/jest, jest",
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest"
+  },
+  {
+   "id": "D-54",
+   "title": "Stop using sphinx-autobuild",
+   "sha": "729845662f",
+   "subject": "Removes old, unused tools from develop packages, removes old Sphinx related tools"
+  },
+  {
+   "id": "D-82",
+   "title": "Stop using patch-package",
+   "sha": "0ab85b5122",
+   "subject": "Fix/Chore: replace file drop package (#9926)"
+  }
+ ],
+ "wagtail": [
+  {
+   "id": "D-88",
+   "title": "Stop using dateformat",
+   "sha": "f2257acc2e",
+   "subject": "Remove dateformat library usage (#7907). Fix #7904"
+  },
+  {
+   "id": "D-82",
+   "title": "Stop using core-js",
+   "sha": "d2d4651853",
+   "subject": "Remove polyfills only installed for IE11"
+  },
+  {
+   "id": "D-41",
+   "title": "Stop using object-assign",
+   "sha": "1eb38a8b7c",
+   "subject": "Replace object-assign and promise polyfills with core-js"
+  },
+  {
+   "id": "D-42",
+   "title": "Stop using promise",
+   "sha": "1eb38a8b7c",
+   "subject": "Replace object-assign and promise polyfills with core-js"
+  },
+  {
+   "id": "D-36",
+   "title": "Stop using react-addons-test-utils",
+   "sha": "e64903659e",
+   "subject": "Remove unused react-addons-test-utils"
+  },
+  {
+   "id": "D-96",
+   "title": "Replace @storybook/manager-webpack5 with storybook",
+   "sha": "b7d2618d93",
+   "subject": "Remove Safari 14 support in Wagtail admin \u2013\u00a0update browserslist and TypeScript (#11258)"
+  },
+  {
+   "id": "D-37",
+   "title": "Stop using redux-actions",
+   "sha": "6cfd139cc2",
+   "subject": "Inline util from redux-actions to reduce bundle size"
+  },
+  {
+   "id": "D-44",
+   "title": "Stop using yargs",
+   "sha": "ad5a3bbdc2",
+   "subject": "Remove unused React component generator"
+  },
+  {
+   "id": "D-76",
+   "title": "Replace postcss-custom-properties with postcss",
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies"
+  },
+  {
+   "id": "D-85",
+   "title": "Stop using url-search-params-polyfill",
+   "sha": "d2d4651853",
+   "subject": "Remove polyfills only installed for IE11"
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using south",
+   "sha": "b9ce897441",
+   "subject": "Removed support for Django 1.6 and Python 2.6"
+  },
+  {
+   "id": "D-91",
+   "title": "Stop using xlsxwriter",
+   "sha": "07adb156d1",
+   "subject": "Stop using tablib & use openpyxl"
+  },
+  {
+   "id": "D-68",
+   "title": "Replace gulp-dart-sass with sass",
+   "sha": "7d7a03f9f2",
+   "subject": "Update all front-end dependencies"
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using exports-loader",
+   "sha": "fea537566f",
+   "subject": "Remove unused Webpack loaders and babel-cli"
+  },
+  {
+   "id": "D-1",
+   "title": "Stop using django-celery",
+   "sha": "d95daa5d57",
+   "subject": "remove celery from requirements in setup.py"
+  },
+  {
+   "id": "D-51",
+   "title": "Replace gulp-cssnano with cssnano",
+   "sha": "582b9c61fd",
+   "subject": "Replace gulp-cssnano and gulp-autoprefixer with gulp-postcss and respective packages"
+  },
+  {
+   "id": "D-49",
+   "title": "Stop using gulp-sass",
+   "sha": "7eeb44ad04",
+   "subject": "Replace gulp-sass with gulp-dart-sass"
+  },
+  {
+   "id": "D-38",
+   "title": "Stop using require-dir",
+   "sha": "80cbef5b78",
+   "subject": "Stop using require-dir"
+  },
+  {
+   "id": "D-95",
+   "title": "Replace @storybook/builder-webpack5 with storybook",
+   "sha": "b7d2618d93",
+   "subject": "Remove Safari 14 support in Wagtail admin \u2013\u00a0update browserslist and TypeScript (#11258)"
+  },
+  {
+   "id": "D-58",
+   "title": "Stop using react-streamfield",
+   "sha": "caf8a7f2d7",
+   "subject": "Import SCSS from react-streamfield"
+  }
+ ],
+ "outline": [
+  {
+   "id": "D-153",
+   "title": "Stop using regenerator-runtime",
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)"
+  },
+  {
+   "id": "D-223",
+   "title": "Stop using jest-cli",
+   "sha": "091346dfe8",
+   "subject": "chore: Migrate to vitest (#12272)"
+  },
+  {
+   "id": "D-137",
+   "title": "Replace webpack with @vitejs/plugin-react, rollup-plugin-webpack-stats",
+   "sha": "e754f89e5c",
+   "subject": "Replace Webpack with Vite (#4765)"
+  },
+  {
+   "id": "D-190",
+   "title": "Replace eslint-import-resolver-typescript with oxlint",
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)"
+  },
+  {
+   "id": "D-209",
+   "title": "Stop using react-color",
+   "sha": "ebe0e5bc3a",
+   "subject": "Replace `react-color` with `react-colorful` (#11269)"
+  },
+  {
+   "id": "D-195",
+   "title": "Replace eslint-plugin-node with oxlint",
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)"
+  },
+  {
+   "id": "D-104",
+   "title": "Stop using react-modal",
+   "sha": "25023fb086",
+   "subject": "chore: Fix modal nesting, remove react-modal (#1996)"
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using babel-preset-stage-0",
+   "sha": "930bf7d105",
+   "subject": "Removed useless modules"
+  },
+  {
+   "id": "D-179",
+   "title": "Replace @getoutline/y-prosemirror with y-prosemirror",
+   "sha": "bdac4360b4",
+   "subject": "chore: Remove usage of y-prosemirror fork, pull in latest fixes from upstream"
+  },
+  {
+   "id": "D-218",
+   "title": "Stop using autotrack",
+   "sha": "7a4b545e7f",
+   "subject": "chore: vendor autotrack library (#12070)"
+  },
+  {
+   "id": "D-166",
+   "title": "Stop using inline-css",
+   "sha": "5558d5af95",
+   "subject": "chore: Move from `inline-css` -> `css-inline` (#6252)"
+  },
+  {
+   "id": "D-100",
+   "title": "Stop using @babel/register",
+   "sha": "e8719340d1",
+   "subject": "refactor: Remove babel/register for instant production server startup"
+  },
+  {
+   "id": "D-194",
+   "title": "Replace eslint-plugin-lodash with oxlint",
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)"
+  },
+  {
+   "id": "D-193",
+   "title": "Replace eslint-plugin-jsx-a11y with oxlint",
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)"
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using fsevents",
+   "sha": "343144d826",
+   "subject": "Updated package.json and removed fsevents"
+  },
+  {
+   "id": "D-246",
+   "title": "Replace koa-router with @koa/router",
+   "sha": "086bd9e9e4",
+   "subject": "chore: Replace deprecated koa-router with @koa/router v15 (#14042)"
+  },
+  {
+   "id": "D-206",
+   "title": "Stop using chalk",
+   "sha": "f4d9b6b257",
+   "subject": "chore: Remove chalk module (#10700)"
+  },
+  {
+   "id": "D-217",
+   "title": "Stop using body-scroll-lock",
+   "sha": "0ba310e027",
+   "subject": "Remove unused files and dependencies (#11850)"
+  },
+  {
+   "id": "D-17",
+   "title": "Stop using react-medium-editor",
+   "sha": "e3371ed06a",
+   "subject": "Code cleanup"
+  },
+  {
+   "id": "D-101",
+   "title": "Replace koa-bodyparser with koa-body",
+   "sha": "2c1a111dee",
+   "subject": "feat: Support importing .docx or .html files as new documents (#1551)"
+  }
+ ]
+}

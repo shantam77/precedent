@@ -1,0 +1,13 @@
+{
+ "what": "Precision audit of mined decisions. 20 enforced (trust=historical, guarded) decisions per repo, random sample (seed 7) from eval/out/precision_sample.json. Label = is this a real, deliberate 'we stopped using X' decision, with the right commit as evidence? Labelled by Claude from the commit subject (and diff when unclear); every row has the sha so a human can re-check in seconds.",
+ "labeller": "Claude (Opus), not a human. Spot-check before quoting.",
+ "results": {"netbox": [18, 20], "mitmproxy": [18, 20], "saleor": [20, 20], "paperless-ngx": [20, 20], "wagtail": [19, 20], "outline": [20, 20]},
+ "total": [115, 120],
+ "false": [
+  {"repo": "netbox", "id": "D-21", "title": "Stop using wheel", "sha": "17c76e413d", "why": "wheel moved to the install script, not dropped"},
+  {"repo": "netbox", "id": "D-13", "title": "Stop using psycopg2", "sha": "ec7bbcf90d", "why": "switch to the psycopg2-binary package, same import name; a packaging change, not 'stop using'"},
+  {"repo": "mitmproxy", "id": "D-36", "title": "Stop using typing (backport)", "sha": "8366c87c57", "why": "the removal is real today but this commit ('update to latest typing release') is the wrong evidence"},
+  {"repo": "mitmproxy", "id": "D-59", "title": "Stop using 3-6-0", "sha": "c5eae9d752", "why": "parser bug: a Python version string read as a package (fixed: names must start with a letter)"},
+  {"repo": "wagtail", "id": "D-58", "title": "Stop using react-streamfield", "sha": "caf8a7f2d7", "why": "evidence commit unclear ('Import SCSS from react-streamfield'); the library was dropped later in a different change"}
+ ]
+}

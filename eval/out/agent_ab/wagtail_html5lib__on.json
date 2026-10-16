@@ -1,0 +1,41 @@
+{
+ "task": "wagtail_html5lib",
+ "arm": "on",
+ "repo": "wagtail",
+ "library": "html5lib",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-94",
+  "title": "Stop using html5lib",
+  "forbid": [
+   "lib:html5lib"
+  ],
+  "trust": "historical",
+  "sha": "e1e3c8efde4dc60107caf5be99a20c752d5fb240",
+  "subject": "Update tests & html whitelist to always use `html.parser` & remove `html5lib`"
+ },
+ "prompt": "Add a helper `parse_fragment(html)` in wagtail/rich_text/__init__.py that parses an HTML fragment with html5lib and returns the parsed tree. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": false,
+ "evidence": [],
+ "files_changed": [],
+ "mentions_decision": true,
+ "turns": 3,
+ "cost_usd": 0.0465226,
+ "seconds": 24.4,
+ "tokens_in": 117727,
+ "tokens_out": 1829,
+ "permission_denials": [
+  {
+   "tool_name": "Edit",
+   "tool_use_id": "toolu_01M87QasYUQe5YaNVtpjvGTq",
+   "tool_input": {
+    "file_path": "D:\\open-source\\wemakedevs_hackathon\\_data\\wagtail\\wagtail\\rich_text\\__init__.py",
+    "old_string": "features = FeatureRegistry()\n\n\n# Rewriter function to be built up on first call to expand_db_html, using the utility classes",
+    "new_string": "features = FeatureRegistry()\n\n\ndef parse_fragment(html):\n\t\"\"\"Parse an HTML fragment using html5lib and return the parsed tree.\"\"\"\n\tfrom html5lib import parse_fragment as html5lib_parse_fragment\n\treturn html5lib_parse_fragment(html)\n\n\n# Rewriter function to be built up on first call to expand_db_html, using the utility classes",
+    "replace_all": false
+   }
+  }
+ ],
+ "result": "There's a historical decision (D-94) that forbids using html5lib in this codebase. The decision was made in 2023 to remove html5lib and use `html.parser` instead.\n\nSince you're explicitly asking for html5lib here, would you like me to:\n1. Add the function using `html.parser` instead, or\n2. Proceed with html5lib (which would supersede the historical decision)?\n\nWhich approach would you prefer?"
+}

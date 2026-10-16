@@ -2,75 +2,281 @@
  "repo": "netbox",
  "cut": "2024-01-01",
  "graph_at_cut": {
-  "repo": "replay",
+  "repo": "replay_netbox",
   "files": 2297,
   "components": 27,
   "depends_on": 115,
-  "libraries": 126,
-  "manifest_events": 47,
-  "decisions": 35,
-  "guarded_decisions": 30,
+  "libraries": 125,
+  "manifest_events": 53,
+  "format_migrations_skipped": 3,
+  "decisions": 37,
+  "guarded_decisions": 14,
+  "observed_only": 20,
   "people": 319,
   "knows": 349,
   "notes": 42,
   "rules": 37,
-  "seconds": 7.2,
+  "seconds": 8.5,
   "llm_tokens": 0
  },
- "guarded_decisions": 30,
+ "guarded_decisions": 14,
+ "decisions_at_cut": 37,
+ "decisions_still_true_at_head": 31,
+ "reversed_decisions": [
+  "D-22",
+  "D-24",
+  "D-33",
+  "D-34",
+  "D-35",
+  "D-37"
+ ],
  "replayed_commits": 3579,
  "replayed_file_changes": 14079,
  "commit_verdicts": {
-  "ok": 3579
+  "ok": 3578,
+  "ask": 1
  },
- "flag_rate_commits": 0.0,
- "flags": [],
- "resurrections": [
+ "flag_rate_commits": 0.0003,
+ "flagged_commits_false_alarm": 0,
+ "flagged_commits_reversal": 1,
+ "decisions": [
   {
-   "decision": "D-1",
-   "title": "Stop using django-extensions",
-   "edits": 1,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "django-extensions==1.6.1"
+   "id": "D-32",
+   "title": "Replace drf-yasg with drf-spectacular, drf-spectacular-sidecar",
+   "guarded": true,
+   "still_true_at_head": true
   },
   {
-   "decision": "D-2",
-   "title": "Stop using ecdsa",
-   "edits": 1,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "ecdsa==0.13"
+   "id": "D-8",
+   "title": "Stop using pydot",
+   "guarded": true,
+   "still_true_at_head": true
   },
   {
-   "decision": "D-3",
-   "title": "Stop using lxml",
-   "edits": 1,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "lxml==3.5.0"
+   "id": "D-22",
+   "title": "Make redis optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": false
   },
   {
-   "decision": "D-5",
+   "id": "D-19",
+   "title": "Stop using graphviz",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-34",
+   "title": "Make boto3 optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-36",
+   "title": "Replace psycopg2-binary with psycopg",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-12",
+   "title": "Stop using sqlparse",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-30",
+   "title": "Stop using swagger-spec-validator",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-5",
    "title": "Stop using pyparsing",
-   "edits": 1,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "pyparsing==1.5.7"
+   "guarded": true,
+   "still_true_at_head": true
   },
   {
-   "decision": "D-6",
+   "id": "D-6",
    "title": "Stop using six",
-   "edits": 3,
-   "caught": 3,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "six==1.10.0"
+   "guarded": true,
+   "still_true_at_head": true
   },
+  {
+   "id": "D-28",
+   "title": "Stop using pytz",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using cffi",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-17",
+   "title": "Stop using paramiko",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-16",
+   "title": "Stop using ncclient",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using psycopg2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-4",
+   "title": "Stop using markupsafe",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-21",
+   "title": "Stop using wheel",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-35",
+   "title": "Make dulwich optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-23",
+   "title": "Stop using django-taggit-serializer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-31",
+   "title": "Stop using masonry-layout",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-24",
+   "title": "Replace mkdocs with mkdocs-material",
+   "guarded": true,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-3",
+   "title": "Stop using lxml",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-29",
+   "title": "Stop using cookie",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-15",
+   "title": "Stop using natsort",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using pycryptodome",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-1",
+   "title": "Stop using django-extensions",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-27",
+   "title": "Make markdown-include optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-14",
+   "title": "Stop using django-rest-swagger",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using exscript",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-33",
+   "title": "Make jsonschema optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-2",
+   "title": "Stop using ecdsa",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using pycrypto",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-10",
+   "title": "Stop using cryptography",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-25",
+   "title": "Replace django-cacheops with django-redis",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-18",
+   "title": "Stop using xmltodict",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-37",
+   "title": "Make sentry-sdk optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-20",
+   "title": "Stop using py-gfm",
+   "guarded": true,
+   "still_true_at_head": true
+  }
+ ],
+ "flags": [
+  {
+   "sha": "54462595a6",
+   "subject": "Release v4.5.4",
+   "path": "requirements.txt",
+   "decision": "D-24",
+   "title": "Replace mkdocs with mkdocs-material",
+   "token": "lib:mkdocs",
+   "line": "mkdocs==1.6.1",
+   "verdict": "ask",
+   "kind": "reversal (library came back later)"
+  }
+ ],
+ "resurrections": [
   {
    "decision": "D-8",
    "title": "Stop using pydot",
@@ -79,24 +285,6 @@
    "missed_comment_only": 0,
    "missed_real": 0,
    "example": "import pydot"
-  },
-  {
-   "decision": "D-9",
-   "title": "Stop using cffi",
-   "edits": 1,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "cffi>=1.8"
-  },
-  {
-   "decision": "D-10",
-   "title": "Stop using cryptography",
-   "edits": 1,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "cryptography>=1.8"
   },
   {
    "decision": "D-11",
@@ -108,15 +296,6 @@
    "example": "pycrypto>=2.6.1"
   },
   {
-   "decision": "D-12",
-   "title": "Stop using sqlparse",
-   "edits": 1,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "sqlparse>=0.2"
-  },
-  {
    "decision": "D-13",
    "title": "Stop using psycopg2",
    "edits": 1,
@@ -126,169 +305,106 @@
    "example": "psycopg2>=2.7.3"
   },
   {
-   "decision": "D-14",
-   "title": "Stop using django-rest-swagger",
-   "edits": 1,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "django-rest-swagger>=2.1.0"
-  },
-  {
    "decision": "D-15",
    "title": "Stop using natsort",
    "edits": 4,
-   "caught": 4,
+   "caught": 3,
    "missed_comment_only": 0,
-   "missed_real": 0,
+   "missed_real": 1,
    "example": "natsort"
-  },
-  {
-   "decision": "D-16",
-   "title": "Stop using ncclient",
-   "edits": 3,
-   "caught": 3,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "ncclient"
-  },
-  {
-   "decision": "D-17",
-   "title": "Stop using paramiko",
-   "edits": 3,
-   "caught": 3,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "paramiko"
-  },
-  {
-   "decision": "D-18",
-   "title": "Stop using xmltodict",
-   "edits": 2,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "xmltodict"
   },
   {
    "decision": "D-19",
    "title": "Stop using graphviz",
    "edits": 4,
-   "caught": 3,
+   "caught": 2,
    "missed_comment_only": 1,
-   "missed_real": 0,
+   "missed_real": 1,
    "example": "# Python interface to the graphviz graph rendering utility"
   },
   {
    "decision": "D-20",
    "title": "Stop using py-gfm",
    "edits": 2,
-   "caught": 2,
+   "caught": 1,
    "missed_comment_only": 0,
-   "missed_real": 0,
+   "missed_real": 1,
    "example": "# https://github.com/zopieux/py-gfm"
   },
   {
    "decision": "D-21",
    "title": "Stop using wheel",
    "edits": 2,
-   "caught": 2,
+   "caught": 1,
    "missed_comment_only": 0,
-   "missed_real": 0,
+   "missed_real": 1,
    "example": "# https://pythonwheels.com/"
   },
   {
-   "decision": "D-22",
+   "decision": "D-23",
    "title": "Stop using django-taggit-serializer",
    "edits": 10,
-   "caught": 10,
+   "caught": 9,
    "missed_comment_only": 0,
-   "missed_real": 0,
+   "missed_real": 1,
    "example": "# https://github.com/glemmaPaul/django-taggit-serializer"
   },
   {
-   "decision": "D-23",
-   "title": "Replace django-cacheops with django-redis",
-   "edits": 10,
-   "caught": 8,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "# https://github.com/Suor/django-cacheops"
-  },
-  {
    "decision": "D-24",
-   "title": "Stop using pycryptodome",
-   "edits": 2,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "# https://github.com/Legrandin/pycryptodome"
-  },
-  {
-   "decision": "D-26",
-   "title": "Stop using pytz",
-   "edits": 4,
-   "caught": 4,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "pytz==2022.1"
-  },
-  {
-   "decision": "D-27",
-   "title": "Stop using cookie",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"cookie\": \"^0.4.1\","
-  },
-  {
-   "decision": "D-28",
-   "title": "Stop using swagger-spec-validator",
+   "title": "Replace mkdocs with mkdocs-material",
    "edits": 1,
    "caught": 1,
    "missed_comment_only": 0,
    "missed_real": 0,
-   "example": "swagger-spec-validator==2.7.6"
+   "example": "mkdocs==1.1"
   },
   {
-   "decision": "D-29",
-   "title": "Stop using masonry-layout",
-   "edits": 4,
-   "caught": 2,
+   "decision": "D-25",
+   "title": "Replace django-cacheops with django-redis",
+   "edits": 10,
+   "caught": 7,
    "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "\"masonry-layout\": \"^4.2.2\","
+   "missed_real": 3,
+   "example": "# https://github.com/Suor/django-cacheops"
   },
   {
-   "decision": "D-30",
+   "decision": "D-26",
+   "title": "Stop using pycryptodome",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "# https://github.com/Legrandin/pycryptodome"
+  },
+  {
+   "decision": "D-32",
    "title": "Replace drf-yasg with drf-spectacular, drf-spectacular-sidecar",
    "edits": 15,
-   "caught": 14,
+   "caught": 13,
    "missed_comment_only": 1,
-   "missed_real": 0,
+   "missed_real": 1,
    "example": "# https://github.com/axnsan12/drf-yasg"
   },
   {
-   "decision": "D-34",
+   "decision": "D-36",
    "title": "Replace psycopg2-binary with psycopg",
    "edits": 2,
-   "caught": 2,
+   "caught": 1,
    "missed_comment_only": 0,
-   "missed_real": 0,
+   "missed_real": 1,
    "example": "psycopg2-binary"
   }
  ],
- "resurrection_edits": 86,
- "resurrection_caught": 79,
+ "resurrection_edits": 56,
+ "resurrection_caught": 43,
  "resurrection_missed_comment_only": 2,
- "resurrection_missed_real": 5,
- "decisions_with_resurrection_tested": 28,
- "decisions_caught": 28,
- "check_ms_p50": 4.37,
- "check_ms_p95": 8.66,
+ "resurrection_missed_real": 11,
+ "decisions_with_resurrection_tested": 13,
+ "decisions_caught": 13,
+ "check_ms_p50": 5.75,
+ "check_ms_p95": 12.66,
  "read_context_files": 1500,
- "read_context_nonempty": 97,
- "read_context_avg_tokens_when_shown": 61,
- "seconds": 599.7
+ "read_context_nonempty": 128,
+ "read_context_avg_tokens_when_shown": 60,
+ "seconds": 693.9
 }

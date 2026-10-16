@@ -5,16 +5,16 @@ Token budget matters more than completeness: an agent sees these lines inside it
 
 import fnmatch
 import re
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 from . import config, db
-from .scan import forbid_tokens
+from .scan import MANIFEST, forbid_tokens
 
 VERDICT = {"human": "deny", "documented": "deny", "agent": "ask", "historical": "ask", "observed": "note"}
 RANK = {"ok": 0, "note": 1, "ask": 2, "deny": 3}
-MANIFEST = re.compile(r"(requirements[^/]*\.txt|pyproject\.toml|package\.json|go\.mod)$")
 
 
 def day(ms):
@@ -85,10 +85,12 @@ def violates(token, path, added):
         name = re.escape(token[4:])
         if MANIFEST.search(path):
             pat = rf"^\s*[\"']?{name}(?![\w-])"
+        elif token[4:] in sys.stdlib_module_names:  # a dropped backport ('typing', 'enum'): importing it is fine now
+            return False
         else:
             # imports and JS require/import; plus the module as a quoted string ('drf_yasg' in INSTALLED_APPS) but only
             # for module-like names with an underscore: plain words ('wheel', 'extensions') gave false alarms in replay
-            pat = rf"^\s*(?:import|from)\s+{name}\b|require\(\s*[\"']{name}[\"'/]|from\s+[\"']{name}[\"'/]"
+            pat = rf"^\s*(?:import|from)\s+{name}\b|(?:\brequire\(|\bfrom|\bimport\s*\(?)\s*[\"']{name}[\"'/]"
             if "_" in token:
                 pat += rf"|[\"']{name}(?:\.[\w.]+)?[\"']"
         return re.search(pat, added, re.I | re.M) is not None
@@ -242,8 +244,9 @@ def why(target, as_of=None):
                   "RETURN l.why, l.present, l.since, l.added_in, collect(d.id)", n=target.lower())
     if lib:
         w, present, since, added_in, ds = lib[0]
-        state = "in use" if present else "no longer in the manifests"
-        return (f"Library {target}: {state}. Added {day(since)} ({added_in or 'before history'}). "
+        if not present:
+            return f"Library {target}: no longer in the manifests. Decisions about it: {', '.join(ds) or 'none'}."
+        return (f"Library {target}: in use. Added {day(since)} ({added_in or 'before history'}). "
                 f"Why: {w or 'no comment in the manifest'}. Decisions: {', '.join(ds) or 'none'}.")
     return search(target)
 
@@ -273,7 +276,7 @@ def query(cypher, limit=50):
 
 
 def pending():
-    rows = db.read("MATCH (p:Decision {status: 'proposed'}) OPTIONAL MATCH (p)-[:PROPOSES_TO_SUPERSEDE]->(o:Decision) "
+    rows = db.read("MATCH (p:Decision {status: 'proposed'}) OPTIONAL MATCH (p)-[:PROPOSES]->(o:Decision) "
                    "RETURN p.id, p.title, p.actor, o.id, o.title, p.recorded_at ORDER BY p.recorded_at")
     return [{"id": i, "title": t, "actor": a, "replaces": o, "replaces_title": ot, "at": at} for i, t, a, o, ot, at in rows]
 

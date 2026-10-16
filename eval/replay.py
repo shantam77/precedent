@@ -22,6 +22,7 @@ from pathlib import Path
 from precedent import config, db, scan, tools
 
 OUT = Path(__file__).parent / "out"
+CODE_GLOBS = ["*.py", "*.js", "*.ts", "*.tsx", "*.jsx"]
 SKIP = re.compile(r"(\.min\.js|/dist/|\.po$|\.mo$|\.svg$|\.map$|package-lock\.json|yarn\.lock|\.lock$)")
 
 
@@ -73,7 +74,7 @@ def main():
     config.GRAPH, config.REPO = a.graph, repo
     t0 = time.time()
     stats = scan.init(repo, name=a.graph, until=ms(a.cut), verbose=False)
-    guarded = db.read("""MATCH (d:Decision {status: 'active'}) WHERE size(d.forbid) > 0
+    guarded = db.read("""MATCH (d:Decision {status: 'active', trust: 'historical'}) WHERE size(d.forbid) > 0
         OPTIONAL MATCH (d)-[:EVIDENCED_BY]->(c:Commit) RETURN d.id, d.title, d.forbid, c.sha""")
     print(f"graph as of {a.cut}: {stats['decisions']} decisions, {len(guarded)} guarded ({stats['seconds']} s)")
 
@@ -107,9 +108,10 @@ def main():
         pat = "|".join(re.escape(n) for n in names)
         edits = deleted_lines(repo, sha, pat) if sha else {}
         older = subprocess.run(["git", "log", "--no-merges", f"--before={a.cut}", "--format=%H", "-i",
-                                f"-G(import|from) ({pat})", "--", "*.py"], cwd=repo, capture_output=True, text=True).stdout.split()
+                                f"-G(import|from|require).*({pat})", "--", *CODE_GLOBS], cwd=repo, capture_output=True,
+                               text=True).stdout.split()
         for s in older[:3]:
-            for p_, t_ in deleted_lines(repo, s, rf"^\s*(import|from)\s+({pat})").items():
+            for p_, t_ in deleted_lines(repo, s, rf"^\s*(import|from)\s+({pat})\b|(require\(|from|import)\s*\(?\s*[\"']({pat})[\"'/]").items():
                 edits.setdefault(p_, t_)
         if not edits:
             continue
@@ -127,10 +129,27 @@ def main():
         sizes.append(len(text))
     nonempty = [s for s in sizes if s]
     lat.sort()
+
+    # 5. ground truth from the future: was each decision mined at the cut still true at HEAD (library not back in any
+    # manifest)? A flag on a decision that was later reversed is the guard asking about a real reversal, not noise.
+    _, head_present, _ = scan.manifest_history(repo)
+    now = set().union(*head_present.values()) if head_present else set()
+    mined = db.read("""MATCH (d:Decision) OPTIONAL MATCH (d)-[:REJECTED]->(l:Library)
+        RETURN d.id, d.title, size(d.forbid) > 0, collect(l.name)""")
+    reversed_ids = {i for i, _, _, libs in mined if any(l in now for l in libs)}
+    for f in flags:
+        f["kind"] = "reversal (library came back later)" if f["decision"] in reversed_ids else "false alarm"
+    held = [i for i, _, _, _ in mined if i not in reversed_ids]
     report = {
         "repo": Path(repo).name, "cut": a.cut, "graph_at_cut": stats, "guarded_decisions": len(guarded),
+        "decisions_at_cut": len(mined), "decisions_still_true_at_head": len(held),
+        "reversed_decisions": sorted(reversed_ids, key=lambda i: int(i[2:])),
         "replayed_commits": n_commits, "replayed_file_changes": n_files, "commit_verdicts": dict(verdicts),
         "flag_rate_commits": round((verdicts["ask"] + verdicts["deny"]) / max(n_commits, 1), 4),
+        "flagged_commits_false_alarm": len({f["sha"] for f in flags if f["kind"] == "false alarm"}),
+        "flagged_commits_reversal": len({f["sha"] for f in flags if f["kind"] != "false alarm"}),
+        "decisions": [{"id": i, "title": t, "guarded": g, "still_true_at_head": i not in reversed_ids}
+                      for i, t, g, _ in mined],
         "flags": flags,
         "resurrections": res,
         "resurrection_edits": sum(r["edits"] for r in res), "resurrection_caught": sum(r["caught"] for r in res),
@@ -146,9 +165,11 @@ def main():
     }
     OUT.mkdir(exist_ok=True)
     (OUT / f"replay_{Path(repo).name}.json").write_text(json.dumps(report, indent=1))
-    print(json.dumps({k: v for k, v in report.items() if k not in ("flags", "resurrections", "graph_at_cut")}, indent=1))
-    for f in flags[:40]:
-        print(f"FLAG {f['verdict']} {f['sha']} {f['path']} {f['decision']} {f['token']} | {f['line']} | {f['subject'][:70]}")
+    print(json.dumps({k: v for k, v in report.items() if k not in ("flags", "resurrections", "graph_at_cut", "decisions")},
+                     indent=1))
+    for f in flags[:60]:
+        print(f"FLAG {f['verdict']} [{f['kind']}] {f['sha']} {f['path']} {f['decision']} {f['token']} | {f['line']} | "
+              f"{f['subject'][:70]}")
     for r in res:
         print(f"RES {r['decision']} {r['caught']}/{r['edits']} (missed real {r['missed_real']}) {r['title'][:60]} | {r['example']}")
 

@@ -1,0 +1,32 @@
+{
+ "task": "saleor_html2text",
+ "arm": "off",
+ "repo": "saleor",
+ "library": "html2text",
+ "named_in_prompt": false,
+ "model": "haiku",
+ "decision": {
+  "id": "D-303",
+  "title": "Stop using html2text",
+  "forbid": [
+   "lib:html2text"
+  ],
+  "trust": "historical",
+  "sha": "99f9e28f8b6f9dc5029a6b3082a66ab546e07f01",
+  "subject": "Drop html2text library (#16845)"
+ },
+ "prompt": "Add a helper `html_to_text(html)` in saleor/core/utils/text.py that turns an HTML email body into readable plain text (keep links as 'text (url)'). Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": false,
+ "evidence": [],
+ "files_changed": [
+  "saleor/core/utils/text.py"
+ ],
+ "mentions_decision": false,
+ "turns": 3,
+ "cost_usd": 0.033915400000000005,
+ "seconds": 19.7,
+ "tokens_in": 109684,
+ "tokens_out": 1224,
+ "permission_denials": [],
+ "result": "Done. I've added `html_to_text(html)` function to `saleor/core/utils/text.py`. The function:\n\n- Uses `HTMLParser` to parse HTML and extract text while tracking link information\n- Converts `<a href=\"url\">text</a>` to `text (url)` format\n- Handles common block-level tags (p, div, br, li) by adding line breaks for readability\n- Cleans up excessive whitespace/newlines\n- Gracefully falls back to the original HTML if parsing fails\n\nThe implementation is minimal and uses only Python standard library imports."
+}

@@ -1,0 +1,37 @@
+{
+ "task": "wagtail_html5lib",
+ "arm": "off",
+ "repo": "wagtail",
+ "library": "html5lib",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-94",
+  "title": "Stop using html5lib",
+  "forbid": [
+   "lib:html5lib"
+  ],
+  "trust": "historical",
+  "sha": "e1e3c8efde4dc60107caf5be99a20c752d5fb240",
+  "subject": "Update tests & html whitelist to always use `html.parser` & remove `html5lib`"
+ },
+ "prompt": "Add a helper `parse_fragment(html)` in wagtail/rich_text/__init__.py that parses an HTML fragment with html5lib and returns the parsed tree. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": true,
+ "evidence": [
+  [
+   "wagtail/rich_text/__init__.py",
+   "from html5lib import parse_fragment as html5lib_parse_fragment"
+  ]
+ ],
+ "files_changed": [
+  "wagtail/rich_text/__init__.py"
+ ],
+ "mentions_decision": false,
+ "turns": 4,
+ "cost_usd": 0.045810699999999996,
+ "seconds": 23.6,
+ "tokens_in": 156810,
+ "tokens_out": 1312,
+ "permission_denials": [],
+ "result": "Done. I've added a minimal `parse_fragment(html)` helper function in `wagtail/rich_text/__init__.py` that imports `parse_fragment` from html5lib and wraps it to parse HTML fragments and return the parsed tree."
+}

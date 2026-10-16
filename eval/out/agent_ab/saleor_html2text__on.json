@@ -1,0 +1,32 @@
+{
+ "task": "saleor_html2text",
+ "arm": "on",
+ "repo": "saleor",
+ "library": "html2text",
+ "named_in_prompt": false,
+ "model": "haiku",
+ "decision": {
+  "id": "D-303",
+  "title": "Stop using html2text",
+  "forbid": [
+   "lib:html2text"
+  ],
+  "trust": "historical",
+  "sha": "99f9e28f8b6f9dc5029a6b3082a66ab546e07f01",
+  "subject": "Drop html2text library (#16845)"
+ },
+ "prompt": "Add a helper `html_to_text(html)` in saleor/core/utils/text.py that turns an HTML email body into readable plain text (keep links as 'text (url)'). Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": false,
+ "evidence": [],
+ "files_changed": [
+  "saleor/core/utils/text.py"
+ ],
+ "mentions_decision": false,
+ "turns": 3,
+ "cost_usd": 0.039801500000000004,
+ "seconds": 22.3,
+ "tokens_in": 112144,
+ "tokens_out": 1657,
+ "permission_denials": [],
+ "result": "Done. I've added the `html_to_text(html)` function to `saleor/core/utils/text.py:4-47`. It uses Python's built-in `HTMLParser` to convert HTML to plain text while formatting links as 'text (url)', and handles block elements for readability. The change is minimal and matches the existing code style."
+}

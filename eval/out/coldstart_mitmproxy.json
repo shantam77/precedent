@@ -1,0 +1,1389 @@
+{
+ "stats": {
+  "repo": "cs_mitmproxy",
+  "files": 1295,
+  "components": 25,
+  "depends_on": 22,
+  "libraries": 221,
+  "manifest_events": 138,
+  "format_migrations_skipped": 5,
+  "decisions": 119,
+  "guarded_decisions": 63,
+  "observed_only": 47,
+  "people": 602,
+  "knows": 470,
+  "notes": 8,
+  "rules": 1,
+  "seconds": 10.5,
+  "llm_tokens": 0
+ },
+ "decisions": [
+  {
+   "id": "D-1",
+   "title": "Stop using pil",
+   "forbid": [
+    "lib:pil"
+   ],
+   "sha": "e9c2c0ac3a",
+   "subject": "Migrate from Pil to the latest version of Pillow.",
+   "at": 1389058150000,
+   "chose": []
+  },
+  {
+   "id": "D-3",
+   "title": "Stop using nose",
+   "forbid": [
+    "lib:nose"
+   ],
+   "sha": "36930a6e1d",
+   "subject": "actually remove test dependencies from requirements.txt",
+   "at": 1390926568000,
+   "chose": []
+  },
+  {
+   "id": "D-2",
+   "title": "Stop using mock",
+   "forbid": [
+    "lib:mock"
+   ],
+   "sha": "36930a6e1d",
+   "subject": "actually remove test dependencies from requirements.txt",
+   "at": 1390926568000,
+   "chose": []
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using grunt-react",
+   "forbid": [
+    "lib:grunt-react",
+    "lib:grunt_react"
+   ],
+   "sha": "563078df24",
+   "subject": "Client-side cleanup",
+   "at": 1410741472000,
+   "chose": []
+  },
+  {
+   "id": "D-8",
+   "title": "Stop using grunt-contrib-less",
+   "forbid": [
+    "lib:grunt-contrib-less",
+    "lib:grunt_contrib_less"
+   ],
+   "sha": "563078df24",
+   "subject": "Client-side cleanup",
+   "at": 1410741472000,
+   "chose": []
+  },
+  {
+   "id": "D-5",
+   "title": "Stop using grunt-contrib-connect",
+   "forbid": [
+    "lib:grunt-contrib-connect",
+    "lib:grunt_contrib_connect"
+   ],
+   "sha": "563078df24",
+   "subject": "Client-side cleanup",
+   "at": 1410741472000,
+   "chose": []
+  },
+  {
+   "id": "D-10",
+   "title": "Stop using grunt-contrib-uglify",
+   "forbid": [
+    "lib:grunt-contrib-uglify",
+    "lib:grunt_contrib_uglify"
+   ],
+   "sha": "563078df24",
+   "subject": "Client-side cleanup",
+   "at": 1410741472000,
+   "chose": []
+  },
+  {
+   "id": "D-12",
+   "title": "Stop using grunt-notify",
+   "forbid": [
+    "lib:grunt-notify",
+    "lib:grunt_notify"
+   ],
+   "sha": "563078df24",
+   "subject": "Client-side cleanup",
+   "at": 1410741472000,
+   "chose": []
+  },
+  {
+   "id": "D-14",
+   "title": "Stop using grunt-shell",
+   "forbid": [
+    "lib:grunt-shell",
+    "lib:grunt_shell"
+   ],
+   "sha": "563078df24",
+   "subject": "Client-side cleanup",
+   "at": 1410741472000,
+   "chose": []
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using grunt-contrib-jshint",
+   "forbid": [
+    "lib:grunt-contrib-jshint",
+    "lib:grunt_contrib_jshint"
+   ],
+   "sha": "563078df24",
+   "subject": "Client-side cleanup",
+   "at": 1410741472000,
+   "chose": []
+  },
+  {
+   "id": "D-4",
+   "title": "Stop using grunt",
+   "forbid": [
+    "lib:grunt"
+   ],
+   "sha": "563078df24",
+   "subject": "Client-side cleanup",
+   "at": 1410741472000,
+   "chose": []
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using grunt-contrib-watch",
+   "forbid": [
+    "lib:grunt-contrib-watch",
+    "lib:grunt_contrib_watch"
+   ],
+   "sha": "563078df24",
+   "subject": "Client-side cleanup",
+   "at": 1410741472000,
+   "chose": []
+  },
+  {
+   "id": "D-6",
+   "title": "Stop using grunt-contrib-copy",
+   "forbid": [
+    "lib:grunt-contrib-copy",
+    "lib:grunt_contrib_copy"
+   ],
+   "sha": "563078df24",
+   "subject": "Client-side cleanup",
+   "at": 1410741472000,
+   "chose": []
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using grunt-contrib-qunit",
+   "forbid": [
+    "lib:grunt-contrib-qunit",
+    "lib:grunt_contrib_qunit"
+   ],
+   "sha": "563078df24",
+   "subject": "Client-side cleanup",
+   "at": 1410741472000,
+   "chose": []
+  },
+  {
+   "id": "D-15",
+   "title": "Stop using gulp-sprite-generator",
+   "forbid": [
+    "lib:gulp-sprite-generator",
+    "lib:gulp_sprite_generator"
+   ],
+   "sha": "b99de36b24",
+   "subject": "undo spriting",
+   "at": 1410991179000,
+   "chose": []
+  },
+  {
+   "id": "D-16",
+   "title": "Stop using bower-installer",
+   "forbid": [
+    "lib:bower-installer",
+    "lib:bower_installer"
+   ],
+   "sha": "bc8687deb5",
+   "subject": "Basic conversion: browserified web app now works.",
+   "at": 1419929467000,
+   "chose": []
+  },
+  {
+   "id": "D-18",
+   "title": "Stop using gulp-qunit",
+   "forbid": [
+    "lib:gulp-qunit",
+    "lib:gulp_qunit"
+   ],
+   "sha": "bc8687deb5",
+   "subject": "Basic conversion: browserified web app now works.",
+   "at": 1419929467000,
+   "chose": []
+  },
+  {
+   "id": "D-19",
+   "title": "Stop using merge-stream",
+   "forbid": [
+    "lib:merge-stream",
+    "lib:merge_stream"
+   ],
+   "sha": "bc8687deb5",
+   "subject": "Basic conversion: browserified web app now works.",
+   "at": 1419929467000,
+   "chose": []
+  },
+  {
+   "id": "D-17",
+   "title": "Stop using clean-css",
+   "forbid": [
+    "lib:clean-css",
+    "lib:clean_css"
+   ],
+   "sha": "bc8687deb5",
+   "subject": "Basic conversion: browserified web app now works.",
+   "at": 1419929467000,
+   "chose": []
+  },
+  {
+   "id": "D-20",
+   "title": "Stop using bower",
+   "forbid": [
+    "lib:bower"
+   ],
+   "sha": "300868edff",
+   "subject": "clean up web builds",
+   "at": 1425516767000,
+   "chose": []
+  },
+  {
+   "id": "D-21",
+   "title": "Stop using react-tools",
+   "forbid": [
+    "lib:react-tools",
+    "lib:react_tools"
+   ],
+   "sha": "300868edff",
+   "subject": "clean up web builds",
+   "at": 1425516767000,
+   "chose": []
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using gulp-rev",
+   "forbid": [
+    "lib:gulp-rev",
+    "lib:gulp_rev"
+   ],
+   "sha": "7d8191ee37",
+   "subject": "update web builds, use watchify",
+   "at": 1444301035000,
+   "chose": []
+  },
+  {
+   "id": "D-23",
+   "title": "Stop using jest-cli",
+   "forbid": [
+    "lib:jest-cli",
+    "lib:jest_cli"
+   ],
+   "sha": "7d8191ee37",
+   "subject": "update web builds, use watchify",
+   "at": 1444301035000,
+   "chose": []
+  },
+  {
+   "id": "D-24",
+   "title": "Stop using jshint-stylish",
+   "forbid": [
+    "lib:jshint",
+    "lib:jshint-stylish",
+    "lib:jshint_stylish"
+   ],
+   "sha": "7d8191ee37",
+   "subject": "update web builds, use watchify",
+   "at": 1444301035000,
+   "chose": []
+  },
+  {
+   "id": "D-25",
+   "title": "Stop using netlib",
+   "forbid": [
+    "lib:netlib"
+   ],
+   "sha": "20352f3453",
+   "subject": "fix test paths, move coverage config into setup.py",
+   "at": 1455833447000,
+   "chose": []
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using gulp-concat",
+   "forbid": [
+    "lib:gulp-concat",
+    "lib:gulp_concat"
+   ],
+   "sha": "cbb068edaa",
+   "subject": "fix up web stuff",
+   "at": 1456695308000,
+   "chose": []
+  },
+  {
+   "id": "D-31",
+   "title": "Stop using map-stream",
+   "forbid": [
+    "lib:map-stream",
+    "lib:map_stream"
+   ],
+   "sha": "cbb068edaa",
+   "subject": "fix up web stuff",
+   "at": 1456695308000,
+   "chose": []
+  },
+  {
+   "id": "D-30",
+   "title": "Stop using gulp-uglify",
+   "forbid": [
+    "lib:gulp-uglify",
+    "lib:gulp_uglify"
+   ],
+   "sha": "cbb068edaa",
+   "subject": "fix up web stuff",
+   "at": 1456695308000,
+   "chose": []
+  },
+  {
+   "id": "D-29",
+   "title": "Stop using gulp-react",
+   "forbid": [
+    "lib:gulp-react",
+    "lib:gulp_react"
+   ],
+   "sha": "cbb068edaa",
+   "subject": "fix up web stuff",
+   "at": 1456695308000,
+   "chose": []
+  },
+  {
+   "id": "D-28",
+   "title": "Stop using gulp-jshint",
+   "forbid": [
+    "lib:gulp-jshint",
+    "lib:gulp_jshint"
+   ],
+   "sha": "cbb068edaa",
+   "subject": "fix up web stuff",
+   "at": 1456695308000,
+   "chose": []
+  },
+  {
+   "id": "D-33",
+   "title": "Stop using vinyl-transform",
+   "forbid": [
+    "lib:vinyl-transform",
+    "lib:vinyl_transform"
+   ],
+   "sha": "cbb068edaa",
+   "subject": "fix up web stuff",
+   "at": 1456695308000,
+   "chose": []
+  },
+  {
+   "id": "D-27",
+   "title": "Stop using gulp-connect",
+   "forbid": [
+    "lib:gulp-connect",
+    "lib:gulp_connect"
+   ],
+   "sha": "cbb068edaa",
+   "subject": "fix up web stuff",
+   "at": 1456695308000,
+   "chose": []
+  },
+  {
+   "id": "D-32",
+   "title": "Replace reactify with react-dom",
+   "forbid": [
+    "lib:reactify"
+   ],
+   "sha": "cbb068edaa",
+   "subject": "fix up web stuff",
+   "at": 1456695308000,
+   "chose": [
+    "react-dom"
+   ]
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using gulp-minify-css",
+   "forbid": [
+    "lib:gulp-minify-css",
+    "lib:gulp_minify_css"
+   ],
+   "sha": "9678240783",
+   "subject": "gulp-minify-css is deprecated. Adding gulp-clean-css",
+   "at": 1460605042000,
+   "chose": []
+  },
+  {
+   "id": "D-35",
+   "title": "Make hpack optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "f969c70015",
+   "subject": "bump python-hyper dependencies (#1139)",
+   "at": 1463079714000,
+   "chose": []
+  },
+  {
+   "id": "D-36",
+   "title": "Stop using typing (the backport: the standard library has it)",
+   "forbid": [
+    "lib:typing"
+   ],
+   "sha": "8366c87c57",
+   "subject": "update to latest `typing` release",
+   "at": 1467196249000,
+   "chose": []
+  },
+  {
+   "id": "D-37",
+   "title": "Make psutil optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "0a1431ed2c",
+   "subject": "fix #1314",
+   "at": 1468018178000,
+   "chose": []
+  },
+  {
+   "id": "D-38",
+   "title": "Stop using jquery",
+   "forbid": [
+    "lib:jquery"
+   ],
+   "sha": "70dbd1b32d",
+   "subject": "web: refactor ContentLoader",
+   "at": 1469494298000,
+   "chose": []
+  },
+  {
+   "id": "D-39",
+   "title": "Stop using react-router",
+   "forbid": [
+    "lib:react-router",
+    "lib:react_router"
+   ],
+   "sha": "1d27334ff7",
+   "subject": "[web] remove react-router",
+   "at": 1471328037000,
+   "chose": []
+  },
+  {
+   "id": "D-40",
+   "title": "Stop using six",
+   "forbid": [
+    "lib:six"
+   ],
+   "sha": "ce98a9219e",
+   "subject": "test & examples: zap six",
+   "at": 1476676982000,
+   "chose": []
+  },
+  {
+   "id": "D-41",
+   "title": "Stop using history",
+   "forbid": [
+    "lib:history"
+   ],
+   "sha": "85476d9915",
+   "subject": "clean up mitmweb",
+   "at": 1478701154000,
+   "chose": []
+  },
+  {
+   "id": "D-42",
+   "title": "Stop using virtualenv",
+   "forbid": [
+    "lib:virtualenv"
+   ],
+   "sha": "3154dc87fd",
+   "subject": "fix pyinstaller",
+   "at": 1480290712000,
+   "chose": []
+  },
+  {
+   "id": "D-43",
+   "title": "Stop using configargparse",
+   "forbid": [
+    "lib:configargparse"
+   ],
+   "sha": "d742d4fb8c",
+   "subject": "Replace configargparse with argparse, enable new options loading",
+   "at": 1481147123000,
+   "chose": []
+  },
+  {
+   "id": "D-44",
+   "title": "Make backports-ssl-match-hostname optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "7bae941ecc",
+   "subject": "remove backport.ssl_match_hostname",
+   "at": 1481385798000,
+   "chose": []
+  },
+  {
+   "id": "D-45",
+   "title": "Stop using lxml",
+   "forbid": [
+    "lib:lxml"
+   ],
+   "sha": "293b79af91",
+   "subject": "remove lxml-dependent code",
+   "at": 1481394807000,
+   "chose": []
+  },
+  {
+   "id": "D-46",
+   "title": "Stop using pillow",
+   "forbid": [
+    "lib:pillow"
+   ],
+   "sha": "8a6f8bd461",
+   "subject": "nuke Pillow",
+   "at": 1487168997000,
+   "chose": []
+  },
+  {
+   "id": "D-47",
+   "title": "Stop using flux",
+   "forbid": [
+    "lib:flux"
+   ],
+   "sha": "02a563dff1",
+   "subject": "[web] yarn? yarn.",
+   "at": 1487689485000,
+   "chose": []
+  },
+  {
+   "id": "D-48",
+   "title": "Stop using watchdog",
+   "forbid": [
+    "lib:watchdog"
+   ],
+   "sha": "7aa2081894",
+   "subject": "Remove watchdog, solidify script testing",
+   "at": 1493162628000,
+   "chose": []
+  },
+  {
+   "id": "D-49",
+   "title": "Stop using construct",
+   "forbid": [
+    "lib:construct"
+   ],
+   "sha": "4aeb6c6455",
+   "subject": "cleanup old tls_parser",
+   "at": 1495799981000,
+   "chose": []
+  },
+  {
+   "id": "D-50",
+   "title": "Stop using idna",
+   "forbid": [
+    "lib:idna"
+   ],
+   "sha": "68839077b6",
+   "subject": "Revert \"Fix version conflict\"",
+   "at": 1502808839000,
+   "chose": []
+  },
+  {
+   "id": "D-51",
+   "title": "Stop using cssutils",
+   "forbid": [
+    "lib:cssutils"
+   ],
+   "sha": "1000efb671",
+   "subject": "remove cssutils dependency",
+   "at": 1503764338000,
+   "chose": []
+  },
+  {
+   "id": "D-52",
+   "title": "Stop using jsbeautifier",
+   "forbid": [
+    "lib:jsbeautifier"
+   ],
+   "sha": "f46e5e667f",
+   "subject": "remove jsbeautifier dependency",
+   "at": 1504547382000,
+   "chose": []
+  },
+  {
+   "id": "D-53",
+   "title": "Stop using html2text",
+   "forbid": [
+    "lib:html2text"
+   ],
+   "sha": "289ddfe988",
+   "subject": "remove html outline contentview, fix #2572",
+   "at": 1505460345000,
+   "chose": []
+  },
+  {
+   "id": "D-54",
+   "title": "Stop using react-addons-test-utils",
+   "forbid": [
+    "lib:react-addons-test-utils",
+    "lib:react_addons_test_utils"
+   ],
+   "sha": "01f28bbccb",
+   "subject": "[web] update to react 16.0",
+   "at": 1509285710000,
+   "chose": []
+  },
+  {
+   "id": "D-55",
+   "title": "Stop using pysftp",
+   "forbid": [
+    "lib:pysftp"
+   ],
+   "sha": "7075f4dfec",
+   "subject": "remove rtool's setup.py, embrace tox",
+   "at": 1514669389000,
+   "chose": []
+  },
+  {
+   "id": "D-56",
+   "title": "Make brotlipy optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "2fef56767b",
+   "subject": "Use Brotli instead of brotlipy",
+   "at": 1563396548000,
+   "chose": [
+    "brotli"
+   ]
+  },
+  {
+   "id": "D-58",
+   "title": "Stop using node-sass",
+   "forbid": [
+    "lib:node-sass",
+    "lib:node_sass"
+   ],
+   "sha": "c6393f86d7",
+   "subject": "Remove yarn/npm from docs",
+   "at": 1582714242000,
+   "chose": []
+  },
+  {
+   "id": "D-57",
+   "title": "Stop using bulma",
+   "forbid": [
+    "lib:bulma"
+   ],
+   "sha": "c6393f86d7",
+   "subject": "Remove yarn/npm from docs",
+   "at": 1582714242000,
+   "chose": []
+  },
+  {
+   "id": "D-60",
+   "title": "Stop using message",
+   "forbid": [
+    "lib:message"
+   ],
+   "sha": "c5eae9d752",
+   "subject": "drop support for Python 3.6 and 3.7",
+   "at": 1607378798000,
+   "chose": []
+  },
+  {
+   "id": "D-59",
+   "title": "Stop using 3-6-0",
+   "forbid": [
+    "lib:3-6-0",
+    "lib:3_6_0"
+   ],
+   "sha": "c5eae9d752",
+   "subject": "drop support for Python 3.6 and 3.7",
+   "at": 1607378798000,
+   "chose": []
+  },
+  {
+   "id": "D-61",
+   "title": "Stop using pyasn1",
+   "forbid": [
+    "lib:pyasn1"
+   ],
+   "sha": "2a30172525",
+   "subject": "migrate certs.Cert to pyca/cryptography, re-add mitmcert",
+   "at": 1609365420000,
+   "chose": []
+  },
+  {
+   "id": "D-64",
+   "title": "Stop using babel-plugin-transform-class-properties",
+   "forbid": [
+    "lib:babel-plugin-transform-class-properties",
+    "lib:babel_plugin_transform_class_properties"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-62",
+   "title": "Stop using babel-core",
+   "forbid": [
+    "lib:babel-core",
+    "lib:babel_core"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-70",
+   "title": "Stop using envify",
+   "forbid": [
+    "lib:envify"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-72",
+   "title": "Stop using gulp-rename",
+   "forbid": [
+    "lib:gulp-rename",
+    "lib:gulp_rename"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-74",
+   "title": "Stop using uglifyify",
+   "forbid": [
+    "lib:uglifyify"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-77",
+   "title": "Stop using watchify",
+   "forbid": [
+    "lib:watchify"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-65",
+   "title": "Stop using babel-plugin-transform-object-rest-spread",
+   "forbid": [
+    "lib:babel-plugin-transform-object-rest-spread",
+    "lib:babel_plugin_transform_object_rest_spread"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-76",
+   "title": "Stop using vinyl-source-stream",
+   "forbid": [
+    "lib:vinyl-source-stream",
+    "lib:vinyl_source_stream"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-69",
+   "title": "Stop using browserify",
+   "forbid": [
+    "lib:browserify"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-63",
+   "title": "Stop using babel-eslint",
+   "forbid": [
+    "lib:babel-eslint",
+    "lib:babel_eslint"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-73",
+   "title": "Stop using gulp-util",
+   "forbid": [
+    "lib:gulp-util",
+    "lib:gulp_util"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-66",
+   "title": "Stop using babel-preset-es2015",
+   "forbid": [
+    "lib:babel-preset-es2015",
+    "lib:babel_preset_es2015"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-68",
+   "title": "Stop using babelify",
+   "forbid": [
+    "lib:babelify"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-67",
+   "title": "Stop using babel-preset-react",
+   "forbid": [
+    "lib:babel-preset-react",
+    "lib:babel_preset_react"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-75",
+   "title": "Stop using vinyl-buffer",
+   "forbid": [
+    "lib:vinyl-buffer",
+    "lib:vinyl_buffer"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-71",
+   "title": "Stop using gulp-eslint",
+   "forbid": [
+    "lib:gulp-eslint",
+    "lib:gulp_eslint"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-79",
+   "title": "Stop using @babel/preset-env",
+   "forbid": [
+    "lib:@babel/preset-env",
+    "lib:@babel/preset_env"
+   ],
+   "sha": "9b119c3dac",
+   "subject": "web: major upgrades",
+   "at": 1629712494000,
+   "chose": []
+  },
+  {
+   "id": "D-83",
+   "title": "Stop using mock-xmlhttprequest",
+   "forbid": [
+    "lib:mock-xmlhttprequest",
+    "lib:mock_xmlhttprequest"
+   ],
+   "sha": "3ad4949c0e",
+   "subject": "fix web tests",
+   "at": 1629712494000,
+   "chose": []
+  },
+  {
+   "id": "D-84",
+   "title": "Replace react-codemirror with codemirror",
+   "forbid": [
+    "lib:react-codemirror",
+    "lib:react_codemirror"
+   ],
+   "sha": "9b119c3dac",
+   "subject": "web: major upgrades",
+   "at": 1629712494000,
+   "chose": [
+    "codemirror"
+   ]
+  },
+  {
+   "id": "D-85",
+   "title": "Stop using redux-logger",
+   "forbid": [
+    "lib:redux-logger",
+    "lib:redux_logger"
+   ],
+   "sha": "9b119c3dac",
+   "subject": "web: major upgrades",
+   "at": 1629712494000,
+   "chose": []
+  },
+  {
+   "id": "D-82",
+   "title": "Stop using babel-jest",
+   "forbid": [
+    "lib:babel-jest",
+    "lib:babel_jest"
+   ],
+   "sha": "9b119c3dac",
+   "subject": "web: major upgrades",
+   "at": 1629712494000,
+   "chose": []
+  },
+  {
+   "id": "D-78",
+   "title": "Stop using @babel/core",
+   "forbid": [
+    "lib:@babel/core"
+   ],
+   "sha": "9b119c3dac",
+   "subject": "web: major upgrades",
+   "at": 1629712494000,
+   "chose": []
+  },
+  {
+   "id": "D-80",
+   "title": "Stop using @babel/preset-react",
+   "forbid": [
+    "lib:@babel/preset-react",
+    "lib:@babel/preset_react"
+   ],
+   "sha": "9b119c3dac",
+   "subject": "web: major upgrades",
+   "at": 1629712494000,
+   "chose": []
+  },
+  {
+   "id": "D-81",
+   "title": "Replace @babel/preset-typescript with typescript",
+   "forbid": [
+    "lib:@babel/preset-typescript",
+    "lib:@babel/preset_typescript"
+   ],
+   "sha": "9b119c3dac",
+   "subject": "web: major upgrades",
+   "at": 1629712494000,
+   "chose": [
+    "typescript"
+   ]
+  },
+  {
+   "id": "D-86",
+   "title": "Stop using setuptools",
+   "forbid": [
+    "lib:setuptools"
+   ],
+   "sha": "3eab9f0856",
+   "subject": "Drop pkg_resources dependency used by kaitaistruct version checking (#5401) (#5403)",
+   "at": 1654507650000,
+   "chose": []
+  },
+  {
+   "id": "D-87",
+   "title": "Stop using blinker",
+   "forbid": [
+    "lib:blinker"
+   ],
+   "sha": "f4dc2f2cfd",
+   "subject": "Replace blinker with custom implementation (#5528)",
+   "at": 1660652515000,
+   "chose": []
+  },
+  {
+   "id": "D-88",
+   "title": "Stop using mitmproxy-wireguard",
+   "forbid": [
+    "lib:mitmproxy-wireguard",
+    "lib:mitmproxy_wireguard"
+   ],
+   "sha": "a7e50c793e",
+   "subject": "mitmproxy-wireguard -> mitmproxy_rs (#5909)",
+   "at": 1675546095000,
+   "chose": []
+  },
+  {
+   "id": "D-89",
+   "title": "Make aioquic-mitmproxy optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "95c5bf9d5d",
+   "subject": "switch to stock aioquic (#6573)",
+   "at": 1704114186000,
+   "chose": [
+    "aioquic"
+   ]
+  },
+  {
+   "id": "D-91",
+   "title": "Make redux-thunk optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "87d5abd2b0",
+   "subject": "web: Upgrade Redux (#6926)",
+   "at": 1718317653000,
+   "chose": []
+  },
+  {
+   "id": "D-90",
+   "title": "Make redux optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "87d5abd2b0",
+   "subject": "web: Upgrade Redux (#6926)",
+   "at": 1718317653000,
+   "chose": [
+    "@reduxjs/toolkit"
+   ]
+  },
+  {
+   "id": "D-92",
+   "title": "Make urwid-mitmproxy optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "c46af057de",
+   "subject": "Use upstream urwid again (#6929)",
+   "at": 1718387001000,
+   "chose": [
+    "urwid"
+   ]
+  },
+  {
+   "id": "D-93",
+   "title": "Stop using shallowequal",
+   "forbid": [
+    "lib:shallowequal"
+   ],
+   "sha": "f211ca91be",
+   "subject": "Adopt ESLint (#7008)",
+   "at": 1720515965000,
+   "chose": []
+  },
+  {
+   "id": "D-94",
+   "title": "Stop using protobuf",
+   "forbid": [
+    "lib:protobuf"
+   ],
+   "sha": "02c1487d54",
+   "subject": "Remove dependency on protobuf library (#7327)",
+   "at": 1731864542000,
+   "chose": []
+  },
+  {
+   "id": "D-97",
+   "title": "Stop using types-flask",
+   "forbid": [
+    "lib:types-flask",
+    "lib:types_flask"
+   ],
+   "sha": "bdd1827687",
+   "subject": "fix various deprecation warnings (#7687)",
+   "at": 1746294957000,
+   "chose": []
+  },
+  {
+   "id": "D-99",
+   "title": "Make types-werkzeug optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "bdd1827687",
+   "subject": "fix various deprecation warnings (#7687)",
+   "at": 1746294957000,
+   "chose": []
+  },
+  {
+   "id": "D-95",
+   "title": "Make types-certifi optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "bdd1827687",
+   "subject": "fix various deprecation warnings (#7687)",
+   "at": 1746294957000,
+   "chose": []
+  },
+  {
+   "id": "D-96",
+   "title": "Make types-cryptography optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "bdd1827687",
+   "subject": "fix various deprecation warnings (#7687)",
+   "at": 1746294957000,
+   "chose": []
+  },
+  {
+   "id": "D-98",
+   "title": "Make types-pyopenssl optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "bdd1827687",
+   "subject": "fix various deprecation warnings (#7687)",
+   "at": 1746294957000,
+   "chose": []
+  },
+  {
+   "id": "D-100",
+   "title": "Stop using react-popper",
+   "forbid": [
+    "lib:react-popper",
+    "lib:react_popper"
+   ],
+   "sha": "b49264cfbd",
+   "subject": "web: upgrade dependencies (#7707)",
+   "at": 1747169771000,
+   "chose": []
+  },
+  {
+   "id": "D-101",
+   "title": "Stop using react-test-renderer",
+   "forbid": [
+    "lib:react-test-renderer",
+    "lib:react_test_renderer"
+   ],
+   "sha": "b49264cfbd",
+   "subject": "web: upgrade dependencies (#7707)",
+   "at": 1747169771000,
+   "chose": []
+  },
+  {
+   "id": "D-102",
+   "title": "Stop using prop-types",
+   "forbid": [
+    "lib:prop-types",
+    "lib:prop_types"
+   ],
+   "sha": "d7c36bb18b",
+   "subject": "web: remove unused prop-types dependency (#7722)",
+   "at": 1747978515000,
+   "chose": []
+  },
+  {
+   "id": "D-103",
+   "title": "Stop using passlib",
+   "forbid": [
+    "lib:passlib"
+   ],
+   "sha": "46d0adc7d1",
+   "subject": "Add custom htpasswd parser (#7906)",
+   "at": 1760079563000,
+   "chose": []
+  },
+  {
+   "id": "D-104",
+   "title": "Stop using windows-curses",
+   "forbid": [
+    "lib:windows",
+    "lib:windows-curses",
+    "lib:windows_curses"
+   ],
+   "sha": "886055df17",
+   "subject": "Update to Python 3.14 (#7918)",
+   "at": 1760556773000,
+   "chose": []
+  },
+  {
+   "id": "D-115",
+   "title": "Stop using gulp-sourcemaps",
+   "forbid": [
+    "lib:gulp-sourcemaps",
+    "lib:gulp_sourcemaps"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-111",
+   "title": "Stop using gulp-notify",
+   "forbid": [
+    "lib:gulp-notify",
+    "lib:gulp_notify"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-116",
+   "title": "Stop using stable",
+   "forbid": [
+    "lib:stable"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-107",
+   "title": "Stop using gulp-clean-css",
+   "forbid": [
+    "lib:gulp-clean-css",
+    "lib:gulp_clean_css"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-110",
+   "title": "Stop using gulp-livereload",
+   "forbid": [
+    "lib:gulp-livereload",
+    "lib:gulp_livereload"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-105",
+   "title": "Stop using esbuild",
+   "forbid": [
+    "lib:esbuild"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-106",
+   "title": "Stop using gulp",
+   "forbid": [
+    "lib:gulp"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-108",
+   "title": "Stop using gulp-esbuild",
+   "forbid": [
+    "lib:gulp-esbuild",
+    "lib:gulp_esbuild"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-112",
+   "title": "Stop using gulp-peg",
+   "forbid": [
+    "lib:gulp-peg",
+    "lib:gulp_peg"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-114",
+   "title": "Stop using gulp-replace",
+   "forbid": [
+    "lib:gulp-replace",
+    "lib:gulp_replace"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-109",
+   "title": "Replace gulp-less with less",
+   "forbid": [
+    "lib:gulp-less",
+    "lib:gulp_less"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": [
+    "less"
+   ]
+  },
+  {
+   "id": "D-113",
+   "title": "Stop using gulp-plumber",
+   "forbid": [
+    "lib:gulp-plumber",
+    "lib:gulp_plumber"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-117",
+   "title": "Stop using bootstrap",
+   "forbid": [
+    "lib:bootstrap"
+   ],
+   "sha": "e33503dbd8",
+   "subject": "Web: Remove Bootstrap dependency and keep mitmweb styling parity (#8147)",
+   "at": 1778595320000,
+   "chose": []
+  },
+  {
+   "id": "D-118",
+   "title": "Stop using msgpack",
+   "forbid": [
+    "lib:msgpack"
+   ],
+   "sha": "a138148e4f",
+   "subject": "build(deps): remove unused msgpack dependency (#8319)",
+   "at": 1784023536000,
+   "chose": []
+  },
+  {
+   "id": "D-119",
+   "title": "Stop using zstandard",
+   "forbid": [
+    "lib:zstandard"
+   ],
+   "sha": "72995cab1c",
+   "subject": "Use compression.zstd (PEP-784) (#8397)",
+   "at": 1787344167000,
+   "chose": []
+  }
+ ]
+}

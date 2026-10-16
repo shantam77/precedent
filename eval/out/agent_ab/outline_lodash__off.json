@@ -1,0 +1,32 @@
+{
+ "task": "outline_lodash",
+ "arm": "off",
+ "repo": "outline",
+ "library": "lodash",
+ "named_in_prompt": false,
+ "model": "haiku",
+ "decision": {
+  "id": "D-221",
+  "title": "Replace lodash with es-toolkit",
+  "forbid": [
+   "lib:lodash"
+  ],
+  "trust": "historical",
+  "sha": "0139b91b5d0b9ac3c3e222c1bb2d5350111b136a",
+  "subject": "chore: Replace lodash with es-toolkit (#12281)"
+ },
+ "prompt": "On the search page (app/scenes/Search), debounce the search input's change handler by 250 ms so we don't fire a request on every keystroke. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": false,
+ "evidence": [],
+ "files_changed": [
+  "app/scenes/Search/Search.tsx"
+ ],
+ "mentions_decision": false,
+ "turns": 9,
+ "cost_usd": 0.103768,
+ "seconds": 43.5,
+ "tokens_in": 396502,
+ "tokens_out": 3349,
+ "permission_denials": [],
+ "result": "Done. I've added a debounced change handler to the search input that:\n\n1. Added a ref `searchDebounceRef` to track the debounce timeout\n2. Created `handleSearchChange` callback that debounces `updateLocation` by 250ms\n3. Passed the `onChange={handleSearchChange}` to SearchInput\n\nNow search requests will only fire 250ms after the user stops typing, instead of potentially on every keystroke."
+}

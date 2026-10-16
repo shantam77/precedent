@@ -1,0 +1,1136 @@
+{
+ "repo": "mitmproxy",
+ "cut": "2024-01-01",
+ "graph_at_cut": {
+  "repo": "replay_mitmproxy",
+  "files": 1295,
+  "components": 25,
+  "depends_on": 22,
+  "libraries": 188,
+  "manifest_events": 113,
+  "format_migrations_skipped": 5,
+  "decisions": 90,
+  "guarded_decisions": 57,
+  "observed_only": 29,
+  "people": 495,
+  "knows": 407,
+  "notes": 8,
+  "rules": 1,
+  "seconds": 10.6,
+  "llm_tokens": 0
+ },
+ "guarded_decisions": 57,
+ "decisions_at_cut": 90,
+ "decisions_still_true_at_head": 87,
+ "reversed_decisions": [
+  "D-56",
+  "D-71",
+  "D-89"
+ ],
+ "replayed_commits": 779,
+ "replayed_file_changes": 2974,
+ "commit_verdicts": {
+  "ok": 775,
+  "ask": 4
+ },
+ "flag_rate_commits": 0.0051,
+ "flagged_commits_false_alarm": 0,
+ "flagged_commits_reversal": 4,
+ "decisions": [
+  {
+   "id": "D-67",
+   "title": "Stop using babel-preset-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-64",
+   "title": "Stop using babel-plugin-transform-class-properties",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-78",
+   "title": "Stop using watchify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-1",
+   "title": "Stop using pil",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-80",
+   "title": "Stop using @babel/preset-env",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-88",
+   "title": "Stop using blinker",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-51",
+   "title": "Stop using cssutils",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-15",
+   "title": "Stop using gulp-sprite-generator",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-23",
+   "title": "Stop using jest-cli",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-19",
+   "title": "Stop using merge-stream",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-70",
+   "title": "Stop using envify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-30",
+   "title": "Stop using gulp-uglify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using gulp-concat",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-20",
+   "title": "Stop using bower",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-43",
+   "title": "Stop using configargparse",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-77",
+   "title": "Stop using vinyl-source-stream",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-68",
+   "title": "Stop using babelify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-28",
+   "title": "Stop using gulp-jshint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-8",
+   "title": "Stop using grunt-contrib-less",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-90",
+   "title": "Stop using mitmproxy-wireguard",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-5",
+   "title": "Stop using grunt-contrib-connect",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-79",
+   "title": "Stop using @babel/core",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-74",
+   "title": "Stop using gulp-util",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-18",
+   "title": "Stop using gulp-qunit",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-10",
+   "title": "Stop using grunt-contrib-uglify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-83",
+   "title": "Stop using babel-jest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-21",
+   "title": "Stop using react-tools",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-57",
+   "title": "Make brotlipy optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-42",
+   "title": "Stop using virtualenv",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using grunt-contrib-jshint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-38",
+   "title": "Stop using jquery",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-49",
+   "title": "Stop using construct",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using grunt-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-36",
+   "title": "Stop using typing (the backport: the standard library has it)",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-40",
+   "title": "Stop using six",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-6",
+   "title": "Stop using grunt-contrib-copy",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-27",
+   "title": "Stop using gulp-connect",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-76",
+   "title": "Stop using vinyl-buffer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-72",
+   "title": "Stop using gulp-eslint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-58",
+   "title": "Stop using bulma",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-39",
+   "title": "Stop using react-router",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-2",
+   "title": "Stop using mock",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-33",
+   "title": "Stop using vinyl-transform",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-82",
+   "title": "Replace @babel/preset-typescript with typescript",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using grunt-contrib-qunit",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-16",
+   "title": "Stop using bower-installer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-53",
+   "title": "Stop using html2text",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-45",
+   "title": "Stop using lxml",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-47",
+   "title": "Stop using flux",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-3",
+   "title": "Stop using nose",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-87",
+   "title": "Stop using setuptools",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-4",
+   "title": "Stop using grunt",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-66",
+   "title": "Stop using babel-preset-es2015",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using gulp-rev",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-84",
+   "title": "Stop using mock-xmlhttprequest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-75",
+   "title": "Stop using uglifyify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-65",
+   "title": "Stop using babel-plugin-transform-object-rest-spread",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-41",
+   "title": "Stop using history",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-14",
+   "title": "Stop using grunt-shell",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-55",
+   "title": "Stop using pysftp",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-61",
+   "title": "Stop using pyasn1",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-37",
+   "title": "Make psutil optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-60",
+   "title": "Stop using message",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-35",
+   "title": "Make hpack optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-71",
+   "title": "Make eslint optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-56",
+   "title": "Stop using twine",
+   "guarded": true,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-46",
+   "title": "Stop using pillow",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-50",
+   "title": "Stop using idna",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-81",
+   "title": "Stop using @babel/preset-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-32",
+   "title": "Replace reactify with react-dom",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-86",
+   "title": "Stop using redux-logger",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-54",
+   "title": "Stop using react-addons-test-utils",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-63",
+   "title": "Stop using babel-eslint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-89",
+   "title": "Make urwid optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-44",
+   "title": "Make backports-ssl-match-hostname optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-62",
+   "title": "Stop using babel-core",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-48",
+   "title": "Stop using watchdog",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-52",
+   "title": "Stop using jsbeautifier",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-73",
+   "title": "Stop using gulp-rename",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-29",
+   "title": "Stop using gulp-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-24",
+   "title": "Stop using jshint-stylish",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-69",
+   "title": "Stop using browserify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-59",
+   "title": "Stop using node-sass",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using gulp-minify-css",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using grunt-contrib-watch",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-85",
+   "title": "Replace react-codemirror with codemirror",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-17",
+   "title": "Stop using clean-css",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-12",
+   "title": "Stop using grunt-notify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-25",
+   "title": "Stop using netlib",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-31",
+   "title": "Stop using map-stream",
+   "guarded": true,
+   "still_true_at_head": true
+  }
+ ],
+ "flags": [
+  {
+   "sha": "f29f146ed1",
+   "subject": "switch to uv (#7662)",
+   "path": "pyproject.toml",
+   "decision": "D-56",
+   "title": "Stop using twine",
+   "token": "lib:twine",
+   "line": "\"twine==6.1.0\",",
+   "verdict": "ask",
+   "kind": "reversal (library came back later)"
+  },
+  {
+   "sha": "d0a35dcf9b",
+   "subject": "introduce new contentview API (#7623)",
+   "path": "pyproject.toml",
+   "decision": "D-56",
+   "title": "Stop using twine",
+   "token": "lib:twine",
+   "line": "\"twine==6.1.0\",",
+   "verdict": "ask",
+   "kind": "reversal (library came back later)"
+  },
+  {
+   "sha": "e9a2c312ef",
+   "subject": "Bump twine from 6.1.0 to 6.2.0 (#7950)",
+   "path": "pyproject.toml",
+   "decision": "D-56",
+   "title": "Stop using twine",
+   "token": "lib:twine",
+   "line": "\"twine==6.2.0\",",
+   "verdict": "ask",
+   "kind": "reversal (library came back later)"
+  },
+  {
+   "sha": "b4c895efd5",
+   "subject": "build(deps-dev): bump the deploy group with 2 updates (#8384)",
+   "path": "pyproject.toml",
+   "decision": "D-56",
+   "title": "Stop using twine",
+   "token": "lib:twine",
+   "line": "\"twine==7.0.0\",",
+   "verdict": "ask",
+   "kind": "reversal (library came back later)"
+  }
+ ],
+ "resurrections": [
+  {
+   "decision": "D-2",
+   "title": "Stop using mock",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "mock>=1.0.1"
+  },
+  {
+   "decision": "D-3",
+   "title": "Stop using nose",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "nose>=1.3.0"
+  },
+  {
+   "decision": "D-4",
+   "title": "Stop using grunt",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "module.exports = function (grunt) {"
+  },
+  {
+   "decision": "D-5",
+   "title": "Stop using grunt-contrib-connect",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"grunt-contrib-connect\": \"\","
+  },
+  {
+   "decision": "D-6",
+   "title": "Stop using grunt-contrib-copy",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "grunt.loadNpmTasks('grunt-contrib-copy');"
+  },
+  {
+   "decision": "D-7",
+   "title": "Stop using grunt-contrib-jshint",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "grunt.loadNpmTasks('grunt-contrib-jshint');"
+  },
+  {
+   "decision": "D-8",
+   "title": "Stop using grunt-contrib-less",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "grunt.loadNpmTasks('grunt-contrib-less');"
+  },
+  {
+   "decision": "D-9",
+   "title": "Stop using grunt-contrib-qunit",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "grunt.loadNpmTasks('grunt-contrib-qunit');"
+  },
+  {
+   "decision": "D-10",
+   "title": "Stop using grunt-contrib-uglify",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "grunt.loadNpmTasks('grunt-contrib-uglify');"
+  },
+  {
+   "decision": "D-11",
+   "title": "Stop using grunt-contrib-watch",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "grunt.loadNpmTasks('grunt-contrib-watch');"
+  },
+  {
+   "decision": "D-12",
+   "title": "Stop using grunt-notify",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "grunt.loadNpmTasks('grunt-notify');"
+  },
+  {
+   "decision": "D-13",
+   "title": "Stop using grunt-react",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "grunt.loadNpmTasks('grunt-react');"
+  },
+  {
+   "decision": "D-14",
+   "title": "Stop using grunt-shell",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "grunt.loadNpmTasks('grunt-shell');"
+  },
+  {
+   "decision": "D-20",
+   "title": "Stop using bower",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "- bower-installer"
+  },
+  {
+   "decision": "D-21",
+   "title": "Stop using react-tools",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"react-tools\": \"\","
+  },
+  {
+   "decision": "D-32",
+   "title": "Replace reactify with react-dom",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "var reactify = require('reactify');"
+  },
+  {
+   "decision": "D-34",
+   "title": "Stop using gulp-minify-css",
+   "edits": 3,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "var minifyCSS = require('gulp-minify-css');"
+  },
+  {
+   "decision": "D-36",
+   "title": "Stop using typing (the backport: the standard library has it)",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 1,
+   "missed_real": 1,
+   "example": "# The typing module backport is somewhat broken."
+  },
+  {
+   "decision": "D-39",
+   "title": "Stop using react-router",
+   "edits": 5,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 3,
+   "example": "\"react-router\": \"^2.4.0\","
+  },
+  {
+   "decision": "D-40",
+   "title": "Stop using six",
+   "edits": 52,
+   "caught": 52,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "from six.moves import urllib"
+  },
+  {
+   "decision": "D-41",
+   "title": "Stop using history",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"history\": \"^3.0.0\","
+  },
+  {
+   "decision": "D-43",
+   "title": "Stop using configargparse",
+   "edits": 4,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "import configargparse"
+  },
+  {
+   "decision": "D-45",
+   "title": "Stop using lxml",
+   "edits": 8,
+   "caught": 5,
+   "missed_comment_only": 0,
+   "missed_real": 3,
+   "example": "tox -e wheel -- https://snapshots.mitmproxy.org/misc/lxml-3.6.0-cp35-cp35m-win32.whl"
+  },
+  {
+   "decision": "D-48",
+   "title": "Stop using watchdog",
+   "edits": 3,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "import watchdog.events"
+  },
+  {
+   "decision": "D-49",
+   "title": "Stop using construct",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "# This file originally comes from https://github.com/pyca/tls/blob/master/tls/_constructs.py."
+  },
+  {
+   "decision": "D-51",
+   "title": "Stop using cssutils",
+   "edits": 5,
+   "caught": 5,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"cssutils>=1.0.1, <1.1\","
+  },
+  {
+   "decision": "D-52",
+   "title": "Stop using jsbeautifier",
+   "edits": 4,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "jsbeautifier, git checkout 25/03/12, MIT license"
+  },
+  {
+   "decision": "D-53",
+   "title": "Stop using html2text",
+   "edits": 4,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "import html2text"
+  },
+  {
+   "decision": "D-55",
+   "title": "Stop using pysftp",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"pysftp==0.2.8\","
+  },
+  {
+   "decision": "D-56",
+   "title": "Stop using twine",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"twine>=1.6.5, <1.10\","
+  },
+  {
+   "decision": "D-58",
+   "title": "Stop using bulma",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"bulma\": \"^0.6.1\","
+  },
+  {
+   "decision": "D-59",
+   "title": "Stop using node-sass",
+   "edits": 4,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 3,
+   "example": "2. Run `yarn` in this directory to get node-sass."
+  },
+  {
+   "decision": "D-60",
+   "title": "Stop using message",
+   "edits": 1,
+   "caught": 0,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"h2>=4.0,<5; python_version>='3.6.0'\",  # python_version only needed to make \"py36+ required\" messag"
+  },
+  {
+   "decision": "D-61",
+   "title": "Stop using pyasn1",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "from pyasn1.codec.der.decoder import decode"
+  },
+  {
+   "decision": "D-62",
+   "title": "Stop using babel-core",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"babel-core\": \"^6.26.0\","
+  },
+  {
+   "decision": "D-63",
+   "title": "Stop using babel-eslint",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"parser\": \"babel-eslint\","
+  },
+  {
+   "decision": "D-64",
+   "title": "Stop using babel-plugin-transform-class-properties",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"babel-plugin-transform-class-properties\": \"^6.24.1\","
+  },
+  {
+   "decision": "D-65",
+   "title": "Stop using babel-plugin-transform-object-rest-spread",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"babel-plugin-transform-object-rest-spread\": \"^6.26.0\","
+  },
+  {
+   "decision": "D-66",
+   "title": "Stop using babel-preset-es2015",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"babel-preset-es2015\": \"^6.24.1\","
+  },
+  {
+   "decision": "D-67",
+   "title": "Stop using babel-preset-react",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"babel-preset-react\": \"^6.24.1\","
+  },
+  {
+   "decision": "D-68",
+   "title": "Stop using babelify",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "var babelify = require('babelify');"
+  },
+  {
+   "decision": "D-69",
+   "title": "Stop using browserify",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "var browserify = require('browserify');"
+  },
+  {
+   "decision": "D-70",
+   "title": "Stop using envify",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "var envify = require('envify/custom');"
+  },
+  {
+   "decision": "D-72",
+   "title": "Stop using gulp-eslint",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "var eslint = require('gulp-eslint');"
+  },
+  {
+   "decision": "D-73",
+   "title": "Stop using gulp-rename",
+   "edits": 4,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "var rename = require(\"gulp-rename\");"
+  },
+  {
+   "decision": "D-74",
+   "title": "Stop using gulp-util",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "var gutil = require(\"gulp-util\");"
+  },
+  {
+   "decision": "D-75",
+   "title": "Stop using uglifyify",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "var uglifyify = require('uglifyify');"
+  },
+  {
+   "decision": "D-76",
+   "title": "Stop using vinyl-buffer",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "var buffer = require('vinyl-buffer');"
+  },
+  {
+   "decision": "D-77",
+   "title": "Stop using vinyl-source-stream",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "var source = require('vinyl-source-stream');"
+  },
+  {
+   "decision": "D-78",
+   "title": "Stop using watchify",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "var watchify = require('watchify');"
+  },
+  {
+   "decision": "D-82",
+   "title": "Replace @babel/preset-typescript with typescript",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "presets: ['@babel/preset-react', '@babel/preset-env', '@babel/preset-typescript'],"
+  },
+  {
+   "decision": "D-85",
+   "title": "Replace react-codemirror with codemirror",
+   "edits": 4,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"react-codemirror\": \"^1.0.0\","
+  },
+  {
+   "decision": "D-87",
+   "title": "Stop using setuptools",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "# Kaitai parsers depend on setuptools, remove once https://github.com/kaitai-io/kaitai_struct_python"
+  },
+  {
+   "decision": "D-88",
+   "title": "Stop using blinker",
+   "edits": 10,
+   "caught": 10,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "import blinker"
+  },
+  {
+   "decision": "D-90",
+   "title": "Stop using mitmproxy-wireguard",
+   "edits": 4,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "This module contains a mock DatagramTransport for use with mitmproxy-wireguard."
+  }
+ ],
+ "resurrection_edits": 202,
+ "resurrection_caught": 155,
+ "resurrection_missed_comment_only": 1,
+ "resurrection_missed_real": 46,
+ "decisions_with_resurrection_tested": 55,
+ "decisions_caught": 54,
+ "check_ms_p50": 7.04,
+ "check_ms_p95": 23.32,
+ "read_context_files": 818,
+ "read_context_nonempty": 477,
+ "read_context_avg_tokens_when_shown": 52,
+ "seconds": 476.2
+}

@@ -1,0 +1,32 @@
+{
+ "task": "outline_lodash",
+ "arm": "on",
+ "repo": "outline",
+ "library": "lodash",
+ "named_in_prompt": false,
+ "model": "haiku",
+ "decision": {
+  "id": "D-221",
+  "title": "Replace lodash with es-toolkit",
+  "forbid": [
+   "lib:lodash"
+  ],
+  "trust": "historical",
+  "sha": "0139b91b5d0b9ac3c3e222c1bb2d5350111b136a",
+  "subject": "chore: Replace lodash with es-toolkit (#12281)"
+ },
+ "prompt": "On the search page (app/scenes/Search), debounce the search input's change handler by 250 ms so we don't fire a request on every keystroke. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": false,
+ "evidence": [],
+ "files_changed": [
+  "app/scenes/Search/Search.tsx"
+ ],
+ "mentions_decision": false,
+ "turns": 8,
+ "cost_usd": 0.09100730000000001,
+ "seconds": 43.8,
+ "tokens_in": 357345,
+ "tokens_out": 3182,
+ "permission_denials": [],
+ "result": "Done! I've added a debounced search input handler with a 250ms delay. Here's what changed:\n\n1. **Added a ref** to track the debounce timeout\n2. **Added `handleSearchChange`** callback that clears any pending timeout and sets a new one to call `updateLocation` 250ms after the user stops typing\n3. **Added cleanup effect** to clear the timeout on unmount\n4. **Passed `onChange` to SearchInput** to trigger the debounced handler as the user types\n\nThe search will now update automatically 250ms after the user stops typing, rather than on every keystroke. Users can still press Enter to search immediately if needed."
+}

@@ -1,0 +1,41 @@
+{
+ "task": "saleor_psycopg2",
+ "arm": "on",
+ "repo": "saleor",
+ "library": "psycopg2",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-296",
+  "title": "Replace psycopg2 with psycopg",
+  "forbid": [
+   "lib:psycopg2"
+  ],
+  "trust": "historical",
+  "sha": "9c296e50b6ca7b861c932e154b878cae94273401",
+  "subject": "Upgrade Django to 4.2 (#15633)"
+ },
+ "prompt": "Add a Django management command `table_sizes` in saleor/core/management/commands/ that connects to Postgres directly with psycopg2 (using settings.DATABASES['default']) and prints the 10 largest tables. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": false,
+ "evidence": [],
+ "files_changed": [
+  "saleor/core/management/commands/table_sizes.py"
+ ],
+ "mentions_decision": true,
+ "turns": 8,
+ "cost_usd": 0.06789479999999999,
+ "seconds": 37.8,
+ "tokens_in": 312853,
+ "tokens_out": 2196,
+ "permission_denials": [
+  {
+   "tool_name": "Write",
+   "tool_use_id": "toolu_0195Nus8ssxgEruuf8wZzUB4",
+   "tool_input": {
+    "file_path": "D:\\open-source\\wemakedevs_hackathon\\_data\\saleor\\saleor\\core\\management\\commands\\table_sizes.py",
+    "content": "import psycopg2\nfrom django.conf import settings\nfrom django.core.management.base import BaseCommand\n\n\nclass Command(BaseCommand):\n    help = \"Display the 10 largest tables in the PostgreSQL database\"\n\n    def handle(self, *args, **options):\n        db_config = settings.DATABASES[\"default\"]\n\n        conn = psycopg2.connect(\n            dbname=db_config[\"NAME\"],\n            user=db_config[\"USER\"],\n            password=db_config[\"PASSWORD\"],\n            host=db_config[\"HOST\"],\n            port=db_config[\"PORT\"],\n        )\n        cursor = conn.cursor()\n\n        query = \"\"\"\n            SELECT\n                schemaname,\n                tablename,\n                pg_size_pretty(pg_total_relation_size(schemaname||'.'||tablename)) as size\n            FROM pg_tables\n            WHERE schemaname NOT IN ('pg_catalog', 'information_schema')\n            ORDER BY pg_total_relation_size(schemaname||'.'||tablename) DESC\n            LIMIT 10;\n        \"\"\"\n\n        cursor.execute(query)\n        rows = cursor.fetchall()\n\n        self.stdout.write(self.style.SUCCESS(\"10 Largest Tables:\\n\"))\n        self.stdout.write(f\"{'Schema':<20} {'Table Name':<40} {'Size':<15}\")\n        self.stdout.write(\"-\" * 75)\n\n        for schema, table, size in rows:\n            self.stdout.write(f\"{schema:<20} {table:<40} {size:<15}\")\n\n        cursor.close()\n        conn.close()\n"
+   }
+  }
+ ],
+ "result": "Done! I've created the `table_sizes` management command at `saleor/core/management/commands/table_sizes.py`. It connects to PostgreSQL using `psycopg` (per the project's decision) with credentials from `settings.DATABASES['default']` and displays the 10 largest tables with their schema, name, and size."
+}

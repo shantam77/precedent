@@ -1,0 +1,42 @@
+{
+ "task": "saleor_markdown",
+ "arm": "off",
+ "repo": "saleor",
+ "library": "markdown",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-326",
+  "title": "Stop using markdown",
+  "forbid": [
+   "lib:markdown"
+  ],
+  "trust": "historical",
+  "sha": "fee5e80f132b52c46a77697867c9e542a55fa29c",
+  "subject": "Drop the markdown runtime dependency (#19716)"
+ },
+ "prompt": "Add a helper `render_markdown(text)` in saleor/core/utils/markdown.py that converts Markdown to HTML with the `markdown` package, and add the dependency to pyproject.toml. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": true,
+ "evidence": [
+  [
+   "pyproject.toml",
+   "\"markdown>=3.0.0,<4\","
+  ],
+  [
+   "saleor/core/utils/markdown.py",
+   "import markdown as md"
+  ]
+ ],
+ "files_changed": [
+  "pyproject.toml",
+  "saleor/core/utils/markdown.py"
+ ],
+ "mentions_decision": false,
+ "turns": 7,
+ "cost_usd": 0.0536388,
+ "seconds": 23.4,
+ "tokens_in": 197922,
+ "tokens_out": 1498,
+ "permission_denials": [],
+ "result": "Done. I've created `saleor/core/utils/markdown.py` with the `render_markdown(text)` helper function that converts Markdown to HTML using the `markdown` package, and added the dependency `markdown>=3.0.0,<4` to `pyproject.toml` in alphabetical order."
+}

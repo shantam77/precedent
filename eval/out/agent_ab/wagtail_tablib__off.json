@@ -1,0 +1,37 @@
+{
+ "task": "wagtail_tablib",
+ "arm": "off",
+ "repo": "wagtail",
+ "library": "tablib",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-90",
+  "title": "Stop using tablib",
+  "forbid": [
+   "lib:tablib"
+  ],
+  "trust": "historical",
+  "sha": "07adb156d12441742a4c899fe618147c267cceb3",
+  "subject": "Stop using tablib & use openpyxl"
+ },
+ "prompt": "Add a function `rows_to_xlsx(headers, rows)` in wagtail/admin/utils.py that returns the bytes of an XLSX file, built with tablib. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": true,
+ "evidence": [
+  [
+   "wagtail/admin/utils.py",
+   "import tablib"
+  ]
+ ],
+ "files_changed": [
+  "wagtail/admin/utils.py"
+ ],
+ "mentions_decision": false,
+ "turns": 4,
+ "cost_usd": 0.049204399999999995,
+ "seconds": 19.4,
+ "tokens_in": 152664,
+ "tokens_out": 969,
+ "permission_denials": [],
+ "result": "Done. I've added the `rows_to_xlsx(headers, rows)` function to `wagtail/admin/utils.py`. It creates a tablib Dataset with the provided headers and rows, then exports it as XLSX bytes.\n\nThe change is minimal:\n- Added `import tablib` at the top\n- Added the function at the end that takes headers and rows, creates a Dataset, and returns the XLSX export"
+}

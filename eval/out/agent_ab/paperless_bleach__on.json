@@ -1,0 +1,39 @@
+{
+ "task": "paperless_bleach",
+ "arm": "on",
+ "repo": "paperless-ngx",
+ "library": "bleach",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-103",
+  "title": "Replace bleach with turbohtml",
+  "forbid": [
+   "lib:bleach"
+  ],
+  "trust": "historical",
+  "sha": "6a5d06ee26a4620e6c8452870f157998d5b35050",
+  "subject": "Chore: replace bleach with turbohtml (#14269)"
+ },
+ "prompt": "Add a helper `clean_html(text)` in src/paperless_mail/utils.py that sanitizes HTML from emails with bleach, allowing only basic formatting tags. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": false,
+ "evidence": [],
+ "files_changed": [],
+ "mentions_decision": true,
+ "turns": 8,
+ "cost_usd": 0.06333630000000001,
+ "seconds": 39.1,
+ "tokens_in": 309074,
+ "tokens_out": 1559,
+ "permission_denials": [
+  {
+   "tool_name": "Write",
+   "tool_use_id": "toolu_01AtNwm6dxSkxTTCxmdQsSuN",
+   "tool_input": {
+    "file_path": "D:\\open-source\\wemakedevs_hackathon\\_data\\paperless-ngx\\src\\paperless_mail\\utils.py",
+    "content": "import bleach\n\n\ndef clean_html(text):\n    \"\"\"Sanitize HTML from emails, allowing only basic formatting tags.\"\"\"\n    allowed_tags = {\n        'b', 'i', 'em', 'strong', 'p', 'br', 'a', 'ul', 'ol', 'li', 'blockquote'\n    }\n    allowed_attributes = {'a': ['href', 'title']}\n    return bleach.clean(text, tags=allowed_tags, attributes=allowed_attributes, strip=True)\n"
+   }
+  }
+ ],
+ "result": "The project decided on 2026-10-06 to replace bleach with turbohtml (see PR #14269). Using bleach would reintroduce a deprecated dependency.\n\nI can create `clean_html()` using **turbohtml** instead, which is already in your dependencies. Would you like me to do that, or do you want to override the bleach decision?"
+}

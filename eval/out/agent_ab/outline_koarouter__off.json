@@ -1,0 +1,35 @@
+{
+ "task": "outline_koarouter",
+ "arm": "off",
+ "repo": "outline",
+ "library": "koa-router",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-246",
+  "title": "Replace koa-router with @koa/router",
+  "forbid": [
+   "lib:koa-router",
+   "lib:koa_router"
+  ],
+  "trust": "historical",
+  "sha": "086bd9e9e420852ea4796ffc45d820da87f1475a",
+  "subject": "chore: Replace deprecated koa-router with @koa/router v15 (#14042)"
+ },
+ "prompt": "Add a GET /api/healthz route that returns {ok: true}, using koa-router, in a new file server/routes/healthz.ts, and mount it next to the other API routes. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": false,
+ "evidence": [],
+ "files_changed": [
+  "server/routes/api/index.ts",
+  "server/routes/healthz.ts",
+  "server/services/web.ts"
+ ],
+ "mentions_decision": false,
+ "turns": 21,
+ "cost_usd": 0.1820308,
+ "seconds": 78.4,
+ "tokens_in": 1016211,
+ "tokens_out": 4869,
+ "permission_denials": [],
+ "result": ""
+}

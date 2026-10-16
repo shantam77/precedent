@@ -1,0 +1,3072 @@
+{
+ "stats": {
+  "repo": "cs_outline",
+  "files": 2860,
+  "components": 51,
+  "depends_on": 39,
+  "libraries": 502,
+  "manifest_events": 356,
+  "format_migrations_skipped": 0,
+  "decisions": 249,
+  "guarded_decisions": 127,
+  "observed_only": 119,
+  "people": 250,
+  "knows": 302,
+  "notes": 30,
+  "rules": 29,
+  "seconds": 18.3,
+  "llm_tokens": 0
+ },
+ "decisions": [
+  {
+   "id": "D-1",
+   "title": "Stop using body-parser",
+   "forbid": [
+    "lib:body-parser",
+    "lib:body_parser"
+   ],
+   "sha": "cce82b3d43",
+   "subject": "Refactor",
+   "at": 1461907537000,
+   "chose": []
+  },
+  {
+   "id": "D-6",
+   "title": "Stop using whatwg-fetch",
+   "forbid": [
+    "lib:whatwg",
+    "lib:whatwg-fetch",
+    "lib:whatwg_fetch"
+   ],
+   "sha": "cce82b3d43",
+   "subject": "Refactor",
+   "at": 1461907537000,
+   "chose": []
+  },
+  {
+   "id": "D-3",
+   "title": "Stop using fetch",
+   "forbid": [
+    "lib:fetch"
+   ],
+   "sha": "cce82b3d43",
+   "subject": "Refactor",
+   "at": 1461907537000,
+   "chose": []
+  },
+  {
+   "id": "D-5",
+   "title": "Stop using webpack-hot-middleware",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-hot-middleware",
+    "lib:webpack_hot_middleware"
+   ],
+   "sha": "cce82b3d43",
+   "subject": "Refactor",
+   "at": 1461907537000,
+   "chose": []
+  },
+  {
+   "id": "D-4",
+   "title": "Stop using webpack-dev-middleware",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-dev-middleware",
+    "lib:webpack_dev_middleware"
+   ],
+   "sha": "cce82b3d43",
+   "subject": "Refactor",
+   "at": 1461907537000,
+   "chose": []
+  },
+  {
+   "id": "D-2",
+   "title": "Make express optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "cce82b3d43",
+   "subject": "Refactor",
+   "at": 1461907537000,
+   "chose": []
+  },
+  {
+   "id": "D-8",
+   "title": "Stop using redux-storage-engine-localstorage",
+   "forbid": [
+    "lib:redux-storage-engine-localstorage",
+    "lib:redux_storage_engine_localstorage"
+   ],
+   "sha": "5e5f37b3c0",
+   "subject": "optimized bundle size and dependencies",
+   "at": 1462260760000,
+   "chose": []
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using webpack-koa-hot-middleware",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-koa-hot-middleware",
+    "lib:webpack_koa_hot_middleware"
+   ],
+   "sha": "5e5f37b3c0",
+   "subject": "optimized bundle size and dependencies",
+   "at": 1462260760000,
+   "chose": []
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using redux-storage",
+   "forbid": [
+    "lib:redux-storage",
+    "lib:redux_storage"
+   ],
+   "sha": "5e5f37b3c0",
+   "subject": "optimized bundle size and dependencies",
+   "at": 1462260760000,
+   "chose": []
+  },
+  {
+   "id": "D-10",
+   "title": "Stop using sw-toolbox",
+   "forbid": [
+    "lib:sw-toolbox",
+    "lib:sw_toolbox"
+   ],
+   "sha": "fce55bb01b",
+   "subject": "More prod",
+   "at": 1464067216000,
+   "chose": []
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using redux-logger",
+   "forbid": [
+    "lib:redux-logger",
+    "lib:redux_logger"
+   ],
+   "sha": "6303bc9279",
+   "subject": "Clean up and smaller bundle.js",
+   "at": 1465162694000,
+   "chose": []
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using redux",
+   "forbid": [
+    "lib:redux"
+   ],
+   "sha": "6303bc9279",
+   "subject": "Clean up and smaller bundle.js",
+   "at": 1465162694000,
+   "chose": []
+  },
+  {
+   "id": "D-15",
+   "title": "Stop using redux-thunk",
+   "forbid": [
+    "lib:redux-thunk",
+    "lib:redux_thunk"
+   ],
+   "sha": "6303bc9279",
+   "subject": "Clean up and smaller bundle.js",
+   "at": 1465162694000,
+   "chose": []
+  },
+  {
+   "id": "D-12",
+   "title": "Stop using redux-actions",
+   "forbid": [
+    "lib:redux-actions",
+    "lib:redux_actions"
+   ],
+   "sha": "6303bc9279",
+   "subject": "Clean up and smaller bundle.js",
+   "at": 1465162694000,
+   "chose": []
+  },
+  {
+   "id": "D-14",
+   "title": "Stop using redux-persist",
+   "forbid": [
+    "lib:redux-persist",
+    "lib:redux_persist"
+   ],
+   "sha": "6303bc9279",
+   "subject": "Clean up and smaller bundle.js",
+   "at": 1465162694000,
+   "chose": []
+  },
+  {
+   "id": "D-19",
+   "title": "Stop using react-router-redux",
+   "forbid": [
+    "lib:react-router-redux",
+    "lib:react_router_redux"
+   ],
+   "sha": "e3371ed06a",
+   "subject": "Code cleanup",
+   "at": 1465194266000,
+   "chose": []
+  },
+  {
+   "id": "D-18",
+   "title": "Stop using react-redux",
+   "forbid": [
+    "lib:react-redux",
+    "lib:react_redux"
+   ],
+   "sha": "e3371ed06a",
+   "subject": "Code cleanup",
+   "at": 1465194266000,
+   "chose": []
+  },
+  {
+   "id": "D-17",
+   "title": "Stop using react-medium-editor",
+   "forbid": [
+    "lib:react-medium-editor",
+    "lib:react_medium_editor"
+   ],
+   "sha": "e3371ed06a",
+   "subject": "Code cleanup",
+   "at": 1465194266000,
+   "chose": []
+  },
+  {
+   "id": "D-16",
+   "title": "Stop using react-keyframes",
+   "forbid": [
+    "lib:react-keyframes",
+    "lib:react_keyframes"
+   ],
+   "sha": "e3371ed06a",
+   "subject": "Code cleanup",
+   "at": 1465194266000,
+   "chose": []
+  },
+  {
+   "id": "D-20",
+   "title": "Stop using to-markdown",
+   "forbid": [
+    "lib:to-markdown",
+    "lib:to_markdown"
+   ],
+   "sha": "e3371ed06a",
+   "subject": "Code cleanup",
+   "at": 1465194266000,
+   "chose": []
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using fsevents",
+   "forbid": [
+    "lib:fsevents"
+   ],
+   "sha": "343144d826",
+   "subject": "Updated package.json and removed fsevents",
+   "at": 1486705525000,
+   "chose": []
+  },
+  {
+   "id": "D-23",
+   "title": "Stop using querystring",
+   "forbid": [
+    "lib:querystring"
+   ],
+   "sha": "343144d826",
+   "subject": "Updated package.json and removed fsevents",
+   "at": 1486705525000,
+   "chose": []
+  },
+  {
+   "id": "D-21",
+   "title": "Make crypto optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "343144d826",
+   "subject": "Updated package.json and removed fsevents",
+   "at": 1486705525000,
+   "chose": []
+  },
+  {
+   "id": "D-24",
+   "title": "Stop using eslint-config-airbnb",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-config-airbnb",
+    "lib:eslint_config_airbnb"
+   ],
+   "sha": "2095b3a874",
+   "subject": "Fix prettier integration, format (#31)",
+   "at": 1493354893000,
+   "chose": []
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using babel-preset-stage-0",
+   "forbid": [
+    "lib:babel-preset-stage-0",
+    "lib:babel_preset_stage_0"
+   ],
+   "sha": "930bf7d105",
+   "subject": "Removed useless modules",
+   "at": 1493576097000,
+   "chose": []
+  },
+  {
+   "id": "D-25",
+   "title": "Stop using babel-preset-es2015",
+   "forbid": [
+    "lib:babel-preset-es2015",
+    "lib:babel_preset_es2015"
+   ],
+   "sha": "930bf7d105",
+   "subject": "Removed useless modules",
+   "at": 1493576097000,
+   "chose": []
+  },
+  {
+   "id": "D-27",
+   "title": "Stop using rebass",
+   "forbid": [
+    "lib:rebass"
+   ],
+   "sha": "c9d6d4bfb2",
+   "subject": "Remove Rebass",
+   "at": 1493702892000,
+   "chose": []
+  },
+  {
+   "id": "D-29",
+   "title": "Stop using react-codemirror",
+   "forbid": [
+    "lib:react-codemirror",
+    "lib:react_codemirror"
+   ],
+   "sha": "ff17047791",
+   "subject": "Slate editor (#38)",
+   "at": 1495074991000,
+   "chose": []
+  },
+  {
+   "id": "D-28",
+   "title": "Stop using codemirror",
+   "forbid": [
+    "lib:codemirror"
+   ],
+   "sha": "ff17047791",
+   "subject": "Slate editor (#38)",
+   "at": 1495074991000,
+   "chose": []
+  },
+  {
+   "id": "D-30",
+   "title": "Make react-router optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "b25298c8f1",
+   "subject": "upgraded to react router v4",
+   "at": 1495078440000,
+   "chose": [
+    "react-router-dom"
+   ]
+  },
+  {
+   "id": "D-31",
+   "title": "Stop using cross-env",
+   "forbid": [
+    "lib:cross-env",
+    "lib:cross_env"
+   ],
+   "sha": "948bbd6e92",
+   "subject": "rm cross-env, fixed deployments",
+   "at": 1499578220000,
+   "chose": []
+  },
+  {
+   "id": "D-32",
+   "title": "Stop using ignore-loader",
+   "forbid": [
+    "lib:ignore",
+    "lib:ignore-loader",
+    "lib:ignore_loader"
+   ],
+   "sha": "6656689c2d",
+   "subject": "remove ignore-loader",
+   "at": 1499578220000,
+   "chose": []
+  },
+  {
+   "id": "D-33",
+   "title": "Stop using localenv",
+   "forbid": [
+    "lib:localenv"
+   ],
+   "sha": "948bbd6e92",
+   "subject": "rm cross-env, fixed deployments",
+   "at": 1499578220000,
+   "chose": []
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using reflexbox",
+   "forbid": [
+    "lib:reflexbox"
+   ],
+   "sha": "8b3b3222b7",
+   "subject": "Swapped Flex to homegrown component",
+   "at": 1499578220000,
+   "chose": []
+  },
+  {
+   "id": "D-35",
+   "title": "Stop using flow",
+   "forbid": [
+    "lib:flow"
+   ],
+   "sha": "d72f73ab18",
+   "subject": "updated flow-typed and flow",
+   "at": 1499646110000,
+   "chose": []
+  },
+  {
+   "id": "D-36",
+   "title": "Stop using slate-drop-or-paste-images",
+   "forbid": [
+    "lib:slate-drop-or-paste-images",
+    "lib:slate_drop_or_paste_images"
+   ],
+   "sha": "057e3b10e8",
+   "subject": "Upgrade dependencies",
+   "at": 1504409171000,
+   "chose": []
+  },
+  {
+   "id": "D-39",
+   "title": "Stop using sass-loader",
+   "forbid": [
+    "lib:sass-loader",
+    "lib:sass_loader"
+   ],
+   "sha": "2140a0698a",
+   "subject": "Refactor CSS modules out",
+   "at": 1505193277000,
+   "chose": []
+  },
+  {
+   "id": "D-37",
+   "title": "Stop using classnames",
+   "forbid": [
+    "lib:classnames"
+   ],
+   "sha": "2140a0698a",
+   "subject": "Refactor CSS modules out",
+   "at": 1505193277000,
+   "chose": []
+  },
+  {
+   "id": "D-38",
+   "title": "Stop using node-sass",
+   "forbid": [
+    "lib:node-sass",
+    "lib:node_sass"
+   ],
+   "sha": "2140a0698a",
+   "subject": "Refactor CSS modules out",
+   "at": 1505193277000,
+   "chose": []
+  },
+  {
+   "id": "D-41",
+   "title": "Stop using highlight.js",
+   "forbid": [
+    "lib:highlight.js"
+   ],
+   "sha": "150771ee88",
+   "subject": "removed dependencies, html/preview",
+   "at": 1508292332000,
+   "chose": []
+  },
+  {
+   "id": "D-40",
+   "title": "Stop using emoji-name-map",
+   "forbid": [
+    "lib:emoji-name-map",
+    "lib:emoji_name_map"
+   ],
+   "sha": "150771ee88",
+   "subject": "removed dependencies, html/preview",
+   "at": 1508292332000,
+   "chose": []
+  },
+  {
+   "id": "D-42",
+   "title": "Stop using js-tree",
+   "forbid": [
+    "lib:js-tree",
+    "lib:js_tree"
+   ],
+   "sha": "150771ee88",
+   "subject": "removed dependencies, html/preview",
+   "at": 1508292332000,
+   "chose": []
+  },
+  {
+   "id": "D-44",
+   "title": "Stop using marked-sanitized",
+   "forbid": [
+    "lib:marked",
+    "lib:marked-sanitized",
+    "lib:marked_sanitized"
+   ],
+   "sha": "150771ee88",
+   "subject": "removed dependencies, html/preview",
+   "at": 1508292332000,
+   "chose": []
+  },
+  {
+   "id": "D-45",
+   "title": "Stop using truncate-html",
+   "forbid": [
+    "lib:truncate",
+    "lib:truncate-html",
+    "lib:truncate_html"
+   ],
+   "sha": "150771ee88",
+   "subject": "removed dependencies, html/preview",
+   "at": 1508292332000,
+   "chose": []
+  },
+  {
+   "id": "D-43",
+   "title": "Stop using marked",
+   "forbid": [
+    "lib:marked"
+   ],
+   "sha": "150771ee88",
+   "subject": "removed dependencies, html/preview",
+   "at": 1508292332000,
+   "chose": []
+  },
+  {
+   "id": "D-46",
+   "title": "Stop using react-feather",
+   "forbid": [
+    "lib:react-feather",
+    "lib:react_feather"
+   ],
+   "sha": "38228d0315",
+   "subject": "WIP",
+   "at": 1508637141000,
+   "chose": []
+  },
+  {
+   "id": "D-47",
+   "title": "Stop using slate-markdown-serializer",
+   "forbid": [
+    "lib:slate-markdown-serializer",
+    "lib:slate_markdown_serializer"
+   ],
+   "sha": "1eea2af80d",
+   "subject": "Fixes #363",
+   "at": 1509499897000,
+   "chose": []
+  },
+  {
+   "id": "D-49",
+   "title": "Stop using react-addons-test-utils",
+   "forbid": [
+    "lib:react-addons-test-utils",
+    "lib:react_addons_test_utils"
+   ],
+   "sha": "21c7cb93a2",
+   "subject": "Upgrade to React 16",
+   "at": 1510431768000,
+   "chose": []
+  },
+  {
+   "id": "D-48",
+   "title": "Stop using react-addons-css-transition-group",
+   "forbid": [
+    "lib:react-addons-css-transition-group",
+    "lib:react_addons_css_transition_group"
+   ],
+   "sha": "21c7cb93a2",
+   "subject": "Upgrade to React 16",
+   "at": 1510431768000,
+   "chose": []
+  },
+  {
+   "id": "D-51",
+   "title": "Stop using lodash.orderby",
+   "forbid": [
+    "lib:lodash.orderby"
+   ],
+   "sha": "686c237e36",
+   "subject": "Moved to webpack 3",
+   "at": 1516051705000,
+   "chose": []
+  },
+  {
+   "id": "D-50",
+   "title": "Stop using eslint-import-resolver-webpack",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-import-resolver-webpack",
+    "lib:eslint_import_resolver_webpack"
+   ],
+   "sha": "2c9e92e5b9",
+   "subject": "Fixes",
+   "at": 1516051705000,
+   "chose": []
+  },
+  {
+   "id": "D-52",
+   "title": "Stop using moment",
+   "forbid": [
+    "lib:moment"
+   ],
+   "sha": "16a6c3bffe",
+   "subject": "Remove moment",
+   "at": 1520397596000,
+   "chose": []
+  },
+  {
+   "id": "D-53",
+   "title": "Stop using @tommoor/slate-edit-code",
+   "forbid": [
+    "lib:@tommoor/slate-edit-code",
+    "lib:@tommoor/slate_edit_code"
+   ],
+   "sha": "b9dda35566",
+   "subject": "Bump slate-edit-code dependency",
+   "at": 1520399930000,
+   "chose": []
+  },
+  {
+   "id": "D-57",
+   "title": "Stop using slate-paste-linkify",
+   "forbid": [
+    "lib:slate-paste-linkify",
+    "lib:slate_paste_linkify"
+   ],
+   "sha": "6222d210be",
+   "subject": "Upgrade editor Prevent markdown in code blocks and headings Improved handling of valid markdown characters in text",
+   "at": 1526861592000,
+   "chose": []
+  },
+  {
+   "id": "D-60",
+   "title": "Stop using slate-react",
+   "forbid": [
+    "lib:slate-react",
+    "lib:slate_react"
+   ],
+   "sha": "6222d210be",
+   "subject": "Upgrade editor Prevent markdown in code blocks and headings Improved handling of valid markdown characters in text",
+   "at": 1526861592000,
+   "chose": []
+  },
+  {
+   "id": "D-58",
+   "title": "Stop using slate-plain-serializer",
+   "forbid": [
+    "lib:slate-plain-serializer",
+    "lib:slate_plain_serializer"
+   ],
+   "sha": "6222d210be",
+   "subject": "Upgrade editor Prevent markdown in code blocks and headings Improved handling of valid markdown characters in text",
+   "at": 1526861592000,
+   "chose": []
+  },
+  {
+   "id": "D-56",
+   "title": "Stop using slate-edit-list",
+   "forbid": [
+    "lib:slate-edit-list",
+    "lib:slate_edit_list"
+   ],
+   "sha": "6222d210be",
+   "subject": "Upgrade editor Prevent markdown in code blocks and headings Improved handling of valid markdown characters in text",
+   "at": 1526861592000,
+   "chose": []
+  },
+  {
+   "id": "D-61",
+   "title": "Stop using slate-trailing-block",
+   "forbid": [
+    "lib:slate-trailing-block",
+    "lib:slate_trailing_block"
+   ],
+   "sha": "6222d210be",
+   "subject": "Upgrade editor Prevent markdown in code blocks and headings Improved handling of valid markdown characters in text",
+   "at": 1526861592000,
+   "chose": []
+  },
+  {
+   "id": "D-59",
+   "title": "Stop using slate-prism",
+   "forbid": [
+    "lib:slate-prism",
+    "lib:slate_prism"
+   ],
+   "sha": "6222d210be",
+   "subject": "Upgrade editor Prevent markdown in code blocks and headings Improved handling of valid markdown characters in text",
+   "at": 1526861592000,
+   "chose": []
+  },
+  {
+   "id": "D-55",
+   "title": "Stop using slate-edit-code",
+   "forbid": [
+    "lib:slate-edit-code",
+    "lib:slate_edit_code"
+   ],
+   "sha": "6222d210be",
+   "subject": "Upgrade editor Prevent markdown in code blocks and headings Improved handling of valid markdown characters in text",
+   "at": 1526861592000,
+   "chose": []
+  },
+  {
+   "id": "D-54",
+   "title": "Stop using slate-collapse-on-escape",
+   "forbid": [
+    "lib:slate-collapse-on-escape",
+    "lib:slate_collapse_on_escape"
+   ],
+   "sha": "6222d210be",
+   "subject": "Upgrade editor Prevent markdown in code blocks and headings Improved handling of valid markdown characters in text",
+   "at": 1526861592000,
+   "chose": []
+  },
+  {
+   "id": "D-62",
+   "title": "Stop using bcrypt",
+   "forbid": [
+    "lib:bcrypt"
+   ],
+   "sha": "4976d53ed8",
+   "subject": "Remove password field",
+   "at": 1531666738000,
+   "chose": []
+  },
+  {
+   "id": "D-63",
+   "title": "Stop using localforage",
+   "forbid": [
+    "lib:localforage"
+   ],
+   "sha": "e24a187699",
+   "subject": "accessToken per subdomain",
+   "at": 1542088909000,
+   "chose": []
+  },
+  {
+   "id": "D-64",
+   "title": "Stop using fbemitter",
+   "forbid": [
+    "lib:fbemitter"
+   ],
+   "sha": "8cbcb77486",
+   "subject": "Base model refactor (#810)",
+   "at": 1543991070000,
+   "chose": []
+  },
+  {
+   "id": "D-65",
+   "title": "Stop using parse-domain",
+   "forbid": [
+    "lib:parse-domain",
+    "lib:parse_domain"
+   ],
+   "sha": "ef583314e0",
+   "subject": "Remove parse-domain dependency (#856)",
+   "at": 1547329830000,
+   "chose": []
+  },
+  {
+   "id": "D-66",
+   "title": "Stop using @tommoor/slate-drop-or-paste-images",
+   "forbid": [
+    "lib:@tommoor/slate-drop-or-paste-images",
+    "lib:@tommoor/slate_drop_or_paste_images"
+   ],
+   "sha": "d21dd710bb",
+   "subject": "Upgrade Editor \u2013 Slate 0.44 / RME 8.0.0 (#863)",
+   "at": 1547880271000,
+   "chose": []
+  },
+  {
+   "id": "D-68",
+   "title": "Make history optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "39a61d8559",
+   "subject": "Upgrade Dependencies (#873)",
+   "at": 1548097604000,
+   "chose": []
+  },
+  {
+   "id": "D-72",
+   "title": "Stop using raf",
+   "forbid": [
+    "lib:raf"
+   ],
+   "sha": "39a61d8559",
+   "subject": "Upgrade Dependencies (#873)",
+   "at": 1548097604000,
+   "chose": []
+  },
+  {
+   "id": "D-67",
+   "title": "Stop using enzyme-to-json",
+   "forbid": [
+    "lib:enzyme",
+    "lib:enzyme-to-json",
+    "lib:enzyme_to_json"
+   ],
+   "sha": "39a61d8559",
+   "subject": "Upgrade Dependencies (#873)",
+   "at": 1548097604000,
+   "chose": []
+  },
+  {
+   "id": "D-70",
+   "title": "Stop using normalize.css",
+   "forbid": [
+    "lib:normalize.css"
+   ],
+   "sha": "39a61d8559",
+   "subject": "Upgrade Dependencies (#873)",
+   "at": 1548097604000,
+   "chose": []
+  },
+  {
+   "id": "D-69",
+   "title": "Stop using node-dev",
+   "forbid": [
+    "lib:node-dev",
+    "lib:node_dev"
+   ],
+   "sha": "39a61d8559",
+   "subject": "Upgrade Dependencies (#873)",
+   "at": 1548097604000,
+   "chose": []
+  },
+  {
+   "id": "D-73",
+   "title": "Stop using react-test-renderer",
+   "forbid": [
+    "lib:react-test-renderer",
+    "lib:react_test_renderer"
+   ],
+   "sha": "39a61d8559",
+   "subject": "Upgrade Dependencies (#873)",
+   "at": 1548097604000,
+   "chose": []
+  },
+  {
+   "id": "D-74",
+   "title": "Stop using string-hash",
+   "forbid": [
+    "lib:string-hash",
+    "lib:string_hash"
+   ],
+   "sha": "39a61d8559",
+   "subject": "Upgrade Dependencies (#873)",
+   "at": 1548097604000,
+   "chose": []
+  },
+  {
+   "id": "D-71",
+   "title": "Stop using normalizr",
+   "forbid": [
+    "lib:normalizr"
+   ],
+   "sha": "39a61d8559",
+   "subject": "Upgrade Dependencies (#873)",
+   "at": 1548097604000,
+   "chose": []
+  },
+  {
+   "id": "D-75",
+   "title": "Stop using js-cookie",
+   "forbid": [
+    "lib:js-cookie",
+    "lib:js_cookie"
+   ],
+   "sha": "fa38ab60eb",
+   "subject": "Fixes: Unexpected token parsing sessions cookie (#905)",
+   "at": 1551567536000,
+   "chose": []
+  },
+  {
+   "id": "D-76",
+   "title": "Stop using koa-connect",
+   "forbid": [
+    "lib:koa-connect",
+    "lib:koa_connect"
+   ],
+   "sha": "a7d49e9042",
+   "subject": "Bump production dependencies with open CVEs closes #916",
+   "at": 1552543863000,
+   "chose": []
+  },
+  {
+   "id": "D-77",
+   "title": "Stop using redis-lock",
+   "forbid": [
+    "lib:redis-lock",
+    "lib:redis_lock"
+   ],
+   "sha": "f406faf08e",
+   "subject": "chore: remove asyncLock closes #928",
+   "at": 1561337857000,
+   "chose": []
+  },
+  {
+   "id": "D-79",
+   "title": "Stop using pui-react-tooltip",
+   "forbid": [
+    "lib:pui-react-tooltip",
+    "lib:pui_react_tooltip"
+   ],
+   "sha": "3d805d5fe7",
+   "subject": "chore: tooltip update / remove css loader (#985)",
+   "at": 1562732245000,
+   "chose": []
+  },
+  {
+   "id": "D-78",
+   "title": "Stop using extract-text-webpack-plugin",
+   "forbid": [
+    "lib:extract",
+    "lib:extract-text-webpack-plugin",
+    "lib:extract_text_webpack_plugin"
+   ],
+   "sha": "3d805d5fe7",
+   "subject": "chore: tooltip update / remove css loader (#985)",
+   "at": 1562732245000,
+   "chose": []
+  },
+  {
+   "id": "D-80",
+   "title": "Stop using safestart",
+   "forbid": [
+    "lib:safestart"
+   ],
+   "sha": "e72608938a",
+   "subject": "chore: upgrade flow-typed",
+   "at": 1572158977000,
+   "chose": []
+  },
+  {
+   "id": "D-81",
+   "title": "Replace redis with ioredis",
+   "forbid": [
+    "lib:redis"
+   ],
+   "sha": "5b78cb8963",
+   "subject": "perf: Reuse redis connections where possible (#1157)",
+   "at": 1578968261000,
+   "chose": [
+    "ioredis"
+   ]
+  },
+  {
+   "id": "D-82",
+   "title": "Stop using react-markdown",
+   "forbid": [
+    "lib:react-markdown",
+    "lib:react_markdown"
+   ],
+   "sha": "5a20f6322f",
+   "subject": "remove changelog from OSS",
+   "at": 1581909912000,
+   "chose": []
+  },
+  {
+   "id": "D-83",
+   "title": "Stop using bugsnag",
+   "forbid": [
+    "lib:bugsnag"
+   ],
+   "sha": "c15cbd06a4",
+   "subject": "chore: Bugsnag -> Sentry (#1178)",
+   "at": 1581922730000,
+   "chose": []
+  },
+  {
+   "id": "D-84",
+   "title": "Stop using styled-components-grid",
+   "forbid": [
+    "lib:styled-components-grid",
+    "lib:styled_components_grid"
+   ],
+   "sha": "5cb04d7ac1",
+   "subject": "New login screen (#1331)",
+   "at": 1594359187000,
+   "chose": []
+  },
+  {
+   "id": "D-89",
+   "title": "Stop using babel-plugin-transform-es2015-modules-commonjs",
+   "forbid": [
+    "lib:babel-plugin-transform-es2015-modules-commonjs",
+    "lib:babel_plugin_transform_es2015_modules_commonjs"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-85",
+   "title": "Stop using babel-core",
+   "forbid": [
+    "lib:babel-core",
+    "lib:babel_core"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-91",
+   "title": "Stop using babel-plugin-transform-regenerator",
+   "forbid": [
+    "lib:babel-plugin-transform-regenerator",
+    "lib:babel_plugin_transform_regenerator"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-86",
+   "title": "Stop using babel-plugin-syntax-dynamic-import",
+   "forbid": [
+    "lib:babel-plugin-syntax-dynamic-import",
+    "lib:babel_plugin_syntax_dynamic_import"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-95",
+   "title": "Stop using babel-preset-react-hmre",
+   "forbid": [
+    "lib:babel-preset-react-hmre",
+    "lib:babel_preset_react_hmre"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-90",
+   "title": "Stop using babel-plugin-transform-object-rest-spread",
+   "forbid": [
+    "lib:babel-plugin-transform-object-rest-spread",
+    "lib:babel_plugin_transform_object_rest_spread"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-96",
+   "title": "Stop using babel-regenerator-runtime",
+   "forbid": [
+    "lib:babel-regenerator-runtime",
+    "lib:babel_regenerator_runtime"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-94",
+   "title": "Stop using babel-preset-react",
+   "forbid": [
+    "lib:babel-preset-react",
+    "lib:babel_preset_react"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-87",
+   "title": "Stop using babel-plugin-transform-decorators-legacy",
+   "forbid": [
+    "lib:babel-plugin-transform-decorators-legacy",
+    "lib:babel_plugin_transform_decorators_legacy"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-92",
+   "title": "Stop using babel-polyfill",
+   "forbid": [
+    "lib:babel-polyfill",
+    "lib:babel_polyfill"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-88",
+   "title": "Stop using babel-plugin-transform-es2015-destructuring",
+   "forbid": [
+    "lib:babel-plugin-transform-es2015-destructuring",
+    "lib:babel_plugin_transform_es2015_destructuring"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-93",
+   "title": "Stop using babel-preset-env",
+   "forbid": [
+    "lib:babel-preset-env",
+    "lib:babel_preset_env"
+   ],
+   "sha": "449dc55aaa",
+   "subject": "chore: Upgrade Babel, Jest, Eslint (#1437)",
+   "at": 1596952439000,
+   "chose": []
+  },
+  {
+   "id": "D-97",
+   "title": "Stop using identity-obj-proxy",
+   "forbid": [
+    "lib:identity",
+    "lib:identity-obj-proxy",
+    "lib:identity_obj_proxy"
+   ],
+   "sha": "11f7e3a060",
+   "subject": "chore: Bundle Stats / Webpack v4 (#1448)",
+   "at": 1597263370000,
+   "chose": []
+  },
+  {
+   "id": "D-98",
+   "title": "Stop using uglifyjs-webpack-plugin",
+   "forbid": [
+    "lib:uglifyjs",
+    "lib:uglifyjs-webpack-plugin",
+    "lib:uglifyjs_webpack_plugin"
+   ],
+   "sha": "11f7e3a060",
+   "subject": "chore: Bundle Stats / Webpack v4 (#1448)",
+   "at": 1597263370000,
+   "chose": []
+  },
+  {
+   "id": "D-99",
+   "title": "Stop using mobx-react-devtools",
+   "forbid": [
+    "lib:mobx-react-devtools",
+    "lib:mobx_react_devtools"
+   ],
+   "sha": "ec38f5d79c",
+   "subject": "refactor: Remove old react lifecycle methods (#1480)",
+   "at": 1598208716000,
+   "chose": []
+  },
+  {
+   "id": "D-100",
+   "title": "Stop using @babel/register",
+   "forbid": [
+    "lib:@babel/register"
+   ],
+   "sha": "e8719340d1",
+   "subject": "refactor: Remove babel/register for instant production server startup",
+   "at": 1598235016000,
+   "chose": []
+  },
+  {
+   "id": "D-101",
+   "title": "Replace koa-bodyparser with koa-body",
+   "forbid": [
+    "lib:koa-bodyparser",
+    "lib:koa_bodyparser"
+   ],
+   "sha": "2c1a111dee",
+   "subject": "feat: Support importing .docx or .html files as new documents (#1551)",
+   "at": 1600318473000,
+   "chose": [
+    "koa-body"
+   ]
+  },
+  {
+   "id": "D-102",
+   "title": "Stop using boundless-popover",
+   "forbid": [
+    "lib:boundless",
+    "lib:boundless-popover",
+    "lib:boundless_popover"
+   ],
+   "sha": "6d88c02869",
+   "subject": "chore: Remove unused Popover component",
+   "at": 1612329371000,
+   "chose": []
+  },
+  {
+   "id": "D-103",
+   "title": "Stop using google-auth-library",
+   "forbid": [
+    "lib:google",
+    "lib:google-auth-library",
+    "lib:google_auth_library"
+   ],
+   "sha": "5d6f68d399",
+   "subject": "feat: Move to passport for authentication (#1934)",
+   "at": 1615485742000,
+   "chose": []
+  },
+  {
+   "id": "D-104",
+   "title": "Stop using react-modal",
+   "forbid": [
+    "lib:react-modal",
+    "lib:react_modal"
+   ],
+   "sha": "25023fb086",
+   "subject": "chore: Fix modal nesting, remove react-modal (#1996)",
+   "at": 1617155174000,
+   "chose": []
+  },
+  {
+   "id": "D-105",
+   "title": "Stop using @babel/polyfill",
+   "forbid": [
+    "lib:@babel/polyfill"
+   ],
+   "sha": "16c60a0d59",
+   "subject": "fix: URLSearchParams polyfill via core-js upgrade (#2059)",
+   "at": 1619140887000,
+   "chose": []
+  },
+  {
+   "id": "D-106",
+   "title": "Stop using @rehooks/window-scroll-position",
+   "forbid": [
+    "lib:@rehooks/window-scroll-position",
+    "lib:@rehooks/window_scroll_position"
+   ],
+   "sha": "9f05c9bd43",
+   "subject": "chore: Upgrade React to v17 (#2045)",
+   "at": 1623623033000,
+   "chose": []
+  },
+  {
+   "id": "D-107",
+   "title": "Stop using isomorphic-fetch",
+   "forbid": [
+    "lib:isomorphic",
+    "lib:isomorphic-fetch",
+    "lib:isomorphic_fetch"
+   ],
+   "sha": "0e7d352781",
+   "subject": "chore: Add fetch-retry, remove isomorphic-fetch (#2297)",
+   "at": 1625828838000,
+   "chose": []
+  },
+  {
+   "id": "D-108",
+   "title": "Stop using boxen",
+   "forbid": [
+    "lib:boxen"
+   ],
+   "sha": "8ee018a759",
+   "subject": "feat: Web concurrency (#2347)",
+   "at": 1627395876000,
+   "chose": []
+  },
+  {
+   "id": "D-109",
+   "title": "Stop using debug",
+   "forbid": [
+    "lib:debug"
+   ],
+   "sha": "83a61b87ed",
+   "subject": "feat: Normalized server logging (#2567)",
+   "at": 1631667875000,
+   "chose": []
+  },
+  {
+   "id": "D-110",
+   "title": "Stop using @hocuspocus/extension-logger",
+   "forbid": [
+    "lib:@hocuspocus/extension-logger",
+    "lib:@hocuspocus/extension_logger"
+   ],
+   "sha": "d576ce1734",
+   "subject": "fix: Remote awareness not available on doc load (collab)",
+   "at": 1631925408000,
+   "chose": []
+  },
+  {
+   "id": "D-111",
+   "title": "Stop using koa-easy-ws",
+   "forbid": [
+    "lib:koa-easy-ws",
+    "lib:koa_easy_ws"
+   ],
+   "sha": "d443abfc57",
+   "subject": "chore: Allow websockets and collaboration service to run in the same process (#2674)",
+   "at": 1634703500000,
+   "chose": []
+  },
+  {
+   "id": "D-112",
+   "title": "Stop using react-keydown",
+   "forbid": [
+    "lib:react-keydown",
+    "lib:react_keydown"
+   ],
+   "sha": "57fa1305a6",
+   "subject": "chore: Remove `react-keydown` (#2713)",
+   "at": 1635821524000,
+   "chose": []
+  },
+  {
+   "id": "D-113",
+   "title": "Stop using react-autosize-textarea",
+   "forbid": [
+    "lib:react-autosize-textarea",
+    "lib:react_autosize_textarea"
+   ],
+   "sha": "c597f2d9a2",
+   "subject": "feat: Seamless Edit (#2701)",
+   "at": 1636433559000,
+   "chose": []
+  },
+  {
+   "id": "D-114",
+   "title": "Stop using imports-loader",
+   "forbid": [
+    "lib:imports",
+    "lib:imports-loader",
+    "lib:imports_loader"
+   ],
+   "sha": "87125223de",
+   "subject": "chore: Various dependency updates (#2751)",
+   "at": 1636470216000,
+   "chose": []
+  },
+  {
+   "id": "D-115",
+   "title": "Stop using koa-sendfile",
+   "forbid": [
+    "lib:koa-sendfile",
+    "lib:koa_sendfile"
+   ],
+   "sha": "c64387668d",
+   "subject": "Merge fix/path-parsing",
+   "at": 1637211773000,
+   "chose": []
+  },
+  {
+   "id": "D-119",
+   "title": "Stop using flow-bin",
+   "forbid": [
+    "lib:flow-bin",
+    "lib:flow_bin"
+   ],
+   "sha": "15b1069bcc",
+   "subject": "chore: Move to Typescript (#2783)",
+   "at": 1638196855000,
+   "chose": []
+  },
+  {
+   "id": "D-116",
+   "title": "Stop using @babel/preset-flow",
+   "forbid": [
+    "lib:@babel/preset-flow",
+    "lib:@babel/preset_flow"
+   ],
+   "sha": "15b1069bcc",
+   "subject": "chore: Move to Typescript (#2783)",
+   "at": 1638196855000,
+   "chose": []
+  },
+  {
+   "id": "D-117",
+   "title": "Stop using eslint-config-react-app",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-config-react-app",
+    "lib:eslint_config_react_app"
+   ],
+   "sha": "15b1069bcc",
+   "subject": "chore: Move to Typescript (#2783)",
+   "at": 1638196855000,
+   "chose": []
+  },
+  {
+   "id": "D-118",
+   "title": "Stop using eslint-plugin-flowtype",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-plugin-flowtype",
+    "lib:eslint_plugin_flowtype"
+   ],
+   "sha": "15b1069bcc",
+   "subject": "chore: Move to Typescript (#2783)",
+   "at": 1638196855000,
+   "chose": []
+  },
+  {
+   "id": "D-120",
+   "title": "Stop using flow-typed",
+   "forbid": [
+    "lib:flow-typed",
+    "lib:flow_typed"
+   ],
+   "sha": "15b1069bcc",
+   "subject": "chore: Move to Typescript (#2783)",
+   "at": 1638196855000,
+   "chose": []
+  },
+  {
+   "id": "D-121",
+   "title": "Stop using react-virtual",
+   "forbid": [
+    "lib:react-virtual",
+    "lib:react_virtual"
+   ],
+   "sha": "d0e7f2de65",
+   "subject": "fix: Emoji in title positioning  (#2927)",
+   "at": 1642381353000,
+   "chose": []
+  },
+  {
+   "id": "D-122",
+   "title": "Stop using js-search",
+   "forbid": [
+    "lib:js-search",
+    "lib:js_search"
+   ],
+   "sha": "062016b164",
+   "subject": "chore: Move editor into codebase (#2930)",
+   "at": 1642646595000,
+   "chose": []
+  },
+  {
+   "id": "D-123",
+   "title": "Stop using rich-markdown-editor",
+   "forbid": [
+    "lib:rich-markdown-editor",
+    "lib:rich_markdown_editor"
+   ],
+   "sha": "062016b164",
+   "subject": "chore: Move editor into codebase (#2930)",
+   "at": 1642646595000,
+   "chose": []
+  },
+  {
+   "id": "D-124",
+   "title": "Stop using boundless-arrow-key-navigation",
+   "forbid": [
+    "lib:boundless",
+    "lib:boundless-arrow-key-navigation",
+    "lib:boundless_arrow_key_navigation"
+   ],
+   "sha": "d1b28499c6",
+   "subject": "chore: new arrow key navigation (#3229)",
+   "at": 1647365770000,
+   "chose": []
+  },
+  {
+   "id": "D-125",
+   "title": "Stop using joplin-turndown-plugin-gfm",
+   "forbid": [
+    "lib:joplin",
+    "lib:joplin-turndown-plugin-gfm",
+    "lib:joplin_turndown_plugin_gfm"
+   ],
+   "sha": "68dd76cfa3",
+   "subject": "chore: Update documentImporter with changes from enterprise, improved Confluence compat",
+   "at": 1654198952000,
+   "chose": []
+  },
+  {
+   "id": "D-126",
+   "title": "Stop using koa-jwt",
+   "forbid": [
+    "lib:koa-jwt",
+    "lib:koa_jwt"
+   ],
+   "sha": "35e82beaf7",
+   "subject": "chore: Upgrade koa- dependencies (#3761)",
+   "at": 1657387422000,
+   "chose": []
+  },
+  {
+   "id": "D-127",
+   "title": "Stop using socketio-auth",
+   "forbid": [
+    "lib:socketio",
+    "lib:socketio-auth",
+    "lib:socketio_auth"
+   ],
+   "sha": "95f4fb2424",
+   "subject": "chore: Remove deprecated socket.io-auth (#3780)",
+   "at": 1657963629000,
+   "chose": []
+  },
+  {
+   "id": "D-128",
+   "title": "Stop using @tippy.js/react",
+   "forbid": [
+    "lib:@tippy.js/react"
+   ],
+   "sha": "1a88cb9d08",
+   "subject": "fix: Upgrade popper, tippy to fix error (#4224)",
+   "at": 1664903626000,
+   "chose": []
+  },
+  {
+   "id": "D-129",
+   "title": "Stop using koa-static",
+   "forbid": [
+    "lib:koa-static",
+    "lib:koa_static"
+   ],
+   "sha": "9936f42882",
+   "subject": "Avoid fsstat on every request, remove `koa-static` (#4387)",
+   "at": 1667656246000,
+   "chose": []
+  },
+  {
+   "id": "D-130",
+   "title": "Stop using koa-onerror",
+   "forbid": [
+    "lib:koa-onerror",
+    "lib:koa_onerror"
+   ],
+   "sha": "053d10d893",
+   "subject": "Enhance server side error handling (#4537)",
+   "at": 1670602902000,
+   "chose": []
+  },
+  {
+   "id": "D-131",
+   "title": "Stop using @theo.gravity/datadog-apm",
+   "forbid": [
+    "lib:@theo.gravity/datadog-apm",
+    "lib:@theo.gravity/datadog_apm"
+   ],
+   "sha": "c6fb764631",
+   "subject": "chore: Move tracing decorators into the codebase (#4623)",
+   "at": 1672491291000,
+   "chose": []
+  },
+  {
+   "id": "D-134",
+   "title": "Replace koa-webpack-dev-middleware with @vitejs/plugin-react, vite",
+   "forbid": [
+    "lib:koa-webpack-dev-middleware",
+    "lib:koa_webpack_dev_middleware"
+   ],
+   "sha": "e754f89e5c",
+   "subject": "Replace Webpack with Vite (#4765)",
+   "at": 1676518786000,
+   "chose": [
+    "@vitejs/plugin-react",
+    "vite"
+   ]
+  },
+  {
+   "id": "D-132",
+   "title": "Replace @pmmmwh/react-refresh-webpack-plugin with @vitejs/plugin-react, vite",
+   "forbid": [
+    "lib:@pmmmwh/react-refresh-webpack-plugin",
+    "lib:@pmmmwh/react_refresh_webpack_plugin"
+   ],
+   "sha": "e754f89e5c",
+   "subject": "Replace Webpack with Vite (#4765)",
+   "at": 1676518786000,
+   "chose": [
+    "@vitejs/plugin-react",
+    "vite"
+   ]
+  },
+  {
+   "id": "D-135",
+   "title": "Replace koa-webpack-hot-middleware with @vitejs/plugin-react, vite",
+   "forbid": [
+    "lib:koa-webpack-hot-middleware",
+    "lib:koa_webpack_hot_middleware"
+   ],
+   "sha": "e754f89e5c",
+   "subject": "Replace Webpack with Vite (#4765)",
+   "at": 1676518786000,
+   "chose": [
+    "@vitejs/plugin-react",
+    "vite"
+   ]
+  },
+  {
+   "id": "D-133",
+   "title": "Replace html-webpack-plugin with @vitejs/plugin-react, vite",
+   "forbid": [
+    "lib:html-webpack-plugin",
+    "lib:html_webpack_plugin",
+    "lib:webpack_plugin"
+   ],
+   "sha": "e754f89e5c",
+   "subject": "Replace Webpack with Vite (#4765)",
+   "at": 1676518786000,
+   "chose": [
+    "@vitejs/plugin-react",
+    "vite"
+   ]
+  },
+  {
+   "id": "D-139",
+   "title": "Replace webpack-manifest-plugin with @vitejs/plugin-react, vite",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-manifest-plugin",
+    "lib:webpack_manifest_plugin"
+   ],
+   "sha": "e754f89e5c",
+   "subject": "Replace Webpack with Vite (#4765)",
+   "at": 1676518786000,
+   "chose": [
+    "@vitejs/plugin-react",
+    "vite"
+   ]
+  },
+  {
+   "id": "D-138",
+   "title": "Replace webpack-cli with @vitejs/plugin-react, vite",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-cli",
+    "lib:webpack_cli"
+   ],
+   "sha": "e754f89e5c",
+   "subject": "Replace Webpack with Vite (#4765)",
+   "at": 1676518786000,
+   "chose": [
+    "@vitejs/plugin-react",
+    "vite"
+   ]
+  },
+  {
+   "id": "D-136",
+   "title": "Replace terser-webpack-plugin with @vitejs/plugin-react, terser",
+   "forbid": [
+    "lib:terser-webpack-plugin",
+    "lib:terser_webpack_plugin"
+   ],
+   "sha": "e754f89e5c",
+   "subject": "Replace Webpack with Vite (#4765)",
+   "at": 1676518786000,
+   "chose": [
+    "@vitejs/plugin-react",
+    "terser"
+   ]
+  },
+  {
+   "id": "D-140",
+   "title": "Replace webpack-pwa-manifest with @vitejs/plugin-react, vite",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-pwa-manifest",
+    "lib:webpack_pwa_manifest"
+   ],
+   "sha": "e754f89e5c",
+   "subject": "Replace Webpack with Vite (#4765)",
+   "at": 1676518786000,
+   "chose": [
+    "@vitejs/plugin-react",
+    "vite"
+   ]
+  },
+  {
+   "id": "D-141",
+   "title": "Replace workbox-webpack-plugin with @vitejs/plugin-react, vite",
+   "forbid": [
+    "lib:workbox",
+    "lib:workbox-webpack-plugin",
+    "lib:workbox_webpack_plugin"
+   ],
+   "sha": "e754f89e5c",
+   "subject": "Replace Webpack with Vite (#4765)",
+   "at": 1676518786000,
+   "chose": [
+    "@vitejs/plugin-react",
+    "vite"
+   ]
+  },
+  {
+   "id": "D-137",
+   "title": "Replace webpack with @vitejs/plugin-react, rollup-plugin-webpack-stats",
+   "forbid": [
+    "lib:webpack"
+   ],
+   "sha": "e754f89e5c",
+   "subject": "Replace Webpack with Vite (#4765)",
+   "at": 1676518786000,
+   "chose": [
+    "@vitejs/plugin-react",
+    "rollup-plugin-webpack-stats"
+   ]
+  },
+  {
+   "id": "D-142",
+   "title": "Stop using babel-plugin-lodash",
+   "forbid": [
+    "lib:babel-plugin-lodash",
+    "lib:babel_plugin_lodash"
+   ],
+   "sha": "0887219be6",
+   "subject": "chore: Bump babel, remove lodash plugin (#4908)",
+   "at": 1676946766000,
+   "chose": []
+  },
+  {
+   "id": "D-150",
+   "title": "Stop using node-htmldiff",
+   "forbid": [
+    "lib:node-htmldiff",
+    "lib:node_htmldiff"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-148",
+   "title": "Stop using json-loader",
+   "forbid": [
+    "lib:json-loader",
+    "lib:json_loader"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-156",
+   "title": "Stop using style-loader",
+   "forbid": [
+    "lib:style-loader",
+    "lib:style_loader"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-143",
+   "title": "Stop using babel-loader",
+   "forbid": [
+    "lib:babel-loader",
+    "lib:babel_loader"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-149",
+   "title": "Stop using koa-convert",
+   "forbid": [
+    "lib:koa-convert",
+    "lib:koa_convert"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-153",
+   "title": "Stop using regenerator-runtime",
+   "forbid": [
+    "lib:regenerator",
+    "lib:regenerator-runtime",
+    "lib:regenerator_runtime"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-145",
+   "title": "Stop using exports-loader",
+   "forbid": [
+    "lib:exports",
+    "lib:exports-loader",
+    "lib:exports_loader"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-151",
+   "title": "Stop using pg-hstore",
+   "forbid": [
+    "lib:pg-hstore",
+    "lib:pg_hstore"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-157",
+   "title": "Stop using url-loader",
+   "forbid": [
+    "lib:url-loader",
+    "lib:url_loader"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-146",
+   "title": "Stop using file-loader",
+   "forbid": [
+    "lib:file-loader",
+    "lib:file_loader"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-147",
+   "title": "Stop using immutable",
+   "forbid": [
+    "lib:immutable"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-154",
+   "title": "Stop using slate",
+   "forbid": [
+    "lib:slate"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-155",
+   "title": "Stop using slate-md-serializer",
+   "forbid": [
+    "lib:slate-md-serializer",
+    "lib:slate_md_serializer"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-144",
+   "title": "Stop using css-loader",
+   "forbid": [
+    "lib:css-loader",
+    "lib:css_loader"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-152",
+   "title": "Stop using raw-loader",
+   "forbid": [
+    "lib:raw-loader",
+    "lib:raw_loader"
+   ],
+   "sha": "eb42f8006d",
+   "subject": "chore: Remove 16+ unused dependencies (#4910)",
+   "at": 1676997808000,
+   "chose": []
+  },
+  {
+   "id": "D-158",
+   "title": "Stop using react-helmet",
+   "forbid": [
+    "lib:react-helmet",
+    "lib:react_helmet"
+   ],
+   "sha": "c82b05a044",
+   "subject": "fix: React devmode warnings (#5169",
+   "at": 1680963451000,
+   "chose": []
+  },
+  {
+   "id": "D-159",
+   "title": "Stop using prosemirror-utils",
+   "forbid": [
+    "lib:prosemirror-utils",
+    "lib:prosemirror_utils"
+   ],
+   "sha": "d5341a486c",
+   "subject": "chore: Upgrade all of prosemirror (#5366)",
+   "at": 1684981445000,
+   "chose": []
+  },
+  {
+   "id": "D-160",
+   "title": "Stop using @optimize-lodash/rollup-plugin",
+   "forbid": [
+    "lib:@optimize-lodash/rollup-plugin",
+    "lib:@optimize_lodash/rollup_plugin"
+   ],
+   "sha": "b7bfc4bb1a",
+   "subject": "chore: Remove optimize imports to allow vite upgrade (#5691)",
+   "at": 1692038698000,
+   "chose": []
+  },
+  {
+   "id": "D-161",
+   "title": "Stop using gemoji",
+   "forbid": [
+    "lib:gemoji"
+   ],
+   "sha": "1c7bb65c7a",
+   "subject": "Document emoji picker (#4338)",
+   "at": 1693746693000,
+   "chose": []
+  },
+  {
+   "id": "D-162",
+   "title": "Stop using @getoutline/jest-runner-serial",
+   "forbid": [
+    "lib:@getoutline/jest-runner-serial",
+    "lib:@getoutline/jest_runner_serial"
+   ],
+   "sha": "ec0564eb32",
+   "subject": "chore: Test performance (#5786)",
+   "at": 1694035161000,
+   "chose": []
+  },
+  {
+   "id": "D-163",
+   "title": "Stop using fetch-test-server",
+   "forbid": [
+    "lib:fetch-test-server",
+    "lib:fetch_test_server"
+   ],
+   "sha": "67b1fe5514",
+   "subject": "Local file storage (#5763)",
+   "at": 1695247923000,
+   "chose": []
+  },
+  {
+   "id": "D-164",
+   "title": "Stop using @fellow/prosemirror-recreate-transform",
+   "forbid": [
+    "lib:@fellow/prosemirror-recreate-transform",
+    "lib:@fellow/prosemirror_recreate_transform"
+   ],
+   "sha": "0014bcf22d",
+   "subject": "chore: Remove unused dep",
+   "at": 1695688930000,
+   "chose": []
+  },
+  {
+   "id": "D-165",
+   "title": "Stop using unzipper",
+   "forbid": [
+    "lib:unzipper"
+   ],
+   "sha": "726613bf1d",
+   "subject": "fix: Remove `unzipper` as it cannot handle zip within zip (#6162)",
+   "at": 1700094737000,
+   "chose": []
+  },
+  {
+   "id": "D-166",
+   "title": "Stop using inline-css",
+   "forbid": [
+    "lib:inline",
+    "lib:inline-css",
+    "lib:inline_css"
+   ],
+   "sha": "5558d5af95",
+   "subject": "chore: Move from `inline-css` -> `css-inline` (#6252)",
+   "at": 1701826827000,
+   "chose": []
+  },
+  {
+   "id": "D-167",
+   "title": "Stop using quoted-printable",
+   "forbid": [
+    "lib:quoted",
+    "lib:quoted-printable",
+    "lib:quoted_printable"
+   ],
+   "sha": "7d7d0fd9ca",
+   "subject": "fix: Improve logic for word import (#6361)",
+   "at": 1704860987000,
+   "chose": []
+  },
+  {
+   "id": "D-168",
+   "title": "Stop using utf8",
+   "forbid": [
+    "lib:utf8"
+   ],
+   "sha": "7d7d0fd9ca",
+   "subject": "fix: Improve logic for word import (#6361)",
+   "at": 1704860987000,
+   "chose": []
+  },
+  {
+   "id": "D-170",
+   "title": "Stop using enzyme-adapter-react-16",
+   "forbid": [
+    "lib:enzyme",
+    "lib:enzyme-adapter-react-16",
+    "lib:enzyme_adapter_react_16"
+   ],
+   "sha": "b52b12fcfd",
+   "subject": "chore: Remove no-longer maintained Enzyme",
+   "at": 1706623965000,
+   "chose": []
+  },
+  {
+   "id": "D-169",
+   "title": "Stop using enzyme",
+   "forbid": [
+    "lib:enzyme"
+   ],
+   "sha": "b52b12fcfd",
+   "subject": "chore: Remove no-longer maintained Enzyme",
+   "at": 1706623965000,
+   "chose": []
+  },
+  {
+   "id": "D-171",
+   "title": "Stop using @sentry/tracing",
+   "forbid": [
+    "lib:@sentry/tracing"
+   ],
+   "sha": "176a0451fc",
+   "subject": "chore: Update Sentry deps",
+   "at": 1706996546000,
+   "chose": []
+  },
+  {
+   "id": "D-172",
+   "title": "Replace css-inline with @css-inline/css-inline-wasm",
+   "forbid": [
+    "lib:css-inline",
+    "lib:css_inline"
+   ],
+   "sha": "ea2c7cfcd4",
+   "subject": "chore: Replace `css-inline` with `@css-inline/css-inline-wasm` (#6336)",
+   "at": 1713709212000,
+   "chose": [
+    "@css-inline/css-inline-wasm"
+   ]
+  },
+  {
+   "id": "D-173",
+   "title": "Stop using @tommoor/remove-markdown",
+   "forbid": [
+    "lib:@tommoor/remove-markdown",
+    "lib:@tommoor/remove_markdown"
+   ],
+   "sha": "3825bc4181",
+   "subject": "Improve the quality of snippets for search results (#6828)",
+   "at": 1713786013000,
+   "chose": []
+  },
+  {
+   "id": "D-174",
+   "title": "Replace aws-sdk with @aws-sdk/client-s3, @aws-sdk/lib-storage",
+   "forbid": [
+    "lib:aws-sdk",
+    "lib:aws_sdk"
+   ],
+   "sha": "3a7dd94e14",
+   "subject": "Migrate from s3 sdk v2 to v3 (#6731)",
+   "at": 1716123702000,
+   "chose": [
+    "@aws-sdk/client-s3",
+    "@aws-sdk/lib-storage"
+   ]
+  },
+  {
+   "id": "D-175",
+   "title": "Stop using @emoji-mart/react",
+   "forbid": [
+    "lib:@emoji-mart/react",
+    "lib:@emoji_mart/react"
+   ],
+   "sha": "6fd3a0fa8a",
+   "subject": "feat: Unified icon picker (#7038)",
+   "at": 1719149478000,
+   "chose": []
+  },
+  {
+   "id": "D-176",
+   "title": "Stop using focus-visible",
+   "forbid": [
+    "lib:focus-visible",
+    "lib:focus_visible"
+   ],
+   "sha": "51839dd780",
+   "subject": "fix: Unable to scroll elements in latest chrome (#7394)",
+   "at": 1723731051000,
+   "chose": []
+  },
+  {
+   "id": "D-177",
+   "title": "Stop using cancan",
+   "forbid": [
+    "lib:cancan"
+   ],
+   "sha": "d2b3e50a48",
+   "subject": "Vendorize `cancan` with performance improvements (#7448)",
+   "at": 1724371858000,
+   "chose": []
+  },
+  {
+   "id": "D-178",
+   "title": "Replace smooth-scroll-into-view-if-needed with scroll-into-view-if-needed",
+   "forbid": [
+    "lib:smooth",
+    "lib:smooth-scroll-into-view-if-needed",
+    "lib:smooth_scroll_into_view_if_needed"
+   ],
+   "sha": "c54fcc3536",
+   "subject": "fix: Improve scroll to comment logic, closes #7435",
+   "at": 1726889506000,
+   "chose": [
+    "scroll-into-view-if-needed"
+   ]
+  },
+  {
+   "id": "D-179",
+   "title": "Replace @getoutline/y-prosemirror with y-prosemirror",
+   "forbid": [
+    "lib:@getoutline/y-prosemirror",
+    "lib:@getoutline/y_prosemirror"
+   ],
+   "sha": "bdac4360b4",
+   "subject": "chore: Remove usage of y-prosemirror fork, pull in latest fixes from upstream",
+   "at": 1729129072000,
+   "chose": [
+    "y-prosemirror"
+   ]
+  },
+  {
+   "id": "D-180",
+   "title": "Replace react-table with @tanstack/react-table",
+   "forbid": [
+    "lib:react-table",
+    "lib:react_table"
+   ],
+   "sha": "9bc1788bc0",
+   "subject": "Upgrade and virtualize table component (#8157)",
+   "at": 1736081705000,
+   "chose": [
+    "@tanstack/react-table"
+   ]
+  },
+  {
+   "id": "D-181",
+   "title": "Stop using @tippyjs/react",
+   "forbid": [
+    "lib:@tippyjs/react"
+   ],
+   "sha": "dae1bce48c",
+   "subject": "chore: Convert `Tooltip` component from Tippy.js to radix-ui (#9302)",
+   "at": 1748643097000,
+   "chose": []
+  },
+  {
+   "id": "D-182",
+   "title": "Stop using eslint-plugin-prettier",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-plugin-prettier",
+    "lib:eslint_plugin_prettier"
+   ],
+   "sha": "97f8d0f265",
+   "subject": "Separate Prettier and ESLint according to best practices (#9565)",
+   "at": 1752012108000,
+   "chose": []
+  },
+  {
+   "id": "D-183",
+   "title": "Stop using @renderlesskit/react",
+   "forbid": [
+    "lib:@renderlesskit/react"
+   ],
+   "sha": "066b6dab43",
+   "subject": "Remove `@renderlesskit/react` package (#9615)",
+   "at": 1752270107000,
+   "chose": []
+  },
+  {
+   "id": "D-184",
+   "title": "Stop using randomstring",
+   "forbid": [
+    "lib:randomstring"
+   ],
+   "sha": "772eb2f1d4",
+   "subject": "fix: `randomstring` dep does not work in browser with rolldown-vite (#9624)",
+   "at": 1752413596000,
+   "chose": []
+  },
+  {
+   "id": "D-191",
+   "title": "Replace eslint-plugin-es with oxlint",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-plugin-es",
+    "lib:eslint_plugin_es"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-195",
+   "title": "Replace eslint-plugin-node with oxlint",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-plugin-node",
+    "lib:eslint_plugin_node"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-193",
+   "title": "Replace eslint-plugin-jsx-a11y with oxlint",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-plugin-jsx-a11y",
+    "lib:eslint_plugin_jsx_a11y"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-192",
+   "title": "Replace eslint-plugin-import with oxlint",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-plugin-import",
+    "lib:eslint_plugin_import"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-197",
+   "title": "Replace eslint-plugin-react-hooks with oxlint",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-plugin-react-hooks",
+    "lib:eslint_plugin_react_hooks"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-188",
+   "title": "Replace eslint with oxlint",
+   "forbid": [
+    "lib:eslint"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-194",
+   "title": "Replace eslint-plugin-lodash with oxlint",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-plugin-lodash",
+    "lib:eslint_plugin_lodash"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-185",
+   "title": "Replace @typescript-eslint/eslint-plugin with oxlint",
+   "forbid": [
+    "lib:@typescript-eslint/eslint-plugin",
+    "lib:@typescript_eslint/eslint_plugin"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-190",
+   "title": "Replace eslint-import-resolver-typescript with oxlint",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-import-resolver-typescript",
+    "lib:eslint_import_resolver_typescript"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-196",
+   "title": "Replace eslint-plugin-react with oxlint",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-plugin-react",
+    "lib:eslint_plugin_react"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-187",
+   "title": "Replace babel-eslint with oxlint",
+   "forbid": [
+    "lib:babel-eslint",
+    "lib:babel_eslint"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-189",
+   "title": "Replace eslint-config-prettier with oxlint",
+   "forbid": [
+    "lib:eslint",
+    "lib:eslint-config-prettier",
+    "lib:eslint_config_prettier"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-186",
+   "title": "Replace @typescript-eslint/parser with oxlint",
+   "forbid": [
+    "lib:@typescript-eslint/parser",
+    "lib:@typescript_eslint/parser"
+   ],
+   "sha": "8e4dfa65f0",
+   "subject": "Migrate from ESLint to oxlint for 50x performance improvement (#9682)",
+   "at": 1752954175000,
+   "chose": [
+    "oxlint"
+   ]
+  },
+  {
+   "id": "D-199",
+   "title": "Stop using @eslint/js",
+   "forbid": [
+    "lib:@eslint/js"
+   ],
+   "sha": "bdf89e5de8",
+   "subject": "chore(linter): improve oxlint setup (#9695)",
+   "at": 1753095420000,
+   "chose": []
+  },
+  {
+   "id": "D-198",
+   "title": "Stop using @eslint/eslintrc",
+   "forbid": [
+    "lib:@eslint/eslintrc"
+   ],
+   "sha": "bdf89e5de8",
+   "subject": "chore(linter): improve oxlint setup (#9695)",
+   "at": 1753095420000,
+   "chose": []
+  },
+  {
+   "id": "D-200",
+   "title": "Replace dotenv with @dotenvx/dotenvx",
+   "forbid": [
+    "lib:dotenv"
+   ],
+   "sha": "e2c8ee7b54",
+   "subject": "chore: Migrate from dotenv to dotenvx with minimal changes (#9921)",
+   "at": 1755215022000,
+   "chose": [
+    "@dotenvx/dotenvx"
+   ]
+  },
+  {
+   "id": "D-201",
+   "title": "Stop using fetch-with-proxy",
+   "forbid": [
+    "lib:fetch-with-proxy",
+    "lib:fetch_with_proxy"
+   ],
+   "sha": "8fcb629bdf",
+   "subject": "fix: Standardize request filtering between cloud / self-hosted (#9914)",
+   "at": 1755256589000,
+   "chose": []
+  },
+  {
+   "id": "D-202",
+   "title": "Stop using vite-plugin-static-copy",
+   "forbid": [
+    "lib:vite-plugin-static-copy",
+    "lib:vite_plugin_static_copy"
+   ],
+   "sha": "ff548eae5c",
+   "subject": "chore: Remove usage of vite-static-copy plugin (#9916)",
+   "at": 1755304887000,
+   "chose": []
+  },
+  {
+   "id": "D-203",
+   "title": "Stop using react-medium-image-zoom",
+   "forbid": [
+    "lib:react-medium-image-zoom",
+    "lib:react_medium_image_zoom"
+   ],
+   "sha": "9854ce7c31",
+   "subject": "Lightbox for image navigation in a doc (#9704)",
+   "at": 1757166233000,
+   "chose": []
+  },
+  {
+   "id": "D-204",
+   "title": "Stop using @testing-library/react",
+   "forbid": [
+    "lib:@testing-library/react",
+    "lib:@testing_library/react"
+   ],
+   "sha": "4a01fb7094",
+   "subject": "chore: Remove `PaginatedList` test (#10110)",
+   "at": 1757188988000,
+   "chose": []
+  },
+  {
+   "id": "D-205",
+   "title": "Stop using reakit",
+   "forbid": [
+    "lib:reakit"
+   ],
+   "sha": "a5e1f613fc",
+   "subject": "chore: Remove `reakit` (#10219)",
+   "at": 1758540356000,
+   "chose": []
+  },
+  {
+   "id": "D-206",
+   "title": "Stop using chalk",
+   "forbid": [
+    "lib:chalk"
+   ],
+   "sha": "f4d9b6b257",
+   "subject": "chore: Remove chalk module (#10700)",
+   "at": 1763924509000,
+   "chose": []
+  },
+  {
+   "id": "D-207",
+   "title": "Stop using yarn-deduplicate",
+   "forbid": [
+    "lib:yarn-deduplicate",
+    "lib:yarn_deduplicate"
+   ],
+   "sha": "7cbd06541c",
+   "subject": "Upgrade Yarn to 4.11.0 (#10865)",
+   "at": 1766670368000,
+   "chose": []
+  },
+  {
+   "id": "D-208",
+   "title": "Stop using rfc6902",
+   "forbid": [
+    "lib:rfc6902"
+   ],
+   "sha": "831f038e3c",
+   "subject": "perf: Vendorize `rfc6902` (#11174)",
+   "at": 1768346022000,
+   "chose": []
+  },
+  {
+   "id": "D-209",
+   "title": "Stop using react-color",
+   "forbid": [
+    "lib:react-color",
+    "lib:react_color"
+   ],
+   "sha": "ebe0e5bc3a",
+   "subject": "Replace `react-color` with `react-colorful` (#11269)",
+   "at": 1769477231000,
+   "chose": []
+  },
+  {
+   "id": "D-210",
+   "title": "Stop using @babel/plugin-transform-destructuring",
+   "forbid": [
+    "lib:@babel/plugin-transform-destructuring",
+    "lib:@babel/plugin_transform_destructuring"
+   ],
+   "sha": "3e1daf4ab8",
+   "subject": "chore: Remove babel from production deps (#11318)",
+   "at": 1769775262000,
+   "chose": []
+  },
+  {
+   "id": "D-212",
+   "title": "Stop using babel-plugin-transform-class-properties",
+   "forbid": [
+    "lib:babel-plugin-transform-class-properties",
+    "lib:babel_plugin_transform_class_properties"
+   ],
+   "sha": "3e1daf4ab8",
+   "subject": "chore: Remove babel from production deps (#11318)",
+   "at": 1769775262000,
+   "chose": []
+  },
+  {
+   "id": "D-211",
+   "title": "Stop using @babel/plugin-transform-regenerator",
+   "forbid": [
+    "lib:@babel/plugin-transform-regenerator",
+    "lib:@babel/plugin_transform_regenerator"
+   ],
+   "sha": "3e1daf4ab8",
+   "subject": "chore: Remove babel from production deps (#11318)",
+   "at": 1769775262000,
+   "chose": []
+  },
+  {
+   "id": "D-214",
+   "title": "Stop using turndown",
+   "forbid": [
+    "lib:turndown"
+   ],
+   "sha": "bb128318da",
+   "subject": "perf: Remove turndown (#11331)",
+   "at": 1769910996000,
+   "chose": []
+  },
+  {
+   "id": "D-213",
+   "title": "Stop using @joplin/turndown-plugin-gfm",
+   "forbid": [
+    "lib:@joplin/turndown-plugin-gfm",
+    "lib:@joplin/turndown_plugin_gfm"
+   ],
+   "sha": "bb128318da",
+   "subject": "perf: Remove turndown (#11331)",
+   "at": 1769910996000,
+   "chose": []
+  },
+  {
+   "id": "D-215",
+   "title": "Stop using datadog-metrics",
+   "forbid": [
+    "lib:datadog",
+    "lib:datadog-metrics",
+    "lib:datadog_metrics"
+   ],
+   "sha": "3d1c2a8759",
+   "subject": "chore: Remove `datadog-metrics` lib (#11665)",
+   "at": 1772756831000,
+   "chose": []
+  },
+  {
+   "id": "D-217",
+   "title": "Stop using body-scroll-lock",
+   "forbid": [
+    "lib:body-scroll-lock",
+    "lib:body_scroll_lock"
+   ],
+   "sha": "0ba310e027",
+   "subject": "Remove unused files and dependencies (#11850)",
+   "at": 1774219491000,
+   "chose": []
+  },
+  {
+   "id": "D-216",
+   "title": "Stop using @octokit/webhooks",
+   "forbid": [
+    "lib:@octokit/webhooks"
+   ],
+   "sha": "0ba310e027",
+   "subject": "Remove unused files and dependencies (#11850)",
+   "at": 1774219491000,
+   "chose": []
+  },
+  {
+   "id": "D-218",
+   "title": "Stop using autotrack",
+   "forbid": [
+    "lib:autotrack"
+   ],
+   "sha": "7a4b545e7f",
+   "subject": "chore: vendor autotrack library (#12070)",
+   "at": 1776339741000,
+   "chose": []
+  },
+  {
+   "id": "D-219",
+   "title": "Stop using babel-plugin-tsconfig-paths-module-resolver",
+   "forbid": [
+    "lib:babel-plugin-tsconfig-paths-module-resolver",
+    "lib:babel_plugin_tsconfig_paths_module_resolver"
+   ],
+   "sha": "816a474a46",
+   "subject": "chore(deps-dev): bump oxlint and tsgolint (#12127)",
+   "at": 1777398642000,
+   "chose": []
+  },
+  {
+   "id": "D-220",
+   "title": "Stop using request-filtering-agent",
+   "forbid": [
+    "lib:request",
+    "lib:request-filtering-agent",
+    "lib:request_filtering_agent"
+   ],
+   "sha": "ad7e6c98ab",
+   "subject": "chore: Vendor `request-filtering-agent` (#12266)",
+   "at": 1778113612000,
+   "chose": []
+  },
+  {
+   "id": "D-221",
+   "title": "Replace lodash with es-toolkit",
+   "forbid": [
+    "lib:lodash"
+   ],
+   "sha": "0139b91b5d",
+   "subject": "chore: Replace lodash with es-toolkit (#12281)",
+   "at": 1778115827000,
+   "chose": [
+    "es-toolkit"
+   ]
+  },
+  {
+   "id": "D-223",
+   "title": "Stop using jest-cli",
+   "forbid": [
+    "lib:jest-cli",
+    "lib:jest_cli"
+   ],
+   "sha": "091346dfe8",
+   "subject": "chore: Migrate to vitest (#12272)",
+   "at": 1778116251000,
+   "chose": []
+  },
+  {
+   "id": "D-222",
+   "title": "Stop using babel-jest",
+   "forbid": [
+    "lib:babel-jest",
+    "lib:babel_jest"
+   ],
+   "sha": "091346dfe8",
+   "subject": "chore: Migrate to vitest (#12272)",
+   "at": 1778116251000,
+   "chose": []
+  },
+  {
+   "id": "D-225",
+   "title": "Stop using jest-fetch-mock",
+   "forbid": [
+    "lib:jest-fetch-mock",
+    "lib:jest_fetch_mock"
+   ],
+   "sha": "091346dfe8",
+   "subject": "chore: Migrate to vitest (#12272)",
+   "at": 1778116251000,
+   "chose": []
+  },
+  {
+   "id": "D-224",
+   "title": "Stop using jest-environment-jsdom",
+   "forbid": [
+    "lib:jest-environment-jsdom",
+    "lib:jest_environment_jsdom"
+   ],
+   "sha": "091346dfe8",
+   "subject": "chore: Migrate to vitest (#12272)",
+   "at": 1778116251000,
+   "chose": []
+  },
+  {
+   "id": "D-226",
+   "title": "Make jszip optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "8d44a0fd92",
+   "subject": "chore: Migrate from `JSZip` to `Yazl` (#12408)",
+   "at": 1779420443000,
+   "chose": []
+  },
+  {
+   "id": "D-227",
+   "title": "Stop using sequelize-encrypted",
+   "forbid": [
+    "lib:sequelize-encrypted",
+    "lib:sequelize_encrypted"
+   ],
+   "sha": "3b4f2ddac0",
+   "subject": "chore: Vendorize sequelize-encrypted (#12757)",
+   "at": 1781904282000,
+   "chose": []
+  },
+  {
+   "id": "D-228",
+   "title": "Stop using prettier",
+   "forbid": [
+    "lib:prettier"
+   ],
+   "sha": "3d9789e8cf",
+   "subject": "chore: Switch prettier -> oxfmt (#12771)",
+   "at": 1782048592000,
+   "chose": []
+  },
+  {
+   "id": "D-229",
+   "title": "Replace @vitejs/plugin-react-oxc with @vitejs/plugin-react",
+   "forbid": [
+    "lib:@vitejs/plugin-react-oxc",
+    "lib:@vitejs/plugin_react_oxc"
+   ],
+   "sha": "da68359292",
+   "subject": "chore: Upgrade to Vite8 (#12789)",
+   "at": 1782173350000,
+   "chose": [
+    "@vitejs/plugin-react"
+   ]
+  },
+  {
+   "id": "D-237",
+   "title": "Stop using babel-plugin-module-resolver",
+   "forbid": [
+    "lib:babel-plugin-module-resolver",
+    "lib:babel_plugin_module_resolver"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-241",
+   "title": "Stop using vite-plugin-babel",
+   "forbid": [
+    "lib:vite-plugin-babel",
+    "lib:vite_plugin_babel"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-238",
+   "title": "Stop using babel-plugin-styled-components",
+   "forbid": [
+    "lib:babel-plugin-styled-components",
+    "lib:babel_plugin_styled_components"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-233",
+   "title": "Stop using @babel/plugin-transform-class-properties",
+   "forbid": [
+    "lib:@babel/plugin-transform-class-properties",
+    "lib:@babel/plugin_transform_class_properties"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-234",
+   "title": "Stop using @babel/preset-env",
+   "forbid": [
+    "lib:@babel/preset-env",
+    "lib:@babel/preset_env"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-231",
+   "title": "Stop using @babel/core",
+   "forbid": [
+    "lib:@babel/core"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-232",
+   "title": "Stop using @babel/plugin-proposal-decorators",
+   "forbid": [
+    "lib:@babel/plugin-proposal-decorators",
+    "lib:@babel/plugin_proposal_decorators"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-230",
+   "title": "Stop using @babel/cli",
+   "forbid": [
+    "lib:@babel/cli"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-239",
+   "title": "Stop using babel-plugin-transform-inline-environment-variables",
+   "forbid": [
+    "lib:babel-plugin-transform-inline-environment-variables",
+    "lib:babel_plugin_transform_inline_environment_variables"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-235",
+   "title": "Stop using @babel/preset-react",
+   "forbid": [
+    "lib:@babel/preset-react",
+    "lib:@babel/preset_react"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-240",
+   "title": "Stop using babel-plugin-transform-typescript-metadata",
+   "forbid": [
+    "lib:babel-plugin-transform-typescript-metadata",
+    "lib:babel_plugin_transform_typescript_metadata"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-236",
+   "title": "Stop using @babel/preset-typescript",
+   "forbid": [
+    "lib:@babel/preset-typescript",
+    "lib:@babel/preset_typescript"
+   ],
+   "sha": "ec3200c7d2",
+   "subject": "chore: babel -> swc (#12821)",
+   "at": 1782767462000,
+   "chose": []
+  },
+  {
+   "id": "D-242",
+   "title": "Stop using web-haptics",
+   "forbid": [
+    "lib:web-haptics",
+    "lib:web_haptics"
+   ],
+   "sha": "b34ef2b6a5",
+   "subject": "chore: Remove web-haptics (#12974)",
+   "at": 1783854628000,
+   "chose": []
+  },
+  {
+   "id": "D-243",
+   "title": "Stop using y-indexeddb",
+   "forbid": [
+    "lib:y-indexeddb",
+    "lib:y_indexeddb"
+   ],
+   "sha": "a7aac841cf",
+   "subject": "chore: Vendorize `y-indexeddb` persistence (#12918)",
+   "at": 1787866521000,
+   "chose": []
+  },
+  {
+   "id": "D-244",
+   "title": "Stop using react-helmet-async",
+   "forbid": [
+    "lib:react-helmet-async",
+    "lib:react_helmet_async"
+   ],
+   "sha": "4b4c7d3281",
+   "subject": "chore: React 19 upgrade (#13562)",
+   "at": 1789784570000,
+   "chose": []
+  },
+  {
+   "id": "D-245",
+   "title": "Stop using react-portal",
+   "forbid": [
+    "lib:react-portal",
+    "lib:react_portal"
+   ],
+   "sha": "86041f3d0c",
+   "subject": "Replace react-portal with createPortal (#13842)",
+   "at": 1790045367000,
+   "chose": []
+  },
+  {
+   "id": "D-246",
+   "title": "Replace koa-router with @koa/router",
+   "forbid": [
+    "lib:koa-router",
+    "lib:koa_router"
+   ],
+   "sha": "086bd9e9e4",
+   "subject": "chore: Replace deprecated koa-router with @koa/router v15 (#14042)",
+   "at": 1791751646000,
+   "chose": [
+    "@koa/router"
+   ]
+  },
+  {
+   "id": "D-247",
+   "title": "Replace koa-send with @koa/send",
+   "forbid": [
+    "lib:koa-send",
+    "lib:koa_send"
+   ],
+   "sha": "0f856db5bd",
+   "subject": "chore: Replace koa-send with @koa/send (#14044)",
+   "at": 1791760208000,
+   "chose": [
+    "@koa/send"
+   ]
+  },
+  {
+   "id": "D-249",
+   "title": "Replace socket.io-redis with @socket.io/redis-adapter",
+   "forbid": [
+    "lib:socket.io-redis",
+    "lib:socket.io_redis"
+   ],
+   "sha": "a2ab9ef731",
+   "subject": "chore: Replace socket.io-redis and crypto-js with maintained packages (#14045)",
+   "at": 1791760511000,
+   "chose": [
+    "@socket.io/redis-adapter"
+   ]
+  },
+  {
+   "id": "D-248",
+   "title": "Stop using crypto-js",
+   "forbid": [
+    "lib:crypto",
+    "lib:crypto-js",
+    "lib:crypto_js"
+   ],
+   "sha": "a2ab9ef731",
+   "subject": "chore: Replace socket.io-redis and crypto-js with maintained packages (#14045)",
+   "at": 1791760511000,
+   "chose": []
+  }
+ ]
+}

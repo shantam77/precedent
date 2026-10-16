@@ -1,0 +1,1235 @@
+{
+ "stats": {
+  "repo": "cs_paperless-ngx",
+  "files": 1566,
+  "components": 30,
+  "depends_on": 47,
+  "libraries": 271,
+  "manifest_events": 138,
+  "format_migrations_skipped": 2,
+  "decisions": 104,
+  "guarded_decisions": 46,
+  "observed_only": 57,
+  "people": 440,
+  "knows": 385,
+  "notes": 16,
+  "rules": 12,
+  "seconds": 14.0,
+  "llm_tokens": 0
+ },
+ "decisions": [
+  {
+   "id": "D-1",
+   "title": "Stop using djangorestframework-filters",
+   "forbid": [
+    "lib:djangorestframework-filters",
+    "lib:djangorestframework_filters"
+   ],
+   "sha": "294b8abc3f",
+   "subject": "Fixes #164",
+   "at": 1483288306000,
+   "chose": []
+  },
+  {
+   "id": "D-2",
+   "title": "Stop using django-suit",
+   "forbid": [
+    "lib:django-suit",
+    "lib:django_suit"
+   ],
+   "sha": "855e9f6c83",
+   "subject": "Remove django-suit",
+   "at": 1484070011000,
+   "chose": []
+  },
+  {
+   "id": "D-3",
+   "title": "Stop using pep8",
+   "forbid": [
+    "lib:pep8"
+   ],
+   "sha": "b58188f805",
+   "subject": "Switch from pep8 to pycodestyle",
+   "at": 1515264997000,
+   "chose": []
+  },
+  {
+   "id": "D-4",
+   "title": "Stop using typing (the backport: the standard library has it)",
+   "forbid": [
+    "lib:typing"
+   ],
+   "sha": "05b7bcd199",
+   "subject": "Minor dependency updates",
+   "at": 1526836073000,
+   "chose": []
+  },
+  {
+   "id": "D-5",
+   "title": "Stop using djangodav",
+   "forbid": [
+    "lib:djangodav"
+   ],
+   "sha": "01fed4f49d",
+   "subject": "Removed WebDAV from dev, since it is kind of broken.",
+   "at": 1535451149000,
+   "chose": []
+  },
+  {
+   "id": "D-8",
+   "title": "Stop using mccabe",
+   "forbid": [
+    "lib:mccabe"
+   ],
+   "sha": "39ef81d398",
+   "subject": "Update dependencies",
+   "at": 1536186581000,
+   "chose": []
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using flake8",
+   "forbid": [
+    "lib:flake8"
+   ],
+   "sha": "39ef81d398",
+   "subject": "Update dependencies",
+   "at": 1536186581000,
+   "chose": []
+  },
+  {
+   "id": "D-6",
+   "title": "Stop using django-flat-responsive",
+   "forbid": [
+    "lib:django-flat-responsive",
+    "lib:django_flat_responsive",
+    "lib:flat_responsive"
+   ],
+   "sha": "39afe41f08",
+   "subject": "Drop django-flat-responsive",
+   "at": 1536186581000,
+   "chose": []
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using pyflakes",
+   "forbid": [
+    "lib:pyflakes"
+   ],
+   "sha": "39ef81d398",
+   "subject": "Update dependencies",
+   "at": 1536186581000,
+   "chose": []
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using jedi",
+   "forbid": [
+    "lib:jedi"
+   ],
+   "sha": "32f3876590",
+   "subject": "Merge branch 'master' into dev",
+   "at": 1558436776000,
+   "chose": []
+  },
+  {
+   "id": "D-16",
+   "title": "Stop using pickleshare",
+   "forbid": [
+    "lib:pickleshare"
+   ],
+   "sha": "32f3876590",
+   "subject": "Merge branch 'master' into dev",
+   "at": 1558436776000,
+   "chose": []
+  },
+  {
+   "id": "D-10",
+   "title": "Stop using backcall",
+   "forbid": [
+    "lib:backcall"
+   ],
+   "sha": "32f3876590",
+   "subject": "Merge branch 'master' into dev",
+   "at": 1558436776000,
+   "chose": []
+  },
+  {
+   "id": "D-12",
+   "title": "Stop using ipython-genutils",
+   "forbid": [
+    "lib:ipython",
+    "lib:ipython-genutils",
+    "lib:ipython_genutils"
+   ],
+   "sha": "32f3876590",
+   "subject": "Merge branch 'master' into dev",
+   "at": 1558436776000,
+   "chose": []
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using decorator",
+   "forbid": [
+    "lib:decorator"
+   ],
+   "sha": "32f3876590",
+   "subject": "Merge branch 'master' into dev",
+   "at": 1558436776000,
+   "chose": []
+  },
+  {
+   "id": "D-19",
+   "title": "Stop using traitlets",
+   "forbid": [
+    "lib:traitlets"
+   ],
+   "sha": "32f3876590",
+   "subject": "Merge branch 'master' into dev",
+   "at": 1558436776000,
+   "chose": []
+  },
+  {
+   "id": "D-18",
+   "title": "Stop using ptyprocess",
+   "forbid": [
+    "lib:ptyprocess"
+   ],
+   "sha": "32f3876590",
+   "subject": "Merge branch 'master' into dev",
+   "at": 1558436776000,
+   "chose": []
+  },
+  {
+   "id": "D-14",
+   "title": "Stop using parso",
+   "forbid": [
+    "lib:parso"
+   ],
+   "sha": "32f3876590",
+   "subject": "Merge branch 'master' into dev",
+   "at": 1558436776000,
+   "chose": []
+  },
+  {
+   "id": "D-17",
+   "title": "Stop using prompt-toolkit",
+   "forbid": [
+    "lib:prompt",
+    "lib:prompt-toolkit",
+    "lib:prompt_toolkit"
+   ],
+   "sha": "32f3876590",
+   "subject": "Merge branch 'master' into dev",
+   "at": 1558436776000,
+   "chose": []
+  },
+  {
+   "id": "D-15",
+   "title": "Stop using pexpect",
+   "forbid": [
+    "lib:pexpect"
+   ],
+   "sha": "32f3876590",
+   "subject": "Merge branch 'master' into dev",
+   "at": 1558436776000,
+   "chose": []
+  },
+  {
+   "id": "D-20",
+   "title": "Stop using sphinxcontrib-websupport",
+   "forbid": [
+    "lib:sphinxcontrib",
+    "lib:sphinxcontrib-websupport",
+    "lib:sphinxcontrib_websupport"
+   ],
+   "sha": "ce02473edb",
+   "subject": "Remove specific versions from Pipfile and adjust Pipfile.lock and requirements.txt accordingly",
+   "at": 1602853377000,
+   "chose": []
+  },
+  {
+   "id": "D-23",
+   "title": "Stop using djangoql",
+   "forbid": [
+    "lib:djangoql"
+   ],
+   "sha": "879683a074",
+   "subject": "updated pipfile",
+   "at": 1603146594000,
+   "chose": []
+  },
+  {
+   "id": "D-24",
+   "title": "Stop using ipython",
+   "forbid": [
+    "lib:ipython"
+   ],
+   "sha": "879683a074",
+   "subject": "updated pipfile",
+   "at": 1603146594000,
+   "chose": []
+  },
+  {
+   "id": "D-21",
+   "title": "Stop using brotli",
+   "forbid": [
+    "lib:brotli"
+   ],
+   "sha": "879683a074",
+   "subject": "updated pipfile",
+   "at": 1603146594000,
+   "chose": []
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using django-crispy-forms",
+   "forbid": [
+    "lib:crispy_forms",
+    "lib:django-crispy-forms",
+    "lib:django_crispy_forms"
+   ],
+   "sha": "879683a074",
+   "subject": "updated pipfile",
+   "at": 1603146594000,
+   "chose": []
+  },
+  {
+   "id": "D-25",
+   "title": "Make filemagic optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "1255ecf86e",
+   "subject": "update dependencies.",
+   "at": 1605868099000,
+   "chose": []
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using pyocr",
+   "forbid": [
+    "lib:pyocr"
+   ],
+   "sha": "2d559d330d",
+   "subject": "reworked PDF parser that uses OCRmyPDF and produces archive files.",
+   "at": 1606829529000,
+   "chose": []
+  },
+  {
+   "id": "D-27",
+   "title": "Stop using importlib-metadata",
+   "forbid": [
+    "lib:importlib",
+    "lib:importlib-metadata",
+    "lib:importlib_metadata"
+   ],
+   "sha": "d2c34fb9c7",
+   "subject": "update requirements.txt",
+   "at": 1614199304000,
+   "chose": []
+  },
+  {
+   "id": "D-28",
+   "title": "Stop using pdftotext",
+   "forbid": [
+    "lib:pdftotext"
+   ],
+   "sha": "e2a932d744",
+   "subject": "update dependencies",
+   "at": 1614199304000,
+   "chose": []
+  },
+  {
+   "id": "D-29",
+   "title": "Stop using pyhamcrest",
+   "forbid": [
+    "lib:pyhamcrest"
+   ],
+   "sha": "6ab884a95c",
+   "subject": "update dependencies",
+   "at": 1614835191000,
+   "chose": []
+  },
+  {
+   "id": "D-30",
+   "title": "Stop using ng-bootstrap",
+   "forbid": [
+    "lib:ng-bootstrap",
+    "lib:ng_bootstrap"
+   ],
+   "sha": "39d45367d0",
+   "subject": "replace ng-bootstrap with ngx-bootstrap",
+   "at": 1623589976000,
+   "chose": []
+  },
+  {
+   "id": "D-31",
+   "title": "Stop using ngx-bootstrap",
+   "forbid": [
+    "lib:ngx-bootstrap",
+    "lib:ngx_bootstrap"
+   ],
+   "sha": "d257eeeabf",
+   "subject": "Remove ngx-bootstrap dependency",
+   "at": 1646942491000,
+   "chose": []
+  },
+  {
+   "id": "D-32",
+   "title": "Stop using sortedcontainers",
+   "forbid": [
+    "lib:sortedcontainers"
+   ],
+   "sha": "c2fae07c11",
+   "subject": "Update dependencies",
+   "at": 1646942491000,
+   "chose": []
+  },
+  {
+   "id": "D-33",
+   "title": "Stop using @angular/animations",
+   "forbid": [
+    "lib:@angular/animations"
+   ],
+   "sha": "5aff9b6fdb",
+   "subject": "bump angular deps & regenerate package-lock",
+   "at": 1650907467000,
+   "chose": []
+  },
+  {
+   "id": "D-37",
+   "title": "Replace karma-chrome-launcher with @angular-builders/jest, jest",
+   "forbid": [
+    "lib:karma-chrome-launcher",
+    "lib:karma_chrome_launcher"
+   ],
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest",
+   "at": 1650907467000,
+   "chose": [
+    "@angular-builders/jest",
+    "jest"
+   ]
+  },
+  {
+   "id": "D-38",
+   "title": "Replace karma-coverage-istanbul-reporter with @angular-builders/jest, jest",
+   "forbid": [
+    "lib:karma-coverage-istanbul-reporter",
+    "lib:karma_coverage_istanbul_reporter"
+   ],
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest",
+   "at": 1650907467000,
+   "chose": [
+    "@angular-builders/jest",
+    "jest"
+   ]
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using jasmine-core",
+   "forbid": [
+    "lib:jasmine",
+    "lib:jasmine-core",
+    "lib:jasmine_core"
+   ],
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest",
+   "at": 1650907467000,
+   "chose": []
+  },
+  {
+   "id": "D-41",
+   "title": "Stop using ngx-infinite-scroll",
+   "forbid": [
+    "lib:ngx-infinite-scroll",
+    "lib:ngx_infinite_scroll"
+   ],
+   "sha": "4e3183ee65",
+   "subject": "remove unused ngx-infinite-scroll",
+   "at": 1650907467000,
+   "chose": []
+  },
+  {
+   "id": "D-36",
+   "title": "Replace karma with @angular-builders/jest, jest",
+   "forbid": [
+    "lib:karma"
+   ],
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest",
+   "at": 1650907467000,
+   "chose": [
+    "@angular-builders/jest",
+    "jest"
+   ]
+  },
+  {
+   "id": "D-42",
+   "title": "Stop using protractor",
+   "forbid": [
+    "lib:protractor"
+   ],
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest",
+   "at": 1650907467000,
+   "chose": []
+  },
+  {
+   "id": "D-43",
+   "title": "Stop using psycopg2-binary",
+   "forbid": [
+    "lib:psycopg2",
+    "lib:psycopg2-binary",
+    "lib:psycopg2_binary"
+   ],
+   "sha": "19cf66be0f",
+   "subject": "Updates the Dockerfile to utilize our new base image 1.0 which provides the pre-compiled wheels for certain dependencies and most base packages",
+   "at": 1650907467000,
+   "chose": []
+  },
+  {
+   "id": "D-35",
+   "title": "Stop using jasmine-spec-reporter",
+   "forbid": [
+    "lib:jasmine",
+    "lib:jasmine-spec-reporter",
+    "lib:jasmine_spec_reporter"
+   ],
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest",
+   "at": 1650907467000,
+   "chose": []
+  },
+  {
+   "id": "D-40",
+   "title": "Replace karma-jasmine-html-reporter with @angular-builders/jest, jest",
+   "forbid": [
+    "lib:karma-jasmine-html-reporter",
+    "lib:karma_jasmine_html_reporter"
+   ],
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest",
+   "at": 1650907467000,
+   "chose": [
+    "@angular-builders/jest",
+    "jest"
+   ]
+  },
+  {
+   "id": "D-39",
+   "title": "Replace karma-jasmine with @angular-builders/jest, jest",
+   "forbid": [
+    "lib:karma-jasmine",
+    "lib:karma_jasmine"
+   ],
+   "sha": "f6a9d5b038",
+   "subject": "chore: replace karma with jest",
+   "at": 1650907467000,
+   "chose": [
+    "@angular-builders/jest",
+    "jest"
+   ]
+  },
+  {
+   "id": "D-44",
+   "title": "Stop using chardet",
+   "forbid": [
+    "lib:chardet"
+   ],
+   "sha": "cbde0e0286",
+   "subject": "Manually updates dependency files",
+   "at": 1659046650000,
+   "chose": []
+  },
+  {
+   "id": "D-45",
+   "title": "Stop using watchgod",
+   "forbid": [
+    "lib:watchgod"
+   ],
+   "sha": "1aeb95396b",
+   "subject": "Updates scikit-learn and fixes the warning this normally generates in the unit tests",
+   "at": 1659046650000,
+   "chose": []
+  },
+  {
+   "id": "D-47",
+   "title": "Stop using fuzzywuzzy",
+   "forbid": [
+    "lib:fuzzywuzzy"
+   ],
+   "sha": "e97c04c03d",
+   "subject": "directly use rapidfuzz",
+   "at": 1669598288000,
+   "chose": []
+  },
+  {
+   "id": "D-46",
+   "title": "Stop using django-q",
+   "forbid": [
+    "lib:django-q",
+    "lib:django_q"
+   ],
+   "sha": "9247300230",
+   "subject": "Transitions the backend to celery and celery beat",
+   "at": 1669598288000,
+   "chose": []
+  },
+  {
+   "id": "D-49",
+   "title": "Stop using sphinx-rtd-theme",
+   "forbid": [
+    "lib:sphinx",
+    "lib:sphinx-rtd-theme",
+    "lib:sphinx_rtd_theme"
+   ],
+   "sha": "605f885e19",
+   "subject": "Move docs to material-mkdocs",
+   "at": 1670023359000,
+   "chose": []
+  },
+  {
+   "id": "D-48",
+   "title": "Stop using sphinx",
+   "forbid": [
+    "lib:sphinx"
+   ],
+   "sha": "605f885e19",
+   "subject": "Move docs to material-mkdocs",
+   "at": 1670023359000,
+   "chose": []
+  },
+  {
+   "id": "D-50",
+   "title": "Stop using codelyzer",
+   "forbid": [
+    "lib:codelyzer"
+   ],
+   "sha": "551a7e606c",
+   "subject": "Migrate to eslint",
+   "at": 1672371578000,
+   "chose": []
+  },
+  {
+   "id": "D-51",
+   "title": "Stop using tslint",
+   "forbid": [
+    "lib:tslint"
+   ],
+   "sha": "551a7e606c",
+   "subject": "Migrate to eslint",
+   "at": 1672371578000,
+   "chose": []
+  },
+  {
+   "id": "D-54",
+   "title": "Stop using sphinx-autobuild",
+   "forbid": [
+    "lib:sphinx",
+    "lib:sphinx-autobuild",
+    "lib:sphinx_autobuild"
+   ],
+   "sha": "729845662f",
+   "subject": "Removes old, unused tools from develop packages, removes old Sphinx related tools",
+   "at": 1672866724000,
+   "chose": []
+  },
+  {
+   "id": "D-53",
+   "title": "Stop using pycodestyle",
+   "forbid": [
+    "lib:pycodestyle"
+   ],
+   "sha": "729845662f",
+   "subject": "Removes old, unused tools from develop packages, removes old Sphinx related tools",
+   "at": 1672866724000,
+   "chose": []
+  },
+  {
+   "id": "D-55",
+   "title": "Stop using tox",
+   "forbid": [
+    "lib:tox"
+   ],
+   "sha": "729845662f",
+   "subject": "Removes old, unused tools from develop packages, removes old Sphinx related tools",
+   "at": 1672866724000,
+   "chose": []
+  },
+  {
+   "id": "D-52",
+   "title": "Stop using myst-parser",
+   "forbid": [
+    "lib:myst-parser",
+    "lib:myst_parser"
+   ],
+   "sha": "729845662f",
+   "subject": "Removes old, unused tools from develop packages, removes old Sphinx related tools",
+   "at": 1672866724000,
+   "chose": []
+  },
+  {
+   "id": "D-58",
+   "title": "Stop using zipp",
+   "forbid": [
+    "lib:zipp"
+   ],
+   "sha": "c21775980f",
+   "subject": "relock with Python 3.8.15",
+   "at": 1673029258000,
+   "chose": []
+  },
+  {
+   "id": "D-56",
+   "title": "Stop using backports-zoneinfo",
+   "forbid": [
+    "lib:backports",
+    "lib:backports-zoneinfo",
+    "lib:backports_zoneinfo"
+   ],
+   "sha": "c21775980f",
+   "subject": "relock with Python 3.8.15",
+   "at": 1673029258000,
+   "chose": []
+  },
+  {
+   "id": "D-57",
+   "title": "Stop using importlib-resources",
+   "forbid": [
+    "lib:importlib",
+    "lib:importlib-resources",
+    "lib:importlib_resources"
+   ],
+   "sha": "c21775980f",
+   "subject": "relock with Python 3.8.15",
+   "at": 1673029258000,
+   "chose": []
+  },
+  {
+   "id": "D-60",
+   "title": "Replace django-ipware with python-ipware",
+   "forbid": [
+    "lib:django-ipware",
+    "lib:django_ipware",
+    "lib:ipware"
+   ],
+   "sha": "17144c45e5",
+   "subject": "Transition to new library for finding IPs from the Django request",
+   "at": 1684163297000,
+   "chose": [
+    "python-ipware"
+   ]
+  },
+  {
+   "id": "D-59",
+   "title": "Stop using coveralls",
+   "forbid": [
+    "lib:coveralls"
+   ],
+   "sha": "22cbfd473b",
+   "subject": "Upgrades dependencies to their latest allowed versions",
+   "at": 1684163297000,
+   "chose": []
+  },
+  {
+   "id": "D-61",
+   "title": "Stop using @cypress/schematic",
+   "forbid": [
+    "lib:@cypress/schematic"
+   ],
+   "sha": "0c6a9a189b",
+   "subject": "migrate frontend tests to playwright",
+   "at": 1685809638000,
+   "chose": []
+  },
+  {
+   "id": "D-62",
+   "title": "Stop using cypress",
+   "forbid": [
+    "lib:cypress"
+   ],
+   "sha": "0c6a9a189b",
+   "subject": "migrate frontend tests to playwright",
+   "at": 1685809638000,
+   "chose": []
+  },
+  {
+   "id": "D-63",
+   "title": "Make numpy optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "6e65558ea4",
+   "subject": "Swapping out the tika and replaces requests with httpx",
+   "at": 1686844443000,
+   "chose": []
+  },
+  {
+   "id": "D-64",
+   "title": "Replace tika with tika-client",
+   "forbid": [
+    "lib:tika"
+   ],
+   "sha": "6e65558ea4",
+   "subject": "Swapping out the tika and replaces requests with httpx",
+   "at": 1686844443000,
+   "chose": [
+    "tika-client"
+   ]
+  },
+  {
+   "id": "D-65",
+   "title": "Make httpx optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "8aa5ecde62",
+   "subject": "Updates some Python dependencies and the hooks",
+   "at": 1691174292000,
+   "chose": []
+  },
+  {
+   "id": "D-70",
+   "title": "Stop using reportlab",
+   "forbid": [
+    "lib:reportlab"
+   ],
+   "sha": "d532913d56",
+   "subject": "Unlocks all things which were locked due to ARMv7, etc",
+   "at": 1701228942000,
+   "chose": []
+  },
+  {
+   "id": "D-67",
+   "title": "Make pdfminer-six optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "facb7226fe",
+   "subject": "Chore: Backend bulk updates (#4509)",
+   "at": 1701228942000,
+   "chose": []
+  },
+  {
+   "id": "D-71",
+   "title": "Stop using scipy",
+   "forbid": [
+    "lib:scipy"
+   ],
+   "sha": "d532913d56",
+   "subject": "Unlocks all things which were locked due to ARMv7, etc",
+   "at": 1701228942000,
+   "chose": []
+  },
+  {
+   "id": "D-69",
+   "title": "Make pillow optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "d532913d56",
+   "subject": "Unlocks all things which were locked due to ARMv7, etc",
+   "at": 1701228942000,
+   "chose": []
+  },
+  {
+   "id": "D-68",
+   "title": "Make pikepdf optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "d532913d56",
+   "subject": "Unlocks all things which were locked due to ARMv7, etc",
+   "at": 1701228942000,
+   "chose": []
+  },
+  {
+   "id": "D-66",
+   "title": "Make cryptography optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "d532913d56",
+   "subject": "Unlocks all things which were locked due to ARMv7, etc",
+   "at": 1701228942000,
+   "chose": []
+  },
+  {
+   "id": "D-73",
+   "title": "Make lxml optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "3fa448ecb5",
+   "subject": "Updates deps, unlocks those which have some resolution of issues (#6755)",
+   "at": 1717391868000,
+   "chose": []
+  },
+  {
+   "id": "D-74",
+   "title": "Replace psycopg2 with psycopg",
+   "forbid": [
+    "lib:psycopg2"
+   ],
+   "sha": "2b85e812f8",
+   "subject": "Chore(deps): Use psycopg as recommended (#6811)",
+   "at": 1717391868000,
+   "chose": [
+    "psycopg"
+   ]
+  },
+  {
+   "id": "D-72",
+   "title": "Stop using black",
+   "forbid": [
+    "lib:black"
+   ],
+   "sha": "622f624132",
+   "subject": "Chore: Change the code formatter to Ruff (#6756)",
+   "at": 1717391868000,
+   "chose": []
+  },
+  {
+   "id": "D-75",
+   "title": "Stop using ngx-filesize",
+   "forbid": [
+    "lib:ngx-filesize",
+    "lib:ngx_filesize"
+   ],
+   "sha": "3435ffd00c",
+   "subject": "Chore: update to Angular v18 (#7106)",
+   "at": 1720670577000,
+   "chose": []
+  },
+  {
+   "id": "D-77",
+   "title": "Stop using wait-on",
+   "forbid": [
+    "lib:wait-on",
+    "lib:wait_on"
+   ],
+   "sha": "8543202723",
+   "subject": "Chore: remove unused frontend dependencies (#7607)",
+   "at": 1725842801000,
+   "chose": []
+  },
+  {
+   "id": "D-76",
+   "title": "Stop using concurrently",
+   "forbid": [
+    "lib:concurrently"
+   ],
+   "sha": "8543202723",
+   "subject": "Chore: remove unused frontend dependencies (#7607)",
+   "at": 1725842801000,
+   "chose": []
+  },
+  {
+   "id": "D-79",
+   "title": "Stop using uvicorn",
+   "forbid": [
+    "lib:uvicorn"
+   ],
+   "sha": "654c9ca273",
+   "subject": "Feature: Switch webserver to granian (#9218)",
+   "at": 1744130719000,
+   "chose": []
+  },
+  {
+   "id": "D-78",
+   "title": "Stop using gunicorn",
+   "forbid": [
+    "lib:gunicorn"
+   ],
+   "sha": "654c9ca273",
+   "subject": "Feature: Switch webserver to granian (#9218)",
+   "at": 1744130719000,
+   "chose": []
+  },
+  {
+   "id": "D-80",
+   "title": "Stop using whoosh",
+   "forbid": [
+    "lib:whoosh"
+   ],
+   "sha": "0f37186c88",
+   "subject": "Chore: use whoosh-reloaded (#9605)",
+   "at": 1744235611000,
+   "chose": []
+  },
+  {
+   "id": "D-81",
+   "title": "Stop using ngx-file-drop",
+   "forbid": [
+    "lib:ngx-file-drop",
+    "lib:ngx_file_drop"
+   ],
+   "sha": "0ab85b5122",
+   "subject": "Fix/Chore: replace file drop package (#9926)",
+   "at": 1747679821000,
+   "chose": []
+  },
+  {
+   "id": "D-82",
+   "title": "Stop using patch-package",
+   "forbid": [
+    "lib:patch-package",
+    "lib:patch_package"
+   ],
+   "sha": "0ab85b5122",
+   "subject": "Fix/Chore: replace file drop package (#9926)",
+   "at": 1747679821000,
+   "chose": []
+  },
+  {
+   "id": "D-83",
+   "title": "Stop using @angular-devkit/build-angular",
+   "forbid": [
+    "lib:@angular-devkit/build-angular",
+    "lib:@angular_devkit/build_angular"
+   ],
+   "sha": "958f98d7e5",
+   "subject": "Chore: update to Angular 20 (#10273)",
+   "at": 1751058400000,
+   "chose": []
+  },
+  {
+   "id": "D-84",
+   "title": "Stop using mkdocs-glightbox",
+   "forbid": [
+    "lib:mkdocs",
+    "lib:mkdocs-glightbox",
+    "lib:mkdocs_glightbox"
+   ],
+   "sha": "3c51b3f9cd",
+   "subject": "Chore: move to Zensical for docs (#12011)",
+   "at": 1770395655000,
+   "chose": []
+  },
+  {
+   "id": "D-85",
+   "title": "Stop using mkdocs-material",
+   "forbid": [
+    "lib:mkdocs",
+    "lib:mkdocs-material",
+    "lib:mkdocs_material"
+   ],
+   "sha": "3c51b3f9cd",
+   "subject": "Chore: move to Zensical for docs (#12011)",
+   "at": 1770395655000,
+   "chose": []
+  },
+  {
+   "id": "D-92",
+   "title": "Stop using types-tqdm",
+   "forbid": [
+    "lib:types-tqdm",
+    "lib:types_tqdm"
+   ],
+   "sha": "c30ee1ec03",
+   "subject": "Feature: Switch progress bar library to rich (#12169)",
+   "at": 1784742913000,
+   "chose": []
+  },
+  {
+   "id": "D-90",
+   "title": "Stop using pyzbar",
+   "forbid": [
+    "lib:pyzbar"
+   ],
+   "sha": "8db1c4e08b",
+   "subject": "Breaking: Remove pybzar as a barcode reader (#12065)",
+   "at": 1784742913000,
+   "chose": []
+  },
+  {
+   "id": "D-86",
+   "title": "Stop using django-celery-results",
+   "forbid": [
+    "lib:celery_results",
+    "lib:django-celery-results",
+    "lib:django_celery_results"
+   ],
+   "sha": "8e67828bd7",
+   "subject": "Feature: Redesign the task system (#12584)",
+   "at": 1784742913000,
+   "chose": []
+  },
+  {
+   "id": "D-97",
+   "title": "Stop using zone.js",
+   "forbid": [
+    "lib:zone.js"
+   ],
+   "sha": "106b41a15c",
+   "subject": "Chorehancement: update to Angular v22, 'zoneless' / 'reactive' (#13114)",
+   "at": 1784742913000,
+   "chose": []
+  },
+  {
+   "id": "D-91",
+   "title": "Stop using tqdm",
+   "forbid": [
+    "lib:tqdm"
+   ],
+   "sha": "c30ee1ec03",
+   "subject": "Feature: Switch progress bar library to rich (#12169)",
+   "at": 1784742913000,
+   "chose": []
+  },
+  {
+   "id": "D-95",
+   "title": "Stop using @angular/platform-browser-dynamic",
+   "forbid": [
+    "lib:@angular/platform-browser-dynamic",
+    "lib:@angular/platform_browser_dynamic"
+   ],
+   "sha": "e03b09e2ea",
+   "subject": "Chore: pnpm lockfile cleanup (#13116)",
+   "at": 1784742913000,
+   "chose": []
+  },
+  {
+   "id": "D-93",
+   "title": "Stop using watchdog",
+   "forbid": [
+    "lib:watchdog"
+   ],
+   "sha": "51b466a86b",
+   "subject": "Feature: Simplify and improve the consumer (#11753)",
+   "at": 1784742913000,
+   "chose": []
+  },
+  {
+   "id": "D-87",
+   "title": "Stop using inotifyrecursive",
+   "forbid": [
+    "lib:inotifyrecursive"
+   ],
+   "sha": "51b466a86b",
+   "subject": "Feature: Simplify and improve the consumer (#11753)",
+   "at": 1784742913000,
+   "chose": []
+  },
+  {
+   "id": "D-89",
+   "title": "Stop using pre-commit-uv",
+   "forbid": [
+    "lib:pre-commit-uv",
+    "lib:pre_commit_uv"
+   ],
+   "sha": "71663fdbe2",
+   "subject": "Chore: Switches all locations to use prek in place of pre-commit (#12002)",
+   "at": 1784742913000,
+   "chose": []
+  },
+  {
+   "id": "D-96",
+   "title": "Stop using ng2-pdf-viewer",
+   "forbid": [
+    "lib:ng2-pdf-viewer",
+    "lib:ng2_pdf_viewer"
+   ],
+   "sha": "9e9e55758f",
+   "subject": "Enhancement: pngx pdf viewer (#12043)",
+   "at": 1784742913000,
+   "chose": []
+  },
+  {
+   "id": "D-94",
+   "title": "Replace whoosh-reloaded with tantivy",
+   "forbid": [
+    "lib:whoosh-reloaded",
+    "lib:whoosh_reloaded"
+   ],
+   "sha": "aed9abe48c",
+   "subject": "Feature: Replace Whoosh with tantivy search backend (#12471)",
+   "at": 1784742913000,
+   "chose": [
+    "tantivy"
+   ]
+  },
+  {
+   "id": "D-88",
+   "title": "Stop using pre-commit",
+   "forbid": [
+    "lib:pre-commit",
+    "lib:pre_commit"
+   ],
+   "sha": "71663fdbe2",
+   "subject": "Chore: Switches all locations to use prek in place of pre-commit (#12002)",
+   "at": 1784742913000,
+   "chose": []
+  },
+  {
+   "id": "D-98",
+   "title": "Make djangorestframework-guardian optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "fc242bb570",
+   "subject": "Performance: unify permission-filtering backends, fixes Correspondent/Tag list slowness (#13601)",
+   "at": 1787794941000,
+   "chose": []
+  },
+  {
+   "id": "D-100",
+   "title": "Stop using @codecov/webpack-plugin",
+   "forbid": [
+    "lib:@codecov/webpack-plugin",
+    "lib:@codecov/webpack_plugin"
+   ],
+   "sha": "42908ad2b9",
+   "subject": "Chore: remove codecov/webpack-plugin (#13595)",
+   "at": 1787794941000,
+   "chose": []
+  },
+  {
+   "id": "D-101",
+   "title": "Stop using webpack",
+   "forbid": [
+    "lib:webpack"
+   ],
+   "sha": "42908ad2b9",
+   "subject": "Chore: remove codecov/webpack-plugin (#13595)",
+   "at": 1787794941000,
+   "chose": []
+  },
+  {
+   "id": "D-99",
+   "title": "Stop using @angular-builders/custom-webpack",
+   "forbid": [
+    "lib:@angular-builders/custom-webpack",
+    "lib:@angular_builders/custom_webpack"
+   ],
+   "sha": "d5f8cd59fb",
+   "subject": "Chore: migrate frontend to esbuild from webpack (#13488)",
+   "at": 1787794941000,
+   "chose": []
+  },
+  {
+   "id": "D-102",
+   "title": "Stop using nltk",
+   "forbid": [
+    "lib:nltk"
+   ],
+   "sha": "530059c5c0",
+   "subject": "Performance: Preprocess classifier text with Tantivy instead of NLTK (#14127)",
+   "at": 1789569326000,
+   "chose": []
+  },
+  {
+   "id": "D-104",
+   "title": "Replace types-bleach with turbohtml",
+   "forbid": [
+    "lib:bleach",
+    "lib:types-bleach",
+    "lib:types_bleach"
+   ],
+   "sha": "6a5d06ee26",
+   "subject": "Chore: replace bleach with turbohtml (#14269)",
+   "at": 1791257616000,
+   "chose": [
+    "turbohtml"
+   ]
+  },
+  {
+   "id": "D-103",
+   "title": "Replace bleach with turbohtml",
+   "forbid": [
+    "lib:bleach"
+   ],
+   "sha": "6a5d06ee26",
+   "subject": "Chore: replace bleach with turbohtml (#14269)",
+   "at": 1791257616000,
+   "chose": [
+    "turbohtml"
+   ]
+  }
+ ]
+}

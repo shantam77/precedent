@@ -1,0 +1,558 @@
+{
+ "stats": {
+  "repo": "cs_netbox",
+  "files": 2297,
+  "components": 27,
+  "depends_on": 115,
+  "libraries": 152,
+  "manifest_events": 71,
+  "format_migrations_skipped": 3,
+  "decisions": 45,
+  "guarded_decisions": 23,
+  "observed_only": 21,
+  "people": 459,
+  "knows": 520,
+  "notes": 42,
+  "rules": 37,
+  "seconds": 11.3,
+  "llm_tokens": 0
+ },
+ "decisions": [
+  {
+   "id": "D-6",
+   "title": "Stop using six",
+   "forbid": [
+    "lib:six"
+   ],
+   "sha": "0b2e66927e",
+   "subject": "Package updates",
+   "at": 1466020059000,
+   "chose": []
+  },
+  {
+   "id": "D-5",
+   "title": "Stop using pyparsing",
+   "forbid": [
+    "lib:pyparsing"
+   ],
+   "sha": "0b2e66927e",
+   "subject": "Package updates",
+   "at": 1466020059000,
+   "chose": []
+  },
+  {
+   "id": "D-2",
+   "title": "Stop using ecdsa",
+   "forbid": [
+    "lib:ecdsa"
+   ],
+   "sha": "0b2e66927e",
+   "subject": "Package updates",
+   "at": 1466020059000,
+   "chose": []
+  },
+  {
+   "id": "D-4",
+   "title": "Stop using markupsafe",
+   "forbid": [
+    "lib:markupsafe"
+   ],
+   "sha": "0b2e66927e",
+   "subject": "Package updates",
+   "at": 1466020059000,
+   "chose": []
+  },
+  {
+   "id": "D-1",
+   "title": "Stop using django-extensions",
+   "forbid": [
+    "lib:django-extensions",
+    "lib:django_extensions",
+    "lib:extensions"
+   ],
+   "sha": "0b2e66927e",
+   "subject": "Package updates",
+   "at": 1466020059000,
+   "chose": []
+  },
+  {
+   "id": "D-3",
+   "title": "Stop using lxml",
+   "forbid": [
+    "lib:lxml"
+   ],
+   "sha": "0b2e66927e",
+   "subject": "Package updates",
+   "at": 1466020059000,
+   "chose": []
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using exscript",
+   "forbid": [
+    "lib:exscript"
+   ],
+   "sha": "5d4add119c",
+   "subject": "Cherry-pick from 13d9be4. Refactor rpc.py and removed dependency on Exscript.",
+   "at": 1466533999000,
+   "chose": []
+  },
+  {
+   "id": "D-8",
+   "title": "Stop using pydot",
+   "forbid": [
+    "lib:pydot"
+   ],
+   "sha": "522a0c20e7",
+   "subject": "Replace pydot by graphviz",
+   "at": 1467236620000,
+   "chose": []
+  },
+  {
+   "id": "D-12",
+   "title": "Stop using sqlparse",
+   "forbid": [
+    "lib:sqlparse"
+   ],
+   "sha": "990c9d6f7c",
+   "subject": "Updated package requirements",
+   "at": 1507831288000,
+   "chose": []
+  },
+  {
+   "id": "D-10",
+   "title": "Stop using cryptography",
+   "forbid": [
+    "lib:cryptography"
+   ],
+   "sha": "990c9d6f7c",
+   "subject": "Updated package requirements",
+   "at": 1507831288000,
+   "chose": []
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using pycrypto",
+   "forbid": [
+    "lib:pycrypto"
+   ],
+   "sha": "c300879995",
+   "subject": "Fixes #1527: Replace deprecated pycrypto library with pycryptodome",
+   "at": 1507831288000,
+   "chose": []
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using cffi",
+   "forbid": [
+    "lib:cffi"
+   ],
+   "sha": "990c9d6f7c",
+   "subject": "Updated package requirements",
+   "at": 1507831288000,
+   "chose": []
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using psycopg2",
+   "forbid": [
+    "lib:psycopg2"
+   ],
+   "sha": "ec7bbcf90d",
+   "subject": "Closes #1899: Prefer binary package of psycopg2",
+   "at": 1519672983000,
+   "chose": []
+  },
+  {
+   "id": "D-14",
+   "title": "Stop using django-rest-swagger",
+   "forbid": [
+    "lib:django-rest-swagger",
+    "lib:django_rest_swagger",
+    "lib:rest_swagger"
+   ],
+   "sha": "b83de7eb11",
+   "subject": "Use drf_yasg to generate swagger",
+   "at": 1521745559000,
+   "chose": []
+  },
+  {
+   "id": "D-17",
+   "title": "Stop using paramiko",
+   "forbid": [
+    "lib:paramiko"
+   ],
+   "sha": "9804db4551",
+   "subject": "Updated dependencies",
+   "at": 1544455644000,
+   "chose": []
+  },
+  {
+   "id": "D-15",
+   "title": "Stop using natsort",
+   "forbid": [
+    "lib:natsort"
+   ],
+   "sha": "60452a7b0c",
+   "subject": "Implemented DeviceComponentManager; removed natsort as a dependency",
+   "at": 1544455644000,
+   "chose": []
+  },
+  {
+   "id": "D-18",
+   "title": "Stop using xmltodict",
+   "forbid": [
+    "lib:xmltodict"
+   ],
+   "sha": "9804db4551",
+   "subject": "Updated dependencies",
+   "at": 1544455644000,
+   "chose": []
+  },
+  {
+   "id": "D-16",
+   "title": "Stop using ncclient",
+   "forbid": [
+    "lib:ncclient"
+   ],
+   "sha": "9804db4551",
+   "subject": "Updated dependencies",
+   "at": 1544455644000,
+   "chose": []
+  },
+  {
+   "id": "D-19",
+   "title": "Stop using graphviz",
+   "forbid": [
+    "lib:graphviz"
+   ],
+   "sha": "dccda62f2d",
+   "subject": "Closes #2745: Remove topology maps",
+   "at": 1579197822000,
+   "chose": []
+  },
+  {
+   "id": "D-20",
+   "title": "Stop using py-gfm",
+   "forbid": [
+    "lib:py-gfm",
+    "lib:py_gfm"
+   ],
+   "sha": "363c4acadc",
+   "subject": "Drop GitHub-flavored Markdown (py-gfm)",
+   "at": 1583863190000,
+   "chose": []
+  },
+  {
+   "id": "D-21",
+   "title": "Stop using wheel",
+   "forbid": [
+    "lib:wheel"
+   ],
+   "sha": "17c76e413d",
+   "subject": "Install wheel before NetBox dependencies",
+   "at": 1583863190000,
+   "chose": []
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using django-taggit-serializer",
+   "forbid": [
+    "lib:django-taggit-serializer",
+    "lib:django_taggit_serializer",
+    "lib:taggit_serializer"
+   ],
+   "sha": "d0f0aef2ef",
+   "subject": "Remove django-taggit-serializer",
+   "at": 1598017921000,
+   "chose": []
+  },
+  {
+   "id": "D-23",
+   "title": "Replace django-cacheops with django-redis",
+   "forbid": [
+    "lib:cacheops",
+    "lib:django-cacheops",
+    "lib:django_cacheops"
+   ],
+   "sha": "d9e27b6a82",
+   "subject": "Replace django-cacheops with django-redis",
+   "at": 1630349027000,
+   "chose": [
+    "django-redis"
+   ]
+  },
+  {
+   "id": "D-24",
+   "title": "Stop using pycryptodome",
+   "forbid": [
+    "lib:pycryptodome"
+   ],
+   "sha": "6b3e0d3229",
+   "subject": "Drop pycryptodome as a Python dependency",
+   "at": 1632922871000,
+   "chose": []
+  },
+  {
+   "id": "D-25",
+   "title": "Make markdown-include optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "4c899f151c",
+   "subject": "Drop markdown-include",
+   "at": 1660759844000,
+   "chose": []
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using pytz",
+   "forbid": [
+    "lib:pytz"
+   ],
+   "sha": "9e22946bb8",
+   "subject": "#9986: Update tzdata & remove pytz pin",
+   "at": 1660759844000,
+   "chose": []
+  },
+  {
+   "id": "D-27",
+   "title": "Stop using cookie",
+   "forbid": [
+    "lib:cookie"
+   ],
+   "sha": "cdea30253b",
+   "subject": "#101700 change csrf token access",
+   "at": 1662147234000,
+   "chose": []
+  },
+  {
+   "id": "D-28",
+   "title": "Stop using swagger-spec-validator",
+   "forbid": [
+    "lib:spec_validator",
+    "lib:swagger-spec-validator",
+    "lib:swagger_spec_validator"
+   ],
+   "sha": "eb591731ef",
+   "subject": "#10712: Remove pin for swagger-spec-validator (fixed in v3.0.3)",
+   "at": 1669842840000,
+   "chose": []
+  },
+  {
+   "id": "D-29",
+   "title": "Stop using masonry-layout",
+   "forbid": [
+    "lib:masonry",
+    "lib:masonry-layout",
+    "lib:masonry_layout"
+   ],
+   "sha": "084a2cc52c",
+   "subject": "Closes #9416: Dashboard widgets (#11823)",
+   "at": 1682620736000,
+   "chose": []
+  },
+  {
+   "id": "D-30",
+   "title": "Replace drf-yasg with drf-spectacular, drf-spectacular-sidecar",
+   "forbid": [
+    "lib:drf-yasg",
+    "lib:drf_yasg"
+   ],
+   "sha": "ecd0c56554",
+   "subject": "Closes #9608: Move from drf-yasg to spectacular",
+   "at": 1682620736000,
+   "chose": [
+    "drf-spectacular",
+    "drf-spectacular-sidecar"
+   ]
+  },
+  {
+   "id": "D-31",
+   "title": "Replace psycopg2-binary with psycopg",
+   "forbid": [
+    "lib:psycopg2",
+    "lib:psycopg2-binary",
+    "lib:psycopg2_binary"
+   ],
+   "sha": "69b818ed33",
+   "subject": "12237 update to Django 4.2 / psycopg3 (#12916)",
+   "at": 1693421464000,
+   "chose": [
+    "psycopg"
+   ]
+  },
+  {
+   "id": "D-37",
+   "title": "Stop using simplebar",
+   "forbid": [
+    "lib:simplebar"
+   ],
+   "sha": "073c2dc8ca",
+   "subject": "Closes #12128: Refresh the web UI to employ the Tabler CSS framework (#14833)",
+   "at": 1715023262000,
+   "chose": []
+  },
+  {
+   "id": "D-33",
+   "title": "Stop using color2k",
+   "forbid": [
+    "lib:color2k"
+   ],
+   "sha": "0bc2bffb81",
+   "subject": "Remove obsolete dependencies",
+   "at": 1715023262000,
+   "chose": []
+  },
+  {
+   "id": "D-35",
+   "title": "Stop using html-entities",
+   "forbid": [
+    "lib:entities",
+    "lib:html-entities",
+    "lib:html_entities"
+   ],
+   "sha": "0bc2bffb81",
+   "subject": "Remove obsolete dependencies",
+   "at": 1715023262000,
+   "chose": []
+  },
+  {
+   "id": "D-36",
+   "title": "Stop using just-debounce-it",
+   "forbid": [
+    "lib:debounce_it",
+    "lib:just-debounce-it",
+    "lib:just_debounce_it"
+   ],
+   "sha": "d63e1dacbf",
+   "subject": "Closes #14917: Replace slim-select with tom-select (#15080)",
+   "at": 1715023262000,
+   "chose": []
+  },
+  {
+   "id": "D-38",
+   "title": "Replace slim-select with tom-select",
+   "forbid": [
+    "lib:select",
+    "lib:slim-select",
+    "lib:slim_select"
+   ],
+   "sha": "d63e1dacbf",
+   "subject": "Closes #14917: Replace slim-select with tom-select (#15080)",
+   "at": 1715023262000,
+   "chose": [
+    "tom-select"
+   ]
+  },
+  {
+   "id": "D-39",
+   "title": "Stop using subscriptions-transport-ws",
+   "forbid": [
+    "lib:subscriptions",
+    "lib:subscriptions-transport-ws",
+    "lib:subscriptions_transport_ws"
+   ],
+   "sha": "45c99e4477",
+   "subject": "9856 Replace graphene with Strawberry (#15141)",
+   "at": 1715023262000,
+   "chose": []
+  },
+  {
+   "id": "D-40",
+   "title": "Stop using whatwg-fetch",
+   "forbid": [
+    "lib:whatwg",
+    "lib:whatwg-fetch",
+    "lib:whatwg_fetch"
+   ],
+   "sha": "45c99e4477",
+   "subject": "9856 Replace graphene with Strawberry (#15141)",
+   "at": 1715023262000,
+   "chose": []
+  },
+  {
+   "id": "D-42",
+   "title": "Replace graphene-django with strawberry-graphql, strawberry-graphql-django",
+   "forbid": [
+    "lib:graphene",
+    "lib:graphene-django",
+    "lib:graphene_django"
+   ],
+   "sha": "45c99e4477",
+   "subject": "9856 Replace graphene with Strawberry (#15141)",
+   "at": 1715023262000,
+   "chose": [
+    "strawberry-graphql",
+    "strawberry-graphql-django"
+   ]
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using dayjs",
+   "forbid": [
+    "lib:dayjs"
+   ],
+   "sha": "0bc2bffb81",
+   "subject": "Remove obsolete dependencies",
+   "at": 1715023262000,
+   "chose": []
+  },
+  {
+   "id": "D-32",
+   "title": "Make @popperjs/core optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "073c2dc8ca",
+   "subject": "Closes #12128: Refresh the web UI to employ the Tabler CSS framework (#14833)",
+   "at": 1715023262000,
+   "chose": []
+  },
+  {
+   "id": "D-41",
+   "title": "Replace bleach with nh3",
+   "forbid": [
+    "lib:bleach"
+   ],
+   "sha": "8254e707b6",
+   "subject": "12851 replace bleach with nh3 (#14767)",
+   "at": 1715023262000,
+   "chose": [
+    "nh3"
+   ]
+  },
+  {
+   "id": "D-43",
+   "title": "Stop using @fontsource-variable/plus-jakarta-sans",
+   "forbid": [
+    "lib:@fontsource-variable/plus-jakarta-sans",
+    "lib:@fontsource_variable/plus_jakarta_sans"
+   ],
+   "sha": "b4dd71d578",
+   "subject": "Fixes #17511: Restore consistent font support for non-Latin characters",
+   "at": 1727382682000,
+   "chose": []
+  },
+  {
+   "id": "D-44",
+   "title": "Replace django-pglocks with django-pgware",
+   "forbid": [
+    "lib:django-pglocks",
+    "lib:django_pglocks",
+    "lib:pglocks"
+   ],
+   "sha": "2f604551c1",
+   "subject": "Closes #22571: Migrate from django-pglocks to django-pgware (#22635)",
+   "at": 1788366681000,
+   "chose": [
+    "django-pgware"
+   ]
+  },
+  {
+   "id": "D-45",
+   "title": "Make django-graphiql-debug-toolbar optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "abccf4e036",
+   "subject": "Release v4.7.1 (#23179)",
+   "at": 1789497313000,
+   "chose": []
+  }
+ ]
+}

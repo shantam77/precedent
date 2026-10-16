@@ -1,0 +1,39 @@
+{
+ "task": "netbox_cacheops",
+ "arm": "off",
+ "repo": "netbox",
+ "library": "django-cacheops",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-23",
+  "title": "Replace django-cacheops with django-redis",
+  "forbid": [
+   "lib:cacheops",
+   "lib:django-cacheops",
+   "lib:django_cacheops"
+  ],
+  "trust": "historical",
+  "sha": "d9e27b6a82298fbf3821fd26a09f6836d5eccada",
+  "subject": "Replace django-cacheops with django-redis"
+ },
+ "prompt": "Cache the queryset of the Site list view in netbox/dcim/views.py with django-cacheops (`cached_as`), so repeated page loads skip the database. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": true,
+ "evidence": [
+  [
+   "netbox/dcim/views.py",
+   "from cacheops import cached_as"
+  ]
+ ],
+ "files_changed": [
+  "netbox/dcim/views.py"
+ ],
+ "mentions_decision": false,
+ "turns": 6,
+ "cost_usd": 0.1416642,
+ "seconds": 37.4,
+ "tokens_in": 390930,
+ "tokens_out": 2741,
+ "permission_denials": [],
+ "result": "Done. I've added django-cacheops caching to the Site list view. The changes are minimal:\n\n1. **Added import** (line 17): `from cacheops import cached_as`\n2. **Created a cached helper function** that returns the annotated Site queryset decorated with `@cached_as(Site)`\n3. **Updated SiteListView** to use the cached result via `_get_site_list_queryset()`\n\nThe `@cached_as(Site)` decorator will cache the queryset on first evaluation and serve subsequent page loads from cache, automatically invalidating when Site objects are modified."
+}

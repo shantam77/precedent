@@ -1,0 +1,67 @@
+=== netbox 00:46:58
+  "D-34",
+  "D-35",
+  "D-37"
+ ],
+ "replayed_commits": 3579,
+ "replayed_file_changes": 14079,
+ "commit_verdicts": {
+  "ok": 3578,
+  "ask": 1
+ },
+ "flag_rate_commits": 0.0003,
+ "flagged_commits_false_alarm": 0,
+ "flagged_commits_reversal": 1,
+ "resurrection_edits": 56,
+ "resurrection_caught": 43,
+ "resurrection_missed_comment_only": 2,
+ "resurrection_missed_real": 11,
+ "decisions_with_resurrection_tested": 13,
+ "decisions_caught": 13,
+ "check_ms_p50": 5.75,
+ "check_ms_p95": 12.66,
+ "read_context_files": 1500,
+ "read_context_nonempty": 128,
+ "read_context_avg_tokens_when_shown": 60,
+ "seconds": 693.9
+}
+FLAG ask [reversal (library came back later)] 54462595a6 requirements.txt D-24 lib:mkdocs | mkdocs==1.6.1 | Release v4.5.4
+RES D-8 2/2 (missed real 0) Stop using pydot | import pydot
+RES D-11 1/1 (missed real 0) Stop using pycrypto | pycrypto>=2.6.1
+RES D-13 1/1 (missed real 0) Stop using psycopg2 | psycopg2>=2.7.3
+RES D-15 3/4 (missed real 1) Stop using natsort | natsort
+RES D-19 2/4 (missed real 1) Stop using graphviz | # Python interface to the graphviz graph rendering utility
+=== mitmproxy 00:58:33
+RES D-32 2/2 (missed real 0) Replace reactify with react-dom | var reactify = require('reactify');
+RES D-34 3/3 (missed real 0) Stop using gulp-minify-css | var minifyCSS = require('gulp-minify-css');
+RES D-36 1/3 (missed real 1) Stop using typing (the backport: the standard library has it | # The typing module backport is somewhat broken.
+RES D-39 2/5 (missed real 3) Stop using react-router | "react-router": "^2.4.0",
+RES D-40 52/52 (missed real 0) Stop using six | from six.moves import urllib
+RES D-41 2/2 (missed real 0) Stop using history | "history": "^3.0.0",
+RES D-43 4/4 (missed real 0) Stop using configargparse | import configargparse
+RES D-45 5/8 (missed real 3) Stop using lxml | tox -e wheel -- https://snapshots.mitmproxy.org/misc/lxml-3.6.0-cp35-cp35m-win32.whl
+RES D-48 3/3 (missed real 0) Stop using watchdog | import watchdog.events
+RES D-49 2/2 (missed real 0) Stop using construct | # This file originally comes from https://github.com/pyca/tls/blob/master/tls/_constructs.py.
+RES D-51 5/5 (missed real 0) Stop using cssutils | "cssutils>=1.0.1, <1.1",
+RES D-52 3/4 (missed real 1) Stop using jsbeautifier | jsbeautifier, git checkout 25/03/12, MIT license
+RES D-53 4/4 (missed real 0) Stop using html2text | import html2text
+RES D-55 2/2 (missed real 0) Stop using pysftp | "pysftp==0.2.8",
+RES D-56 1/1 (missed real 0) Stop using twine | "twine>=1.6.5, <1.10",
+RES D-58 1/3 (missed real 2) Stop using bulma | "bulma": "^0.6.1",
+RES D-59 1/4 (missed real 3) Stop using node-sass | 2. Run `yarn` in this directory to get node-sass.
+RES D-60 0/1 (missed real 1) Stop using message | "h2>=4.0,<5; python_version>='3.6.0'",  # python_version only needed to make "py36+ required" messag
+RES D-61 2/2 (missed real 0) Stop using pyasn1 | from pyasn1.codec.der.decoder import decode
+RES D-62 1/2 (missed real 1) Stop using babel-core | "babel-core": "^6.26.0",
+RES D-63 1/3 (missed real 2) Stop using babel-eslint | "parser": "babel-eslint",
+RES D-64 1/2 (missed real 1) Stop using babel-plugin-transform-class-properties | "babel-plugin-transform-class-properties": "^6.24.1",
+RES D-65 1/2 (missed real 1) Stop using babel-plugin-transform-object-rest-spread | "babel-plugin-transform-object-rest-spread": "^6.26.0",
+RES D-66 1/2 (missed real 1) Stop using babel-preset-es2015 | "babel-preset-es2015": "^6.24.1",
+RES D-67 1/2 (missed real 1) Stop using babel-preset-react | "babel-preset-react": "^6.24.1",
+RES D-68 2/3 (missed real 1) Stop using babelify | var babelify = require('babelify');
+RES D-69 2/3 (missed real 1) Stop using browserify | var browserify = require('browserify');
+RES D-70 2/3 (missed real 1) Stop using envify | var envify = require('envify/custom');
+RES D-72 2/3 (missed real 1) Stop using gulp-eslint | var eslint = require('gulp-eslint');
+RES D-73 3/4 (missed real 1) Stop using gulp-rename | var rename = require("gulp-rename");
+RES D-74 2/3 (missed real 1) Stop using gulp-util | var gutil = require("gulp-util");
+RES D-75 2/3 (missed real 1) Stop using uglifyify | var uglifyify = require('uglifyify');
+=== paperless-ngx 01:06:30

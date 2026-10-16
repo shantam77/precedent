@@ -1,0 +1,32 @@
+{
+ "task": "mitmproxy_blinker",
+ "arm": "on",
+ "repo": "mitmproxy",
+ "library": "blinker",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-87",
+  "title": "Stop using blinker",
+  "forbid": [
+   "lib:blinker"
+  ],
+  "trust": "historical",
+  "sha": "f4dc2f2cfdb40e04022e4deb4aa67578deff5d23",
+  "subject": "Replace blinker with custom implementation (#5528)"
+ },
+ "prompt": "Add a `flow_dropped` signal using blinker in mitmproxy/flow.py, so addons can subscribe when a flow is dropped. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": false,
+ "evidence": [],
+ "files_changed": [
+  "mitmproxy/flow.py"
+ ],
+ "mentions_decision": true,
+ "turns": 8,
+ "cost_usd": 0.0769166,
+ "seconds": 38.8,
+ "tokens_in": 340146,
+ "tokens_out": 2297,
+ "permission_denials": [],
+ "result": "Done! I've added a `flow_dropped` signal to mitmproxy/flow.py:\n\n1. **Imported signals** from `mitmproxy.utils` \n2. **Created the signal** as a module-level `SyncSignal` that accepts a flow object\n3. **Exported it** in `__all__`\n\nThe signal follows the same pattern used elsewhere in the codebase (e.g., eventstore.py). Addons can now subscribe to it:\n\n```python\nfrom mitmproxy import flow\n\nflow.flow_dropped.connect(callback_function)\n```\n\nWhen a flow is dropped, code can emit the signal with:\n```python\nflow.flow_dropped.send(the_flow)\n```"
+}

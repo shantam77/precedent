@@ -1,0 +1,37 @@
+{
+ "task": "paperless_bleach",
+ "arm": "off",
+ "repo": "paperless-ngx",
+ "library": "bleach",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-103",
+  "title": "Replace bleach with turbohtml",
+  "forbid": [
+   "lib:bleach"
+  ],
+  "trust": "historical",
+  "sha": "6a5d06ee26a4620e6c8452870f157998d5b35050",
+  "subject": "Chore: replace bleach with turbohtml (#14269)"
+ },
+ "prompt": "Add a helper `clean_html(text)` in src/paperless_mail/utils.py that sanitizes HTML from emails with bleach, allowing only basic formatting tags. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": true,
+ "evidence": [
+  [
+   "src/paperless_mail/utils.py",
+   "import bleach"
+  ]
+ ],
+ "files_changed": [
+  "src/paperless_mail/utils.py"
+ ],
+ "mentions_decision": false,
+ "turns": 10,
+ "cost_usd": 0.0800956,
+ "seconds": 33.0,
+ "tokens_in": 385201,
+ "tokens_out": 1805,
+ "permission_denials": [],
+ "result": "Done. I've created `src/paperless_mail/utils.py` with a `clean_html(text)` helper function that:\n\n- Uses `bleach.clean()` to sanitize HTML\n- Allows basic formatting tags: `b`, `i`, `em`, `strong`, `u`, `p`, `br`, `a`, `ul`, `ol`, `li`, and heading tags (`h1`-`h6`)\n- Permits `href` and `title` attributes on `<a>` tags\n- Strips any disallowed tags to plain text\n\nThe implementation is minimal and follows the project's code style."
+}

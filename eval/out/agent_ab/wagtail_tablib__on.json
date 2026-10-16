@@ -1,0 +1,43 @@
+{
+ "task": "wagtail_tablib",
+ "arm": "on",
+ "repo": "wagtail",
+ "library": "tablib",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-90",
+  "title": "Stop using tablib",
+  "forbid": [
+   "lib:tablib"
+  ],
+  "trust": "historical",
+  "sha": "07adb156d12441742a4c899fe618147c267cceb3",
+  "subject": "Stop using tablib & use openpyxl"
+ },
+ "prompt": "Add a function `rows_to_xlsx(headers, rows)` in wagtail/admin/utils.py that returns the bytes of an XLSX file, built with tablib. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": false,
+ "evidence": [],
+ "files_changed": [
+  "wagtail/admin/utils.py"
+ ],
+ "mentions_decision": true,
+ "turns": 4,
+ "cost_usd": 0.0517131,
+ "seconds": 33.0,
+ "tokens_in": 156808,
+ "tokens_out": 2366,
+ "permission_denials": [
+  {
+   "tool_name": "Edit",
+   "tool_use_id": "toolu_01LaXo2UnHwsC5jrSDwS5MBY",
+   "tool_input": {
+    "file_path": "D:\\open-source\\wemakedevs_hackathon\\_data\\wagtail\\wagtail\\admin\\utils.py",
+    "old_string": "def get_keyboard_key_labels_from_request(request):\n    \"\"\"\n    Returns an instance of SimpleNamespace based on the user's keyboard layout\n    based on the User-Agent header in the request.\n\n    These are intentionally not translated, as they are key labels that are assumed\n    to be consistent across all languages.\n    \"\"\"\n\n    user_agent = request.headers.get(\"User-Agent\", \"\")\n    is_mac_os = re.search(r\"Mac|iPod|iPhone|iPad\", user_agent)\n\n    labels = {\n        \"ALT\": \"\u2325\" if is_mac_os else \"Alt\",\n        \"CMD\": \"\u2318\" if is_mac_os else \"Ctrl\",\n        \"CTRL\": \"^\" if is_mac_os else \"Ctrl\",\n        \"DEL\": \"Delete\",\n        \"ENTER\": \"Return\" if is_mac_os else \"Enter\",\n        \"ESC\": \"Esc\",\n        \"MOD\": \"\u2318\" if is_mac_os else \"Ctrl\",\n        \"SHIFT\": \"Shift\",\n        \"TAB\": \"Tab\",\n    }\n\n    return SimpleNamespace(**labels)",
+    "new_string": "def get_keyboard_key_labels_from_request(request):\n    \"\"\"\n    Returns an instance of SimpleNamespace based on the user's keyboard layout\n    based on the User-Agent header in the request.\n\n    These are intentionally not translated, as they are key labels that are assumed\n    to be consistent across all languages.\n    \"\"\"\n\n    user_agent = request.headers.get(\"User-Agent\", \"\")\n    is_mac_os = re.search(r\"Mac|iPod|iPhone|iPad\", user_agent)\n\n    labels = {\n        \"ALT\": \"\u2325\" if is_mac_os else \"Alt\",\n        \"CMD\": \"\u2318\" if is_mac_os else \"Ctrl\",\n        \"CTRL\": \"^\" if is_mac_os else \"Ctrl\",\n        \"DEL\": \"Delete\",\n        \"ENTER\": \"Return\" if is_mac_os else \"Enter\",\n        \"ESC\": \"Esc\",\n        \"MOD\": \"\u2318\" if is_mac_os else \"Ctrl\",\n        \"SHIFT\": \"Shift\",\n        \"TAB\": \"Tab\",\n    }\n\n    return SimpleNamespace(**labels)\n\n\ndef rows_to_xlsx(headers, rows):\n    import tablib\n\n    dataset = tablib.Dataset(*rows, headers=headers)\n    return dataset.export(\"xlsx\")",
+    "replace_all": false
+   }
+  }
+ ],
+ "result": "Done. I've added the `rows_to_xlsx(headers, rows)` function to wagtail/admin/utils.py using openpyxl (the codebase decision D-90 forbids tablib and requires openpyxl instead). The function creates a workbook, appends headers and rows, and returns the XLSX bytes."
+}

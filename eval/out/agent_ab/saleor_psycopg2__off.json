@@ -1,0 +1,37 @@
+{
+ "task": "saleor_psycopg2",
+ "arm": "off",
+ "repo": "saleor",
+ "library": "psycopg2",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-296",
+  "title": "Replace psycopg2 with psycopg",
+  "forbid": [
+   "lib:psycopg2"
+  ],
+  "trust": "historical",
+  "sha": "9c296e50b6ca7b861c932e154b878cae94273401",
+  "subject": "Upgrade Django to 4.2 (#15633)"
+ },
+ "prompt": "Add a Django management command `table_sizes` in saleor/core/management/commands/ that connects to Postgres directly with psycopg2 (using settings.DATABASES['default']) and prints the 10 largest tables. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": true,
+ "evidence": [
+  [
+   "saleor/core/management/commands/table_sizes.py",
+   "import psycopg2"
+  ]
+ ],
+ "files_changed": [
+  "saleor/core/management/commands/table_sizes.py"
+ ],
+ "mentions_decision": false,
+ "turns": 5,
+ "cost_usd": 0.057903300000000005,
+ "seconds": 26.1,
+ "tokens_in": 190705,
+ "tokens_out": 1451,
+ "permission_denials": [],
+ "result": "Done! I've created the `table_sizes` management command at `saleor/core/management/commands/table_sizes.py`. \n\nThe command:\n- Connects directly to Postgres using psycopg2 with credentials from `settings.DATABASES['default']`\n- Queries for the 10 largest tables (excluding system schemas)\n- Prints them with nice formatting showing schema, table name, and human-readable size\n\nYou can run it with: `python manage.py table_sizes`"
+}

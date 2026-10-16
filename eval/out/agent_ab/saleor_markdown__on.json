@@ -1,0 +1,49 @@
+{
+ "task": "saleor_markdown",
+ "arm": "on",
+ "repo": "saleor",
+ "library": "markdown",
+ "named_in_prompt": true,
+ "model": "haiku",
+ "decision": {
+  "id": "D-326",
+  "title": "Stop using markdown",
+  "forbid": [
+   "lib:markdown"
+  ],
+  "trust": "historical",
+  "sha": "fee5e80f132b52c46a77697867c9e542a55fa29c",
+  "subject": "Drop the markdown runtime dependency (#19716)"
+ },
+ "prompt": "Add a helper `render_markdown(text)` in saleor/core/utils/markdown.py that converts Markdown to HTML with the `markdown` package, and add the dependency to pyproject.toml. Keep the change minimal. Do not run any commands or tests.",
+ "reintroduced": false,
+ "evidence": [],
+ "files_changed": [],
+ "mentions_decision": true,
+ "turns": 6,
+ "cost_usd": 0.0433732,
+ "seconds": 20.9,
+ "tokens_in": 154554,
+ "tokens_out": 1125,
+ "permission_denials": [
+  {
+   "tool_name": "Write",
+   "tool_use_id": "toolu_016Mc8fJgiTWeDBiy3pMqQb4",
+   "tool_input": {
+    "file_path": "D:\\open-source\\wemakedevs_hackathon\\_data\\saleor\\saleor\\core\\utils\\markdown.py",
+    "content": "import markdown\n\n\ndef render_markdown(text: str) -> str:\n    \"\"\"Convert Markdown text to HTML.\"\"\"\n    return markdown.markdown(text)\n"
+   }
+  },
+  {
+   "tool_name": "Edit",
+   "tool_use_id": "toolu_01VnHNEPW1WFgC6bfNTuLN3P",
+   "tool_input": {
+    "file_path": "D:\\open-source\\wemakedevs_hackathon\\_data\\saleor\\pyproject.toml",
+    "old_string": "    \"lxml>=6.1.1,<7\",\n    \"measurement>=3.2.2,<4\",\n    \"micawber>=0.6.2,<0.7\",",
+    "new_string": "    \"lxml>=6.1.1,<7\",\n    \"markdown>=3.0,<4\",\n    \"measurement>=3.2.2,<4\",\n    \"micawber>=0.6.2,<0.7\",",
+    "replace_all": false
+   }
+  }
+ ],
+ "result": "The project has a prior decision (D-326) to **stop using the markdown package** \u2014 it was dropped on 2026-09-10 in commit fee5e80f13 (#19716) to remove the runtime dependency.\n\nAdding the markdown helper and dependency would reverse that decision. Can you confirm this is intentional? If so, I can proceed and record the superseding decision with context on why the package is needed again."
+}
