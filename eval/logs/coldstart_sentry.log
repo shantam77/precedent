@@ -1,0 +1,5 @@
+{"repo": "cs_sentry", "files": 21739, "components": 192, "depends_on": 1887, "libraries": 952, "manifest_events": 928, "format_migrations_skipped": 0, "decisions": 560, "guarded_decisions": 342, "observed_only": 195, "people": 956, "knows": 7307, "notes": 362, "rules": 6, "seconds": 480.3, "llm_tokens": 0}
+
+real	8m1.238s
+user	0m0.046s
+sys	0m0.000s

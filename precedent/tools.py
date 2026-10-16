@@ -84,7 +84,7 @@ def violates(token, path, added):
     if token.startswith("lib:"):
         name = re.escape(token[4:])
         if MANIFEST.search(path):
-            pat = rf"^\s*[\"']?{name}(?![\w-])"
+            pat = rf"^\s*[\"']?{name}(?=\s*(?:[<>=!~;\[@,\"']|$))"  # a version, quote or end next; 'tika: …' (a marker) is not
         elif token[4:] in sys.stdlib_module_names:  # a dropped backport ('typing', 'enum'): importing it is fine now
             return False
         else:
