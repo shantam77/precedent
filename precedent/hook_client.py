@@ -22,7 +22,7 @@ def via_daemon(raw):
 
 def start_daemon():
     import subprocess
-    flags = 0x00000008 | 0x00000200 if os.name == "nt" else 0  # DETACHED_PROCESS | CREATE_NEW_PROCESS_GROUP
+    flags = 0x08000000 | 0x00000200 if os.name == "nt" else 0  # CREATE_NO_WINDOW | CREATE_NEW_PROCESS_GROUP (hidden console)
     subprocess.Popen([sys.executable, "-m", "precedent", "serve", "--port", str(PORT)], stdin=subprocess.DEVNULL,
                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=flags,
                      start_new_session=os.name != "nt")
