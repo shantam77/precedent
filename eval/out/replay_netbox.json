@@ -16,16 +16,17 @@
   "knows": 349,
   "notes": 42,
   "rules": 37,
-  "seconds": 8.5,
+  "seconds": 27.6,
   "llm_tokens": 0
  },
  "guarded_decisions": 14,
+ "resurrection_sample": null,
  "decisions_at_cut": 37,
  "decisions_still_true_at_head": 31,
  "reversed_decisions": [
   "D-22",
   "D-24",
-  "D-33",
+  "D-32",
   "D-34",
   "D-35",
   "D-37"
@@ -41,12 +42,6 @@
  "flagged_commits_reversal": 1,
  "decisions": [
   {
-   "id": "D-32",
-   "title": "Replace drf-yasg with drf-spectacular, drf-spectacular-sidecar",
-   "guarded": true,
-   "still_true_at_head": true
-  },
-  {
    "id": "D-8",
    "title": "Stop using pydot",
    "guarded": true,
@@ -61,6 +56,12 @@
   {
    "id": "D-19",
    "title": "Stop using graphviz",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-33",
+   "title": "Stop using masonry-layout",
    "guarded": true,
    "still_true_at_head": true
   },
@@ -155,12 +156,6 @@
    "still_true_at_head": true
   },
   {
-   "id": "D-31",
-   "title": "Stop using masonry-layout",
-   "guarded": true,
-   "still_true_at_head": true
-  },
-  {
    "id": "D-24",
    "title": "Replace mkdocs with mkdocs-material",
    "guarded": true,
@@ -191,6 +186,18 @@
    "still_true_at_head": true
   },
   {
+   "id": "D-32",
+   "title": "Make jsonschema optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-31",
+   "title": "Replace drf-yasg with drf-spectacular, drf-spectacular-sidecar",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
    "id": "D-1",
    "title": "Stop using django-extensions",
    "guarded": true,
@@ -213,12 +220,6 @@
    "title": "Stop using exscript",
    "guarded": true,
    "still_true_at_head": true
-  },
-  {
-   "id": "D-33",
-   "title": "Make jsonschema optional (removed from required dependencies)",
-   "guarded": false,
-   "still_true_at_head": false
   },
   {
    "id": "D-2",
@@ -377,7 +378,7 @@
    "example": "# https://github.com/Legrandin/pycryptodome"
   },
   {
-   "decision": "D-32",
+   "decision": "D-31",
    "title": "Replace drf-yasg with drf-spectacular, drf-spectacular-sidecar",
    "edits": 15,
    "caught": 13,
@@ -401,10 +402,10 @@
  "resurrection_missed_real": 11,
  "decisions_with_resurrection_tested": 13,
  "decisions_caught": 13,
- "check_ms_p50": 5.75,
- "check_ms_p95": 12.66,
+ "check_ms_p50": 8.41,
+ "check_ms_p95": 43.85,
  "read_context_files": 1500,
  "read_context_nonempty": 128,
  "read_context_avg_tokens_when_shown": 60,
- "seconds": 693.9
+ "seconds": 1586.1
 }

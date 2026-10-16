@@ -1,8 +1,9 @@
-graph as of 2024-01-01: 104 decisions, 48 guarded (37.9 s)
+graph as of 2024-01-01: 104 decisions, 48 guarded (35.5 s)
 {
  "repo": "wagtail",
  "cut": "2024-01-01",
  "guarded_decisions": 48,
+ "resurrection_sample": null,
  "decisions_at_cut": 104,
  "decisions_still_true_at_head": 96,
  "reversed_decisions": [
@@ -30,12 +31,12 @@ graph as of 2024-01-01: 104 decisions, 48 guarded (37.9 s)
  "resurrection_missed_real": 33,
  "decisions_with_resurrection_tested": 46,
  "decisions_caught": 46,
- "check_ms_p50": 13.68,
- "check_ms_p95": 35.25,
+ "check_ms_p50": 27.78,
+ "check_ms_p95": 56.37,
  "read_context_files": 1500,
  "read_context_nonempty": 975,
  "read_context_avg_tokens_when_shown": 58,
- "seconds": 1151.2
+ "seconds": 1421.3
 }
 FLAG ask [reversal (library came back later)] d9a09a7442 pyproject.toml D-17 lib:coverage | "coverage>=3.7.0", | Migrate setup.py and setup.cfg to pyproject.toml
 FLAG ask [reversal (library came back later)] a9900b5d9b pyproject.toml D-21 lib:pyenchant | "pyenchant>=3.3.0,<4", | Upgrade Python tooling, testing, and docs dependencies (#13952)

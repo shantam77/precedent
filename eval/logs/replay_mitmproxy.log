@@ -1,8 +1,9 @@
-graph as of 2024-01-01: 90 decisions, 57 guarded (10.6 s)
+graph as of 2024-01-01: 90 decisions, 57 guarded (40.2 s)
 {
  "repo": "mitmproxy",
  "cut": "2024-01-01",
  "guarded_decisions": 57,
+ "resurrection_sample": null,
  "decisions_at_cut": 90,
  "decisions_still_true_at_head": 87,
  "reversed_decisions": [
@@ -25,12 +26,12 @@ graph as of 2024-01-01: 90 decisions, 57 guarded (10.6 s)
  "resurrection_missed_real": 46,
  "decisions_with_resurrection_tested": 55,
  "decisions_caught": 54,
- "check_ms_p50": 7.04,
- "check_ms_p95": 23.32,
+ "check_ms_p50": 12.52,
+ "check_ms_p95": 42.83,
  "read_context_files": 818,
  "read_context_nonempty": 477,
  "read_context_avg_tokens_when_shown": 52,
- "seconds": 476.2
+ "seconds": 1022.7
 }
 FLAG ask [reversal (library came back later)] f29f146ed1 pyproject.toml D-56 lib:twine | "twine==6.1.0", | switch to uv (#7662)
 FLAG ask [reversal (library came back later)] d0a35dcf9b pyproject.toml D-56 lib:twine | "twine==6.1.0", | introduce new contentview API (#7623)

@@ -7,10 +7,11 @@ in a graph shared by many people and many harnesses.
 > Graph Hacks: Context for AI Agents (WeMakeDevs × FalkorDB), Oct 15-18 2026.
 > Tracks: **03 Company Brain** (primary), **02 Agent Memory and Coordination**, 01 Agents That Act on Connected Data.
 
-**Measured on real netbox:** cold start in 9 s with 0 LLM tokens (44 enforceable decisions from git history) ·
-**0 of 3,579** real later commits flagged · **28/28** resurrected removed libraries caught · real Claude Code declined
-3 regressions citing the rule (with Precedent off it wrote the graphene one), recorded its own decision, and couldn't
-overwrite a protected rule without a human · 8 concurrent agents with injected mistakes: **0** unauthorized changes · `check()` **2.5 ms flat** up to 80k files.
+**Measured on 7 real repositories** (NetBox, mitmproxy, paperless-ngx, Wagtail, Outline, Saleor, Sentry):
+cold start with **0 LLM tokens** on all of them (Sentry: 112k commits in 8 min) · mined decisions **96% precise** (115/120 audited) ·
+**0 false alarms on 18,242 real later commits** · **220/221** removed-library decisions caught when their code is put back ·
+**agent A/B:** asked for a library the team removed on purpose, Claude Code put it back in **6/9 tasks without Precedent, 0/9 with it** ·
+8 concurrent agents with injected mistakes: **0** unauthorized changes · `check()` **2.5 ms flat** up to 80k files.
 
 - Plan and design reasoning: [docs/PLAN.md](docs/PLAN.md)
 - Measured results (real repo + synthetic volume): [docs/RESULTS.md](docs/RESULTS.md)
@@ -40,8 +41,8 @@ agents share one memory, the hard problem is not reading, it's **writing safely*
 # FalkorDB (any way you like; we run it in WSL, docker works too)
 docker run -p 6379:6379 -it --rm falkordb/falkordb
 
-uv venv .venv && uv pip install falkordb==1.7.1 mcp==2.3.0 pyyaml pytest
-python -m pytest tests                                   # 11 end-to-end tests on a live FalkorDB
+uv venv .venv --python 3.12 && uv pip install falkordb==1.7.1 mcp==2.3.0 pyyaml pytest
+python -m pytest tests                                   # 13 end-to-end tests on a live FalkorDB
 
 python -m precedent init /path/to/repo                   # cold start, graph named after the folder
 python -m precedent install /path/to/repo                # Claude Code: MCP + hooks + permissions + /precedent-onboard; git pre-commit
@@ -122,6 +123,7 @@ precedent/  scan.py (cold start)  tools.py (read)  store.py (write + policy)  ho
             mcp_server.py  cli.py  queries/  assets/precedent-onboard.md
 tests/      end-to-end tests + MCP smoke test
 sim/        world.py (synthetic monorepo)  agents.py (multi-agent simulation with injected mistakes)
-eval/       replay.py (real history replay)  bench.py (scale)  out/ (results)
+eval/       coldstart.py  replay.py (real history replay)  agent_ab.py (A/B with real Claude Code)  bench.py (scale)
+            mcp_wire.py (raw MCP traffic)  summary.py  run_all.sh  out/ (results)  logs/
 docs/       PLAN.md  RESULTS.md
 ```

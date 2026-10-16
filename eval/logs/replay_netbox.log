@@ -1,14 +1,15 @@
-graph as of 2024-01-01: 37 decisions, 14 guarded (8.5 s)
+graph as of 2024-01-01: 37 decisions, 14 guarded (27.6 s)
 {
  "repo": "netbox",
  "cut": "2024-01-01",
  "guarded_decisions": 14,
+ "resurrection_sample": null,
  "decisions_at_cut": 37,
  "decisions_still_true_at_head": 31,
  "reversed_decisions": [
   "D-22",
   "D-24",
-  "D-33",
+  "D-32",
   "D-34",
   "D-35",
   "D-37"
@@ -28,12 +29,12 @@ graph as of 2024-01-01: 37 decisions, 14 guarded (8.5 s)
  "resurrection_missed_real": 11,
  "decisions_with_resurrection_tested": 13,
  "decisions_caught": 13,
- "check_ms_p50": 5.75,
- "check_ms_p95": 12.66,
+ "check_ms_p50": 8.41,
+ "check_ms_p95": 43.85,
  "read_context_files": 1500,
  "read_context_nonempty": 128,
  "read_context_avg_tokens_when_shown": 60,
- "seconds": 693.9
+ "seconds": 1586.1
 }
 FLAG ask [reversal (library came back later)] 54462595a6 requirements.txt D-24 lib:mkdocs | mkdocs==1.6.1 | Release v4.5.4
 RES D-8 2/2 (missed real 0) Stop using pydot | import pydot
@@ -47,5 +48,5 @@ RES D-23 9/10 (missed real 1) Stop using django-taggit-serializer | # https://gi
 RES D-24 1/1 (missed real 0) Replace mkdocs with mkdocs-material | mkdocs==1.1
 RES D-25 7/10 (missed real 3) Replace django-cacheops with django-redis | # https://github.com/Suor/django-cacheops
 RES D-26 1/2 (missed real 1) Stop using pycryptodome | # https://github.com/Legrandin/pycryptodome
-RES D-32 13/15 (missed real 1) Replace drf-yasg with drf-spectacular, drf-spectacular-sidec | # https://github.com/axnsan12/drf-yasg
+RES D-31 13/15 (missed real 1) Replace drf-yasg with drf-spectacular, drf-spectacular-sidec | # https://github.com/axnsan12/drf-yasg
 RES D-36 1/2 (missed real 1) Replace psycopg2-binary with psycopg | psycopg2-binary

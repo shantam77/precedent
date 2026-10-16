@@ -16,10 +16,11 @@
   "knows": 407,
   "notes": 8,
   "rules": 1,
-  "seconds": 10.6,
+  "seconds": 40.2,
   "llm_tokens": 0
  },
  "guarded_decisions": 57,
+ "resurrection_sample": null,
  "decisions_at_cut": 90,
  "decisions_still_true_at_head": 87,
  "reversed_decisions": [
@@ -1127,10 +1128,10 @@
  "resurrection_missed_real": 46,
  "decisions_with_resurrection_tested": 55,
  "decisions_caught": 54,
- "check_ms_p50": 7.04,
- "check_ms_p95": 23.32,
+ "check_ms_p50": 12.52,
+ "check_ms_p95": 42.83,
  "read_context_files": 818,
  "read_context_nonempty": 477,
  "read_context_avg_tokens_when_shown": 52,
- "seconds": 476.2
+ "seconds": 1022.7
 }

@@ -16,11 +16,11 @@
   "knows": 195,
   "notes": 30,
   "rules": 29,
-  "seconds": 105.8,
+  "seconds": 13.4,
   "llm_tokens": 0
  },
  "guarded_decisions": 84,
- "resurrection_sample": null,
+ "resurrection_sample": 40,
  "decisions_at_cut": 169,
  "decisions_still_true_at_head": 167,
  "reversed_decisions": [
@@ -30,11 +30,10 @@
  "replayed_commits": 4645,
  "replayed_file_changes": 20559,
  "commit_verdicts": {
-  "ok": 4612,
-  "ask": 33
+  "ok": 4645
  },
- "flag_rate_commits": 0.0071,
- "flagged_commits_false_alarm": 33,
+ "flag_rate_commits": 0.0,
+ "flagged_commits_false_alarm": 0,
  "flagged_commits_reversal": 0,
  "decisions": [
   {
@@ -1052,696 +1051,16 @@
    "still_true_at_head": true
   }
  ],
- "flags": [
-  {
-   "sha": "89d905ebb7",
-   "subject": "fix: Size of inserted retina images (#6350)",
-   "path": "shared/editor/lib/FileHelper.ts",
-   "decision": "D-78",
-   "title": "Stop using extract-text-webpack-plugin",
-   "token": "lib:extract",
-   "line": "import extract from \"png-chunks-extract\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "bd2b32f9d5",
-   "subject": "Helper for cache related utilities (#6696)",
-   "path": "server/utils/CacheHelper.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "450d0d9355",
-   "subject": "Github integration (#6414)",
-   "path": "plugins/github/shared/GitHubUtils.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "34923d9b8d",
-   "subject": "feat: Enable unfurling comments in Slack (#6716)",
-   "path": "plugins/slack/server/api/hooks.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "117c4f5009",
-   "subject": "feat: Comment resolving (#7115)",
-   "path": "app/scenes/Document/components/Comments.tsx",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "57e9abd77f",
-   "subject": "feat: allow sort by position for comments (#7770)",
-   "path": "app/scenes/Document/components/CommentSortMenu.tsx",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "fd5391cbb6",
-   "subject": "Cache diff generation for email notifications (#7987)",
-   "path": "server/utils/MutexLock.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "a48f6c7a85",
-   "subject": "fix: Unsubscribe link for collection subscriptions  (#8734)",
-   "path": "server/models/helpers/SubscriptionHelper.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "a48f6c7a85",
-   "subject": "fix: Unsubscribe link for collection subscriptions  (#8734)",
-   "path": "server/routes/api/subscriptions/subscriptions.test.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "6e98568e5b",
-   "subject": "API importer for Notion (#8710)",
-   "path": "plugins/notion/shared/NotionUtils.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "6e98568e5b",
-   "subject": "API importer for Notion (#8710)",
-   "path": "server/queues/processors/ImportsProcessor.ts",
-   "decision": "D-45",
-   "title": "Stop using truncate-html",
-   "token": "lib:truncate",
-   "line": "import truncate from \"lodash/truncate\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "6e98568e5b",
-   "subject": "API importer for Notion (#8710)",
-   "path": "server/routes/api/imports/imports.ts",
-   "decision": "D-45",
-   "title": "Stop using truncate-html",
-   "token": "lib:truncate",
-   "line": "import truncate from \"lodash/truncate\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "40278b2d9a",
-   "subject": "fix: notifications.pixel requests hang (#8760)",
-   "path": "server/routes/api/notifications/notifications.test.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "dcb7b86df8",
-   "subject": "Store import error in DB (#8811)",
-   "path": "server/queues/tasks/APIImportTask.ts",
-   "decision": "D-45",
-   "title": "Stop using truncate-html",
-   "token": "lib:truncate",
-   "line": "import truncate from \"lodash/truncate\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "de6c1735d9",
-   "subject": "feat: Linear integration (#9037)",
-   "path": "plugins/linear/shared/LinearUtils.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "2cc5846f1b",
-   "subject": "Truncate Notion document titles to fit validation limits (#9041)",
-   "path": "plugins/notion/server/notion.ts",
-   "decision": "D-45",
-   "title": "Stop using truncate-html",
-   "token": "lib:truncate",
-   "line": "import truncate from \"lodash/truncate\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "a06671e8ce",
-   "subject": "OAuth provider (#8884)",
-   "path": "app/models/oauth/OAuthClient.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "a57d90fdf1",
-   "subject": "Add `collaboratorIds` support to revisions (#9343)",
-   "path": "server/collaboration/PersistenceExtension.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "a57d90fdf1",
-   "subject": "Add `collaboratorIds` support to revisions (#9343)",
-   "path": "server/commands/revisionCreator.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "cf2f13193f",
-   "subject": "chore: Fix Redis mock not used consistently in tests (#9716)",
-   "path": "server/index.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "cf2f13193f",
-   "subject": "chore: Fix Redis mock not used consistently in tests (#9716)",
-   "path": "server/queues/queue.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"../storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "cf2f13193f",
-   "subject": "chore: Fix Redis mock not used consistently in tests (#9716)",
-   "path": "server/utils/VerificationCode.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "cc8a3d8b5e",
-   "subject": "chore: Still seeing redis connection failures in CI (#9957)",
-   "path": "server/queues/queue.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "cc8a3d8b5e",
-   "subject": "chore: Still seeing redis connection failures in CI (#9957)",
-   "path": "server/test/setup.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"ioredis-mock\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "bf45e97641",
-   "subject": "chore: Enforce `type` import consistency (#10968)",
-   "path": "server/storage/redis.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"ioredis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "57b6e9aca4",
-   "subject": "feat: Passkey support (#11065)",
-   "path": "plugins/passkeys/server/auth/passkeys.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "5584089441",
-   "subject": "feat: Figma integration (#11044)",
-   "path": "plugins/figma/shared/FigmaUtils.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "00fb4d1af7",
-   "subject": "chore: Update node style imports (#11277)",
-   "path": "plugins/slack/server/slack.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import querystring from \"node:querystring\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "00fb4d1af7",
-   "subject": "chore: Update node style imports (#11277)",
-   "path": "server/routes/api/middlewares/pagination.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import querystring from \"node:querystring\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "00fb4d1af7",
-   "subject": "chore: Update node style imports (#11277)",
-   "path": "server/utils/authentication.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import querystring from \"node:querystring\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "350f69e194",
-   "subject": "fix: Stale collaborator IDs (#11749)",
-   "path": "server/queues/processors/RevisionsProcessor.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "bcc5a94070",
-   "subject": "feat: Add email subscriptions to public docs (#11911)",
-   "path": "server/models/helpers/ShareSubscriptionHelper.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "bcc5a94070",
-   "subject": "feat: Add email subscriptions to public docs (#11911)",
-   "path": "server/routes/api/shares/shares.test.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "1f097b0fdd",
-   "subject": "chore: resolve no-explicit-any lint warnings in plugins (#12237)",
-   "path": "plugins/slack/server/slack.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import querystring, { type ParsedUrlQueryInput } from \"node:querystring\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "879d2b8198",
-   "subject": "fix: Allow connecting additional auth providers on custom domain (#12364)",
-   "path": "server/utils/passport.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "db1d93f9b5",
-   "subject": "perf: Use SCAN and batched UNLINK instead of KEYS in CacheHelper.clearData (#12934)",
-   "path": "server/utils/CacheHelper.test.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "533efdfcfe",
-   "subject": "fix: OIDC 502 on sign-in from oversized id_token cookie (#12986) (#12995)",
-   "path": "plugins/oidc/server/auth/oidc.test.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "533efdfcfe",
-   "subject": "fix: OIDC 502 on sign-in from oversized id_token cookie (#12986) (#12995)",
-   "path": "server/utils/LogoutTokenStore.test.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "533efdfcfe",
-   "subject": "fix: OIDC 502 on sign-in from oversized id_token cookie (#12986) (#12995)",
-   "path": "server/utils/LogoutTokenStore.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "5386d689da",
-   "subject": "perf: Refactor to run boot migration check as separate process (#13049)",
-   "path": "server/main.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "d57db81c6b",
-   "subject": "feat: Split view (#13044)",
-   "path": "app/utils/splitView.ts",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "e66f0d887b",
-   "subject": "fix: Restart worker when queue health check cannot complete (#13431)",
-   "path": "server/queues/HealthMonitor.test.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "e66f0d887b",
-   "subject": "fix: Restart worker when queue health check cannot complete (#13431)",
-   "path": "server/queues/HealthMonitor.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "e4905a97b8",
-   "subject": "feat: Filter the trash by who deleted an item and when (#13474)",
-   "path": "app/scenes/Trash/index.tsx",
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "token": "lib:querystring",
-   "line": "import queryString from \"query-string\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "5693562624",
-   "subject": "fix: Revisions sometimes attributed to the wrong user in collaborative edits (#13809)",
-   "path": "server/queues/processors/RevisionsProcessor.test.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "5693562624",
-   "subject": "fix: Revisions sometimes attributed to the wrong user in collaborative edits (#13809)",
-   "path": "server/storage/redis.test.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"./redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  },
-  {
-   "sha": "a58962101d",
-   "subject": "fix: Tighten email sign-in link handling (#14089)",
-   "path": "server/utils/jwt.ts",
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "token": "lib:redis",
-   "line": "import Redis from \"@server/storage/redis\";",
-   "verdict": "ask",
-   "kind": "false alarm"
-  }
- ],
+ "flags": [],
  "resurrections": [
   {
-   "decision": "D-11",
-   "title": "Stop using redux",
-   "edits": 3,
+   "decision": "D-101",
+   "title": "Replace koa-bodyparser with koa-body",
+   "edits": 4,
    "caught": 3,
    "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"redux\": \"^3.3.1\","
-  },
-  {
-   "decision": "D-12",
-   "title": "Stop using redux-actions",
-   "edits": 3,
-   "caught": 3,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"redux-actions\": \"^0.9.1\","
-  },
-  {
-   "decision": "D-13",
-   "title": "Stop using redux-logger",
-   "edits": 2,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"redux-logger\": \"^2.6.1\","
-  },
-  {
-   "decision": "D-14",
-   "title": "Stop using redux-persist",
-   "edits": 2,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"redux-persist\": \"3.0.3\","
-  },
-  {
-   "decision": "D-15",
-   "title": "Stop using redux-thunk",
-   "edits": 2,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"redux-thunk\": \"^2.0.1\","
-  },
-  {
-   "decision": "D-16",
-   "title": "Stop using react-keyframes",
-   "edits": 2,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"react-keyframes\": \"^0.1.4\","
-  },
-  {
-   "decision": "D-17",
-   "title": "Stop using react-medium-editor",
-   "edits": 1,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"react-medium-editor\": \"^1.6.2\","
-  },
-  {
-   "decision": "D-18",
-   "title": "Stop using react-redux",
-   "edits": 6,
-   "caught": 6,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"react-redux\": \"^4.4.0\","
-  },
-  {
-   "decision": "D-19",
-   "title": "Stop using react-router-redux",
-   "edits": 7,
-   "caught": 7,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"react-router-redux\": \"^4.0.4\","
-  },
-  {
-   "decision": "D-20",
-   "title": "Stop using to-markdown",
-   "edits": 3,
-   "caught": 3,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"to-markdown\": \"^2.0.1\","
-  },
-  {
-   "decision": "D-22",
-   "title": "Stop using fsevents",
-   "edits": 1,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"fsevents\": \"1.0.14\","
-  },
-  {
-   "decision": "D-23",
-   "title": "Stop using querystring",
-   "edits": 1,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"querystring\": \"0.2.0\","
-  },
-  {
-   "decision": "D-25",
-   "title": "Stop using babel-preset-es2015",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
    "missed_real": 1,
-   "example": "\"babel-preset-es2015\": \"^6.24.1\","
-  },
-  {
-   "decision": "D-26",
-   "title": "Stop using babel-preset-stage-0",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"babel-preset-stage-0\": \"^6.24.1\","
-  },
-  {
-   "decision": "D-27",
-   "title": "Stop using rebass",
-   "edits": 8,
-   "caught": 6,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "import { Avatar } from 'rebass';"
-  },
-  {
-   "decision": "D-31",
-   "title": "Stop using cross-env",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"build:webpack\": \"cross-env NODE_ENV=production webpack --config webpack.config.prod.js\","
-  },
-  {
-   "decision": "D-32",
-   "title": "Stop using ignore-loader",
-   "edits": 3,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "\"ignore-loader\": \"0.1.1\","
-  },
-  {
-   "decision": "D-35",
-   "title": "Stop using flow",
-   "edits": 3,
-   "caught": 1,
-   "missed_comment_only": 1,
-   "missed_real": 1,
-   "example": "// flow-typed signature: 8e43d27dae79968dc11e73b131ec77da"
-  },
-  {
-   "decision": "D-40",
-   "title": "Stop using emoji-name-map",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"emoji-name-map\": \"1.1.2\","
+   "example": "\"koa-bodyparser\": \"4.2.0\","
   },
   {
    "decision": "D-41",
@@ -1753,276 +1072,6 @@
    "example": "import highlight from 'highlight.js';"
   },
   {
-   "decision": "D-42",
-   "title": "Stop using js-tree",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"js-tree\": \"1.1.0\","
-  },
-  {
-   "decision": "D-43",
-   "title": "Stop using marked",
-   "edits": 6,
-   "caught": 4,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "import marked from 'marked';"
-  },
-  {
-   "decision": "D-44",
-   "title": "Stop using marked-sanitized",
-   "edits": 6,
-   "caught": 4,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "import marked from 'marked';"
-  },
-  {
-   "decision": "D-45",
-   "title": "Stop using truncate-html",
-   "edits": 4,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "\"truncate-html\": \"https://github.com/jorilallo/truncate-html/tarball/master\","
-  },
-  {
-   "decision": "D-52",
-   "title": "Stop using moment",
-   "edits": 9,
-   "caught": 6,
-   "missed_comment_only": 0,
-   "missed_real": 3,
-   "example": "import moment from 'moment';"
-  },
-  {
-   "decision": "D-62",
-   "title": "Stop using bcrypt",
-   "edits": 2,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"bcrypt\": \"1.0.3\","
-  },
-  {
-   "decision": "D-65",
-   "title": "Stop using parse-domain",
-   "edits": 5,
-   "caught": 4,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "import parseDomain from 'parse-domain';"
-  },
-  {
-   "decision": "D-77",
-   "title": "Stop using redis-lock",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"redis-lock\": \"^0.1.0\","
-  },
-  {
-   "decision": "D-78",
-   "title": "Stop using extract-text-webpack-plugin",
-   "edits": 6,
-   "caught": 4,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "// flow-typed version: <<STUB>>/extract-text-webpack-plugin_v^3.0.2/flow_v0.86.0"
-  },
-  {
-   "decision": "D-79",
-   "title": "Stop using pui-react-tooltip",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "import { TooltipTrigger } from 'pui-react-tooltip';"
-  },
-  {
-   "decision": "D-81",
-   "title": "Replace redis with ioredis",
-   "edits": 4,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "\"redis\": \"^2.6.2\","
-  },
-  {
-   "decision": "D-82",
-   "title": "Stop using react-markdown",
-   "edits": 5,
-   "caught": 3,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "// flow-typed version: <<STUB>>/react-markdown_v^3.0.2/flow_v0.86.0"
-  },
-  {
-   "decision": "D-83",
-   "title": "Stop using bugsnag",
-   "edits": 10,
-   "caught": 6,
-   "missed_comment_only": 0,
-   "missed_real": 4,
-   "example": "\"description\": \"An API key for bugsnag if you wish to collect error reporting (optional)\","
-  },
-  {
-   "decision": "D-85",
-   "title": "Replace babel-core with @babel/core",
-   "edits": 4,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "// flow-typed version: <<STUB>>/babel-core_v^6.24.1/flow_v0.104.0"
-  },
-  {
-   "decision": "D-87",
-   "title": "Replace babel-plugin-transform-decorators-legacy with @babel/plugin-transform-destructuring",
-   "edits": 3,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "// flow-typed version: <<STUB>>/babel-plugin-transform-decorators-legacy_v1.3.4/flow_v0.104.0"
-  },
-  {
-   "decision": "D-91",
-   "title": "Replace babel-plugin-transform-regenerator with @babel/plugin-transform-destructuring, @babel/plugin-transform-regenerator",
-   "edits": 3,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "// flow-typed version: <<STUB>>/babel-plugin-transform-regenerator_v^6.24.1/flow_v0.104.0"
-  },
-  {
-   "decision": "D-93",
-   "title": "Replace babel-preset-env with @babel/preset-env, @babel/preset-react",
-   "edits": 3,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "// flow-typed version: <<STUB>>/babel-preset-env_v^1.4.0/flow_v0.104.0"
-  },
-  {
-   "decision": "D-94",
-   "title": "Replace babel-preset-react with @babel/preset-env, @babel/preset-react",
-   "edits": 4,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 3,
-   "example": "// flow-typed version: <<STUB>>/babel-preset-react-hmre_v1.1.1/flow_v0.104.0"
-  },
-  {
-   "decision": "D-95",
-   "title": "Replace babel-preset-react-hmre with @babel/preset-react",
-   "edits": 3,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "// flow-typed version: <<STUB>>/babel-preset-react-hmre_v1.1.1/flow_v0.104.0"
-  },
-  {
-   "decision": "D-99",
-   "title": "Stop using mobx-react-devtools",
-   "edits": 4,
-   "caught": 3,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "DevTools = require(\"mobx-react-devtools\").default; // eslint-disable-line global-require"
-  },
-  {
-   "decision": "D-100",
-   "title": "Stop using @babel/register",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "require(\"@babel/register\");"
-  },
-  {
-   "decision": "D-101",
-   "title": "Replace koa-bodyparser with koa-body",
-   "edits": 4,
-   "caught": 3,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"koa-bodyparser\": \"4.2.0\","
-  },
-  {
-   "decision": "D-102",
-   "title": "Stop using boundless-popover",
-   "edits": 4,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "import BoundlessPopover from \"boundless-popover\";"
-  },
-  {
-   "decision": "D-104",
-   "title": "Stop using react-modal",
-   "edits": 4,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "import ReactModal from \"react-modal\";"
-  },
-  {
-   "decision": "D-107",
-   "title": "Stop using isomorphic-fetch",
-   "edits": 7,
-   "caught": 5,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "\"isomorphic-fetch\": \"2.2.1\","
-  },
-  {
-   "decision": "D-112",
-   "title": "Stop using react-keydown",
-   "edits": 9,
-   "caught": 7,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "import keydown from \"react-keydown\";"
-  },
-  {
-   "decision": "D-115",
-   "title": "Replace koa-sendfile with koa-send",
-   "edits": 5,
-   "caught": 3,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "// flow-typed version: <<STUB>>/koa-sendfile_v2.0.0/flow_v0.104.0"
-  },
-  {
-   "decision": "D-117",
-   "title": "Replace eslint-config-react-app with eslint-config-prettier",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"eslint-config-react-app\": \"3.0.6\","
-  },
-  {
-   "decision": "D-118",
-   "title": "Replace eslint-plugin-flowtype with eslint-plugin-node",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"eslint-plugin-flowtype\": \"^5.2.0\","
-  },
-  {
-   "decision": "D-127",
-   "title": "Replace joplin-turndown-plugin-gfm with @joplin/turndown-plugin-gfm",
-   "edits": 4,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 2,
-   "example": "\"joplin-turndown-plugin-gfm\": \"^1.0.12\","
-  },
-  {
    "decision": "D-129",
    "title": "Stop using socketio-auth",
    "edits": 5,
@@ -2032,157 +1081,22 @@
    "example": "\"socketio-auth\": \"^0.1.1\","
   },
   {
-   "decision": "D-130",
-   "title": "Replace @tippy.js/react with @tippyjs/react",
-   "edits": 4,
-   "caught": 3,
+   "decision": "D-17",
+   "title": "Stop using react-medium-editor",
+   "edits": 1,
+   "caught": 1,
    "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "import Tippy, { TippyProps } from \"@tippy.js/react\";"
+   "missed_real": 0,
+   "example": "\"react-medium-editor\": \"^1.6.2\","
   },
   {
-   "decision": "D-131",
-   "title": "Stop using koa-static",
-   "edits": 4,
-   "caught": 3,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"koa-static\": \"^4.0.1\","
-  },
-  {
-   "decision": "D-135",
-   "title": "Replace @pmmmwh/react-refresh-webpack-plugin with @vitejs/plugin-react, vite",
+   "decision": "D-20",
+   "title": "Stop using to-markdown",
    "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"@pmmmwh/react-refresh-webpack-plugin\": \"^0.5.10\","
-  },
-  {
-   "decision": "D-136",
-   "title": "Replace html-webpack-plugin with @vitejs/plugin-react, vite",
-   "edits": 5,
-   "caught": 4,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"html-webpack-plugin\": \"4.5.2\","
-  },
-  {
-   "decision": "D-137",
-   "title": "Replace koa-webpack-dev-middleware with @vitejs/plugin-react, vite",
-   "edits": 4,
    "caught": 3,
    "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"koa-webpack-dev-middleware\": \"^1.4.5\","
-  },
-  {
-   "decision": "D-138",
-   "title": "Replace koa-webpack-hot-middleware with @vitejs/plugin-react, vite",
-   "edits": 4,
-   "caught": 3,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"koa-webpack-hot-middleware\": \"^1.0.3\","
-  },
-  {
-   "decision": "D-139",
-   "title": "Replace terser-webpack-plugin with @vitejs/plugin-react, terser",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"terser-webpack-plugin\": \"^4.1.0\","
-  },
-  {
-   "decision": "D-140",
-   "title": "Replace webpack with @vitejs/plugin-react, rollup-plugin-webpack-stats",
-   "edits": 23,
-   "caught": 5,
-   "missed_comment_only": 0,
-   "missed_real": 18,
-   "example": "name: build-webpack"
-  },
-  {
-   "decision": "D-141",
-   "title": "Replace webpack-cli with @vitejs/plugin-react, vite",
-   "edits": 23,
-   "caught": 5,
-   "missed_comment_only": 0,
-   "missed_real": 18,
-   "example": "name: build-webpack"
-  },
-  {
-   "decision": "D-142",
-   "title": "Replace webpack-manifest-plugin with @vitejs/plugin-react, vite",
-   "edits": 23,
-   "caught": 5,
-   "missed_comment_only": 0,
-   "missed_real": 18,
-   "example": "name: build-webpack"
-  },
-  {
-   "decision": "D-143",
-   "title": "Replace webpack-pwa-manifest with @vitejs/plugin-react, vite",
-   "edits": 23,
-   "caught": 5,
-   "missed_comment_only": 0,
-   "missed_real": 18,
-   "example": "name: build-webpack"
-  },
-  {
-   "decision": "D-144",
-   "title": "Replace workbox-webpack-plugin with @vitejs/plugin-react, vite",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"workbox-webpack-plugin\": \"^6.5.3\","
-  },
-  {
-   "decision": "D-145",
-   "title": "Stop using babel-plugin-lodash",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"babel-plugin-lodash\": \"^3.3.4\","
-  },
-  {
-   "decision": "D-146",
-   "title": "Stop using babel-loader",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"babel-loader\": \"^9.1.2\","
-  },
-  {
-   "decision": "D-147",
-   "title": "Stop using css-loader",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"css-loader\": \"5.2.6\","
-  },
-  {
-   "decision": "D-148",
-   "title": "Stop using exports-loader",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"exports-loader\": \"^1.1.1\","
-  },
-  {
-   "decision": "D-149",
-   "title": "Stop using file-loader",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"file-loader\": \"^1.1.6\","
+   "missed_real": 0,
+   "example": "\"to-markdown\": \"^2.0.1\","
   },
   {
    "decision": "D-150",
@@ -2194,49 +1108,22 @@
    "example": "\"immutable\": \"^4.2.4\","
   },
   {
-   "decision": "D-151",
-   "title": "Stop using json-loader",
+   "decision": "D-25",
+   "title": "Stop using babel-preset-es2015",
    "edits": 2,
    "caught": 1,
    "missed_comment_only": 0,
    "missed_real": 1,
-   "example": "\"json-loader\": \"0.5.7\","
+   "example": "\"babel-preset-es2015\": \"^6.24.1\","
   },
   {
-   "decision": "D-152",
-   "title": "Stop using koa-convert",
-   "edits": 3,
+   "decision": "D-115",
+   "title": "Replace koa-sendfile with koa-send",
+   "edits": 5,
    "caught": 3,
    "missed_comment_only": 0,
-   "missed_real": 0,
-   "example": "\"koa-convert\": \"^2.0.0\","
-  },
-  {
-   "decision": "D-153",
-   "title": "Stop using node-htmldiff",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"node-htmldiff\": \"^0.9.4\","
-  },
-  {
-   "decision": "D-154",
-   "title": "Stop using pg-hstore",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"pg-hstore\": \"^2.3.4\","
-  },
-  {
-   "decision": "D-155",
-   "title": "Stop using raw-loader",
-   "edits": 2,
-   "caught": 1,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"raw-loader\": \"^0.5.1\","
+   "missed_real": 2,
+   "example": "// flow-typed version: <<STUB>>/koa-sendfile_v2.0.0/flow_v0.104.0"
   },
   {
    "decision": "D-156",
@@ -2248,6 +1135,105 @@
    "example": "\"@babel/plugin-transform-regenerator\": \"^7.10.4\","
   },
   {
+   "decision": "D-18",
+   "title": "Stop using react-redux",
+   "edits": 6,
+   "caught": 6,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"react-redux\": \"^4.4.0\","
+  },
+  {
+   "decision": "D-146",
+   "title": "Stop using babel-loader",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"babel-loader\": \"^9.1.2\","
+  },
+  {
+   "decision": "D-77",
+   "title": "Stop using redis-lock",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"redis-lock\": \"^0.1.0\","
+  },
+  {
+   "decision": "D-15",
+   "title": "Stop using redux-thunk",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"redux-thunk\": \"^2.0.1\","
+  },
+  {
+   "decision": "D-23",
+   "title": "Stop using querystring",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"querystring\": \"0.2.0\","
+  },
+  {
+   "decision": "D-137",
+   "title": "Replace koa-webpack-dev-middleware with @vitejs/plugin-react, vite",
+   "edits": 4,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"koa-webpack-dev-middleware\": \"^1.4.5\","
+  },
+  {
+   "decision": "D-135",
+   "title": "Replace @pmmmwh/react-refresh-webpack-plugin with @vitejs/plugin-react, vite",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"@pmmmwh/react-refresh-webpack-plugin\": \"^0.5.10\","
+  },
+  {
+   "decision": "D-19",
+   "title": "Stop using react-router-redux",
+   "edits": 7,
+   "caught": 7,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"react-router-redux\": \"^4.0.4\","
+  },
+  {
+   "decision": "D-81",
+   "title": "Replace redis with ioredis",
+   "edits": 4,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"redis\": \"^2.6.2\","
+  },
+  {
+   "decision": "D-152",
+   "title": "Stop using koa-convert",
+   "edits": 3,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"koa-convert\": \"^2.0.0\","
+  },
+  {
+   "decision": "D-136",
+   "title": "Replace html-webpack-plugin with @vitejs/plugin-react, vite",
+   "edits": 5,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"html-webpack-plugin\": \"4.5.2\","
+  },
+  {
    "decision": "D-157",
    "title": "Stop using slate",
    "edits": 5,
@@ -2257,31 +1243,166 @@
    "example": "\"slate\": \"0.45.0\","
   },
   {
-   "decision": "D-158",
-   "title": "Stop using slate-md-serializer",
-   "edits": 7,
-   "caught": 5,
+   "decision": "D-131",
+   "title": "Stop using koa-static",
+   "edits": 4,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"koa-static\": \"^4.0.1\","
+  },
+  {
+   "decision": "D-93",
+   "title": "Replace babel-preset-env with @babel/preset-env, @babel/preset-react",
+   "edits": 3,
+   "caught": 1,
    "missed_comment_only": 0,
    "missed_real": 2,
-   "example": "\"slate-md-serializer\": \"5.5.4\","
+   "example": "// flow-typed version: <<STUB>>/babel-preset-env_v^1.4.0/flow_v0.104.0"
   },
   {
-   "decision": "D-159",
-   "title": "Stop using style-loader",
+   "decision": "D-145",
+   "title": "Stop using babel-plugin-lodash",
    "edits": 2,
    "caught": 1,
    "missed_comment_only": 0,
    "missed_real": 1,
-   "example": "\"style-loader\": \"2.0.0\","
+   "example": "\"babel-plugin-lodash\": \"^3.3.4\","
   },
   {
-   "decision": "D-160",
-   "title": "Stop using url-loader",
+   "decision": "D-27",
+   "title": "Stop using rebass",
+   "edits": 8,
+   "caught": 6,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "import { Avatar } from 'rebass';"
+  },
+  {
+   "decision": "D-100",
+   "title": "Stop using @babel/register",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "require(\"@babel/register\");"
+  },
+  {
+   "decision": "D-140",
+   "title": "Replace webpack with @vitejs/plugin-react, rollup-plugin-webpack-stats",
+   "edits": 23,
+   "caught": 5,
+   "missed_comment_only": 0,
+   "missed_real": 18,
+   "example": "name: build-webpack"
+  },
+  {
+   "decision": "D-94",
+   "title": "Replace babel-preset-react with @babel/preset-env, @babel/preset-react",
+   "edits": 4,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 3,
+   "example": "// flow-typed version: <<STUB>>/babel-preset-react-hmre_v1.1.1/flow_v0.104.0"
+  },
+  {
+   "decision": "D-14",
+   "title": "Stop using redux-persist",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"redux-persist\": \"3.0.3\","
+  },
+  {
+   "decision": "D-143",
+   "title": "Replace webpack-pwa-manifest with @vitejs/plugin-react, vite",
+   "edits": 23,
+   "caught": 5,
+   "missed_comment_only": 0,
+   "missed_real": 18,
+   "example": "name: build-webpack"
+  },
+  {
+   "decision": "D-138",
+   "title": "Replace koa-webpack-hot-middleware with @vitejs/plugin-react, vite",
+   "edits": 4,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"koa-webpack-hot-middleware\": \"^1.0.3\","
+  },
+  {
+   "decision": "D-62",
+   "title": "Stop using bcrypt",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"bcrypt\": \"1.0.3\","
+  },
+  {
+   "decision": "D-151",
+   "title": "Stop using json-loader",
    "edits": 2,
    "caught": 1,
    "missed_comment_only": 0,
    "missed_real": 1,
-   "example": "\"url-loader\": \"^4.1.1\","
+   "example": "\"json-loader\": \"0.5.7\","
+  },
+  {
+   "decision": "D-141",
+   "title": "Replace webpack-cli with @vitejs/plugin-react, vite",
+   "edits": 23,
+   "caught": 5,
+   "missed_comment_only": 0,
+   "missed_real": 18,
+   "example": "name: build-webpack"
+  },
+  {
+   "decision": "D-13",
+   "title": "Stop using redux-logger",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"redux-logger\": \"^2.6.1\","
+  },
+  {
+   "decision": "D-91",
+   "title": "Replace babel-plugin-transform-regenerator with @babel/plugin-transform-destructuring, @babel/plugin-transform-regenerator",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "// flow-typed version: <<STUB>>/babel-plugin-transform-regenerator_v^6.24.1/flow_v0.104.0"
+  },
+  {
+   "decision": "D-149",
+   "title": "Stop using file-loader",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"file-loader\": \"^1.1.6\","
+  },
+  {
+   "decision": "D-40",
+   "title": "Stop using emoji-name-map",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"emoji-name-map\": \"1.1.2\","
+  },
+  {
+   "decision": "D-65",
+   "title": "Stop using parse-domain",
+   "edits": 5,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "import parseDomain from 'parse-domain';"
   },
   {
    "decision": "D-161",
@@ -2291,54 +1412,18 @@
    "missed_comment_only": 0,
    "missed_real": 1,
    "example": "import { Helmet } from \"react-helmet\";"
-  },
-  {
-   "decision": "D-163",
-   "title": "Stop using @optimize-lodash/rollup-plugin",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"@optimize-lodash/rollup-plugin\": \"4.0.3\","
-  },
-  {
-   "decision": "D-167",
-   "title": "Stop using @fellow/prosemirror-recreate-transform",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"@fellow/prosemirror-recreate-transform\": \"^1.2.3\","
-  },
-  {
-   "decision": "D-168",
-   "title": "Stop using unzipper",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"unzipper\": \"0.10.11\","
-  },
-  {
-   "decision": "D-169",
-   "title": "Stop using inline-css",
-   "edits": 5,
-   "caught": 4,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "\"inline-css\": \"^4.0.2\","
   }
  ],
- "resurrection_edits": 385,
- "resurrection_caught": 216,
- "resurrection_missed_comment_only": 1,
- "resurrection_missed_real": 168,
- "decisions_with_resurrection_tested": 84,
- "decisions_caught": 84,
- "check_ms_p50": 49.29,
- "check_ms_p95": 187.27,
+ "resurrection_edits": 199,
+ "resurrection_caught": 108,
+ "resurrection_missed_comment_only": 0,
+ "resurrection_missed_real": 91,
+ "decisions_with_resurrection_tested": 40,
+ "decisions_caught": 40,
+ "check_ms_p50": 20.66,
+ "check_ms_p95": 73.24,
  "read_context_files": 1500,
  "read_context_nonempty": 978,
  "read_context_avg_tokens_when_shown": 57,
- "seconds": 2737.7
+ "seconds": 947.3
 }

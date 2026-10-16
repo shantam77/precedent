@@ -16,21 +16,21 @@
   "knows": 340,
   "notes": 16,
   "rules": 12,
-  "seconds": 11.7,
+  "seconds": 23.8,
   "llm_tokens": 0
  },
  "guarded_decisions": 27,
+ "resurrection_sample": null,
  "decisions_at_cut": 72,
  "decisions_still_true_at_head": 72,
  "reversed_decisions": [],
  "replayed_commits": 3465,
  "replayed_file_changes": 14359,
  "commit_verdicts": {
-  "ok": 3464,
-  "ask": 1
+  "ok": 3465
  },
- "flag_rate_commits": 0.0003,
- "flagged_commits_false_alarm": 1,
+ "flag_rate_commits": 0.0,
+ "flagged_commits_false_alarm": 0,
  "flagged_commits_reversal": 0,
  "decisions": [
   {
@@ -106,14 +106,14 @@
    "still_true_at_head": true
   },
   {
-   "id": "D-12",
-   "title": "Stop using ipython-genutils",
+   "id": "D-38",
+   "title": "Replace karma-chrome-launcher with @angular-builders/jest, jest",
    "guarded": true,
    "still_true_at_head": true
   },
   {
-   "id": "D-34",
-   "title": "Stop using jasmine-core",
+   "id": "D-12",
+   "title": "Stop using ipython-genutils",
    "guarded": true,
    "still_true_at_head": true
   },
@@ -130,18 +130,6 @@
    "still_true_at_head": true
   },
   {
-   "id": "D-43",
-   "title": "Replace psycopg2-binary with psycopg2",
-   "guarded": true,
-   "still_true_at_head": true
-  },
-  {
-   "id": "D-33",
-   "title": "Stop using @angular/animations",
-   "guarded": true,
-   "still_true_at_head": true
-  },
-  {
    "id": "D-45",
    "title": "Stop using watchgod",
    "guarded": true,
@@ -154,6 +142,12 @@
    "still_true_at_head": true
   },
   {
+   "id": "D-36",
+   "title": "Stop using jasmine-spec-reporter",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
    "id": "D-63",
    "title": "Make numpy optional (removed from required dependencies)",
    "guarded": false,
@@ -162,6 +156,12 @@
   {
    "id": "D-51",
    "title": "Stop using tslint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-33",
+   "title": "Replace psycopg2-binary with psycopg2",
    "guarded": true,
    "still_true_at_head": true
   },
@@ -220,14 +220,20 @@
    "still_true_at_head": true
   },
   {
+   "id": "D-42",
+   "title": "Stop using ngx-infinite-scroll",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
    "id": "D-49",
    "title": "Stop using sphinx-rtd-theme",
    "guarded": true,
    "still_true_at_head": true
   },
   {
-   "id": "D-36",
-   "title": "Replace karma with @angular-builders/jest, jest",
+   "id": "D-34",
+   "title": "Stop using @angular/animations",
    "guarded": true,
    "still_true_at_head": true
   },
@@ -250,6 +256,12 @@
    "still_true_at_head": true
   },
   {
+   "id": "D-31",
+   "title": "Stop using sortedcontainers",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
    "id": "D-29",
    "title": "Stop using pyhamcrest",
    "guarded": true,
@@ -262,8 +274,8 @@
    "still_true_at_head": true
   },
   {
-   "id": "D-32",
-   "title": "Stop using sortedcontainers",
+   "id": "D-41",
+   "title": "Replace karma-jasmine-html-reporter with @angular-builders/jest, jest",
    "guarded": true,
    "still_true_at_head": true
   },
@@ -280,8 +292,8 @@
    "still_true_at_head": true
   },
   {
-   "id": "D-35",
-   "title": "Stop using jasmine-spec-reporter",
+   "id": "D-37",
+   "title": "Replace karma with @angular-builders/jest, jest",
    "guarded": true,
    "still_true_at_head": true
   },
@@ -334,14 +346,20 @@
    "still_true_at_head": true
   },
   {
-   "id": "D-39",
-   "title": "Replace karma-jasmine with @angular-builders/jest, jest",
+   "id": "D-3",
+   "title": "Stop using pep8",
    "guarded": true,
    "still_true_at_head": true
   },
   {
-   "id": "D-3",
-   "title": "Stop using pep8",
+   "id": "D-35",
+   "title": "Stop using jasmine-core",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-39",
+   "title": "Replace karma-coverage-istanbul-reporter with @angular-builders/jest, jest",
    "guarded": true,
    "still_true_at_head": true
   },
@@ -370,24 +388,6 @@
    "still_true_at_head": true
   },
   {
-   "id": "D-40",
-   "title": "Replace karma-jasmine-html-reporter with @angular-builders/jest, jest",
-   "guarded": true,
-   "still_true_at_head": true
-  },
-  {
-   "id": "D-37",
-   "title": "Replace karma-chrome-launcher with @angular-builders/jest, jest",
-   "guarded": true,
-   "still_true_at_head": true
-  },
-  {
-   "id": "D-41",
-   "title": "Stop using ngx-infinite-scroll",
-   "guarded": true,
-   "still_true_at_head": true
-  },
-  {
    "id": "D-14",
    "title": "Stop using parso",
    "guarded": true,
@@ -400,8 +400,8 @@
    "still_true_at_head": true
   },
   {
-   "id": "D-38",
-   "title": "Replace karma-coverage-istanbul-reporter with @angular-builders/jest, jest",
+   "id": "D-43",
+   "title": "Stop using protractor",
    "guarded": true,
    "still_true_at_head": true
   },
@@ -430,6 +430,12 @@
    "still_true_at_head": true
   },
   {
+   "id": "D-40",
+   "title": "Replace karma-jasmine with @angular-builders/jest, jest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
    "id": "D-11",
    "title": "Stop using decorator",
    "guarded": true,
@@ -448,37 +454,19 @@
    "still_true_at_head": true
   },
   {
-   "id": "D-31",
-   "title": "Stop using ngx-bootstrap",
-   "guarded": true,
-   "still_true_at_head": true
-  },
-  {
    "id": "D-8",
    "title": "Stop using mccabe",
    "guarded": true,
    "still_true_at_head": true
   },
   {
-   "id": "D-42",
-   "title": "Stop using protractor",
+   "id": "D-32",
+   "title": "Stop using ngx-bootstrap",
    "guarded": true,
    "still_true_at_head": true
   }
  ],
- "flags": [
-  {
-   "sha": "01b21377af",
-   "subject": "Chore: Use a local http server instead of external to reduce flakiness (#11916)",
-   "path": "pyproject.toml",
-   "decision": "D-64",
-   "title": "Replace tika with tika-client",
-   "token": "lib:tika",
-   "line": "\"tika: Tests requiring Tika service\",",
-   "verdict": "ask",
-   "kind": "false alarm"
-  }
- ],
+ "flags": [],
  "resurrections": [
   {
    "decision": "D-2",
@@ -535,7 +523,7 @@
    "example": "\"ng-bootstrap\": \"^0.46.0\","
   },
   {
-   "decision": "D-31",
+   "decision": "D-32",
    "title": "Stop using ngx-bootstrap",
    "edits": 2,
    "caught": 1,
@@ -544,7 +532,16 @@
    "example": "\"ngx-bootstrap\": \"^8.0.0\","
   },
   {
-   "decision": "D-34",
+   "decision": "D-33",
+   "title": "Replace psycopg2-binary with psycopg2",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "psycopg2-binary = \"*\""
+  },
+  {
+   "decision": "D-35",
    "title": "Stop using jasmine-core",
    "edits": 4,
    "caught": 1,
@@ -553,7 +550,7 @@
    "example": "frameworks: ['jasmine', '@angular-devkit/build-angular'],"
   },
   {
-   "decision": "D-35",
+   "decision": "D-36",
    "title": "Stop using jasmine-spec-reporter",
    "edits": 5,
    "caught": 2,
@@ -562,7 +559,7 @@
    "example": "frameworks: ['jasmine', '@angular-devkit/build-angular'],"
   },
   {
-   "decision": "D-36",
+   "decision": "D-37",
    "title": "Replace karma with @angular-builders/jest, jest",
    "edits": 4,
    "caught": 1,
@@ -571,7 +568,7 @@
    "example": "\"builder\": \"@angular-devkit/build-angular:karma\","
   },
   {
-   "decision": "D-37",
+   "decision": "D-38",
    "title": "Replace karma-chrome-launcher with @angular-builders/jest, jest",
    "edits": 2,
    "caught": 2,
@@ -580,7 +577,7 @@
    "example": "require('karma-chrome-launcher'),"
   },
   {
-   "decision": "D-38",
+   "decision": "D-39",
    "title": "Replace karma-coverage-istanbul-reporter with @angular-builders/jest, jest",
    "edits": 2,
    "caught": 2,
@@ -589,7 +586,7 @@
    "example": "require('karma-coverage-istanbul-reporter'),"
   },
   {
-   "decision": "D-39",
+   "decision": "D-40",
    "title": "Replace karma-jasmine with @angular-builders/jest, jest",
    "edits": 2,
    "caught": 2,
@@ -598,7 +595,7 @@
    "example": "require('karma-jasmine'),"
   },
   {
-   "decision": "D-40",
+   "decision": "D-41",
    "title": "Replace karma-jasmine-html-reporter with @angular-builders/jest, jest",
    "edits": 2,
    "caught": 2,
@@ -607,7 +604,7 @@
    "example": "require('karma-jasmine-html-reporter'),"
   },
   {
-   "decision": "D-41",
+   "decision": "D-42",
    "title": "Stop using ngx-infinite-scroll",
    "edits": 3,
    "caught": 2,
@@ -616,22 +613,13 @@
    "example": "\"ngx-infinite-scroll\": \"^13.0.1\","
   },
   {
-   "decision": "D-42",
+   "decision": "D-43",
    "title": "Stop using protractor",
    "edits": 6,
    "caught": 4,
    "missed_comment_only": 0,
    "missed_real": 2,
    "example": "\"builder\": \"@angular-devkit/build-angular:protractor\","
-  },
-  {
-   "decision": "D-43",
-   "title": "Replace psycopg2-binary with psycopg2",
-   "edits": 3,
-   "caught": 2,
-   "missed_comment_only": 0,
-   "missed_real": 1,
-   "example": "psycopg2-binary = \"*\""
   },
   {
    "decision": "D-50",
@@ -730,10 +718,10 @@
  "resurrection_missed_real": 33,
  "decisions_with_resurrection_tested": 27,
  "decisions_caught": 27,
- "check_ms_p50": 11.17,
- "check_ms_p95": 128.21,
+ "check_ms_p50": 21.65,
+ "check_ms_p95": 311.14,
  "read_context_files": 1420,
  "read_context_nonempty": 454,
  "read_context_avg_tokens_when_shown": 96,
- "seconds": 764.4
+ "seconds": 1704.4
 }

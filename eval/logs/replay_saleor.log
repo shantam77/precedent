@@ -1,0 +1,70 @@
+graph as of 2024-01-01: 293 decisions, 180 guarded (74.4 s)
+{
+ "repo": "saleor",
+ "cut": "2024-01-01",
+ "guarded_decisions": 180,
+ "resurrection_sample": 40,
+ "decisions_at_cut": 293,
+ "decisions_still_true_at_head": 293,
+ "reversed_decisions": [],
+ "replayed_commits": 1615,
+ "replayed_file_changes": 13024,
+ "commit_verdicts": {
+  "ok": 1615
+ },
+ "flag_rate_commits": 0.0,
+ "flagged_commits_false_alarm": 0,
+ "flagged_commits_reversal": 0,
+ "resurrection_edits": 753,
+ "resurrection_caught": 692,
+ "resurrection_missed_comment_only": 0,
+ "resurrection_missed_real": 61,
+ "decisions_with_resurrection_tested": 40,
+ "decisions_caught": 40,
+ "check_ms_p50": 32.87,
+ "check_ms_p95": 115.98,
+ "read_context_files": 1500,
+ "read_context_nonempty": 899,
+ "read_context_avg_tokens_when_shown": 119,
+ "seconds": 1519.1
+}
+RES D-125 17/17 (missed real 0) Stop using react-apollo | "react-apollo": "^2.5.8",
+RES D-70 1/1 (missed real 0) Stop using suds-jurko | suds-jurko==0.6
+RES D-144 3/3 (missed real 0) Stop using tsconfig-paths-webpack-plugin | "tsconfig-paths-webpack-plugin": "^3.2.0",
+RES D-229 2/2 (missed real 0) Stop using future | future==0.18.2
+RES D-19 1/2 (missed real 1) Stop using grunt-contrib-less | "grunt-contrib-less": {
+RES D-25 2/3 (missed real 1) Stop using load-grunt-tasks | require("load-grunt-tasks")(grunt);
+RES D-196 2/2 (missed real 0) Stop using medium-editor | "medium-editor": "^5.23.3",
+RES D-38 1/2 (missed real 1) Stop using url-loader | "url-loader": "^0.5.7",
+RES D-136 4/4 (missed real 0) Stop using react-sortable-tree | "@types/react-sortable-tree": "^0.3.6",
+RES D-208 571/573 (missed real 2) Stop using react | "plugin:react/recommended",
+RES D-21 1/2 (missed real 1) Stop using grunt-postcss | "grunt-postcss": {
+RES D-188 1/3 (missed real 2) Stop using eslint-plugin-react | eslint:
+RES D-96 2/2 (missed real 0) Stop using apollo-link-batch-http | "apollo": "^2.15.0",
+RES D-16 1/2 (missed real 1) Stop using grunt-browser-sync | "grunt-browser-sync": {
+RES D-35 4/6 (missed real 2) Stop using django-selectable | django-selectable>=0.8.0
+RES D-169 1/1 (missed real 0) Stop using css-loader | "css-loader": "^3.0.0",
+RES D-150 2/2 (missed real 0) Stop using use-react-router | "use-react-router": "^1.0.7"
+RES D-24 1/4 (missed real 3) Stop using less | "grunt-contrib-less": {
+RES D-103 20/20 (missed real 0) Stop using draft-js | "draft-js": "^0.10.5",
+RES D-37 1/32 (missed real 31) Stop using material-design-icons | "material-design-icons": "^3.0.1",
+RES D-200 1/1 (missed real 0) Stop using node-sass | "node-sass": "^4.12.0",
+RES D-162 3/3 (missed real 0) Stop using autoprefixer | "autoprefixer": "^8.6.5",
+RES D-22 1/2 (missed real 1) Stop using grunt-sass | "grunt-sass": {
+RES D-203 1/1 (missed real 0) Stop using postcss-loader | "postcss": "^6.0.23",
+RES D-49 1/3 (missed real 2) Stop using underscore | "underscore": "^1.8.3",
+RES D-99 2/2 (missed real 0) Stop using apollo-upload-client | "apollo": "^2.15.0",
+RES D-239 4/6 (missed real 2) Stop using tqdm | known_third_party = Adyen,PIL,authorizenet,babel,boto3,botocore,braintree,celery,dateutil,dj_databas
+RES D-216 2/9 (missed real 7) Stop using webpack | webpack-bundle.json
+RES D-206 1/1 (missed real 0) Stop using qs | "qs": "^6.7.0",
+RES D-212 2/2 (missed real 0) Stop using select2 | "select2": "^4.0.7",
+RES D-274 7/8 (missed real 1) Stop using django-prices-openexchangerates | name = "django-prices-openexchangerates"
+RES D-271 2/3 (missed real 1) Stop using codecov | name = "codecov"
+RES D-98 2/2 (missed real 0) Stop using apollo-link-error | "apollo": "^2.15.0",
+RES D-18 1/2 (missed real 1) Stop using grunt-contrib-copy | "grunt-contrib-copy": {
+RES D-201 1/1 (missed real 0) Stop using popper.js | "popper.js": "^1.15.0",
+RES D-53 15/15 (missed real 0) Stop using satchless | satchless>=1.1.2,<1.2a0
+RES D-117 2/2 (missed real 0) Stop using is-url | "is-url": "^1.2.4",
+RES D-223 3/4 (missed real 1) Stop using django-silk | name = "django-silk"
+RES D-68 1/1 (missed real 0) Stop using asn1crypto | asn1crypto==0.24.0
+RES D-197 2/2 (missed real 0) Stop using mini-css-extract-plugin | "mini-css-extract-plugin": "^0.4.5",

@@ -1,0 +1,2170 @@
+{
+ "repo": "saleor",
+ "cut": "2024-01-01",
+ "graph_at_cut": {
+  "repo": "replay_saleor",
+  "files": 4724,
+  "components": 72,
+  "depends_on": 56,
+  "libraries": 417,
+  "manifest_events": 252,
+  "format_migrations_skipped": 1,
+  "decisions": 293,
+  "guarded_decisions": 180,
+  "observed_only": 86,
+  "people": 260,
+  "knows": 1319,
+  "notes": 115,
+  "rules": 103,
+  "seconds": 74.4,
+  "llm_tokens": 0
+ },
+ "guarded_decisions": 180,
+ "resurrection_sample": 40,
+ "decisions_at_cut": 293,
+ "decisions_still_true_at_head": 293,
+ "reversed_decisions": [],
+ "replayed_commits": 1615,
+ "replayed_file_changes": 13024,
+ "commit_verdicts": {
+  "ok": 1615
+ },
+ "flag_rate_commits": 0.0,
+ "flagged_commits_false_alarm": 0,
+ "flagged_commits_reversal": 0,
+ "decisions": [
+  {
+   "id": "D-8",
+   "title": "Stop using grunt-contrib-uglify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-135",
+   "title": "Stop using react-sortable-hoc",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-27",
+   "title": "Stop using materialize-sass-origin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-150",
+   "title": "Stop using use-react-router",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-62",
+   "title": "Stop using django-graphql-extensions",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-16",
+   "title": "Stop using grunt-browser-sync",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-66",
+   "title": "Stop using pip-tools",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-195",
+   "title": "Stop using materialize-css",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-287",
+   "title": "Stop using pyflakes",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-18",
+   "title": "Stop using grunt-contrib-copy",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-242",
+   "title": "Stop using apipkg",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-55",
+   "title": "Make babel-plugin-transform-class-properties optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-163",
+   "title": "Make babel-core optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-160",
+   "title": "Make @babel/preset-react optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-236",
+   "title": "Stop using mjml",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-56",
+   "title": "Make babel-plugin-transform-decorators-legacy optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-133",
+   "title": "Stop using react-router-dom",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using hammerjs",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-261",
+   "title": "Stop using watchgod",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-193",
+   "title": "Stop using lazysizes",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-230",
+   "title": "Stop using uwsgi",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-53",
+   "title": "Stop using satchless",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-94",
+   "title": "Stop using apollo-client-preset",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-201",
+   "title": "Stop using popper.js",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-52",
+   "title": "Stop using django-bootstrap3",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-234",
+   "title": "Stop using maxminddb-geolite2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-17",
+   "title": "Stop using grunt-cli",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-47",
+   "title": "Stop using modernizr",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-152",
+   "title": "Stop using ipaddress (the backport: the standard library has it)",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-151",
+   "title": "Stop using dataclasses (the backport: the standard library has it)",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-4",
+   "title": "Stop using south",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-213",
+   "title": "Stop using social-auth-app-django",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-239",
+   "title": "Stop using tqdm",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-176",
+   "title": "Stop using draftjs-to-html",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-6",
+   "title": "Stop using autoprefixer-core",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-282",
+   "title": "Stop using lazy-object-proxy",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-257",
+   "title": "Stop using transifex-client",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-276",
+   "title": "Stop using jsonfield",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-198",
+   "title": "Stop using mobx",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-3",
+   "title": "Stop using oauth2client",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-125",
+   "title": "Stop using react-apollo",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-182",
+   "title": "Stop using eslint-config-standard",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-147",
+   "title": "Stop using typescript",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-243",
+   "title": "Stop using chardet",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-238",
+   "title": "Stop using django-templated-email",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-48",
+   "title": "Stop using tether",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-85",
+   "title": "Stop using @material-ui/core",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-115",
+   "title": "Stop using i18next-xhr-backend",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-29",
+   "title": "Stop using django-model-utils",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-175",
+   "title": "Stop using django-webpack-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-81",
+   "title": "Stop using django-fsm",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-153",
+   "title": "Stop using python3-openid",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-49",
+   "title": "Stop using underscore",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-19",
+   "title": "Stop using grunt-contrib-less",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-158",
+   "title": "Make @babel/plugin-proposal-object-rest-spread optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-154",
+   "title": "Stop using social-auth-core",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-248",
+   "title": "Stop using backports-entry-points-selectable",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-174",
+   "title": "Stop using django-recaptcha",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-35",
+   "title": "Stop using django-selectable",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-5",
+   "title": "Stop using django-images",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-280",
+   "title": "Stop using flake8",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-247",
+   "title": "Stop using regex",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-25",
+   "title": "Stop using load-grunt-tasks",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-292",
+   "title": "Stop using snowballstemmer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-83",
+   "title": "Stop using relativetimebuilder",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-157",
+   "title": "Make @babel/plugin-proposal-decorators optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-95",
+   "title": "Stop using apollo-link",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-258",
+   "title": "Stop using typing-inspect",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-140",
+   "title": "Stop using string-similarity",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-137",
+   "title": "Stop using react-svg",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-271",
+   "title": "Stop using codecov",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-218",
+   "title": "Stop using webpack-cli",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-32",
+   "title": "Make boto optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-86",
+   "title": "Stop using @material-ui/icons",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-76",
+   "title": "Stop using @playlyfe/gql",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-84",
+   "title": "Stop using raven",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-89",
+   "title": "Stop using @storybook/react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-51",
+   "title": "Make babeldjango optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-104",
+   "title": "Stop using draftail",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-260",
+   "title": "Stop using atomicwrites",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-204",
+   "title": "Stop using prettier",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-268",
+   "title": "Stop using toml",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-128",
+   "title": "Stop using react-infinite-scroller",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-178",
+   "title": "Stop using elasticsearch",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-188",
+   "title": "Stop using eslint-plugin-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-44",
+   "title": "Stop using react-relay",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-267",
+   "title": "Stop using pyparsing",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-207",
+   "title": "Stop using query-string",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-72",
+   "title": "Make phonenumbers optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-107",
+   "title": "Stop using enzyme-to-json",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-191",
+   "title": "Stop using jquery",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-113",
+   "title": "Stop using i18next",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-212",
+   "title": "Stop using select2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using django-offsite-storage",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-256",
+   "title": "Stop using smmap",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-149",
+   "title": "Stop using url-join",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-156",
+   "title": "Make @babel/plugin-proposal-class-properties optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-23",
+   "title": "Stop using grunt-webpack",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-288",
+   "title": "Stop using pylint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-210",
+   "title": "Stop using regenerator-runtime",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-206",
+   "title": "Stop using qs",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-24",
+   "title": "Stop using less",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-270",
+   "title": "Make requests-oauthlib optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using whitenoise",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-74",
+   "title": "Make @babel/preset-es2015 optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-183",
+   "title": "Stop using eslint-plugin-import",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-254",
+   "title": "Stop using libcst",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-10",
+   "title": "Stop using python-geoip-geolite2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-164",
+   "title": "Make babel-eslint optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-249",
+   "title": "Stop using unidecode",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-68",
+   "title": "Stop using asn1crypto",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-279",
+   "title": "Stop using dill",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-214",
+   "title": "Stop using sortablejs",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-54",
+   "title": "Make babel-es6-polyfill optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-224",
+   "title": "Stop using gprof2dot",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-166",
+   "title": "Make babel-loader optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-71",
+   "title": "Stop using xmltodict",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-251",
+   "title": "Make graphene-federation optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-220",
+   "title": "Make django-babel optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-184",
+   "title": "Stop using eslint-plugin-jsx-a11y",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-43",
+   "title": "Make babel-relay-plugin-loader optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-293",
+   "title": "Stop using tomlkit",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-186",
+   "title": "Stop using eslint-plugin-prettier",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-245",
+   "title": "Stop using cairosvg",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-217",
+   "title": "Stop using webpack-bundle-tracker",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-106",
+   "title": "Stop using enzyme-adapter-react-16",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-285",
+   "title": "Stop using pycodestyle",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-165",
+   "title": "Make babel-jest optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-127",
+   "title": "Stop using react-helmet",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-274",
+   "title": "Stop using django-prices-openexchangerates",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-291",
+   "title": "Stop using pylint-plugin-utils",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-14",
+   "title": "Stop using grunt",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-41",
+   "title": "Stop using djangorestframework",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-205",
+   "title": "Stop using prop-types",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-39",
+   "title": "Stop using django-emailit",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-255",
+   "title": "Stop using python-slugify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-240",
+   "title": "Stop using purl",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-265",
+   "title": "Stop using maxminddb",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-38",
+   "title": "Stop using url-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-171",
+   "title": "Stop using django-bootstrap4",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-252",
+   "title": "Stop using gitdb",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-200",
+   "title": "Stop using node-sass",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-145",
+   "title": "Stop using tslint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-118",
+   "title": "Stop using jest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-223",
+   "title": "Stop using django-silk",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-181",
+   "title": "Stop using eslint-config-prettier",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-45",
+   "title": "Stop using jquery-match-height",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-21",
+   "title": "Stop using grunt-postcss",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-129",
+   "title": "Stop using react-inlinesvg",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-177",
+   "title": "Stop using dropzone",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-75",
+   "title": "Make @babel/preset-stage-0 optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-161",
+   "title": "Make @babel/runtime optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-162",
+   "title": "Stop using autoprefixer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-90",
+   "title": "Stop using @testing-library/react-hooks",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-226",
+   "title": "Make graphene-django-optimizer optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-136",
+   "title": "Stop using react-sortable-tree",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-37",
+   "title": "Stop using material-design-icons",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-185",
+   "title": "Stop using eslint-plugin-node",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-100",
+   "title": "Stop using chai",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-219",
+   "title": "Stop using yapf",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-98",
+   "title": "Stop using apollo-link-error",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-138",
+   "title": "Stop using react-test-renderer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-241",
+   "title": "Stop using typed-ast",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-40",
+   "title": "Stop using django-materializecss-form",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-159",
+   "title": "Make @babel/preset-env optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-222",
+   "title": "Stop using autopep8",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-15",
+   "title": "Make grunt-babel optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-253",
+   "title": "Stop using gitpython",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-70",
+   "title": "Stop using suds-jurko",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-289",
+   "title": "Make pylint-celery optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-82",
+   "title": "Stop using django-celery-results",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-105",
+   "title": "Stop using enzyme",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-173",
+   "title": "Stop using django-impersonate",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-77",
+   "title": "Stop using apollo-codegen",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-2",
+   "title": "Stop using httplib2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-109",
+   "title": "Stop using fork-ts-checker-webpack-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-126",
+   "title": "Stop using react-dropzone",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-61",
+   "title": "Stop using favicons-webpack-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-143",
+   "title": "Stop using ts-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-281",
+   "title": "Stop using isort",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-103",
+   "title": "Stop using draft-js",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-30",
+   "title": "Stop using bootstrap-sass",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-259",
+   "title": "Replace psycopg2-binary with psycopg2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-148",
+   "title": "Stop using universal-cookie",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-216",
+   "title": "Stop using webpack",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-59",
+   "title": "Make babel-preset-react optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using grunt-sass",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-167",
+   "title": "Stop using bootstrap",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-114",
+   "title": "Stop using i18next-browser-languagedetector",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-168",
+   "title": "Stop using classnames",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-286",
+   "title": "Stop using pydocstyle",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-60",
+   "title": "Make babel-preset-stage-0 optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-278",
+   "title": "Stop using black",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-46",
+   "title": "Stop using jquery-ui",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-215",
+   "title": "Stop using svg-injector-2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-172",
+   "title": "Stop using django-elasticsearch-dsl",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-134",
+   "title": "Stop using react-router-navigation-prompt",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-101",
+   "title": "Stop using crc-32",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-284",
+   "title": "Stop using pathspec",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-275",
+   "title": "Stop using django-prices-vatlayer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-273",
+   "title": "Make google-measurement-protocol optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-78",
+   "title": "Stop using apollo-link-http",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-69",
+   "title": "Stop using django-payments",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-93",
+   "title": "Stop using apollo-client",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-187",
+   "title": "Make eslint-plugin-promise optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-197",
+   "title": "Stop using mini-css-extract-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-246",
+   "title": "Stop using appdirs",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-199",
+   "title": "Stop using mobx-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-92",
+   "title": "Stop using apollo-cache-inmemory",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-244",
+   "title": "Stop using cairocffi",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-169",
+   "title": "Stop using css-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-231",
+   "title": "Stop using docutils",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-155",
+   "title": "Make @babel/core optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-110",
+   "title": "Stop using fuzzaldrin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-99",
+   "title": "Stop using apollo-upload-client",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-190",
+   "title": "Stop using file-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-102",
+   "title": "Stop using downshift",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-73",
+   "title": "Stop using pdfrw",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-229",
+   "title": "Stop using future",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-141",
+   "title": "Stop using testcafe",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using python-geoip",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-111",
+   "title": "Make graphql optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-194",
+   "title": "Stop using lodash",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-20",
+   "title": "Stop using grunt-contrib-watch",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-88",
+   "title": "Stop using @storybook/addon-storyshots",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using redux",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-250",
+   "title": "Make pytest-vcr optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-131",
+   "title": "Stop using react-moment",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-232",
+   "title": "Stop using typing (the backport: the standard library has it)",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-272",
+   "title": "Stop using django-versatileimagefield",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-12",
+   "title": "Stop using bower",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-96",
+   "title": "Stop using apollo-link-batch-http",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-57",
+   "title": "Make babel-plugin-transform-object-rest-spread optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-123",
+   "title": "Stop using moment-timezone",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-112",
+   "title": "Stop using graphql-tag",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-277",
+   "title": "Stop using astroid",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-228",
+   "title": "Stop using django-graphql-jwt",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-132",
+   "title": "Stop using react-router",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-192",
+   "title": "Stop using jquery.cookie",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-108",
+   "title": "Stop using fast-array-diff",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-79",
+   "title": "Stop using awesome-typescript-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-87",
+   "title": "Stop using @material-ui/styles",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-50",
+   "title": "Stop using yarn",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-290",
+   "title": "Stop using pylint-django",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-179",
+   "title": "Stop using elasticsearch-dsl",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-170",
+   "title": "Stop using detect-passive-events",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-91",
+   "title": "Stop using apollo",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-122",
+   "title": "Stop using lodash-es",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-227",
+   "title": "Stop using entrypoints",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-189",
+   "title": "Stop using eslint-plugin-standard",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-269",
+   "title": "Stop using msrest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-58",
+   "title": "Make babel-preset-es2015 optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-283",
+   "title": "Stop using mccabe",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-233",
+   "title": "Stop using more-itertools",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-144",
+   "title": "Stop using tsconfig-paths-webpack-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-63",
+   "title": "Stop using extract-text-webpack-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-264",
+   "title": "Stop using tox",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-116",
+   "title": "Stop using invariant",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-262",
+   "title": "Stop using py",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-180",
+   "title": "Stop using eslint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-31",
+   "title": "Stop using fake-factory",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-202",
+   "title": "Stop using postcss",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-263",
+   "title": "Make pytest-forked optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-142",
+   "title": "Stop using ts-jest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-36",
+   "title": "Stop using django-allauth",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-203",
+   "title": "Stop using postcss-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-124",
+   "title": "Stop using plop",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-117",
+   "title": "Stop using is-url",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-211",
+   "title": "Stop using sass-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-80",
+   "title": "Stop using webpack-dev-server",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-130",
+   "title": "Stop using react-jss",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-28",
+   "title": "Stop using font-awesome",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-1",
+   "title": "Stop using facebook-sdk",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-33",
+   "title": "Stop using react-redux",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-65",
+   "title": "Stop using eslint-config-airbnb-base",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-266",
+   "title": "Stop using deprecated",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-97",
+   "title": "Stop using apollo-link-context",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-196",
+   "title": "Stop using medium-editor",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-119",
+   "title": "Stop using jest-file",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-67",
+   "title": "Stop using moment",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-64",
+   "title": "Make graphene-file-upload optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using csswring",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-208",
+   "title": "Stop using react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-42",
+   "title": "Make babel-relay-plugin optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-209",
+   "title": "Stop using react-dom",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-121",
+   "title": "Stop using keycode",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-221",
+   "title": "Stop using bleach",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-235",
+   "title": "Stop using jdcal",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-120",
+   "title": "Stop using jss",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-139",
+   "title": "Stop using slugify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-237",
+   "title": "Stop using django-render-block",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-146",
+   "title": "Stop using tslint-config-prettier",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-225",
+   "title": "Stop using aspy-yaml",
+   "guarded": true,
+   "still_true_at_head": true
+  }
+ ],
+ "flags": [],
+ "resurrections": [
+  {
+   "decision": "D-125",
+   "title": "Stop using react-apollo",
+   "edits": 17,
+   "caught": 17,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"react-apollo\": \"^2.5.8\","
+  },
+  {
+   "decision": "D-70",
+   "title": "Stop using suds-jurko",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "suds-jurko==0.6"
+  },
+  {
+   "decision": "D-144",
+   "title": "Stop using tsconfig-paths-webpack-plugin",
+   "edits": 3,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"tsconfig-paths-webpack-plugin\": \"^3.2.0\","
+  },
+  {
+   "decision": "D-229",
+   "title": "Stop using future",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "future==0.18.2"
+  },
+  {
+   "decision": "D-19",
+   "title": "Stop using grunt-contrib-less",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"grunt-contrib-less\": {"
+  },
+  {
+   "decision": "D-25",
+   "title": "Stop using load-grunt-tasks",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "require(\"load-grunt-tasks\")(grunt);"
+  },
+  {
+   "decision": "D-196",
+   "title": "Stop using medium-editor",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"medium-editor\": \"^5.23.3\","
+  },
+  {
+   "decision": "D-38",
+   "title": "Stop using url-loader",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"url-loader\": \"^0.5.7\","
+  },
+  {
+   "decision": "D-136",
+   "title": "Stop using react-sortable-tree",
+   "edits": 4,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"@types/react-sortable-tree\": \"^0.3.6\","
+  },
+  {
+   "decision": "D-208",
+   "title": "Stop using react",
+   "edits": 573,
+   "caught": 571,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"plugin:react/recommended\","
+  },
+  {
+   "decision": "D-21",
+   "title": "Stop using grunt-postcss",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"grunt-postcss\": {"
+  },
+  {
+   "decision": "D-188",
+   "title": "Stop using eslint-plugin-react",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "eslint:"
+  },
+  {
+   "decision": "D-96",
+   "title": "Stop using apollo-link-batch-http",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"apollo\": \"^2.15.0\","
+  },
+  {
+   "decision": "D-16",
+   "title": "Stop using grunt-browser-sync",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"grunt-browser-sync\": {"
+  },
+  {
+   "decision": "D-35",
+   "title": "Stop using django-selectable",
+   "edits": 6,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "django-selectable>=0.8.0"
+  },
+  {
+   "decision": "D-169",
+   "title": "Stop using css-loader",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"css-loader\": \"^3.0.0\","
+  },
+  {
+   "decision": "D-150",
+   "title": "Stop using use-react-router",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"use-react-router\": \"^1.0.7\""
+  },
+  {
+   "decision": "D-24",
+   "title": "Stop using less",
+   "edits": 4,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 3,
+   "example": "\"grunt-contrib-less\": {"
+  },
+  {
+   "decision": "D-103",
+   "title": "Stop using draft-js",
+   "edits": 20,
+   "caught": 20,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"draft-js\": \"^0.10.5\","
+  },
+  {
+   "decision": "D-37",
+   "title": "Stop using material-design-icons",
+   "edits": 32,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 31,
+   "example": "\"material-design-icons\": \"^3.0.1\","
+  },
+  {
+   "decision": "D-200",
+   "title": "Stop using node-sass",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"node-sass\": \"^4.12.0\","
+  },
+  {
+   "decision": "D-162",
+   "title": "Stop using autoprefixer",
+   "edits": 3,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"autoprefixer\": \"^8.6.5\","
+  },
+  {
+   "decision": "D-22",
+   "title": "Stop using grunt-sass",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"grunt-sass\": {"
+  },
+  {
+   "decision": "D-203",
+   "title": "Stop using postcss-loader",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"postcss\": \"^6.0.23\","
+  },
+  {
+   "decision": "D-49",
+   "title": "Stop using underscore",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"underscore\": \"^1.8.3\","
+  },
+  {
+   "decision": "D-99",
+   "title": "Stop using apollo-upload-client",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"apollo\": \"^2.15.0\","
+  },
+  {
+   "decision": "D-239",
+   "title": "Stop using tqdm",
+   "edits": 6,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "known_third_party = Adyen,PIL,authorizenet,babel,boto3,botocore,braintree,celery,dateutil,dj_databas"
+  },
+  {
+   "decision": "D-216",
+   "title": "Stop using webpack",
+   "edits": 9,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 7,
+   "example": "webpack-bundle.json"
+  },
+  {
+   "decision": "D-206",
+   "title": "Stop using qs",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"qs\": \"^6.7.0\","
+  },
+  {
+   "decision": "D-212",
+   "title": "Stop using select2",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"select2\": \"^4.0.7\","
+  },
+  {
+   "decision": "D-274",
+   "title": "Stop using django-prices-openexchangerates",
+   "edits": 8,
+   "caught": 7,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "name = \"django-prices-openexchangerates\""
+  },
+  {
+   "decision": "D-271",
+   "title": "Stop using codecov",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "name = \"codecov\""
+  },
+  {
+   "decision": "D-98",
+   "title": "Stop using apollo-link-error",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"apollo\": \"^2.15.0\","
+  },
+  {
+   "decision": "D-18",
+   "title": "Stop using grunt-contrib-copy",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"grunt-contrib-copy\": {"
+  },
+  {
+   "decision": "D-201",
+   "title": "Stop using popper.js",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"popper.js\": \"^1.15.0\","
+  },
+  {
+   "decision": "D-53",
+   "title": "Stop using satchless",
+   "edits": 15,
+   "caught": 15,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "satchless>=1.1.2,<1.2a0"
+  },
+  {
+   "decision": "D-117",
+   "title": "Stop using is-url",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"is-url\": \"^1.2.4\","
+  },
+  {
+   "decision": "D-223",
+   "title": "Stop using django-silk",
+   "edits": 4,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "name = \"django-silk\""
+  },
+  {
+   "decision": "D-68",
+   "title": "Stop using asn1crypto",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "asn1crypto==0.24.0"
+  },
+  {
+   "decision": "D-197",
+   "title": "Stop using mini-css-extract-plugin",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"mini-css-extract-plugin\": \"^0.4.5\","
+  }
+ ],
+ "resurrection_edits": 753,
+ "resurrection_caught": 692,
+ "resurrection_missed_comment_only": 0,
+ "resurrection_missed_real": 61,
+ "decisions_with_resurrection_tested": 40,
+ "decisions_caught": 40,
+ "check_ms_p50": 32.87,
+ "check_ms_p95": 115.98,
+ "read_context_files": 1500,
+ "read_context_nonempty": 899,
+ "read_context_avg_tokens_when_shown": 119,
+ "seconds": 1519.1
+}
