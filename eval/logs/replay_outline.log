@@ -1,0 +1,165 @@
+graph as of 2024-01-01: 169 decisions, 84 guarded (105.8 s)
+{
+ "repo": "outline",
+ "cut": "2024-01-01",
+ "guarded_decisions": 84,
+ "resurrection_sample": null,
+ "decisions_at_cut": 169,
+ "decisions_still_true_at_head": 167,
+ "reversed_decisions": [
+  "D-121",
+  "D-125"
+ ],
+ "replayed_commits": 4645,
+ "replayed_file_changes": 20559,
+ "commit_verdicts": {
+  "ok": 4612,
+  "ask": 33
+ },
+ "flag_rate_commits": 0.0071,
+ "flagged_commits_false_alarm": 33,
+ "flagged_commits_reversal": 0,
+ "resurrection_edits": 385,
+ "resurrection_caught": 216,
+ "resurrection_missed_comment_only": 1,
+ "resurrection_missed_real": 168,
+ "decisions_with_resurrection_tested": 84,
+ "decisions_caught": 84,
+ "check_ms_p50": 49.29,
+ "check_ms_p95": 187.27,
+ "read_context_files": 1500,
+ "read_context_nonempty": 978,
+ "read_context_avg_tokens_when_shown": 57,
+ "seconds": 2737.7
+}
+FLAG ask [false alarm] 89d905ebb7 shared/editor/lib/FileHelper.ts D-78 lib:extract | import extract from "png-chunks-extract"; | fix: Size of inserted retina images (#6350)
+FLAG ask [false alarm] bd2b32f9d5 server/utils/CacheHelper.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | Helper for cache related utilities (#6696)
+FLAG ask [false alarm] 450d0d9355 plugins/github/shared/GitHubUtils.ts D-23 lib:querystring | import queryString from "query-string"; | Github integration (#6414)
+FLAG ask [false alarm] 34923d9b8d plugins/slack/server/api/hooks.ts D-23 lib:querystring | import queryString from "query-string"; | feat: Enable unfurling comments in Slack (#6716)
+FLAG ask [false alarm] 117c4f5009 app/scenes/Document/components/Comments.tsx D-23 lib:querystring | import queryString from "query-string"; | feat: Comment resolving (#7115)
+FLAG ask [false alarm] 57e9abd77f app/scenes/Document/components/CommentSortMenu.tsx D-23 lib:querystring | import queryString from "query-string"; | feat: allow sort by position for comments (#7770)
+FLAG ask [false alarm] fd5391cbb6 server/utils/MutexLock.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | Cache diff generation for email notifications (#7987)
+FLAG ask [false alarm] a48f6c7a85 server/models/helpers/SubscriptionHelper.ts D-23 lib:querystring | import queryString from "query-string"; | fix: Unsubscribe link for collection subscriptions  (#8734)
+FLAG ask [false alarm] a48f6c7a85 server/routes/api/subscriptions/subscriptions.test.ts D-23 lib:querystring | import queryString from "query-string"; | fix: Unsubscribe link for collection subscriptions  (#8734)
+FLAG ask [false alarm] 6e98568e5b plugins/notion/shared/NotionUtils.ts D-23 lib:querystring | import queryString from "query-string"; | API importer for Notion (#8710)
+FLAG ask [false alarm] 6e98568e5b server/queues/processors/ImportsProcessor.ts D-45 lib:truncate | import truncate from "lodash/truncate"; | API importer for Notion (#8710)
+FLAG ask [false alarm] 6e98568e5b server/routes/api/imports/imports.ts D-45 lib:truncate | import truncate from "lodash/truncate"; | API importer for Notion (#8710)
+FLAG ask [false alarm] 40278b2d9a server/routes/api/notifications/notifications.test.ts D-23 lib:querystring | import queryString from "query-string"; | fix: notifications.pixel requests hang (#8760)
+FLAG ask [false alarm] dcb7b86df8 server/queues/tasks/APIImportTask.ts D-45 lib:truncate | import truncate from "lodash/truncate"; | Store import error in DB (#8811)
+FLAG ask [false alarm] de6c1735d9 plugins/linear/shared/LinearUtils.ts D-23 lib:querystring | import queryString from "query-string"; | feat: Linear integration (#9037)
+FLAG ask [false alarm] 2cc5846f1b plugins/notion/server/notion.ts D-45 lib:truncate | import truncate from "lodash/truncate"; | Truncate Notion document titles to fit validation limits (#9041)
+FLAG ask [false alarm] a06671e8ce app/models/oauth/OAuthClient.ts D-23 lib:querystring | import queryString from "query-string"; | OAuth provider (#8884)
+FLAG ask [false alarm] a57d90fdf1 server/collaboration/PersistenceExtension.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | Add `collaboratorIds` support to revisions (#9343)
+FLAG ask [false alarm] a57d90fdf1 server/commands/revisionCreator.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | Add `collaboratorIds` support to revisions (#9343)
+FLAG ask [false alarm] cf2f13193f server/index.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | chore: Fix Redis mock not used consistently in tests (#9716)
+FLAG ask [false alarm] cf2f13193f server/queues/queue.ts D-81 lib:redis | import Redis from "../storage/redis"; | chore: Fix Redis mock not used consistently in tests (#9716)
+FLAG ask [false alarm] cf2f13193f server/utils/VerificationCode.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | chore: Fix Redis mock not used consistently in tests (#9716)
+FLAG ask [false alarm] cc8a3d8b5e server/queues/queue.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | chore: Still seeing redis connection failures in CI (#9957)
+FLAG ask [false alarm] cc8a3d8b5e server/test/setup.ts D-81 lib:redis | import Redis from "ioredis-mock"; | chore: Still seeing redis connection failures in CI (#9957)
+FLAG ask [false alarm] bf45e97641 server/storage/redis.ts D-81 lib:redis | import Redis from "ioredis"; | chore: Enforce `type` import consistency (#10968)
+FLAG ask [false alarm] 57b6e9aca4 plugins/passkeys/server/auth/passkeys.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | feat: Passkey support (#11065)
+FLAG ask [false alarm] 5584089441 plugins/figma/shared/FigmaUtils.ts D-23 lib:querystring | import queryString from "query-string"; | feat: Figma integration (#11044)
+FLAG ask [false alarm] 00fb4d1af7 plugins/slack/server/slack.ts D-23 lib:querystring | import querystring from "node:querystring"; | chore: Update node style imports (#11277)
+FLAG ask [false alarm] 00fb4d1af7 server/routes/api/middlewares/pagination.ts D-23 lib:querystring | import querystring from "node:querystring"; | chore: Update node style imports (#11277)
+FLAG ask [false alarm] 00fb4d1af7 server/utils/authentication.ts D-23 lib:querystring | import querystring from "node:querystring"; | chore: Update node style imports (#11277)
+FLAG ask [false alarm] 350f69e194 server/queues/processors/RevisionsProcessor.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | fix: Stale collaborator IDs (#11749)
+FLAG ask [false alarm] bcc5a94070 server/models/helpers/ShareSubscriptionHelper.ts D-23 lib:querystring | import queryString from "query-string"; | feat: Add email subscriptions to public docs (#11911)
+FLAG ask [false alarm] bcc5a94070 server/routes/api/shares/shares.test.ts D-23 lib:querystring | import queryString from "query-string"; | feat: Add email subscriptions to public docs (#11911)
+FLAG ask [false alarm] 1f097b0fdd plugins/slack/server/slack.ts D-23 lib:querystring | import querystring, { type ParsedUrlQueryInput } from "node:querystring"; | chore: resolve no-explicit-any lint warnings in plugins (#12237)
+FLAG ask [false alarm] 879d2b8198 server/utils/passport.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | fix: Allow connecting additional auth providers on custom domain (#123
+FLAG ask [false alarm] db1d93f9b5 server/utils/CacheHelper.test.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | perf: Use SCAN and batched UNLINK instead of KEYS in CacheHelper.clear
+FLAG ask [false alarm] 533efdfcfe plugins/oidc/server/auth/oidc.test.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | fix: OIDC 502 on sign-in from oversized id_token cookie (#12986) (#129
+FLAG ask [false alarm] 533efdfcfe server/utils/LogoutTokenStore.test.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | fix: OIDC 502 on sign-in from oversized id_token cookie (#12986) (#129
+FLAG ask [false alarm] 533efdfcfe server/utils/LogoutTokenStore.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | fix: OIDC 502 on sign-in from oversized id_token cookie (#12986) (#129
+FLAG ask [false alarm] 5386d689da server/main.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | perf: Refactor to run boot migration check as separate process (#13049
+FLAG ask [false alarm] d57db81c6b app/utils/splitView.ts D-23 lib:querystring | import queryString from "query-string"; | feat: Split view (#13044)
+FLAG ask [false alarm] e66f0d887b server/queues/HealthMonitor.test.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | fix: Restart worker when queue health check cannot complete (#13431)
+FLAG ask [false alarm] e66f0d887b server/queues/HealthMonitor.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | fix: Restart worker when queue health check cannot complete (#13431)
+FLAG ask [false alarm] e4905a97b8 app/scenes/Trash/index.tsx D-23 lib:querystring | import queryString from "query-string"; | feat: Filter the trash by who deleted an item and when (#13474)
+FLAG ask [false alarm] 5693562624 server/queues/processors/RevisionsProcessor.test.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | fix: Revisions sometimes attributed to the wrong user in collaborative
+FLAG ask [false alarm] 5693562624 server/storage/redis.test.ts D-81 lib:redis | import Redis from "./redis"; | fix: Revisions sometimes attributed to the wrong user in collaborative
+FLAG ask [false alarm] a58962101d server/utils/jwt.ts D-81 lib:redis | import Redis from "@server/storage/redis"; | fix: Tighten email sign-in link handling (#14089)
+RES D-11 3/3 (missed real 0) Stop using redux | "redux": "^3.3.1",
+RES D-12 3/3 (missed real 0) Stop using redux-actions | "redux-actions": "^0.9.1",
+RES D-13 2/2 (missed real 0) Stop using redux-logger | "redux-logger": "^2.6.1",
+RES D-14 2/2 (missed real 0) Stop using redux-persist | "redux-persist": "3.0.3",
+RES D-15 2/2 (missed real 0) Stop using redux-thunk | "redux-thunk": "^2.0.1",
+RES D-16 2/2 (missed real 0) Stop using react-keyframes | "react-keyframes": "^0.1.4",
+RES D-17 1/1 (missed real 0) Stop using react-medium-editor | "react-medium-editor": "^1.6.2",
+RES D-18 6/6 (missed real 0) Stop using react-redux | "react-redux": "^4.4.0",
+RES D-19 7/7 (missed real 0) Stop using react-router-redux | "react-router-redux": "^4.0.4",
+RES D-20 3/3 (missed real 0) Stop using to-markdown | "to-markdown": "^2.0.1",
+RES D-22 1/1 (missed real 0) Stop using fsevents | "fsevents": "1.0.14",
+RES D-23 1/1 (missed real 0) Stop using querystring | "querystring": "0.2.0",
+RES D-25 1/2 (missed real 1) Stop using babel-preset-es2015 | "babel-preset-es2015": "^6.24.1",
+RES D-26 1/2 (missed real 1) Stop using babel-preset-stage-0 | "babel-preset-stage-0": "^6.24.1",
+RES D-27 6/8 (missed real 2) Stop using rebass | import { Avatar } from 'rebass';
+RES D-31 1/2 (missed real 1) Stop using cross-env | "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+RES D-32 1/3 (missed real 2) Stop using ignore-loader | "ignore-loader": "0.1.1",
+RES D-35 1/3 (missed real 1) Stop using flow | // flow-typed signature: 8e43d27dae79968dc11e73b131ec77da
+RES D-40 2/3 (missed real 1) Stop using emoji-name-map | "emoji-name-map": "1.1.2",
+RES D-41 3/4 (missed real 1) Stop using highlight.js | import highlight from 'highlight.js';
+RES D-42 2/3 (missed real 1) Stop using js-tree | "js-tree": "1.1.0",
+RES D-43 4/6 (missed real 2) Stop using marked | import marked from 'marked';
+RES D-44 4/6 (missed real 2) Stop using marked-sanitized | import marked from 'marked';
+RES D-45 2/4 (missed real 2) Stop using truncate-html | "truncate-html": "https://github.com/jorilallo/truncate-html/tarball/master",
+RES D-52 6/9 (missed real 3) Stop using moment | import moment from 'moment';
+RES D-62 2/2 (missed real 0) Stop using bcrypt | "bcrypt": "1.0.3",
+RES D-65 4/5 (missed real 1) Stop using parse-domain | import parseDomain from 'parse-domain';
+RES D-77 2/3 (missed real 1) Stop using redis-lock | "redis-lock": "^0.1.0",
+RES D-78 4/6 (missed real 2) Stop using extract-text-webpack-plugin | // flow-typed version: <<STUB>>/extract-text-webpack-plugin_v^3.0.2/flow_v0.86.0
+RES D-79 2/3 (missed real 1) Stop using pui-react-tooltip | import { TooltipTrigger } from 'pui-react-tooltip';
+RES D-81 2/4 (missed real 2) Replace redis with ioredis | "redis": "^2.6.2",
+RES D-82 3/5 (missed real 2) Stop using react-markdown | // flow-typed version: <<STUB>>/react-markdown_v^3.0.2/flow_v0.86.0
+RES D-83 6/10 (missed real 4) Stop using bugsnag | "description": "An API key for bugsnag if you wish to collect error reporting (optional)",
+RES D-85 2/4 (missed real 2) Replace babel-core with @babel/core | // flow-typed version: <<STUB>>/babel-core_v^6.24.1/flow_v0.104.0
+RES D-87 1/3 (missed real 2) Replace babel-plugin-transform-decorators-legacy with @babel | // flow-typed version: <<STUB>>/babel-plugin-transform-decorators-legacy_v1.3.4/flow_v0.104.0
+RES D-91 1/3 (missed real 2) Replace babel-plugin-transform-regenerator with @babel/plugi | // flow-typed version: <<STUB>>/babel-plugin-transform-regenerator_v^6.24.1/flow_v0.104.0
+RES D-93 1/3 (missed real 2) Replace babel-preset-env with @babel/preset-env, @babel/pres | // flow-typed version: <<STUB>>/babel-preset-env_v^1.4.0/flow_v0.104.0
+RES D-94 1/4 (missed real 3) Replace babel-preset-react with @babel/preset-env, @babel/pr | // flow-typed version: <<STUB>>/babel-preset-react-hmre_v1.1.1/flow_v0.104.0
+RES D-95 1/3 (missed real 2) Replace babel-preset-react-hmre with @babel/preset-react | // flow-typed version: <<STUB>>/babel-preset-react-hmre_v1.1.1/flow_v0.104.0
+RES D-99 3/4 (missed real 1) Stop using mobx-react-devtools | DevTools = require("mobx-react-devtools").default; // eslint-disable-line global-require
+RES D-100 2/3 (missed real 1) Stop using @babel/register | require("@babel/register");
+RES D-101 3/4 (missed real 1) Replace koa-bodyparser with koa-body | "koa-bodyparser": "4.2.0",
+RES D-102 2/4 (missed real 2) Stop using boundless-popover | import BoundlessPopover from "boundless-popover";
+RES D-104 2/4 (missed real 2) Stop using react-modal | import ReactModal from "react-modal";
+RES D-107 5/7 (missed real 2) Stop using isomorphic-fetch | "isomorphic-fetch": "2.2.1",
+RES D-112 7/9 (missed real 2) Stop using react-keydown | import keydown from "react-keydown";
+RES D-115 3/5 (missed real 2) Replace koa-sendfile with koa-send | // flow-typed version: <<STUB>>/koa-sendfile_v2.0.0/flow_v0.104.0
+RES D-117 1/2 (missed real 1) Replace eslint-config-react-app with eslint-config-prettier | "eslint-config-react-app": "3.0.6",
+RES D-118 1/2 (missed real 1) Replace eslint-plugin-flowtype with eslint-plugin-node | "eslint-plugin-flowtype": "^5.2.0",
+RES D-127 2/4 (missed real 2) Replace joplin-turndown-plugin-gfm with @joplin/turndown-plu | "joplin-turndown-plugin-gfm": "^1.0.12",
+RES D-129 4/5 (missed real 1) Stop using socketio-auth | "socketio-auth": "^0.1.1",
+RES D-130 3/4 (missed real 1) Replace @tippy.js/react with @tippyjs/react | import Tippy, { TippyProps } from "@tippy.js/react";
+RES D-131 3/4 (missed real 1) Stop using koa-static | "koa-static": "^4.0.1",
+RES D-135 2/3 (missed real 1) Replace @pmmmwh/react-refresh-webpack-plugin with @vitejs/pl | "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+RES D-136 4/5 (missed real 1) Replace html-webpack-plugin with @vitejs/plugin-react, vite | "html-webpack-plugin": "4.5.2",
+RES D-137 3/4 (missed real 1) Replace koa-webpack-dev-middleware with @vitejs/plugin-react | "koa-webpack-dev-middleware": "^1.4.5",
+RES D-138 3/4 (missed real 1) Replace koa-webpack-hot-middleware with @vitejs/plugin-react | "koa-webpack-hot-middleware": "^1.0.3",
+RES D-139 2/3 (missed real 1) Replace terser-webpack-plugin with @vitejs/plugin-react, ter | "terser-webpack-plugin": "^4.1.0",
+RES D-140 5/23 (missed real 18) Replace webpack with @vitejs/plugin-react, rollup-plugin-web | name: build-webpack
+RES D-141 5/23 (missed real 18) Replace webpack-cli with @vitejs/plugin-react, vite | name: build-webpack
+RES D-142 5/23 (missed real 18) Replace webpack-manifest-plugin with @vitejs/plugin-react, v | name: build-webpack
+RES D-143 5/23 (missed real 18) Replace webpack-pwa-manifest with @vitejs/plugin-react, vite | name: build-webpack
+RES D-144 2/3 (missed real 1) Replace workbox-webpack-plugin with @vitejs/plugin-react, vi | "workbox-webpack-plugin": "^6.5.3",
+RES D-145 1/2 (missed real 1) Stop using babel-plugin-lodash | "babel-plugin-lodash": "^3.3.4",
+RES D-146 1/2 (missed real 1) Stop using babel-loader | "babel-loader": "^9.1.2",
+RES D-147 1/2 (missed real 1) Stop using css-loader | "css-loader": "5.2.6",
+RES D-148 1/2 (missed real 1) Stop using exports-loader | "exports-loader": "^1.1.1",
+RES D-149 1/2 (missed real 1) Stop using file-loader | "file-loader": "^1.1.6",
+RES D-150 3/4 (missed real 1) Stop using immutable | "immutable": "^4.2.4",
+RES D-151 1/2 (missed real 1) Stop using json-loader | "json-loader": "0.5.7",
+RES D-152 3/3 (missed real 0) Stop using koa-convert | "koa-convert": "^2.0.0",
+RES D-153 2/3 (missed real 1) Stop using node-htmldiff | "node-htmldiff": "^0.9.4",
+RES D-154 1/2 (missed real 1) Stop using pg-hstore | "pg-hstore": "^2.3.4",
+RES D-155 1/2 (missed real 1) Stop using raw-loader | "raw-loader": "^0.5.1",
+RES D-156 1/2 (missed real 1) Stop using regenerator-runtime | "@babel/plugin-transform-regenerator": "^7.10.4",
+RES D-157 1/5 (missed real 4) Stop using slate | "slate": "0.45.0",
+RES D-158 5/7 (missed real 2) Stop using slate-md-serializer | "slate-md-serializer": "5.5.4",
+RES D-159 1/2 (missed real 1) Stop using style-loader | "style-loader": "2.0.0",
+RES D-160 1/2 (missed real 1) Stop using url-loader | "url-loader": "^4.1.1",
+RES D-161 5/6 (missed real 1) Replace react-helmet with react-helmet-async | import { Helmet } from "react-helmet";
+RES D-163 2/3 (missed real 1) Stop using @optimize-lodash/rollup-plugin | "@optimize-lodash/rollup-plugin": "4.0.3",
+RES D-167 2/3 (missed real 1) Stop using @fellow/prosemirror-recreate-transform | "@fellow/prosemirror-recreate-transform": "^1.2.3",
+RES D-168 2/3 (missed real 1) Stop using unzipper | "unzipper": "0.10.11",
+RES D-169 4/5 (missed real 1) Stop using inline-css | "inline-css": "^4.0.2",

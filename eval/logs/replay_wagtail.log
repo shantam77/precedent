@@ -1,0 +1,87 @@
+graph as of 2024-01-01: 104 decisions, 48 guarded (37.9 s)
+{
+ "repo": "wagtail",
+ "cut": "2024-01-01",
+ "guarded_decisions": 48,
+ "decisions_at_cut": 104,
+ "decisions_still_true_at_head": 96,
+ "reversed_decisions": [
+  "D-17",
+  "D-21",
+  "D-23",
+  "D-24",
+  "D-26",
+  "D-88",
+  "D-100",
+  "D-102"
+ ],
+ "replayed_commits": 4159,
+ "replayed_file_changes": 13546,
+ "commit_verdicts": {
+  "ok": 4157,
+  "ask": 2
+ },
+ "flag_rate_commits": 0.0005,
+ "flagged_commits_false_alarm": 0,
+ "flagged_commits_reversal": 2,
+ "resurrection_edits": 132,
+ "resurrection_caught": 98,
+ "resurrection_missed_comment_only": 1,
+ "resurrection_missed_real": 33,
+ "decisions_with_resurrection_tested": 46,
+ "decisions_caught": 46,
+ "check_ms_p50": 13.68,
+ "check_ms_p95": 35.25,
+ "read_context_files": 1500,
+ "read_context_nonempty": 975,
+ "read_context_avg_tokens_when_shown": 58,
+ "seconds": 1151.2
+}
+FLAG ask [reversal (library came back later)] d9a09a7442 pyproject.toml D-17 lib:coverage | "coverage>=3.7.0", | Migrate setup.py and setup.cfg to pyproject.toml
+FLAG ask [reversal (library came back later)] a9900b5d9b pyproject.toml D-21 lib:pyenchant | "pyenchant>=3.3.0,<4", | Upgrade Python tooling, testing, and docs dependencies (#13952)
+RES D-1 2/2 (missed real 0) Stop using django-celery | "django-celery>=3.1.1",
+RES D-5 6/6 (missed real 0) Stop using unittest2 | unittest2==0.5.1
+RES D-7 2/2 (missed real 0) Stop using unicodecsv | 'unicodecsv>=0.9.4',
+RES D-8 1/2 (missed real 1) Stop using lxml | "lxml>=3.3.0",
+RES D-10 3/5 (missed real 2) Stop using django-libsass | * libsass-python (for compiling SASS stylesheets) - requires a C++ compiler and the Python developme
+RES D-11 1/1 (missed real 0) Stop using gulp-pixrem | "gulp-pixrem": "~0.1.1",
+RES D-13 1/6 (missed real 5) Stop using django-compressor | 'compressor',
+RES D-17 2/2 (missed real 0) Stop using coverage | # For coverage and PEP8 linting
+RES D-18 2/2 (missed real 0) Stop using elasticsearch | elasticsearch>=1.0.0
+RES D-19 1/1 (missed real 0) Stop using flake8 | flake8>=2.2.0
+RES D-20 1/1 (missed real 0) Stop using mock | mock>=1.0.0
+RES D-21 1/1 (missed real 0) Stop using pyenchant | pyenchant==1.6.6
+RES D-22 2/2 (missed real 0) Stop using python-dateutil | python-dateutil>=2.2
+RES D-40 1/1 (missed real 0) Stop using exports-loader | "exports-loader": "^0.6.4",
+RES D-41 1/1 (missed real 0) Stop using imports-loader | "imports-loader": "^0.7.1",
+RES D-42 1/1 (missed real 0) Stop using react-addons-test-utils | "react-addons-test-utils": "^15.4.2",
+RES D-43 3/3 (missed real 0) Stop using redux-actions | import { createAction } from 'redux-actions';
+RES D-44 2/2 (missed real 0) Stop using require-dir | var requireDir = require('require-dir');
+RES D-46 10/11 (missed real 1) Stop using lodash | "lodash": "4.17.4"
+RES D-47 2/2 (missed real 0) Stop using object-assign | Object.assign = require('object-assign');
+RES D-48 2/3 (missed real 1) Stop using promise | require('promise/lib/rejection-tracking').enable();
+RES D-50 2/3 (missed real 1) Stop using yargs | "yargs": {
+RES D-51 2/3 (missed real 1) Stop using mustache | "mustache": {
+RES D-52 1/3 (missed real 2) Stop using stylelint-scss | - stylelint-scss
+RES D-55 3/4 (missed real 1) Stop using gulp-sass | var sass = require('gulp-sass');
+RES D-56 3/3 (missed real 0) Replace gulp-autoprefixer with autoprefixer | var autoprefixer = require('gulp-autoprefixer');
+RES D-57 2/2 (missed real 0) Replace gulp-cssnano with cssnano | var cssnano = require('gulp-cssnano');
+RES D-63 2/3 (missed real 0) Stop using unidecode | # RemovedInWagtail212Warning: unidecode is only used by _migrate_legacy_clean_name in wagtail.contri
+RES D-64 1/3 (missed real 2) Stop using react-streamfield | @use '../../../../node_modules/react-streamfield/src/scss/index' with (
+RES D-65 3/4 (missed real 1) Stop using wagtail-comment-frontend | import { initCommentApp } from 'wagtail-comment-frontend';
+RES D-71 1/2 (missed real 1) Replace eslint-config-wagtail with @wagtail/eslint-config-wa | "eslint-config-wagtail": {
+RES D-74 2/3 (missed real 1) Replace gulp-dart-sass with sass | "gulp-dart-sass": {
+RES D-75 2/3 (missed real 1) Replace gulp-postcss with postcss | "gulp-postcss": {
+RES D-82 2/3 (missed real 1) Replace postcss-custom-properties with postcss | "postcss-custom-properties": {
+RES D-89 2/3 (missed real 1) Stop using core-js | import 'core-js/shim';
+RES D-90 3/4 (missed real 1) Stop using element-closest | import 'element-closest';
+RES D-91 2/3 (missed real 1) Stop using formdata-polyfill | import 'formdata-polyfill';
+RES D-92 2/3 (missed real 1) Stop using url-search-params-polyfill | import 'url-search-params-polyfill';
+RES D-93 2/3 (missed real 1) Stop using whatwg-fetch | import 'whatwg-fetch';
+RES D-94 2/3 (missed real 1) Stop using postcss-calc | "postcss-calc": "^7.0.5",
+RES D-95 2/3 (missed real 1) Stop using dateformat | import dateFormat from 'dateformat';
+RES D-97 3/3 (missed real 0) Stop using tablib | "tablib[xlsx]>=0.14.0",
+RES D-98 3/3 (missed real 0) Stop using xlsxwriter | "xlsxwriter>=1.2.8,<4.0",
+RES D-99 2/4 (missed real 2) Stop using react-axe | // Run react-axe in development only, so it does not affect performance
+RES D-103 1/2 (missed real 1) Replace @storybook/builder-webpack5 with storybook | "@storybook/builder-webpack5": "^6.4.19",
+RES D-104 1/2 (missed real 1) Replace @storybook/manager-webpack5 with storybook | "@storybook/manager-webpack5": "^6.4.19",

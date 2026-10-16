@@ -1,0 +1,6544 @@
+{
+ "stats": {
+  "repo": "cs_sentry",
+  "files": 21739,
+  "components": 192,
+  "depends_on": 1887,
+  "libraries": 952,
+  "manifest_events": 928,
+  "format_migrations_skipped": 0,
+  "decisions": 560,
+  "guarded_decisions": 342,
+  "observed_only": 195,
+  "people": 956,
+  "knows": 7307,
+  "notes": 362,
+  "rules": 6,
+  "seconds": 480.3,
+  "llm_tokens": 0
+ },
+ "decisions": [
+  {
+   "id": "D-1",
+   "title": "Stop using pygooglechart",
+   "forbid": [
+    "lib:pygooglechart"
+   ],
+   "sha": "5574e6015a",
+   "subject": "Add sexy charts using highchart; shows activity up within last 90 days",
+   "at": 1287190647000,
+   "chose": []
+  },
+  {
+   "id": "D-2",
+   "title": "Stop using uuid (the backport: the standard library has it)",
+   "forbid": [
+    "lib:uuid"
+   ],
+   "sha": "eb90221d1a",
+   "subject": "Dont require eventlet/python-daemon by default. Only require uuid if its not found within existing packages. Better docs about isolated sentry web server and reqs.",
+   "at": 1305246534000,
+   "chose": []
+  },
+  {
+   "id": "D-3",
+   "title": "Stop using django-haystack",
+   "forbid": [
+    "lib:django-haystack",
+    "lib:django_haystack",
+    "lib:haystack"
+   ],
+   "sha": "89d700e327",
+   "subject": "Clean up package requirements",
+   "at": 1324614948000,
+   "chose": []
+  },
+  {
+   "id": "D-4",
+   "title": "Stop using whoosh",
+   "forbid": [
+    "lib:whoosh"
+   ],
+   "sha": "89d700e327",
+   "subject": "Clean up package requirements",
+   "at": 1324614948000,
+   "chose": []
+  },
+  {
+   "id": "D-5",
+   "title": "Stop using raven2",
+   "forbid": [
+    "lib:raven2"
+   ],
+   "sha": "84f6edbb36",
+   "subject": "raven2 -> raven",
+   "at": 1326916792000,
+   "chose": []
+  },
+  {
+   "id": "D-6",
+   "title": "Stop using python-daemon",
+   "forbid": [
+    "lib:daemon",
+    "lib:python-daemon",
+    "lib:python_daemon"
+   ],
+   "sha": "3d67130e66",
+   "subject": "*really* remove python-daemon requirement",
+   "at": 1329508920000,
+   "chose": []
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using django-kombu",
+   "forbid": [
+    "lib:django-kombu",
+    "lib:django_kombu",
+    "lib:kombu"
+   ],
+   "sha": "4d79f4da67",
+   "subject": "Up Kombu to version 2.1.0",
+   "at": 1329972745000,
+   "chose": []
+  },
+  {
+   "id": "D-8",
+   "title": "Stop using eventlet",
+   "forbid": [
+    "lib:eventlet"
+   ],
+   "sha": "1163c25872",
+   "subject": "Dont use eventlet by default for the gunicorn worker as it causes issue",
+   "at": 1330396851000,
+   "chose": []
+  },
+  {
+   "id": "D-10",
+   "title": "Stop using connect",
+   "forbid": [
+    "lib:connect"
+   ],
+   "sha": "d32919dd94",
+   "subject": "Move less compression into django-compresor",
+   "at": 1353707503000,
+   "chose": []
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using recess",
+   "forbid": [
+    "lib:recess"
+   ],
+   "sha": "d32919dd94",
+   "subject": "Move less compression into django-compresor",
+   "at": 1353707503000,
+   "chose": []
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using hogan.js",
+   "forbid": [
+    "lib:hogan.js"
+   ],
+   "sha": "d32919dd94",
+   "subject": "Move less compression into django-compresor",
+   "at": 1353707503000,
+   "chose": []
+  },
+  {
+   "id": "D-12",
+   "title": "Stop using django-compressor",
+   "forbid": [
+    "lib:compressor",
+    "lib:django-compressor",
+    "lib:django_compressor"
+   ],
+   "sha": "e1d11c0dbb",
+   "subject": "Replace django-compressor with django-static-compiler",
+   "at": 1359843510000,
+   "chose": []
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using django-indexer",
+   "forbid": [
+    "lib:django-indexer",
+    "lib:django_indexer",
+    "lib:indexer"
+   ],
+   "sha": "fccaf9ce5f",
+   "subject": "Remove django-indexer and most of the custom filter functionality",
+   "at": 1367396270000,
+   "chose": []
+  },
+  {
+   "id": "D-14",
+   "title": "Stop using django-social-auth-trello",
+   "forbid": [
+    "lib:django-social-auth-trello",
+    "lib:django_social_auth_trello",
+    "lib:social_auth_trello"
+   ],
+   "sha": "a040eb9578",
+   "subject": "Update django-social-auth and remove unused backends",
+   "at": 1374075797000,
+   "chose": []
+  },
+  {
+   "id": "D-15",
+   "title": "Stop using sourcemap",
+   "forbid": [
+    "lib:sourcemap"
+   ],
+   "sha": "011f8f475a",
+   "subject": "Revert \"Switch to sourcemap library via @mattrobenolt\"",
+   "at": 1375652840000,
+   "chose": []
+  },
+  {
+   "id": "D-16",
+   "title": "Stop using gevent",
+   "forbid": [
+    "lib:gevent"
+   ],
+   "sha": "e02e5e505c",
+   "subject": "Do not require gevent",
+   "at": 1398966616000,
+   "chose": []
+  },
+  {
+   "id": "D-17",
+   "title": "Replace httpagentparser with ua-parser",
+   "forbid": [
+    "lib:httpagentparser"
+   ],
+   "sha": "c992dec125",
+   "subject": "Replace httpagentparser with ua_parser \\nadd DevicePlugin",
+   "at": 1399746177000,
+   "chose": [
+    "ua-parser"
+   ]
+  },
+  {
+   "id": "D-18",
+   "title": "Stop using pynliner",
+   "forbid": [
+    "lib:pynliner"
+   ],
+   "sha": "0e68935ab7",
+   "subject": "Swap pynliner for toronado",
+   "at": 1400374461000,
+   "chose": []
+  },
+  {
+   "id": "D-19",
+   "title": "Stop using mocha-phantomjs",
+   "forbid": [
+    "lib:mocha-phantomjs",
+    "lib:mocha_phantomjs"
+   ],
+   "sha": "6d61b1d215",
+   "subject": "Move test suite to karma",
+   "at": 1406376329000,
+   "chose": []
+  },
+  {
+   "id": "D-20",
+   "title": "Stop using phantomjs",
+   "forbid": [
+    "lib:phantomjs"
+   ],
+   "sha": "6d61b1d215",
+   "subject": "Move test suite to karma",
+   "at": 1406376329000,
+   "chose": []
+  },
+  {
+   "id": "D-21",
+   "title": "Stop using django-static-compiler",
+   "forbid": [
+    "lib:django-static-compiler",
+    "lib:django_static_compiler",
+    "lib:static_compiler"
+   ],
+   "sha": "ca6c10d0b0",
+   "subject": "JS refactor",
+   "at": 1419034163000,
+   "chose": []
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using gulp-webpack",
+   "forbid": [
+    "lib:gulp-webpack",
+    "lib:gulp_webpack"
+   ],
+   "sha": "38c5376410",
+   "subject": "Fix webpack behavior",
+   "at": 1420004038000,
+   "chose": []
+  },
+  {
+   "id": "D-23",
+   "title": "Stop using bower",
+   "forbid": [
+    "lib:bower"
+   ],
+   "sha": "c4d6476bc0",
+   "subject": "Remove bower",
+   "at": 1421265886000,
+   "chose": []
+  },
+  {
+   "id": "D-24",
+   "title": "Stop using bootstrap-datetimepicker",
+   "forbid": [
+    "lib:bootstrap",
+    "lib:bootstrap-datetimepicker",
+    "lib:bootstrap_datetimepicker"
+   ],
+   "sha": "96a05dffa6",
+   "subject": "Swap in more maintained datetime picker",
+   "at": 1421266025000,
+   "chose": []
+  },
+  {
+   "id": "D-25",
+   "title": "Stop using browser-sync",
+   "forbid": [
+    "lib:browser",
+    "lib:browser-sync",
+    "lib:browser_sync"
+   ],
+   "sha": "7b0848416e",
+   "subject": "Remove browser-sync (not working correctly)",
+   "at": 1421366627000,
+   "chose": []
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using eonasdan-bootstrap-datetimepicker",
+   "forbid": [
+    "lib:eonasdan",
+    "lib:eonasdan-bootstrap-datetimepicker",
+    "lib:eonasdan_bootstrap_datetimepicker"
+   ],
+   "sha": "6d0713a829",
+   "subject": "Import react-bootstrap-datepicker",
+   "at": 1421443672000,
+   "chose": []
+  },
+  {
+   "id": "D-27",
+   "title": "Stop using fluxxor",
+   "forbid": [
+    "lib:fluxxor"
+   ],
+   "sha": "ad325e1767",
+   "subject": "Remove fluxxor",
+   "at": 1422745851000,
+   "chose": []
+  },
+  {
+   "id": "D-28",
+   "title": "Stop using gulp-livereload",
+   "forbid": [
+    "lib:gulp-livereload",
+    "lib:gulp_livereload"
+   ],
+   "sha": "4bd1887709",
+   "subject": "Remove livereload",
+   "at": 1425597520000,
+   "chose": []
+  },
+  {
+   "id": "D-29",
+   "title": "Stop using uglify-js",
+   "forbid": [
+    "lib:uglify",
+    "lib:uglify-js",
+    "lib:uglify_js"
+   ],
+   "sha": "94ad0d69fd",
+   "subject": "Version up/simplify some npm deps",
+   "at": 1425955821000,
+   "chose": []
+  },
+  {
+   "id": "D-31",
+   "title": "Stop using source-map",
+   "forbid": [
+    "lib:source",
+    "lib:source-map",
+    "lib:source_map"
+   ],
+   "sha": "94ad0d69fd",
+   "subject": "Version up/simplify some npm deps",
+   "at": 1425955821000,
+   "chose": []
+  },
+  {
+   "id": "D-30",
+   "title": "Stop using imports-loader",
+   "forbid": [
+    "lib:imports",
+    "lib:imports-loader",
+    "lib:imports_loader"
+   ],
+   "sha": "94ad0d69fd",
+   "subject": "Version up/simplify some npm deps",
+   "at": 1425955821000,
+   "chose": []
+  },
+  {
+   "id": "D-32",
+   "title": "Stop using gulp-cached",
+   "forbid": [
+    "lib:gulp-cached",
+    "lib:gulp_cached"
+   ],
+   "sha": "224a528ee9",
+   "subject": "Remove gulp-cached as it breaks less",
+   "at": 1425957113000,
+   "chose": []
+  },
+  {
+   "id": "D-33",
+   "title": "Stop using django-celery",
+   "forbid": [
+    "lib:celery",
+    "lib:django-celery",
+    "lib:django_celery"
+   ],
+   "sha": "8f8eede4fd",
+   "subject": "Kill djcelery",
+   "at": 1429378861000,
+   "chose": []
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using flot",
+   "forbid": [
+    "lib:flot"
+   ],
+   "sha": "7158bf24b8",
+   "subject": "Migrate organization stats to React",
+   "at": 1432819904000,
+   "chose": []
+  },
+  {
+   "id": "D-36",
+   "title": "Stop using gulp-uglify",
+   "forbid": [
+    "lib:gulp-uglify",
+    "lib:gulp_uglify"
+   ],
+   "sha": "9a28054274",
+   "subject": "Unused deps",
+   "at": 1433779578000,
+   "chose": []
+  },
+  {
+   "id": "D-35",
+   "title": "Stop using gulp-rename",
+   "forbid": [
+    "lib:gulp-rename",
+    "lib:gulp_rename"
+   ],
+   "sha": "9a28054274",
+   "subject": "Unused deps",
+   "at": 1433779578000,
+   "chose": []
+  },
+  {
+   "id": "D-37",
+   "title": "Stop using jsx",
+   "forbid": [
+    "lib:jsx"
+   ],
+   "sha": "f7234b5e6e",
+   "subject": "Switch to babel loader",
+   "at": 1434420353000,
+   "chose": []
+  },
+  {
+   "id": "D-38",
+   "title": "Stop using jsx-loader",
+   "forbid": [
+    "lib:jsx-loader",
+    "lib:jsx_loader"
+   ],
+   "sha": "f7234b5e6e",
+   "subject": "Switch to babel loader",
+   "at": 1434420353000,
+   "chose": []
+  },
+  {
+   "id": "D-39",
+   "title": "Stop using docutils",
+   "forbid": [
+    "lib:docutils"
+   ],
+   "sha": "4e36ab552c",
+   "subject": "Imported new docs for federation",
+   "at": 1438038229000,
+   "chose": []
+  },
+  {
+   "id": "D-42",
+   "title": "Stop using sphinx",
+   "forbid": [
+    "lib:sphinx"
+   ],
+   "sha": "4e36ab552c",
+   "subject": "Imported new docs for federation",
+   "at": 1438038229000,
+   "chose": []
+  },
+  {
+   "id": "D-41",
+   "title": "Stop using pygments",
+   "forbid": [
+    "lib:pygments"
+   ],
+   "sha": "4e36ab552c",
+   "subject": "Imported new docs for federation",
+   "at": 1438038229000,
+   "chose": []
+  },
+  {
+   "id": "D-40",
+   "title": "Stop using jinja2",
+   "forbid": [
+    "lib:jinja2"
+   ],
+   "sha": "4e36ab552c",
+   "subject": "Imported new docs for federation",
+   "at": 1438038229000,
+   "chose": []
+  },
+  {
+   "id": "D-43",
+   "title": "Stop using sync-exec",
+   "forbid": [
+    "lib:sync-exec",
+    "lib:sync_exec"
+   ],
+   "sha": "d444272cb1",
+   "subject": "Remove unused sync-exec",
+   "at": 1438737620000,
+   "chose": []
+  },
+  {
+   "id": "D-44",
+   "title": "Stop using django-statsd-mozilla",
+   "forbid": [
+    "lib:django-statsd-mozilla",
+    "lib:django_statsd_mozilla",
+    "lib:statsd_mozilla"
+   ],
+   "sha": "bc20820fdd",
+   "subject": "Add pluggable internal metrics backends",
+   "at": 1439924039000,
+   "chose": []
+  },
+  {
+   "id": "D-45",
+   "title": "Stop using nydus",
+   "forbid": [
+    "lib:nydus"
+   ],
+   "sha": "04b872e6a9",
+   "subject": "Pull in ThreadPool from Nydus",
+   "at": 1439942644000,
+   "chose": []
+  },
+  {
+   "id": "D-47",
+   "title": "Stop using jsxhint",
+   "forbid": [
+    "lib:jsxhint"
+   ],
+   "sha": "90e514cbda",
+   "subject": "Dump jshint in favor of eslint",
+   "at": 1440622224000,
+   "chose": []
+  },
+  {
+   "id": "D-46",
+   "title": "Stop using jshint",
+   "forbid": [
+    "lib:jshint"
+   ],
+   "sha": "90e514cbda",
+   "subject": "Dump jshint in favor of eslint",
+   "at": 1440622224000,
+   "chose": []
+  },
+  {
+   "id": "D-49",
+   "title": "Stop using react-day-picker",
+   "forbid": [
+    "lib:react-day-picker",
+    "lib:react_day_picker"
+   ],
+   "sha": "7854026c72",
+   "subject": "Remove unused datepicker code, dependency",
+   "at": 1443654737000,
+   "chose": []
+  },
+  {
+   "id": "D-48",
+   "title": "Stop using react-datepicker",
+   "forbid": [
+    "lib:react-datepicker",
+    "lib:react_datepicker"
+   ],
+   "sha": "7854026c72",
+   "subject": "Remove unused datepicker code, dependency",
+   "at": 1443654737000,
+   "chose": []
+  },
+  {
+   "id": "D-50",
+   "title": "Stop using selectize",
+   "forbid": [
+    "lib:selectize"
+   ],
+   "sha": "7f8e6a1a86",
+   "subject": "Various cleanup for Rules",
+   "at": 1443723377000,
+   "chose": []
+  },
+  {
+   "id": "D-52",
+   "title": "Stop using gulp-clean",
+   "forbid": [
+    "lib:gulp-clean",
+    "lib:gulp_clean"
+   ],
+   "sha": "2e2c2d1743",
+   "subject": "Remove gulp (all done via webpack now)",
+   "at": 1444169977000,
+   "chose": []
+  },
+  {
+   "id": "D-54",
+   "title": "Stop using gulp-less",
+   "forbid": [
+    "lib:gulp-less",
+    "lib:gulp_less"
+   ],
+   "sha": "2e2c2d1743",
+   "subject": "Remove gulp (all done via webpack now)",
+   "at": 1444169977000,
+   "chose": []
+  },
+  {
+   "id": "D-55",
+   "title": "Stop using gulp-react",
+   "forbid": [
+    "lib:gulp-react",
+    "lib:gulp_react"
+   ],
+   "sha": "2e2c2d1743",
+   "subject": "Remove gulp (all done via webpack now)",
+   "at": 1444169977000,
+   "chose": []
+  },
+  {
+   "id": "D-57",
+   "title": "Stop using gulp-watch",
+   "forbid": [
+    "lib:gulp-watch",
+    "lib:gulp_watch"
+   ],
+   "sha": "2e2c2d1743",
+   "subject": "Remove gulp (all done via webpack now)",
+   "at": 1444169977000,
+   "chose": []
+  },
+  {
+   "id": "D-51",
+   "title": "Stop using gulp",
+   "forbid": [
+    "lib:gulp"
+   ],
+   "sha": "2e2c2d1743",
+   "subject": "Remove gulp (all done via webpack now)",
+   "at": 1444169977000,
+   "chose": []
+  },
+  {
+   "id": "D-56",
+   "title": "Stop using gulp-util",
+   "forbid": [
+    "lib:gulp-util",
+    "lib:gulp_util"
+   ],
+   "sha": "2e2c2d1743",
+   "subject": "Remove gulp (all done via webpack now)",
+   "at": 1444169977000,
+   "chose": []
+  },
+  {
+   "id": "D-53",
+   "title": "Stop using gulp-concat",
+   "forbid": [
+    "lib:gulp-concat",
+    "lib:gulp_concat"
+   ],
+   "sha": "2e2c2d1743",
+   "subject": "Remove gulp (all done via webpack now)",
+   "at": 1444169977000,
+   "chose": []
+  },
+  {
+   "id": "D-58",
+   "title": "Stop using markdown",
+   "forbid": [
+    "lib:markdown"
+   ],
+   "sha": "28fbb13c18",
+   "subject": "Remove markdown from backend",
+   "at": 1446493741000,
+   "chose": []
+  },
+  {
+   "id": "D-59",
+   "title": "Stop using logan",
+   "forbid": [
+    "lib:logan"
+   ],
+   "sha": "f3b84a88f7",
+   "subject": "Refactor `sentry` cli tooling to use Click",
+   "at": 1449083210000,
+   "chose": []
+  },
+  {
+   "id": "D-60",
+   "title": "Stop using gunicorn",
+   "forbid": [
+    "lib:gunicorn"
+   ],
+   "sha": "d77e5a3666",
+   "subject": "Replace gunicorn with uwsgi",
+   "at": 1453758087000,
+   "chose": []
+  },
+  {
+   "id": "D-61",
+   "title": "Stop using django-paging",
+   "forbid": [
+    "lib:django-paging",
+    "lib:django_paging",
+    "lib:paging"
+   ],
+   "sha": "df824c1c86",
+   "subject": "Overhaul internal admin",
+   "at": 1470353606000,
+   "chose": []
+  },
+  {
+   "id": "D-62",
+   "title": "Stop using django-social-auth",
+   "forbid": [
+    "lib:django-social-auth",
+    "lib:django_social_auth",
+    "lib:social_auth"
+   ],
+   "sha": "733b393548",
+   "subject": "Vendor django-social-auth",
+   "at": 1470353645000,
+   "chose": []
+  },
+  {
+   "id": "D-64",
+   "title": "Stop using progressbar",
+   "forbid": [
+    "lib:progressbar"
+   ],
+   "sha": "461204944f",
+   "subject": "Initial support for Python 3",
+   "at": 1470418612000,
+   "chose": []
+  },
+  {
+   "id": "D-63",
+   "title": "Stop using ipaddr",
+   "forbid": [
+    "lib:ipaddr"
+   ],
+   "sha": "461204944f",
+   "subject": "Initial support for Python 3",
+   "at": 1470418612000,
+   "chose": []
+  },
+  {
+   "id": "D-65",
+   "title": "Stop using django-recaptcha",
+   "forbid": [
+    "lib:django-recaptcha",
+    "lib:django_recaptcha",
+    "lib:recaptcha"
+   ],
+   "sha": "7fe17a6847",
+   "subject": "Remove all of ReCAPTCHA (#4024)",
+   "at": 1472667702000,
+   "chose": []
+  },
+  {
+   "id": "D-66",
+   "title": "Stop using node-zopfli",
+   "forbid": [
+    "lib:node-zopfli",
+    "lib:node_zopfli"
+   ],
+   "sha": "1381621a36",
+   "subject": "Remove node-zopfli",
+   "at": 1483988418000,
+   "chose": []
+  },
+  {
+   "id": "D-67",
+   "title": "Stop using django-bitfield",
+   "forbid": [
+    "lib:bitfield",
+    "lib:django-bitfield",
+    "lib:django_bitfield"
+   ],
+   "sha": "73f717b9d0",
+   "subject": "Initial support for running newer versions of Django (#4868)",
+   "at": 1490640758000,
+   "chose": []
+  },
+  {
+   "id": "D-71",
+   "title": "Stop using karma-phantomjs-launcher",
+   "forbid": [
+    "lib:karma-phantomjs-launcher",
+    "lib:karma_phantomjs_launcher"
+   ],
+   "sha": "da72a6d77e",
+   "subject": "Use Jest for JS/React tests (#5252)",
+   "at": 1492625718000,
+   "chose": []
+  },
+  {
+   "id": "D-68",
+   "title": "Stop using karma",
+   "forbid": [
+    "lib:karma"
+   ],
+   "sha": "da72a6d77e",
+   "subject": "Use Jest for JS/React tests (#5252)",
+   "at": 1492625718000,
+   "chose": []
+  },
+  {
+   "id": "D-69",
+   "title": "Stop using karma-chai",
+   "forbid": [
+    "lib:karma-chai",
+    "lib:karma_chai"
+   ],
+   "sha": "da72a6d77e",
+   "subject": "Use Jest for JS/React tests (#5252)",
+   "at": 1492625718000,
+   "chose": []
+  },
+  {
+   "id": "D-72",
+   "title": "Stop using karma-sinon",
+   "forbid": [
+    "lib:karma-sinon",
+    "lib:karma_sinon"
+   ],
+   "sha": "da72a6d77e",
+   "subject": "Use Jest for JS/React tests (#5252)",
+   "at": 1492625718000,
+   "chose": []
+  },
+  {
+   "id": "D-73",
+   "title": "Stop using mocha",
+   "forbid": [
+    "lib:mocha"
+   ],
+   "sha": "da72a6d77e",
+   "subject": "Use Jest for JS/React tests (#5252)",
+   "at": 1492625718000,
+   "chose": []
+  },
+  {
+   "id": "D-70",
+   "title": "Stop using karma-mocha",
+   "forbid": [
+    "lib:karma-mocha",
+    "lib:karma_mocha"
+   ],
+   "sha": "da72a6d77e",
+   "subject": "Use Jest for JS/React tests (#5252)",
+   "at": 1492625718000,
+   "chose": []
+  },
+  {
+   "id": "D-74",
+   "title": "Stop using django-debug-toolbar",
+   "forbid": [
+    "lib:debug_toolbar",
+    "lib:django-debug-toolbar",
+    "lib:django_debug_toolbar"
+   ],
+   "sha": "092920674e",
+   "subject": "debugger: vendor debug_toolbar",
+   "at": 1497028557000,
+   "chose": []
+  },
+  {
+   "id": "D-75",
+   "title": "Stop using south",
+   "forbid": [
+    "lib:south"
+   ],
+   "sha": "2f88d9db85",
+   "subject": "vendor south",
+   "at": 1500425873000,
+   "chose": []
+  },
+  {
+   "id": "D-76",
+   "title": "Stop using underscore",
+   "forbid": [
+    "lib:underscore"
+   ],
+   "sha": "2ac81ef4d9",
+   "subject": "Switch to lodash + lodash-webpack-plugin ... (#5616)",
+   "at": 1501189634000,
+   "chose": []
+  },
+  {
+   "id": "D-78",
+   "title": "Stop using karma-webpack",
+   "forbid": [
+    "lib:karma-webpack",
+    "lib:karma_webpack"
+   ],
+   "sha": "9929c481f6",
+   "subject": "build(npm): remove \"karma-*\" packages (#6092)",
+   "at": 1505253854000,
+   "chose": []
+  },
+  {
+   "id": "D-77",
+   "title": "Stop using karma-sourcemap-loader",
+   "forbid": [
+    "lib:karma-sourcemap-loader",
+    "lib:karma_sourcemap_loader"
+   ],
+   "sha": "9929c481f6",
+   "subject": "build(npm): remove \"karma-*\" packages (#6092)",
+   "at": 1505253854000,
+   "chose": []
+  },
+  {
+   "id": "D-79",
+   "title": "Stop using webpack-livereload-plugin",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-livereload-plugin",
+    "lib:webpack_livereload_plugin"
+   ],
+   "sha": "790fad79cb",
+   "subject": "tooling(webpack): add webpack hot module replacement (#5805)",
+   "at": 1507237655000,
+   "chose": []
+  },
+  {
+   "id": "D-80",
+   "title": "Stop using symsynd",
+   "forbid": [
+    "lib:symsynd"
+   ],
+   "sha": "23e20e4887",
+   "subject": "feat(symbolic): Switch to symbolic based symbolication (#6301)",
+   "at": 1507906825000,
+   "chose": []
+  },
+  {
+   "id": "D-81",
+   "title": "Stop using libsourcemap",
+   "forbid": [
+    "lib:libsourcemap"
+   ],
+   "sha": "adb72c23c9",
+   "subject": "feat: libsourcemap -> symbolic (#6365)",
+   "at": 1508365019000,
+   "chose": []
+  },
+  {
+   "id": "D-82",
+   "title": "Stop using phantomjs-prebuilt",
+   "forbid": [
+    "lib:phantomjs",
+    "lib:phantomjs-prebuilt",
+    "lib:phantomjs_prebuilt"
+   ],
+   "sha": "24bba58060",
+   "subject": "feat(selenium): Switch to headless Chrome",
+   "at": 1509475752000,
+   "chose": []
+  },
+  {
+   "id": "D-83",
+   "title": "Stop using react-code-input",
+   "forbid": [
+    "lib:react-code-input",
+    "lib:react_code_input"
+   ],
+   "sha": "92dcff93b5",
+   "subject": "ref(ui): Remove `<NumberConfirm>` (and react-code-input) (#6881)",
+   "at": 1515175336000,
+   "chose": []
+  },
+  {
+   "id": "D-84",
+   "title": "Stop using react-addons-update",
+   "forbid": [
+    "lib:react-addons-update",
+    "lib:react_addons_update"
+   ],
+   "sha": "223ecf0399",
+   "subject": "ref(ui): Remove react-addons-update (#6952)",
+   "at": 1515795906000,
+   "chose": []
+  },
+  {
+   "id": "D-86",
+   "title": "Stop using react-addons-test-utils",
+   "forbid": [
+    "lib:react-addons-test-utils",
+    "lib:react_addons_test_utils"
+   ],
+   "sha": "eaf938310c",
+   "subject": "build: React 16",
+   "at": 1516145790000,
+   "chose": []
+  },
+  {
+   "id": "D-85",
+   "title": "Stop using enzyme-adapter-react-15",
+   "forbid": [
+    "lib:enzyme",
+    "lib:enzyme-adapter-react-15",
+    "lib:enzyme_adapter_react_15"
+   ],
+   "sha": "eaf938310c",
+   "subject": "build: React 16",
+   "at": 1516145790000,
+   "chose": []
+  },
+  {
+   "id": "D-87",
+   "title": "Stop using react-addons-pure-render-mixin",
+   "forbid": [
+    "lib:react-addons-pure-render-mixin",
+    "lib:react_addons_pure_render_mixin"
+   ],
+   "sha": "058b04a3cf",
+   "subject": "ref(ui): Remove pure render mixin (#6950)",
+   "at": 1516215405000,
+   "chose": []
+  },
+  {
+   "id": "D-88",
+   "title": "Make history optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "531faed25e",
+   "subject": "chore(deps): Remove unused history package (#7620)",
+   "at": 1521567458000,
+   "chose": []
+  },
+  {
+   "id": "D-89",
+   "title": "Stop using jest-glamor-react",
+   "forbid": [
+    "lib:jest-glamor-react",
+    "lib:jest_glamor_react"
+   ],
+   "sha": "8909df9a49",
+   "subject": "tests(js): Remove emotion from snapshots (#7888)",
+   "at": 1522783717000,
+   "chose": []
+  },
+  {
+   "id": "D-90",
+   "title": "Stop using react-sticky",
+   "forbid": [
+    "lib:react-sticky",
+    "lib:react_sticky"
+   ],
+   "sha": "68dc1b06ae",
+   "subject": "feat: New stream design (#7894)",
+   "at": 1523308746000,
+   "chose": []
+  },
+  {
+   "id": "D-91",
+   "title": "Stop using @percy-io/react-percy-storybook",
+   "forbid": [
+    "lib:@percy-io/react-percy-storybook",
+    "lib:@percy_io/react_percy_storybook"
+   ],
+   "sha": "f3ee59c60f",
+   "subject": "fix(ui): Fix Issue Diff when no stacktrace for event (APP-114) (#8099)",
+   "at": 1524504604000,
+   "chose": []
+  },
+  {
+   "id": "D-92",
+   "title": "Replace react-lazy-load with react-lazyload",
+   "forbid": [
+    "lib:react-lazy-load",
+    "lib:react_lazy_load"
+   ],
+   "sha": "cfb9ffb112",
+   "subject": "ref(jslib): Use react-lazyload (#8386)",
+   "at": 1525965082000,
+   "chose": [
+    "react-lazyload"
+   ]
+  },
+  {
+   "id": "D-93",
+   "title": "Stop using select2",
+   "forbid": [
+    "lib:select2"
+   ],
+   "sha": "3ebe7d6d96",
+   "subject": "feat(ui): Change Select2Field to use react-select (#8743)",
+   "at": 1532039198000,
+   "chose": []
+  },
+  {
+   "id": "D-94",
+   "title": "Stop using @percy-io/percy-storybook",
+   "forbid": [
+    "lib:@percy-io/percy-storybook",
+    "lib:@percy_io/percy_storybook"
+   ],
+   "sha": "20d33b7cfb",
+   "subject": "chore(storybook): Upgrade to 3.4.x (#9770)",
+   "at": 1536941196000,
+   "chose": []
+  },
+  {
+   "id": "D-95",
+   "title": "Stop using raven",
+   "forbid": [
+    "lib:raven"
+   ],
+   "sha": "179bd98e70",
+   "subject": "ref: Swap Raven out for the new Python SDK (#9949)",
+   "at": 1539892569000,
+   "chose": []
+  },
+  {
+   "id": "D-97",
+   "title": "Stop using eslint-import-resolver-webpack",
+   "forbid": [
+    "lib:eslint-import-resolver-webpack",
+    "lib:eslint_import_resolver_webpack"
+   ],
+   "sha": "2acf1e3093",
+   "subject": "build(eslint): Move to central eslint config (#10708)",
+   "at": 1543524884000,
+   "chose": []
+  },
+  {
+   "id": "D-98",
+   "title": "Stop using eslint-plugin-getsentry",
+   "forbid": [
+    "lib:eslint-plugin-getsentry",
+    "lib:eslint_plugin_getsentry"
+   ],
+   "sha": "2acf1e3093",
+   "subject": "build(eslint): Move to central eslint config (#10708)",
+   "at": 1543524884000,
+   "chose": []
+  },
+  {
+   "id": "D-96",
+   "title": "Stop using eslint-config-sentry-react",
+   "forbid": [
+    "lib:eslint-config-sentry-react",
+    "lib:eslint_config_sentry_react"
+   ],
+   "sha": "2acf1e3093",
+   "subject": "build(eslint): Move to central eslint config (#10708)",
+   "at": 1543524884000,
+   "chose": []
+  },
+  {
+   "id": "D-99",
+   "title": "Stop using raven-js",
+   "forbid": [
+    "lib:raven-js",
+    "lib:raven_js"
+   ],
+   "sha": "5f0f87daf0",
+   "subject": "feat: Use new JS SDK (#11046)",
+   "at": 1545045543000,
+   "chose": []
+  },
+  {
+   "id": "D-100",
+   "title": "Stop using json-loader",
+   "forbid": [
+    "lib:json-loader",
+    "lib:json_loader"
+   ],
+   "sha": "5fad94f77a",
+   "subject": "build(webpack): Remove json-loader (#11122)",
+   "at": 1546455955000,
+   "chose": []
+  },
+  {
+   "id": "D-102",
+   "title": "Stop using webpack-dev-middleware",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-dev-middleware",
+    "lib:webpack_dev_middleware"
+   ],
+   "sha": "2a772fc024",
+   "subject": "build(webpack): Upgrade to v4 (#11306)",
+   "at": 1546558734000,
+   "chose": []
+  },
+  {
+   "id": "D-101",
+   "title": "Stop using extract-text-webpack-plugin",
+   "forbid": [
+    "lib:extract",
+    "lib:extract-text-webpack-plugin",
+    "lib:extract_text_webpack_plugin"
+   ],
+   "sha": "2a772fc024",
+   "subject": "build(webpack): Upgrade to v4 (#11306)",
+   "at": 1546558734000,
+   "chose": []
+  },
+  {
+   "id": "D-103",
+   "title": "Stop using react-icon-base",
+   "forbid": [
+    "lib:react-icon-base",
+    "lib:react_icon_base"
+   ],
+   "sha": "f5bfba649a",
+   "subject": "ref(ui): Remove non svg icons and react-icon-base (#11351)",
+   "at": 1546631232000,
+   "chose": []
+  },
+  {
+   "id": "D-104",
+   "title": "Stop using geoip",
+   "forbid": [
+    "lib:geoip"
+   ],
+   "sha": "f9267a1176",
+   "subject": "geo: Switch to geoip2 mmdb format",
+   "at": 1546998570000,
+   "chose": []
+  },
+  {
+   "id": "D-111",
+   "title": "Stop using babel-plugin-transform-runtime",
+   "forbid": [
+    "lib:babel-plugin-transform-runtime",
+    "lib:babel_plugin_transform_runtime"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-115",
+   "title": "Stop using babel-runtime",
+   "forbid": [
+    "lib:babel-runtime",
+    "lib:babel_runtime"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-109",
+   "title": "Stop using babel-plugin-transform-decorators-legacy",
+   "forbid": [
+    "lib:babel-plugin-transform-decorators-legacy",
+    "lib:babel_plugin_transform_decorators_legacy"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-114",
+   "title": "Stop using babel-preset-react",
+   "forbid": [
+    "lib:babel-preset-react",
+    "lib:babel_preset_react"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-107",
+   "title": "Stop using babel-plugin-syntax-dynamic-import",
+   "forbid": [
+    "lib:babel-plugin-syntax-dynamic-import",
+    "lib:babel_plugin_syntax_dynamic_import"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-108",
+   "title": "Stop using babel-plugin-transform-class-properties",
+   "forbid": [
+    "lib:babel-plugin-transform-class-properties",
+    "lib:babel_plugin_transform_class_properties"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-105",
+   "title": "Stop using babel-plugin-add-module-exports",
+   "forbid": [
+    "lib:babel-plugin-add-module-exports",
+    "lib:babel_plugin_add_module_exports"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-113",
+   "title": "Stop using babel-preset-latest",
+   "forbid": [
+    "lib:babel-preset-latest",
+    "lib:babel_preset_latest"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-112",
+   "title": "Stop using babel-polyfill",
+   "forbid": [
+    "lib:babel-polyfill",
+    "lib:babel_polyfill"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-110",
+   "title": "Stop using babel-plugin-transform-object-rest-spread",
+   "forbid": [
+    "lib:babel-plugin-transform-object-rest-spread",
+    "lib:babel_plugin_transform_object_rest_spread"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-106",
+   "title": "Stop using babel-plugin-idx",
+   "forbid": [
+    "lib:babel-plugin-idx",
+    "lib:babel_plugin_idx"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-116",
+   "title": "Stop using idx",
+   "forbid": [
+    "lib:idx"
+   ],
+   "sha": "c7da02e7f0",
+   "subject": "build: Upgrade to bable 7 (#11411)",
+   "at": 1547146327000,
+   "chose": []
+  },
+  {
+   "id": "D-117",
+   "title": "Stop using funcy",
+   "forbid": [
+    "lib:funcy"
+   ],
+   "sha": "4486b70326",
+   "subject": "ref: Kill funcy (#11871)",
+   "at": 1549362901000,
+   "chose": []
+  },
+  {
+   "id": "D-118",
+   "title": "Stop using chai",
+   "forbid": [
+    "lib:chai"
+   ],
+   "sha": "808153b7be",
+   "subject": "ref(test): Remove sinon from js tests (#12383)",
+   "at": 1552513211000,
+   "chose": []
+  },
+  {
+   "id": "D-119",
+   "title": "Stop using sinon",
+   "forbid": [
+    "lib:sinon"
+   ],
+   "sha": "808153b7be",
+   "subject": "ref(test): Remove sinon from js tests (#12383)",
+   "at": 1552513211000,
+   "chose": []
+  },
+  {
+   "id": "D-120",
+   "title": "Stop using sinon-chai",
+   "forbid": [
+    "lib:sinon-chai",
+    "lib:sinon_chai"
+   ],
+   "sha": "808153b7be",
+   "subject": "ref(test): Remove sinon from js tests (#12383)",
+   "at": 1552513211000,
+   "chose": []
+  },
+  {
+   "id": "D-121",
+   "title": "Stop using betamax",
+   "forbid": [
+    "lib:betamax"
+   ],
+   "sha": "37e53d15e0",
+   "subject": "build: Restructure symbolicator tests to not be mocked (#12617)",
+   "at": 1554318050000,
+   "chose": []
+  },
+  {
+   "id": "D-122",
+   "title": "Stop using babel-plugin-transform-builtin-extend",
+   "forbid": [
+    "lib:babel-plugin-transform-builtin-extend",
+    "lib:babel_plugin_transform_builtin_extend"
+   ],
+   "sha": "b90fd43136",
+   "subject": "ref(js): Fix RequestError name being lost (#12656)",
+   "at": 1554486860000,
+   "chose": []
+  },
+  {
+   "id": "D-123",
+   "title": "Make psycopg2 optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "1896c73d89",
+   "subject": "build: Switch to psycopg2-binary",
+   "at": 1554928552000,
+   "chose": [
+    "psycopg2-binary"
+   ]
+  },
+  {
+   "id": "D-126",
+   "title": "Stop using casscache",
+   "forbid": [
+    "lib:casscache"
+   ],
+   "sha": "bb181ec72b",
+   "subject": "nodestore: Remove cassandra and multi backends",
+   "at": 1556308615000,
+   "chose": []
+  },
+  {
+   "id": "D-127",
+   "title": "Stop using cqlsh",
+   "forbid": [
+    "lib:cqlsh"
+   ],
+   "sha": "bb181ec72b",
+   "subject": "nodestore: Remove cassandra and multi backends",
+   "at": 1556308615000,
+   "chose": []
+  },
+  {
+   "id": "D-125",
+   "title": "Stop using cassandra-driver",
+   "forbid": [
+    "lib:cassandra",
+    "lib:cassandra-driver",
+    "lib:cassandra_driver"
+   ],
+   "sha": "bb181ec72b",
+   "subject": "nodestore: Remove cassandra and multi backends",
+   "at": 1556308615000,
+   "chose": []
+  },
+  {
+   "id": "D-124",
+   "title": "Stop using blist",
+   "forbid": [
+    "lib:blist"
+   ],
+   "sha": "bb181ec72b",
+   "subject": "nodestore: Remove cassandra and multi backends",
+   "at": 1556308615000,
+   "chose": []
+  },
+  {
+   "id": "D-128",
+   "title": "Stop using awesome-typescript-loader",
+   "forbid": [
+    "lib:awesome",
+    "lib:awesome-typescript-loader",
+    "lib:awesome_typescript_loader"
+   ],
+   "sha": "d21b7efc49",
+   "subject": "feat(typescript): Add ts-loader, Add sentry ts pkg + linting",
+   "at": 1561369051000,
+   "chose": []
+  },
+  {
+   "id": "D-129",
+   "title": "Stop using tslint",
+   "forbid": [
+    "lib:tslint"
+   ],
+   "sha": "ba6a4057f6",
+   "subject": "lint(typescript): use typescript eslint parser instead of tslint",
+   "at": 1561396501000,
+   "chose": []
+  },
+  {
+   "id": "D-130",
+   "title": "Stop using django-templatetag-sugar",
+   "forbid": [
+    "lib:django-templatetag-sugar",
+    "lib:django_templatetag_sugar",
+    "lib:templatetag_sugar"
+   ],
+   "sha": "201b6957c0",
+   "subject": "ref: (Django 1.9) Remove the `django-templatetag-sugar` library",
+   "at": 1561422833000,
+   "chose": []
+  },
+  {
+   "id": "D-131",
+   "title": "Stop using ts-jest",
+   "forbid": [
+    "lib:ts-jest",
+    "lib:ts_jest"
+   ],
+   "sha": "670480032f",
+   "subject": "feat: Remove ts-jest (#13846)",
+   "at": 1562613036000,
+   "chose": []
+  },
+  {
+   "id": "D-132",
+   "title": "Stop using batching-kafka-consumer",
+   "forbid": [
+    "lib:batching",
+    "lib:batching-kafka-consumer",
+    "lib:batching_kafka_consumer"
+   ],
+   "sha": "a5000fbc55",
+   "subject": "ref: Remove Kafka pipeline consumer, batching-kafka-consumer (#14143)",
+   "at": 1564508517000,
+   "chose": []
+  },
+  {
+   "id": "D-133",
+   "title": "Stop using @sentry/typescript",
+   "forbid": [
+    "lib:@sentry/typescript"
+   ],
+   "sha": "04aaff526f",
+   "subject": "build(typescript): Remove dependence on external tsconfig (#14300)",
+   "at": 1565284216000,
+   "chose": []
+  },
+  {
+   "id": "D-134",
+   "title": "Stop using react-addons-css-transition-group",
+   "forbid": [
+    "lib:react-addons-css-transition-group",
+    "lib:react_addons_css_transition_group"
+   ],
+   "sha": "91cc68e737",
+   "subject": "ref(ui): replcae css-transition-group w/ pose (#14385)",
+   "at": 1565744301000,
+   "chose": []
+  },
+  {
+   "id": "D-135",
+   "title": "Stop using autopep8",
+   "forbid": [
+    "lib:autopep8"
+   ],
+   "sha": "4019fb48c6",
+   "subject": "chore: remove autopep8 in preparation for black (#14401)",
+   "at": 1565893269000,
+   "chose": []
+  },
+  {
+   "id": "D-136",
+   "title": "Stop using configparser (the backport: the standard library has it)",
+   "forbid": [
+    "lib:configparser"
+   ],
+   "sha": "4aa70bb4c2",
+   "subject": "chore: flake8 upgrade (#14710)",
+   "at": 1569879935000,
+   "chose": []
+  },
+  {
+   "id": "D-137",
+   "title": "Make msgpack-python optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "6f7bdc54d4",
+   "subject": "py3: sort and trim requirements (#14944)",
+   "at": 1570152304000,
+   "chose": []
+  },
+  {
+   "id": "D-138",
+   "title": "Stop using django-jsonfield",
+   "forbid": [
+    "lib:django-jsonfield",
+    "lib:django_jsonfield",
+    "lib:jsonfield"
+   ],
+   "sha": "1290b0a94c",
+   "subject": "py3(django): remove django-jsonfield (#15432)",
+   "at": 1572906901000,
+   "chose": []
+  },
+  {
+   "id": "D-139",
+   "title": "Stop using @babel/polyfill",
+   "forbid": [
+    "lib:@babel/polyfill"
+   ],
+   "sha": "5409878035",
+   "subject": "build(babel): Remove `@babel/polyfill` (#15564)",
+   "at": 1573667216000,
+   "chose": []
+  },
+  {
+   "id": "D-141",
+   "title": "Stop using lodash-webpack-plugin",
+   "forbid": [
+    "lib:lodash-webpack-plugin",
+    "lib:lodash_webpack_plugin"
+   ],
+   "sha": "4de0d59ca7",
+   "subject": "build(webpack): Remove `lodash-webpack-plugin` (#15521)",
+   "at": 1573670101000,
+   "chose": []
+  },
+  {
+   "id": "D-140",
+   "title": "Stop using babel-plugin-lodash",
+   "forbid": [
+    "lib:babel-plugin-lodash",
+    "lib:babel_plugin_lodash"
+   ],
+   "sha": "4de0d59ca7",
+   "subject": "build(webpack): Remove `lodash-webpack-plugin` (#15521)",
+   "at": 1573670101000,
+   "chose": []
+  },
+  {
+   "id": "D-142",
+   "title": "Replace beautifulsoup with beautifulsoup4",
+   "forbid": [
+    "lib:beautifulsoup"
+   ],
+   "sha": "6f5153b541",
+   "subject": "ref(py3): bump BeautifulSoup (#15613)",
+   "at": 1574273309000,
+   "chose": [
+    "beautifulsoup4"
+   ]
+  },
+  {
+   "id": "D-143",
+   "title": "Stop using python-openid",
+   "forbid": [
+    "lib:openid",
+    "lib:python-openid",
+    "lib:python_openid"
+   ],
+   "sha": "481a3d778d",
+   "subject": "chore: remove python-openid (#16098)",
+   "at": 1576196586000,
+   "chose": []
+  },
+  {
+   "id": "D-145",
+   "title": "Stop using grid-emotion",
+   "forbid": [
+    "lib:grid-emotion",
+    "lib:grid_emotion"
+   ],
+   "sha": "94a63d9a3b",
+   "subject": "feat(emotion): Upgrade emotion to v10 (#15106)",
+   "at": 1578690543000,
+   "chose": []
+  },
+  {
+   "id": "D-146",
+   "title": "Make react-emotion optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "94a63d9a3b",
+   "subject": "feat(emotion): Upgrade emotion to v10 (#15106)",
+   "at": 1578690543000,
+   "chose": []
+  },
+  {
+   "id": "D-144",
+   "title": "Stop using babel-plugin-emotion",
+   "forbid": [
+    "lib:babel-plugin-emotion",
+    "lib:babel_plugin_emotion"
+   ],
+   "sha": "94a63d9a3b",
+   "subject": "feat(emotion): Upgrade emotion to v10 (#15106)",
+   "at": 1578690543000,
+   "chose": []
+  },
+  {
+   "id": "D-147",
+   "title": "Stop using @babel/plugin-proposal-optional-chaining",
+   "forbid": [
+    "lib:@babel/plugin-proposal-optional-chaining",
+    "lib:@babel/plugin_proposal_optional_chaining"
+   ],
+   "sha": "e4393382bb",
+   "subject": "Revert \"feat(js): add optional chaining proposal (#16433)\"",
+   "at": 1579221215000,
+   "chose": []
+  },
+  {
+   "id": "D-148",
+   "title": "Stop using react-lottie",
+   "forbid": [
+    "lib:react-lottie",
+    "lib:react_lottie"
+   ],
+   "sha": "a3effe2907",
+   "subject": "ref(ui): Use video for congrats robot animation. Remove lottie. (#14868)",
+   "at": 1579742606000,
+   "chose": []
+  },
+  {
+   "id": "D-149",
+   "title": "Stop using semaphore",
+   "forbid": [
+    "lib:semaphore"
+   ],
+   "sha": "237d454654",
+   "subject": "feat: Bump sentry-relay to 0.5.0 (#16650)",
+   "at": 1580201845000,
+   "chose": []
+  },
+  {
+   "id": "D-150",
+   "title": "Stop using node-libs-browser",
+   "forbid": [
+    "lib:node-libs-browser",
+    "lib:node_libs_browser"
+   ],
+   "sha": "05c781a2bd",
+   "subject": "chore(deps): Remove `node-libs-browser` (#16659)",
+   "at": 1580256471000,
+   "chose": []
+  },
+  {
+   "id": "D-151",
+   "title": "Stop using loremipsum",
+   "forbid": [
+    "lib:loremipsum"
+   ],
+   "sha": "57b681da5c",
+   "subject": "chore(py3): remove loremipsum (#16808)",
+   "at": 1580925814000,
+   "chose": []
+  },
+  {
+   "id": "D-152",
+   "title": "Stop using cached-property",
+   "forbid": [
+    "lib:cached",
+    "lib:cached-property",
+    "lib:cached_property"
+   ],
+   "sha": "87805f305b",
+   "subject": "ref: remove cached-property, using django's implementation instead (#16812)",
+   "at": 1580927086000,
+   "chose": []
+  },
+  {
+   "id": "D-153",
+   "title": "Stop using oauth2",
+   "forbid": [
+    "lib:oauth2"
+   ],
+   "sha": "0bfe540d62",
+   "subject": "feat(social auth): replace oauth2 with requests_oauthlib (#16863)",
+   "at": 1581102418000,
+   "chose": []
+  },
+  {
+   "id": "D-154",
+   "title": "Stop using babel-core",
+   "forbid": [
+    "lib:babel-core",
+    "lib:babel_core"
+   ],
+   "sha": "6854335b2a",
+   "subject": "build(babel): Upgrade babel and babel plugins to 7.8.4 (#17016)",
+   "at": 1581714155000,
+   "chose": []
+  },
+  {
+   "id": "D-155",
+   "title": "Stop using strict-rfc3339",
+   "forbid": [
+    "lib:strict",
+    "lib:strict-rfc3339",
+    "lib:strict_rfc3339"
+   ],
+   "sha": "16b5e941cb",
+   "subject": "chore: remove unused strict-rfc3339 (#17151)",
+   "at": 1582225325000,
+   "chose": []
+  },
+  {
+   "id": "D-156",
+   "title": "Stop using react-hot-loader",
+   "forbid": [
+    "lib:react-hot-loader",
+    "lib:react_hot_loader"
+   ],
+   "sha": "31fd572613",
+   "subject": "dev(webpack): Use `react-refresh-webpack-plugin` instead of `r\u2026 (#17465)",
+   "at": 1583444492000,
+   "chose": []
+  },
+  {
+   "id": "D-157",
+   "title": "Stop using eslint-plugin-emotion",
+   "forbid": [
+    "lib:eslint-plugin-emotion",
+    "lib:eslint_plugin_emotion"
+   ],
+   "sha": "be286160a2",
+   "subject": "build(eslint): Move ts and emotion lint rules to config (#17666)",
+   "at": 1584467902000,
+   "chose": []
+  },
+  {
+   "id": "D-158",
+   "title": "Stop using babel",
+   "forbid": [
+    "lib:babel"
+   ],
+   "sha": "af52a8fc79",
+   "subject": "build(locale): Fix and refactor building locale catalogs (#17510)",
+   "at": 1584471917000,
+   "chose": []
+  },
+  {
+   "id": "D-159",
+   "title": "Stop using ts-loader",
+   "forbid": [
+    "lib:ts-loader",
+    "lib:ts_loader"
+   ],
+   "sha": "59ad0209bd",
+   "subject": "build(travis): Split webpack + tsc from test suite for frontend (#15207)",
+   "at": 1585695856000,
+   "chose": []
+  },
+  {
+   "id": "D-160",
+   "title": "Replace react-pose with framer-motion",
+   "forbid": [
+    "lib:react-pose",
+    "lib:react_pose"
+   ],
+   "sha": "62e4507201",
+   "subject": "ref(ui): Replace react-pose with framer-motion (#19656)",
+   "at": 1593673581000,
+   "chose": [
+    "framer-motion"
+   ]
+  },
+  {
+   "id": "D-161",
+   "title": "Stop using sentry-dreamy-components",
+   "forbid": [
+    "lib:sentry-dreamy-components",
+    "lib:sentry_dreamy_components"
+   ],
+   "sha": "4f36e07436",
+   "subject": "ref(ui): Move `sentry-dreamy-components` into app (#19705)",
+   "at": 1594051032000,
+   "chose": []
+  },
+  {
+   "id": "D-162",
+   "title": "Stop using querystring-parser",
+   "forbid": [
+    "lib:querystring",
+    "lib:querystring-parser",
+    "lib:querystring_parser"
+   ],
+   "sha": "fdba72bd7c",
+   "subject": "ref: Remove Python store view (#19135)",
+   "at": 1594300907000,
+   "chose": []
+  },
+  {
+   "id": "D-163",
+   "title": "Stop using @sentry/apm",
+   "forbid": [
+    "lib:@sentry/apm"
+   ],
+   "sha": "cc645effc8",
+   "subject": "feat: Add React Router Instrumentation for Tracing (#20031)",
+   "at": 1595620882000,
+   "chose": []
+  },
+  {
+   "id": "D-164",
+   "title": "Stop using percy",
+   "forbid": [
+    "lib:percy"
+   ],
+   "sha": "3936df2509",
+   "subject": "test(acceptance): Remove percy (#20040)",
+   "at": 1595876048000,
+   "chose": []
+  },
+  {
+   "id": "D-165",
+   "title": "Stop using @size-limit/preset-app",
+   "forbid": [
+    "lib:@size-limit/preset-app",
+    "lib:@size_limit/preset_app"
+   ],
+   "sha": "5ab7f43713",
+   "subject": "build(github): Add `size-limit` GH Action (#20257)",
+   "at": 1597796180000,
+   "chose": []
+  },
+  {
+   "id": "D-166",
+   "title": "Stop using algoliasearch",
+   "forbid": [
+    "lib:algoliasearch"
+   ],
+   "sha": "e605579b6b",
+   "subject": "feat(support): Replace algolia search w/ SentryGlobalSearch (#20980)",
+   "at": 1601410402000,
+   "chose": []
+  },
+  {
+   "id": "D-168",
+   "title": "Stop using @babel/plugin-syntax-dynamic-import",
+   "forbid": [
+    "lib:@babel/plugin-syntax-dynamic-import",
+    "lib:@babel/plugin_syntax_dynamic_import"
+   ],
+   "sha": "a2e47d8c10",
+   "subject": "build(babel): Remove un-needed babel plugins (#21701)",
+   "at": 1605832252000,
+   "chose": []
+  },
+  {
+   "id": "D-167",
+   "title": "Stop using @babel/plugin-proposal-object-rest-spread",
+   "forbid": [
+    "lib:@babel/plugin-proposal-object-rest-spread",
+    "lib:@babel/plugin_proposal_object_rest_spread"
+   ],
+   "sha": "a2e47d8c10",
+   "subject": "build(babel): Remove un-needed babel plugins (#21701)",
+   "at": 1605832252000,
+   "chose": []
+  },
+  {
+   "id": "D-170",
+   "title": "Stop using functools32",
+   "forbid": [
+    "lib:functools32"
+   ],
+   "sha": "d197c5c158",
+   "subject": "ref(py3): Remove all py2-compat requirement definitions (#23245)",
+   "at": 1611320003000,
+   "chose": []
+  },
+  {
+   "id": "D-171",
+   "title": "Stop using futures",
+   "forbid": [
+    "lib:futures"
+   ],
+   "sha": "d197c5c158",
+   "subject": "ref(py3): Remove all py2-compat requirement definitions (#23245)",
+   "at": 1611320003000,
+   "chose": []
+  },
+  {
+   "id": "D-169",
+   "title": "Stop using enum34",
+   "forbid": [
+    "lib:enum34"
+   ],
+   "sha": "d197c5c158",
+   "subject": "ref(py3): Remove all py2-compat requirement definitions (#23245)",
+   "at": 1611320003000,
+   "chose": []
+  },
+  {
+   "id": "D-172",
+   "title": "Stop using ipaddress (the backport: the standard library has it)",
+   "forbid": [
+    "lib:ipaddress"
+   ],
+   "sha": "d197c5c158",
+   "subject": "ref(py3): Remove all py2-compat requirement definitions (#23245)",
+   "at": 1611320003000,
+   "chose": []
+  },
+  {
+   "id": "D-175",
+   "title": "Stop using @storybook/addon-options",
+   "forbid": [
+    "lib:@storybook/addon-options",
+    "lib:@storybook/addon_options"
+   ],
+   "sha": "c1d485b896",
+   "subject": "feat(ui): Upgrade to storybook v6, add dark mode toggle (#23303)",
+   "at": 1612217327000,
+   "chose": []
+  },
+  {
+   "id": "D-174",
+   "title": "Stop using @storybook/addon-knobs",
+   "forbid": [
+    "lib:@storybook/addon-knobs",
+    "lib:@storybook/addon_knobs"
+   ],
+   "sha": "c1d485b896",
+   "subject": "feat(ui): Upgrade to storybook v6, add dark mode toggle (#23303)",
+   "at": 1612217327000,
+   "chose": []
+  },
+  {
+   "id": "D-173",
+   "title": "Stop using @storybook/addon-info",
+   "forbid": [
+    "lib:@storybook/addon-info",
+    "lib:@storybook/addon_info"
+   ],
+   "sha": "c1d485b896",
+   "subject": "feat(ui): Upgrade to storybook v6, add dark mode toggle (#23303)",
+   "at": 1612217327000,
+   "chose": []
+  },
+  {
+   "id": "D-176",
+   "title": "Stop using qrcode",
+   "forbid": [
+    "lib:qrcode"
+   ],
+   "sha": "e96506e3b3",
+   "subject": "ref: Consolidate QR codes (#24121)",
+   "at": 1614606199000,
+   "chose": []
+  },
+  {
+   "id": "D-177",
+   "title": "Make pytest-html optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "901e552a05",
+   "subject": "chore(py38): remove unused dependencies (#24276)",
+   "at": 1615229251000,
+   "chose": []
+  },
+  {
+   "id": "D-178",
+   "title": "Stop using setproctitle",
+   "forbid": [
+    "lib:setproctitle"
+   ],
+   "sha": "901e552a05",
+   "subject": "chore(py38): remove unused dependencies (#24276)",
+   "at": 1615229251000,
+   "chose": []
+  },
+  {
+   "id": "D-179",
+   "title": "Stop using @sentry/chartcuterie",
+   "forbid": [
+    "lib:@sentry/chartcuterie"
+   ],
+   "sha": "7ab8db0ff7",
+   "subject": "ref(js): Avoid installing @sentry/chartcuterie due to dependencies (#24469)",
+   "at": 1615853906000,
+   "chose": []
+  },
+  {
+   "id": "D-180",
+   "title": "Stop using clipboard",
+   "forbid": [
+    "lib:clipboard"
+   ],
+   "sha": "83278819ab",
+   "subject": "ref(ui): Switch from clipboard to copy-text-to-clipboard (#24492)",
+   "at": 1616020023000,
+   "chose": []
+  },
+  {
+   "id": "D-182",
+   "title": "Stop using svgo",
+   "forbid": [
+    "lib:svgo"
+   ],
+   "sha": "5e574ebec6",
+   "subject": "ref(ui): Remove unused app/icons/*.svg, <InlineSvg>, svgo-loader (#24582)",
+   "at": 1616438179000,
+   "chose": []
+  },
+  {
+   "id": "D-181",
+   "title": "Stop using svg-sprite-loader",
+   "forbid": [
+    "lib:svg-sprite-loader",
+    "lib:svg_sprite_loader"
+   ],
+   "sha": "5e574ebec6",
+   "subject": "ref(ui): Remove unused app/icons/*.svg, <InlineSvg>, svgo-loader (#24582)",
+   "at": 1616438179000,
+   "chose": []
+  },
+  {
+   "id": "D-183",
+   "title": "Stop using svgo-loader",
+   "forbid": [
+    "lib:svgo-loader",
+    "lib:svgo_loader"
+   ],
+   "sha": "5e574ebec6",
+   "subject": "ref(ui): Remove unused app/icons/*.svg, <InlineSvg>, svgo-loader (#24582)",
+   "at": 1616438179000,
+   "chose": []
+  },
+  {
+   "id": "D-184",
+   "title": "Stop using parseurl",
+   "forbid": [
+    "lib:parseurl"
+   ],
+   "sha": "857295a6d4",
+   "subject": "ref(ui): Remove parseurl lib in favor of URL() (#24935)",
+   "at": 1617632889000,
+   "chose": []
+  },
+  {
+   "id": "D-186",
+   "title": "Stop using webpack-fix-style-only-entries",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-fix-style-only-entries",
+    "lib:webpack_fix_style_only_entries"
+   ],
+   "sha": "318a9bae57",
+   "subject": "build(webpack): Upgrade to webpack@5 (#25004)",
+   "at": 1617740319000,
+   "chose": []
+  },
+  {
+   "id": "D-185",
+   "title": "Stop using optimize-css-assets-webpack-plugin",
+   "forbid": [
+    "lib:optimize",
+    "lib:optimize-css-assets-webpack-plugin",
+    "lib:optimize_css_assets_webpack_plugin"
+   ],
+   "sha": "318a9bae57",
+   "subject": "build(webpack): Upgrade to webpack@5 (#25004)",
+   "at": 1617740319000,
+   "chose": []
+  },
+  {
+   "id": "D-187",
+   "title": "Stop using object.fromentries",
+   "forbid": [
+    "lib:object.fromentries"
+   ],
+   "sha": "f1044061d0",
+   "subject": "test(js): Use core-js Object.fromEntries polyfill (#25249)",
+   "at": 1618394496000,
+   "chose": []
+  },
+  {
+   "id": "D-188",
+   "title": "Stop using reflexbox",
+   "forbid": [
+    "lib:reflexbox"
+   ],
+   "sha": "5d919dc73b",
+   "subject": "ref(reflexbox): DELETE (#25536)",
+   "at": 1619112254000,
+   "chose": []
+  },
+  {
+   "id": "D-189",
+   "title": "Stop using @emotion/core",
+   "forbid": [
+    "lib:@emotion/core"
+   ],
+   "sha": "14cba4d5ae",
+   "subject": "build(js): Emotion 11 (#25478)",
+   "at": 1619114471000,
+   "chose": []
+  },
+  {
+   "id": "D-191",
+   "title": "Stop using emotion-theming",
+   "forbid": [
+    "lib:emotion",
+    "lib:emotion-theming",
+    "lib:emotion_theming"
+   ],
+   "sha": "14cba4d5ae",
+   "subject": "build(js): Emotion 11 (#25478)",
+   "at": 1619114471000,
+   "chose": []
+  },
+  {
+   "id": "D-190",
+   "title": "Replace emotion with @emotion/react",
+   "forbid": [
+    "lib:emotion"
+   ],
+   "sha": "14cba4d5ae",
+   "subject": "build(js): Emotion 11 (#25478)",
+   "at": 1619114471000,
+   "chose": [
+    "@emotion/react"
+   ]
+  },
+  {
+   "id": "D-192",
+   "title": "Stop using enzyme-adapter-react-16",
+   "forbid": [
+    "lib:enzyme",
+    "lib:enzyme-adapter-react-16",
+    "lib:enzyme_adapter_react_16"
+   ],
+   "sha": "9d1c941ee5",
+   "subject": "deps(react): Upgrade to 17 (#25608)",
+   "at": 1619488359000,
+   "chose": []
+  },
+  {
+   "id": "D-193",
+   "title": "Stop using tsconfig-paths-webpack-plugin",
+   "forbid": [
+    "lib:tsconfig",
+    "lib:tsconfig-paths-webpack-plugin",
+    "lib:tsconfig_paths_webpack_plugin"
+   ],
+   "sha": "9c5c3ab4aa",
+   "subject": "chore(js): Remove unused tsconfig-paths-webpack-plugin (#25656)",
+   "at": 1619507113000,
+   "chose": []
+  },
+  {
+   "id": "D-194",
+   "title": "Stop using source-map-loader",
+   "forbid": [
+    "lib:source",
+    "lib:source-map-loader",
+    "lib:source_map_loader"
+   ],
+   "sha": "705a055205",
+   "subject": "chore(deps): Remove unused source-map-loader (#25714)",
+   "at": 1619606918000,
+   "chose": []
+  },
+  {
+   "id": "D-195",
+   "title": "Stop using @webpack-cli/serve",
+   "forbid": [
+    "lib:@webpack-cli/serve",
+    "lib:@webpack_cli/serve"
+   ],
+   "sha": "8a81465243",
+   "subject": "chore(deps): Do not explicitly install @webpack/serve (#25715)",
+   "at": 1619642253000,
+   "chose": []
+  },
+  {
+   "id": "D-196",
+   "title": "Stop using react-select-legacy",
+   "forbid": [
+    "lib:react-select-legacy",
+    "lib:react_select_legacy"
+   ],
+   "sha": "0282f39f9c",
+   "subject": "ref(ui) Remove deprecatedSelectControl (#25759)",
+   "at": 1619717943000,
+   "chose": []
+  },
+  {
+   "id": "D-197",
+   "title": "Stop using @emotion/babel-preset-css-prop",
+   "forbid": [
+    "lib:@emotion/babel-preset-css-prop",
+    "lib:@emotion/babel_preset_css_prop"
+   ],
+   "sha": "f290b1d2d7",
+   "subject": "ref(ui) Add new jsx transform to our builds (#25816)",
+   "at": 1620136727000,
+   "chose": []
+  },
+  {
+   "id": "D-198",
+   "title": "Stop using react-bootstrap",
+   "forbid": [
+    "lib:react-bootstrap",
+    "lib:react_bootstrap"
+   ],
+   "sha": "b34c2a9539",
+   "subject": "ref(modal): Replace react-bootstrap modal (#25768)",
+   "at": 1620344322000,
+   "chose": []
+  },
+  {
+   "id": "D-199",
+   "title": "Stop using shellcheck-py",
+   "forbid": [
+    "lib:shellcheck",
+    "lib:shellcheck-py",
+    "lib:shellcheck_py"
+   ],
+   "sha": "70e361f6f3",
+   "subject": "fix: Remove shellcheck-py from pre-commit setup (#26032)",
+   "at": 1620997917000,
+   "chose": []
+  },
+  {
+   "id": "D-200",
+   "title": "Stop using django-sudo",
+   "forbid": [
+    "lib:django-sudo",
+    "lib:django_sudo"
+   ],
+   "sha": "0905435d47",
+   "subject": "py38: vendor django-sudo (#26646)",
+   "at": 1623886795000,
+   "chose": []
+  },
+  {
+   "id": "D-201",
+   "title": "Stop using @babel/plugin-proposal-class-properties",
+   "forbid": [
+    "lib:@babel/plugin-proposal-class-properties",
+    "lib:@babel/plugin_proposal_class_properties"
+   ],
+   "sha": "30b5873dbc",
+   "subject": "deps(js): Bump babel 7.1{2,3} -> 7.14 (#26806)",
+   "at": 1624414399000,
+   "chose": []
+  },
+  {
+   "id": "D-202",
+   "title": "Stop using file-loader",
+   "forbid": [
+    "lib:file-loader",
+    "lib:file_loader"
+   ],
+   "sha": "4b4a42517c",
+   "subject": "ref(webpack): Replace file-loader with asset type (#27008)",
+   "at": 1625089072000,
+   "chose": []
+  },
+  {
+   "id": "D-203",
+   "title": "Stop using django-manifest-loader",
+   "forbid": [
+    "lib:django-manifest-loader",
+    "lib:django_manifest_loader",
+    "lib:manifest_loader"
+   ],
+   "sha": "8b2ff257b0",
+   "subject": "feat: Use unversioned frontend asset paths (#27091)",
+   "at": 1625695769000,
+   "chose": []
+  },
+  {
+   "id": "D-204",
+   "title": "Stop using webpack-manifest-plugin",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-manifest-plugin",
+    "lib:webpack_manifest_plugin"
+   ],
+   "sha": "8b2ff257b0",
+   "subject": "feat: Use unversioned frontend asset paths (#27091)",
+   "at": 1625695769000,
+   "chose": []
+  },
+  {
+   "id": "D-205",
+   "title": "Stop using enzyme-to-json",
+   "forbid": [
+    "lib:enzyme",
+    "lib:enzyme-to-json",
+    "lib:enzyme_to_json"
+   ],
+   "sha": "35008e280d",
+   "subject": "test(js): Remove `enzyme-to-json` serializer (#27835)",
+   "at": 1627588483000,
+   "chose": []
+  },
+  {
+   "id": "D-206",
+   "title": "Stop using create-react-class",
+   "forbid": [
+    "lib:create",
+    "lib:create-react-class",
+    "lib:create_react_class"
+   ],
+   "sha": "32ec2cc335",
+   "subject": "ref(ui) Remove createReactClass as a direct dependency (#27831)",
+   "at": 1627999601000,
+   "chose": []
+  },
+  {
+   "id": "D-207",
+   "title": "Stop using clean-webpack-plugin",
+   "forbid": [
+    "lib:clean-webpack-plugin",
+    "lib:clean_webpack_plugin"
+   ],
+   "sha": "65974edf02",
+   "subject": "build(webpack): Remove `clean-webpack-plugin` (#27902)",
+   "at": 1628011257000,
+   "chose": []
+  },
+  {
+   "id": "D-208",
+   "title": "Stop using bootstrap",
+   "forbid": [
+    "lib:bootstrap"
+   ],
+   "sha": "1f7e326f1c",
+   "subject": "ref(js): Remove bootstrap/js/* (#27988)",
+   "at": 1628287953000,
+   "chose": []
+  },
+  {
+   "id": "D-209",
+   "title": "Stop using jquery",
+   "forbid": [
+    "lib:jquery"
+   ],
+   "sha": "d1cd612db8",
+   "subject": "ref(js): Remove jQuery from the SPA completely (#28001)",
+   "at": 1629402438000,
+   "chose": []
+  },
+  {
+   "id": "D-210",
+   "title": "Stop using react-keydown",
+   "forbid": [
+    "lib:react-keydown",
+    "lib:react_keydown"
+   ],
+   "sha": "f6c0e4b17f",
+   "subject": "ref(js): Remove unused react-keydown (#29240)",
+   "at": 1633994936000,
+   "chose": []
+  },
+  {
+   "id": "D-211",
+   "title": "Stop using dataclasses (the backport: the standard library has it)",
+   "forbid": [
+    "lib:dataclasses"
+   ],
+   "sha": "b0cfeb1c10",
+   "subject": "chore: drop Python 3.6 (#29504)",
+   "at": 1634942783000,
+   "chose": []
+  },
+  {
+   "id": "D-212",
+   "title": "Stop using stylelint-config-styled-components",
+   "forbid": [
+    "lib:stylelint-config-styled-components",
+    "lib:stylelint_config_styled_components"
+   ],
+   "sha": "83daa80b5c",
+   "subject": "deps(ui): Upgrade to stylelint v14 (#31582)",
+   "at": 1644261252000,
+   "chose": []
+  },
+  {
+   "id": "D-213",
+   "title": "Stop using stylelint-processor-styled-components",
+   "forbid": [
+    "lib:stylelint-processor-styled-components",
+    "lib:stylelint_processor_styled_components"
+   ],
+   "sha": "83daa80b5c",
+   "subject": "deps(ui): Upgrade to stylelint v14 (#31582)",
+   "at": 1644261252000,
+   "chose": []
+  },
+  {
+   "id": "D-214",
+   "title": "Stop using babel-eslint",
+   "forbid": [
+    "lib:babel-eslint",
+    "lib:babel_eslint"
+   ],
+   "sha": "ce63acc788",
+   "subject": "deps(ui): Remove babel-eslint (#32438)",
+   "at": 1646783908000,
+   "chose": []
+  },
+  {
+   "id": "D-215",
+   "title": "Stop using jest-circus",
+   "forbid": [
+    "lib:jest-circus",
+    "lib:jest_circus"
+   ],
+   "sha": "b9683ab1a3",
+   "subject": "ref(deps): remove jest-circus (#32541)",
+   "at": 1647033331000,
+   "chose": []
+  },
+  {
+   "id": "D-216",
+   "title": "Stop using csstype",
+   "forbid": [
+    "lib:csstype"
+   ],
+   "sha": "9cbbba64a8",
+   "subject": "chore(deps): Remove unused csstype (#32678)",
+   "at": 1647450983000,
+   "chose": []
+  },
+  {
+   "id": "D-217",
+   "title": "Stop using speed-measure-webpack-plugin",
+   "forbid": [
+    "lib:speed-measure-webpack-plugin",
+    "lib:speed_measure_webpack_plugin"
+   ],
+   "sha": "34432de351",
+   "subject": "ref(webpack): drop speed plugin (#32998)",
+   "at": 1648486973000,
+   "chose": []
+  },
+  {
+   "id": "D-218",
+   "title": "Stop using wink-jaro-distance",
+   "forbid": [
+    "lib:wink-jaro-distance",
+    "lib:wink_jaro_distance"
+   ],
+   "sha": "517ee67bb5",
+   "subject": "deps(ui): Remove unused `wink-jaro-distance` (#33656)",
+   "at": 1650056738000,
+   "chose": []
+  },
+  {
+   "id": "D-219",
+   "title": "Replace sentry-flake8 with flake8",
+   "forbid": [
+    "lib:sentry-flake8",
+    "lib:sentry_flake8"
+   ],
+   "sha": "db976bb447",
+   "subject": "ref(dev): use sentry-flake8 as a flake8:local-plugins plugin (#33830)",
+   "at": 1650575092000,
+   "chose": [
+    "flake8"
+   ]
+  },
+  {
+   "id": "D-220",
+   "title": "Stop using before-after",
+   "forbid": [
+    "lib:before",
+    "lib:before-after",
+    "lib:before_after"
+   ],
+   "sha": "daf3532b64",
+   "subject": "ref: factor out before-after testing library (#34179)",
+   "at": 1651599879000,
+   "chose": []
+  },
+  {
+   "id": "D-221",
+   "title": "Stop using requirements-parser",
+   "forbid": [
+    "lib:requirements",
+    "lib:requirements-parser",
+    "lib:requirements_parser"
+   ],
+   "sha": "bbd157787a",
+   "subject": "ref: use pre-commit to manage lint-requirements (#34203)",
+   "at": 1651669059000,
+   "chose": []
+  },
+  {
+   "id": "D-222",
+   "title": "Stop using django-picklefield",
+   "forbid": [
+    "lib:django-picklefield",
+    "lib:django_picklefield",
+    "lib:picklefield"
+   ],
+   "sha": "0ad4aa9d9f",
+   "subject": "ref(django-3.2): Vendor django picklefield (#35727)",
+   "at": 1655831422000,
+   "chose": []
+  },
+  {
+   "id": "D-223",
+   "title": "Make brotlipy optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "734a80f7e4",
+   "subject": "feat: upgrade urllib3 to 1.26 (#35409)",
+   "at": 1656006747000,
+   "chose": [
+    "brotli"
+   ]
+  },
+  {
+   "id": "D-224",
+   "title": "Stop using ansicolor",
+   "forbid": [
+    "lib:ansicolor"
+   ],
+   "sha": "89cd39e7cc",
+   "subject": "ref(logFileViewer): Replace ansicolor lib with ansi-to-react (#36117)",
+   "at": 1656444049000,
+   "chose": []
+  },
+  {
+   "id": "D-225",
+   "title": "Replace react-aria with @react-aria/button, @react-aria/focus",
+   "forbid": [
+    "lib:react-aria",
+    "lib:react_aria"
+   ],
+   "sha": "a8b13c2f7d",
+   "subject": "ref(package.json): Use explicit react-aria submodules (#36374)",
+   "at": 1657137675000,
+   "chose": [
+    "@react-aria/button",
+    "@react-aria/focus"
+   ]
+  },
+  {
+   "id": "D-226",
+   "title": "Stop using react-resize-panel",
+   "forbid": [
+    "lib:react-resize-panel",
+    "lib:react_resize_panel"
+   ],
+   "sha": "d93aa76d69",
+   "subject": "feat(replays): Fix issues in Replay Details v2 layout and replace the original layout styles (#36705)",
+   "at": 1658169167000,
+   "chose": []
+  },
+  {
+   "id": "D-227",
+   "title": "Stop using typed-ast",
+   "forbid": [
+    "lib:typed-ast",
+    "lib:typed_ast"
+   ],
+   "sha": "cc82be15ce",
+   "subject": "ref: upgrade to mypy 0.9xx (#37608)",
+   "at": 1660071751000,
+   "chose": []
+  },
+  {
+   "id": "D-228",
+   "title": "Make uwsgi-dogstatsd-plugin optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "2d854cfc13",
+   "subject": "Revert \"ref: use uwsgi-dogstatsd-plugin pip package (#38027)\" (#38048)",
+   "at": 1660917644000,
+   "chose": []
+  },
+  {
+   "id": "D-229",
+   "title": "Stop using @babel/plugin-proposal-decorators",
+   "forbid": [
+    "lib:@babel/plugin-proposal-decorators",
+    "lib:@babel/plugin_proposal_decorators"
+   ],
+   "sha": "f5d4cdeb0a",
+   "subject": "ref(js): Remove last usages of decorators (#38144)",
+   "at": 1661787198000,
+   "chose": []
+  },
+  {
+   "id": "D-230",
+   "title": "Make uwsgi optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "f9889c5708",
+   "subject": "ref: use pyuwsgi instead of uwsgi for easier installation (#37817)",
+   "at": 1661864615000,
+   "chose": []
+  },
+  {
+   "id": "D-231",
+   "title": "Stop using pako",
+   "forbid": [
+    "lib:pako"
+   ],
+   "sha": "f3d31eee22",
+   "subject": "ref(replays): Refactor how we fetch segments to use the new batch api endpoint (#38281)",
+   "at": 1661966402000,
+   "chose": []
+  },
+  {
+   "id": "D-232",
+   "title": "Stop using react-hotkeys-hook",
+   "forbid": [
+    "lib:react-hotkeys-hook",
+    "lib:react_hotkeys_hook"
+   ],
+   "sha": "f67f610437",
+   "subject": "ref(js): Remove react-hotkeys-hook in favor of ours (#38497)",
+   "at": 1663086946000,
+   "chose": []
+  },
+  {
+   "id": "D-233",
+   "title": "Stop using @sentry/replay",
+   "forbid": [
+    "lib:@sentry/replay"
+   ],
+   "sha": "97d17ef362",
+   "subject": "feat(replay): Remove `@sentry/replay`... (#39031)",
+   "at": 1663694431000,
+   "chose": []
+  },
+  {
+   "id": "D-235",
+   "title": "Stop using typing-inspect",
+   "forbid": [
+    "lib:typing-inspect",
+    "lib:typing_inspect"
+   ],
+   "sha": "56fb605b0e",
+   "subject": "ref: upgrade protobuf (#39268)",
+   "at": 1664981885000,
+   "chose": []
+  },
+  {
+   "id": "D-234",
+   "title": "Stop using libcst",
+   "forbid": [
+    "lib:libcst"
+   ],
+   "sha": "56fb605b0e",
+   "subject": "ref: upgrade protobuf (#39268)",
+   "at": 1664981885000,
+   "chose": []
+  },
+  {
+   "id": "D-236",
+   "title": "Stop using py",
+   "forbid": [
+    "lib:py"
+   ],
+   "sha": "f8ab47a218",
+   "subject": "ref: upgrade pytest to 7.2.0 (#40526)",
+   "at": 1666744873000,
+   "chose": []
+  },
+  {
+   "id": "D-237",
+   "title": "Make pytest-forked optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "f8ab47a218",
+   "subject": "ref: upgrade pytest to 7.2.0 (#40526)",
+   "at": 1666744873000,
+   "chose": []
+  },
+  {
+   "id": "D-238",
+   "title": "Stop using importlib-resources",
+   "forbid": [
+    "lib:importlib",
+    "lib:importlib-resources",
+    "lib:importlib_resources"
+   ],
+   "sha": "af9aaf1d37",
+   "subject": "ref: factor out requirements-dev-only-frozen.txt (#41149)",
+   "at": 1668002563000,
+   "chose": []
+  },
+  {
+   "id": "D-240",
+   "title": "Stop using mock",
+   "forbid": [
+    "lib:mock"
+   ],
+   "sha": "542d13fbdb",
+   "subject": "ref: remove exam dependency (#42311)",
+   "at": 1671042218000,
+   "chose": []
+  },
+  {
+   "id": "D-239",
+   "title": "Stop using exam",
+   "forbid": [
+    "lib:exam"
+   ],
+   "sha": "542d13fbdb",
+   "subject": "ref: remove exam dependency (#42311)",
+   "at": 1671042218000,
+   "chose": []
+  },
+  {
+   "id": "D-241",
+   "title": "Stop using @wojtekmaj/enzyme-adapter-react-17",
+   "forbid": [
+    "lib:@wojtekmaj/enzyme-adapter-react-17",
+    "lib:@wojtekmaj/enzyme_adapter_react_17"
+   ],
+   "sha": "1372cd44ae",
+   "subject": "test(js): Remove Enzyme (again) (#42571)",
+   "at": 1671699973000,
+   "chose": []
+  },
+  {
+   "id": "D-242",
+   "title": "Stop using enzyme",
+   "forbid": [
+    "lib:enzyme"
+   ],
+   "sha": "1372cd44ae",
+   "subject": "test(js): Remove Enzyme (again) (#42571)",
+   "at": 1671699973000,
+   "chose": []
+  },
+  {
+   "id": "D-243",
+   "title": "Stop using regenerator-runtime",
+   "forbid": [
+    "lib:regenerator",
+    "lib:regenerator-runtime",
+    "lib:regenerator_runtime"
+   ],
+   "sha": "1fe3d28d15",
+   "subject": "chore(deps): Remove regenerator-runtime (#42630)",
+   "at": 1671738415000,
+   "chose": []
+  },
+  {
+   "id": "D-244",
+   "title": "Make pytest-timeout optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "9e99ae2847",
+   "subject": "Revert \"CI: Adding timeouts to tests (#42970)\"",
+   "at": 1673459417000,
+   "chose": []
+  },
+  {
+   "id": "D-245",
+   "title": "Stop using avro",
+   "forbid": [
+    "lib:avro"
+   ],
+   "sha": "112b65b4df",
+   "subject": "build: Arroyo 2.5.0 (#43520)",
+   "at": 1674507913000,
+   "chose": []
+  },
+  {
+   "id": "D-246",
+   "title": "Stop using prism-sentry",
+   "forbid": [
+    "lib:prism-sentry",
+    "lib:prism_sentry"
+   ],
+   "sha": "ddff7049b3",
+   "subject": "feat(theme): Add in-app Prism colors (#43761)",
+   "at": 1674842669000,
+   "chose": []
+  },
+  {
+   "id": "D-249",
+   "title": "Stop using @storybook/addon-docs",
+   "forbid": [
+    "lib:@storybook/addon-docs",
+    "lib:@storybook/addon_docs"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-256",
+   "title": "Stop using @storybook/react",
+   "forbid": [
+    "lib:@storybook/react"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-258",
+   "title": "Stop using @storybook/theming",
+   "forbid": [
+    "lib:@storybook/theming"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-253",
+   "title": "Stop using @storybook/addons",
+   "forbid": [
+    "lib:@storybook/addons"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-254",
+   "title": "Stop using @storybook/builder-webpack5",
+   "forbid": [
+    "lib:@storybook/builder-webpack5",
+    "lib:@storybook/builder_webpack5"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-251",
+   "title": "Stop using @storybook/addon-links",
+   "forbid": [
+    "lib:@storybook/addon-links",
+    "lib:@storybook/addon_links"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-255",
+   "title": "Stop using @storybook/manager-webpack5",
+   "forbid": [
+    "lib:@storybook/manager-webpack5",
+    "lib:@storybook/manager_webpack5"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-248",
+   "title": "Stop using @storybook/addon-actions",
+   "forbid": [
+    "lib:@storybook/addon-actions",
+    "lib:@storybook/addon_actions"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-259",
+   "title": "Stop using storybook-dark-mode",
+   "forbid": [
+    "lib:storybook",
+    "lib:storybook-dark-mode",
+    "lib:storybook_dark_mode"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-252",
+   "title": "Stop using @storybook/addon-storysource",
+   "forbid": [
+    "lib:@storybook/addon-storysource",
+    "lib:@storybook/addon_storysource"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-257",
+   "title": "Stop using @storybook/router",
+   "forbid": [
+    "lib:@storybook/router"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-250",
+   "title": "Stop using @storybook/addon-essentials",
+   "forbid": [
+    "lib:@storybook/addon-essentials",
+    "lib:@storybook/addon_essentials"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-247",
+   "title": "Stop using @storybook/addon-a11y",
+   "forbid": [
+    "lib:@storybook/addon-a11y",
+    "lib:@storybook/addon_a11y"
+   ],
+   "sha": "2f573c0aab",
+   "subject": "ref(storybook): Burn it all down (#44809)",
+   "at": 1676590777000,
+   "chose": []
+  },
+  {
+   "id": "D-261",
+   "title": "Stop using colors",
+   "forbid": [
+    "lib:colors"
+   ],
+   "sha": "86812b8d1c",
+   "subject": "chore(ui): Remove unused dependencies (#44863)",
+   "at": 1677004672000,
+   "chose": []
+  },
+  {
+   "id": "D-260",
+   "title": "Stop using assert",
+   "forbid": [
+    "lib:assert"
+   ],
+   "sha": "86812b8d1c",
+   "subject": "chore(ui): Remove unused dependencies (#44863)",
+   "at": 1677004672000,
+   "chose": []
+  },
+  {
+   "id": "D-262",
+   "title": "Stop using @size-limit/preset-small-lib",
+   "forbid": [
+    "lib:@size-limit/preset-small-lib",
+    "lib:@size_limit/preset_small_lib"
+   ],
+   "sha": "73dc9823ff",
+   "subject": "chore(ui): Remove size limit (#45107)",
+   "at": 1677285868000,
+   "chose": []
+  },
+  {
+   "id": "D-263",
+   "title": "Stop using size-limit",
+   "forbid": [
+    "lib:size-limit",
+    "lib:size_limit"
+   ],
+   "sha": "73dc9823ff",
+   "subject": "chore(ui): Remove size limit (#45107)",
+   "at": 1677285868000,
+   "chose": []
+  },
+  {
+   "id": "D-265",
+   "title": "Stop using rrweb-player",
+   "forbid": [
+    "lib:rrweb-player",
+    "lib:rrweb_player"
+   ],
+   "sha": "dd3fd3999b",
+   "subject": "ref(replay): Use `@sentry-internal/rrweb` packages (#44629)",
+   "at": 1677509391000,
+   "chose": []
+  },
+  {
+   "id": "D-264",
+   "title": "Stop using rrweb",
+   "forbid": [
+    "lib:rrweb"
+   ],
+   "sha": "dd3fd3999b",
+   "subject": "ref(replay): Use `@sentry-internal/rrweb` packages (#44629)",
+   "at": 1677509391000,
+   "chose": []
+  },
+  {
+   "id": "D-266",
+   "title": "Stop using react-document-title",
+   "forbid": [
+    "lib:react-document-title",
+    "lib:react_document_title"
+   ],
+   "sha": "48207fcede",
+   "subject": "ref(js): Remove usage of react-document-title (#45170)",
+   "at": 1677560489000,
+   "chose": []
+  },
+  {
+   "id": "D-267",
+   "title": "Stop using copy-text-to-clipboard",
+   "forbid": [
+    "lib:copy-text-to-clipboard",
+    "lib:copy_text_to_clipboard"
+   ],
+   "sha": "c8bbb69c60",
+   "subject": "feat(ui): Switch from copy-text-to-clipboard to navigator (#45438)",
+   "at": 1678143192000,
+   "chose": []
+  },
+  {
+   "id": "D-269",
+   "title": "Stop using util",
+   "forbid": [
+    "lib:util"
+   ],
+   "sha": "66a807cf81",
+   "subject": "feat(replay): use `react-inspector` to display objects in Console (#45990)",
+   "at": 1680026070000,
+   "chose": []
+  },
+  {
+   "id": "D-268",
+   "title": "Stop using react-inspector",
+   "forbid": [
+    "lib:react-inspector",
+    "lib:react_inspector"
+   ],
+   "sha": "66a807cf81",
+   "subject": "feat(replay): use `react-inspector` to display objects in Console (#45990)",
+   "at": 1680026070000,
+   "chose": []
+  },
+  {
+   "id": "D-270",
+   "title": "Stop using natsort",
+   "forbid": [
+    "lib:natsort"
+   ],
+   "sha": "f08412cf3c",
+   "subject": "ref(crons): Upgrade croniter for bugfixes (#46975)",
+   "at": 1680810853000,
+   "chose": []
+  },
+  {
+   "id": "D-271",
+   "title": "Stop using typescript-styled-plugin",
+   "forbid": [
+    "lib:typescript-styled-plugin",
+    "lib:typescript_styled_plugin"
+   ],
+   "sha": "70d8a6e9c1",
+   "subject": "ref(dx): Replace deprecated typescript-styled-plugin (#50103)",
+   "at": 1685566213000,
+   "chose": []
+  },
+  {
+   "id": "D-272",
+   "title": "Stop using @react-types/menu",
+   "forbid": [
+    "lib:@react-types/menu",
+    "lib:@react_types/menu"
+   ],
+   "sha": "dd2d516982",
+   "subject": "ref(packages): Import `react-aria` types from `@react-aria`/`@react-stately` (#50457)",
+   "at": 1686092636000,
+   "chose": []
+  },
+  {
+   "id": "D-274",
+   "title": "Stop using @react-types/radio",
+   "forbid": [
+    "lib:@react-types/radio",
+    "lib:@react_types/radio"
+   ],
+   "sha": "dd2d516982",
+   "subject": "ref(packages): Import `react-aria` types from `@react-aria`/`@react-stately` (#50457)",
+   "at": 1686092636000,
+   "chose": []
+  },
+  {
+   "id": "D-273",
+   "title": "Stop using @react-types/numberfield",
+   "forbid": [
+    "lib:@react-types/numberfield",
+    "lib:@react_types/numberfield"
+   ],
+   "sha": "dd2d516982",
+   "subject": "ref(packages): Import `react-aria` types from `@react-aria`/`@react-stately` (#50457)",
+   "at": 1686092636000,
+   "chose": []
+  },
+  {
+   "id": "D-275",
+   "title": "Stop using toml",
+   "forbid": [
+    "lib:toml"
+   ],
+   "sha": "a3332855ed",
+   "subject": "ref: upgrade pre-commit (#51371)",
+   "at": 1687375982000,
+   "chose": []
+  },
+  {
+   "id": "D-276",
+   "title": "Stop using types-freezegun",
+   "forbid": [
+    "lib:freezegun",
+    "lib:types-freezegun",
+    "lib:types_freezegun"
+   ],
+   "sha": "97a1a3042f",
+   "subject": "ref: upgrade freezegun (now has types) (#53154)",
+   "at": 1689789720000,
+   "chose": []
+  },
+  {
+   "id": "D-277",
+   "title": "Stop using pyright",
+   "forbid": [
+    "lib:pyright"
+   ],
+   "sha": "97991f62c3",
+   "subject": "chore(ui): Remove pyright as dependency (#55084)",
+   "at": 1692396655000,
+   "chose": []
+  },
+  {
+   "id": "D-279",
+   "title": "Stop using postcss-syntax",
+   "forbid": [
+    "lib:postcss-syntax",
+    "lib:postcss_syntax"
+   ],
+   "sha": "d7b964a5c9",
+   "subject": "deps(ui): Upgrade to stylelint 15 (#53823)",
+   "at": 1694218269000,
+   "chose": []
+  },
+  {
+   "id": "D-280",
+   "title": "Stop using stylelint-config-prettier",
+   "forbid": [
+    "lib:stylelint-config-prettier",
+    "lib:stylelint_config_prettier"
+   ],
+   "sha": "d7b964a5c9",
+   "subject": "deps(ui): Upgrade to stylelint 15 (#53823)",
+   "at": 1694218269000,
+   "chose": []
+  },
+  {
+   "id": "D-278",
+   "title": "Stop using postcss-jsx",
+   "forbid": [
+    "lib:postcss-jsx",
+    "lib:postcss_jsx"
+   ],
+   "sha": "d7b964a5c9",
+   "subject": "deps(ui): Upgrade to stylelint 15 (#53823)",
+   "at": 1694218269000,
+   "chose": []
+  },
+  {
+   "id": "D-281",
+   "title": "Stop using @visual-snapshot/jest",
+   "forbid": [
+    "lib:@visual-snapshot/jest",
+    "lib:@visual_snapshot/jest"
+   ],
+   "sha": "3da73801ae",
+   "subject": "ref: remove visual snapshots (#56037)",
+   "at": 1694524535000,
+   "chose": []
+  },
+  {
+   "id": "D-282",
+   "title": "Stop using freezegun",
+   "forbid": [
+    "lib:freezegun"
+   ],
+   "sha": "4191ea1f7a",
+   "subject": "ref: move from freezegun to time-machine (part 3: rest of sentry) (#56495)",
+   "at": 1695156481000,
+   "chose": []
+  },
+  {
+   "id": "D-287",
+   "title": "Stop using yarl",
+   "forbid": [
+    "lib:yarl"
+   ],
+   "sha": "efe606434f",
+   "subject": "chore(ai): upgrade OpenAI SDK (#60906)",
+   "at": 1701377716000,
+   "chose": []
+  },
+  {
+   "id": "D-285",
+   "title": "Stop using frozenlist",
+   "forbid": [
+    "lib:frozenlist"
+   ],
+   "sha": "efe606434f",
+   "subject": "chore(ai): upgrade OpenAI SDK (#60906)",
+   "at": 1701377716000,
+   "chose": []
+  },
+  {
+   "id": "D-283",
+   "title": "Stop using aiohttp",
+   "forbid": [
+    "lib:aiohttp"
+   ],
+   "sha": "efe606434f",
+   "subject": "chore(ai): upgrade OpenAI SDK (#60906)",
+   "at": 1701377716000,
+   "chose": []
+  },
+  {
+   "id": "D-286",
+   "title": "Stop using multidict",
+   "forbid": [
+    "lib:multidict"
+   ],
+   "sha": "efe606434f",
+   "subject": "chore(ai): upgrade OpenAI SDK (#60906)",
+   "at": 1701377716000,
+   "chose": []
+  },
+  {
+   "id": "D-284",
+   "title": "Stop using aiosignal",
+   "forbid": [
+    "lib:aiosignal"
+   ],
+   "sha": "efe606434f",
+   "subject": "chore(ai): upgrade OpenAI SDK (#60906)",
+   "at": 1701377716000,
+   "chose": []
+  },
+  {
+   "id": "D-288",
+   "title": "Stop using planout",
+   "forbid": [
+    "lib:planout"
+   ],
+   "sha": "e6caacde9c",
+   "subject": "ref: remove PlanOut (#61056)",
+   "at": 1701711091000,
+   "chose": []
+  },
+  {
+   "id": "D-289",
+   "title": "Stop using @sentry-internal/feedback",
+   "forbid": [
+    "lib:@sentry-internal/feedback",
+    "lib:@sentry_internal/feedback"
+   ],
+   "sha": "b5cd372ab8",
+   "subject": "feat(sdks): Upgrade to 7.85.0 (#61076)",
+   "at": 1701725227000,
+   "chose": []
+  },
+  {
+   "id": "D-290",
+   "title": "Stop using decorator",
+   "forbid": [
+    "lib:decorator"
+   ],
+   "sha": "b27b2f5fd3",
+   "subject": "ref: upgrade datadog client (#61123)",
+   "at": 1701788258000,
+   "chose": []
+  },
+  {
+   "id": "D-291",
+   "title": "Stop using pyopenssl",
+   "forbid": [
+    "lib:pyopenssl"
+   ],
+   "sha": "5197ce3eb3",
+   "subject": "ref: upgrade selenium (#61253)",
+   "at": 1701896489000,
+   "chose": []
+  },
+  {
+   "id": "D-292",
+   "title": "Make docker-pycreds optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "db53ec4557",
+   "subject": "ref: upgrade docker to 6.x (#61360)",
+   "at": 1701982064000,
+   "chose": []
+  },
+  {
+   "id": "D-293",
+   "title": "Stop using backports-zoneinfo",
+   "forbid": [
+    "lib:backports-zoneinfo",
+    "lib:backports_zoneinfo"
+   ],
+   "sha": "adeb447c14",
+   "subject": "ref: upgrade to python 3.9 (#36860)",
+   "at": 1702993892000,
+   "chose": []
+  },
+  {
+   "id": "D-294",
+   "title": "Stop using dictpath",
+   "forbid": [
+    "lib:dictpath"
+   ],
+   "sha": "00a656892b",
+   "subject": "ref: upgrade openapi to 0.15.0 (#62091)",
+   "at": 1703196015000,
+   "chose": []
+  },
+  {
+   "id": "D-295",
+   "title": "Stop using pyrsistent",
+   "forbid": [
+    "lib:pyrsistent"
+   ],
+   "sha": "d06400b605",
+   "subject": "ref: upgrade jsonschema again (#62234)",
+   "at": 1703258886000,
+   "chose": []
+  },
+  {
+   "id": "D-296",
+   "title": "Make types-urllib3 optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "d1c678bba7",
+   "subject": "ref: upgrade to urllib3 2.x (#62349)",
+   "at": 1704378128000,
+   "chose": []
+  },
+  {
+   "id": "D-297",
+   "title": "Stop using python-memcached",
+   "forbid": [
+    "lib:memcached",
+    "lib:python-memcached",
+    "lib:python_memcached"
+   ],
+   "sha": "018d5e9fe0",
+   "subject": "ref: remove python-memcache (#63375)",
+   "at": 1705592132000,
+   "chose": []
+  },
+  {
+   "id": "D-298",
+   "title": "Stop using @sentry/tracing",
+   "forbid": [
+    "lib:@sentry/tracing"
+   ],
+   "sha": "cb699dffb3",
+   "subject": "feat(sdk): Add instrumentation for JSON serialization (#63503)",
+   "at": 1705687092000,
+   "chose": []
+  },
+  {
+   "id": "D-299",
+   "title": "Stop using prop-types",
+   "forbid": [
+    "lib:prop-types",
+    "lib:prop_types"
+   ],
+   "sha": "f3ed936352",
+   "subject": "ref: drop prop-types (#62968)",
+   "at": 1706026055000,
+   "chose": []
+  },
+  {
+   "id": "D-300",
+   "title": "Stop using exceptiongroup",
+   "forbid": [
+    "lib:exceptiongroup"
+   ],
+   "sha": "2d6875bf90",
+   "subject": "Revertx10: ref: upgrade to python 3.11 (#62925) (#63970)",
+   "at": 1706516276000,
+   "chose": []
+  },
+  {
+   "id": "D-301",
+   "title": "Stop using focus-visible",
+   "forbid": [
+    "lib:focus-visible",
+    "lib:focus_visible"
+   ],
+   "sha": "3b97429a2a",
+   "subject": "ref(focus-visible): drop focus-visible (#64562)",
+   "at": 1707161725000,
+   "chose": []
+  },
+  {
+   "id": "D-302",
+   "title": "Stop using @fullstory/babel-plugin-annotate-react",
+   "forbid": [
+    "lib:@fullstory/babel-plugin-annotate-react",
+    "lib:@fullstory/babel_plugin_annotate_react"
+   ],
+   "sha": "0e69fa2c76",
+   "subject": "ref(deps): Remove old component annotate plugin dependency (#64606)",
+   "at": 1707171735000,
+   "chose": []
+  },
+  {
+   "id": "D-304",
+   "title": "Stop using types-pyopenssl",
+   "forbid": [
+    "lib:pyopenssl",
+    "lib:types-pyopenssl",
+    "lib:types_pyopenssl"
+   ],
+   "sha": "52466b44a9",
+   "subject": "Revert \"build: update redis and remove redis-py-cluster (#65282)\"",
+   "at": 1708104529000,
+   "chose": []
+  },
+  {
+   "id": "D-303",
+   "title": "Stop using async-timeout",
+   "forbid": [
+    "lib:async-timeout",
+    "lib:async_timeout"
+   ],
+   "sha": "52466b44a9",
+   "subject": "Revert \"build: update redis and remove redis-py-cluster (#65282)\"",
+   "at": 1708104529000,
+   "chose": []
+  },
+  {
+   "id": "D-305",
+   "title": "Stop using webpack-hook-plugin",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-hook-plugin",
+    "lib:webpack_hook_plugin"
+   ],
+   "sha": "7b42245408",
+   "subject": "ref: Use docker for spotlight instead of webpack (#64664)",
+   "at": 1708941010000,
+   "chose": []
+  },
+  {
+   "id": "D-306",
+   "title": "Stop using react-select-event",
+   "forbid": [
+    "lib:react-select-event",
+    "lib:react_select_event"
+   ],
+   "sha": "687918359a",
+   "subject": "deps(ui): Remove react-select-event (#66976)",
+   "at": 1710436058000,
+   "chose": []
+  },
+  {
+   "id": "D-307",
+   "title": "Stop using pytz",
+   "forbid": [
+    "lib:pytz"
+   ],
+   "sha": "08c9f1e2f3",
+   "subject": "ref: upgrade djangorestframework (#67597)",
+   "at": 1711632375000,
+   "chose": []
+  },
+  {
+   "id": "D-308",
+   "title": "Stop using tocbot",
+   "forbid": [
+    "lib:tocbot"
+   ],
+   "sha": "52ad4cc57c",
+   "subject": "build: remove unused `tocbot` dependency (#67986)",
+   "at": 1711987634000,
+   "chose": []
+  },
+  {
+   "id": "D-309",
+   "title": "Stop using @testing-library/react-hooks",
+   "forbid": [
+    "lib:@testing-library/react-hooks",
+    "lib:@testing_library/react_hooks"
+   ],
+   "sha": "a42574b493",
+   "subject": "feat(ui): React 18 (#65632)",
+   "at": 1712682280000,
+   "chose": []
+  },
+  {
+   "id": "D-310",
+   "title": "Stop using react-test-renderer",
+   "forbid": [
+    "lib:react-test-renderer",
+    "lib:react_test_renderer"
+   ],
+   "sha": "d09c970e06",
+   "subject": "deps(ui): Remove react-test-renderer (#68929)",
+   "at": 1713211950000,
+   "chose": []
+  },
+  {
+   "id": "D-311",
+   "title": "Stop using babel-plugin-transform-react-remove-prop-types",
+   "forbid": [
+    "lib:babel-plugin-transform-react-remove-prop-types",
+    "lib:babel_plugin_transform_react_remove_prop_types"
+   ],
+   "sha": "955c5af221",
+   "subject": "build(ui): Remove babel remove prop types (#69061)",
+   "at": 1713367926000,
+   "chose": []
+  },
+  {
+   "id": "D-312",
+   "title": "Stop using crypto-browserify",
+   "forbid": [
+    "lib:crypto-browserify",
+    "lib:crypto_browserify"
+   ],
+   "sha": "853032a5c9",
+   "subject": "build(ui): Remove crypto-browserify (#69107)",
+   "at": 1713375346000,
+   "chose": []
+  },
+  {
+   "id": "D-313",
+   "title": "Stop using crypto-js",
+   "forbid": [
+    "lib:crypto-js",
+    "lib:crypto_js"
+   ],
+   "sha": "7cdb3e5a47",
+   "subject": "feat(ui): Remove crypto-js from gravatar (#69122)",
+   "at": 1713379048000,
+   "chose": []
+  },
+  {
+   "id": "D-314",
+   "title": "Stop using @sentry/integrations",
+   "forbid": [
+    "lib:@sentry/integrations"
+   ],
+   "sha": "5bff6b7d5a",
+   "subject": "feat: Update Sentry SDK to 8.0.0-beta.5 (#68520)",
+   "at": 1714643917000,
+   "chose": []
+  },
+  {
+   "id": "D-315",
+   "title": "Stop using babel-plugin-dynamic-import-node",
+   "forbid": [
+    "lib:babel-plugin-dynamic-import-node",
+    "lib:babel_plugin_dynamic_import_node"
+   ],
+   "sha": "c1f2d1ecdf",
+   "subject": "test(ui): Remove `babel-plugin-dynamic-import-node` (#70460)",
+   "at": 1715203186000,
+   "chose": []
+  },
+  {
+   "id": "D-316",
+   "title": "Stop using jest-sentry-environment",
+   "forbid": [
+    "lib:jest-sentry-environment",
+    "lib:jest_sentry_environment"
+   ],
+   "sha": "1a251543c7",
+   "subject": "test(ui): Enable sentry jest integration (#70821)",
+   "at": 1715710517000,
+   "chose": []
+  },
+  {
+   "id": "D-317",
+   "title": "Stop using async-generator",
+   "forbid": [
+    "lib:async-generator",
+    "lib:async_generator"
+   ],
+   "sha": "62ac480574",
+   "subject": "ref: upgrade trio (#70923)",
+   "at": 1715850276000,
+   "chose": []
+  },
+  {
+   "id": "D-318",
+   "title": "Stop using pylibmc",
+   "forbid": [
+    "lib:pylibmc"
+   ],
+   "sha": "5d940994e9",
+   "subject": "chore: remove unused pylibmc (#71339)",
+   "at": 1716389861000,
+   "chose": []
+  },
+  {
+   "id": "D-319",
+   "title": "Stop using annotated-types",
+   "forbid": [
+    "lib:annotated",
+    "lib:annotated-types",
+    "lib:annotated_types"
+   ],
+   "sha": "3efa8cf306",
+   "subject": "Revert \"chore(hybrid-cloud): Resubmits Pydantic v2.7 upgrade\" (#75411)",
+   "at": 1722481956000,
+   "chose": []
+  },
+  {
+   "id": "D-320",
+   "title": "Make pydantic-core optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "3efa8cf306",
+   "subject": "Revert \"chore(hybrid-cloud): Resubmits Pydantic v2.7 upgrade\" (#75411)",
+   "at": 1722481956000,
+   "chose": []
+  },
+  {
+   "id": "D-321",
+   "title": "Stop using @sentry/babel-plugin-component-annotate",
+   "forbid": [
+    "lib:@sentry/babel-plugin-component-annotate",
+    "lib:@sentry/babel_plugin_component_annotate"
+   ],
+   "sha": "5d4b5d6285",
+   "subject": "feat(webpack): Add Sentry Webpack Plugin (#76051)",
+   "at": 1723652160000,
+   "chose": []
+  },
+  {
+   "id": "D-322",
+   "title": "Stop using grpc-interceptor",
+   "forbid": [
+    "lib:grpc-interceptor",
+    "lib:grpc_interceptor"
+   ],
+   "sha": "e6309e9c8d",
+   "subject": "ref: upgrade google-cloud-spanner (#76952)",
+   "at": 1725546245000,
+   "chose": []
+  },
+  {
+   "id": "D-323",
+   "title": "Stop using @sentry-internal/react-inspector",
+   "forbid": [
+    "lib:@sentry-internal/react-inspector",
+    "lib:@sentry_internal/react_inspector"
+   ],
+   "sha": "61dc82ada0",
+   "subject": "chore(replay): Remove object inspector (#78236)",
+   "at": 1727893759000,
+   "chose": []
+  },
+  {
+   "id": "D-324",
+   "title": "Replace pegjs with peggy",
+   "forbid": [
+    "lib:pegjs"
+   ],
+   "sha": "4a6ac22abd",
+   "subject": "chore(js): Upgrade from abandoned PEG.js to Peggy (#79450)",
+   "at": 1729614674000,
+   "chose": [
+    "peggy"
+   ]
+  },
+  {
+   "id": "D-325",
+   "title": "Stop using pegjs-loader",
+   "forbid": [
+    "lib:pegjs-loader",
+    "lib:pegjs_loader"
+   ],
+   "sha": "4a6ac22abd",
+   "subject": "chore(js): Upgrade from abandoned PEG.js to Peggy (#79450)",
+   "at": 1729614674000,
+   "chose": []
+  },
+  {
+   "id": "D-326",
+   "title": "Stop using pyparsing",
+   "forbid": [
+    "lib:pyparsing"
+   ],
+   "sha": "d3e24ea213",
+   "subject": "ref: upgrade packaging to 24.x (#79596)",
+   "at": 1729863957000,
+   "chose": []
+  },
+  {
+   "id": "D-328",
+   "title": "Stop using types-croniter",
+   "forbid": [
+    "lib:croniter",
+    "lib:types-croniter",
+    "lib:types_croniter"
+   ],
+   "sha": "0b247ed5e5",
+   "subject": "ref(py): Remove unused croniter library (#80303)",
+   "at": 1730922303000,
+   "chose": []
+  },
+  {
+   "id": "D-327",
+   "title": "Stop using croniter",
+   "forbid": [
+    "lib:croniter"
+   ],
+   "sha": "0b247ed5e5",
+   "subject": "ref(py): Remove unused croniter library (#80303)",
+   "at": 1730922303000,
+   "chose": []
+  },
+  {
+   "id": "D-329",
+   "title": "Stop using @monaco-editor/react",
+   "forbid": [
+    "lib:@monaco-editor/react",
+    "lib:@monaco_editor/react"
+   ],
+   "sha": "e61ad14e42",
+   "subject": "chore(ui): Remove monaco-editor package (#80712)",
+   "at": 1731541416000,
+   "chose": []
+  },
+  {
+   "id": "D-330",
+   "title": "Stop using websocket-client",
+   "forbid": [
+    "lib:websocket",
+    "lib:websocket-client",
+    "lib:websocket_client"
+   ],
+   "sha": "f0500b3711",
+   "subject": "chore(deps): bump requests (#80870)",
+   "at": 1731956312000,
+   "chose": []
+  },
+  {
+   "id": "D-331",
+   "title": "Stop using eslint-config-sentry-app",
+   "forbid": [
+    "lib:eslint-config-sentry-app",
+    "lib:eslint_config_sentry_app"
+   ],
+   "sha": "a6126669cd",
+   "subject": "ci(eslint): Inline all the external eslint-config-sentry* ESLint configs into our .eslintrc file (#80970)",
+   "at": 1732161801000,
+   "chose": []
+  },
+  {
+   "id": "D-332",
+   "title": "Stop using @typescript-eslint/eslint-plugin",
+   "forbid": [
+    "lib:@typescript-eslint/eslint-plugin",
+    "lib:@typescript_eslint/eslint_plugin"
+   ],
+   "sha": "d1d4f86a2e",
+   "subject": "ci(eslint): Upgrade to eslint v9 (#82678)",
+   "at": 1735592927000,
+   "chose": []
+  },
+  {
+   "id": "D-333",
+   "title": "Stop using eslint-plugin-no-lookahead-lookbehind-regexp",
+   "forbid": [
+    "lib:eslint-plugin-no-lookahead-lookbehind-regexp",
+    "lib:eslint_plugin_no_lookahead_lookbehind_regexp"
+   ],
+   "sha": "d1d4f86a2e",
+   "subject": "ci(eslint): Upgrade to eslint v9 (#82678)",
+   "at": 1735592927000,
+   "chose": []
+  },
+  {
+   "id": "D-334",
+   "title": "Stop using eslint-plugin-prettier",
+   "forbid": [
+    "lib:eslint-plugin-prettier",
+    "lib:eslint_plugin_prettier"
+   ],
+   "sha": "c2ed20fcfe",
+   "subject": "ci(eslint): Use the prettier-config to disable conflicting rules, prettier itself still runs and does the formatting (#82830)",
+   "at": 1735854337000,
+   "chose": []
+  },
+  {
+   "id": "D-335",
+   "title": "Make email-reply-parser optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "d5e392dad9",
+   "subject": "ref: swap email-reply-parser for our fork (#83106)",
+   "at": 1736368047000,
+   "chose": [
+    "sentry-forked-email-reply-parser"
+   ]
+  },
+  {
+   "id": "D-336",
+   "title": "Stop using react-autosize-textarea",
+   "forbid": [
+    "lib:react-autosize-textarea",
+    "lib:react_autosize_textarea"
+   ],
+   "sha": "a7d46f9c9d",
+   "subject": "feat(forms): Migrate to `react-textarea-autosize` (#83357)",
+   "at": 1736896971000,
+   "chose": []
+  },
+  {
+   "id": "D-338",
+   "title": "Stop using @babel/plugin-transform-react-jsx-source",
+   "forbid": [
+    "lib:@babel/plugin-transform-react-jsx-source",
+    "lib:@babel/plugin_transform_react_jsx_source"
+   ],
+   "sha": "4572fe7367",
+   "subject": "build(ui): Remove display name babel plugins (#84256)",
+   "at": 1738194490000,
+   "chose": []
+  },
+  {
+   "id": "D-339",
+   "title": "Stop using babel-plugin-add-react-displayname",
+   "forbid": [
+    "lib:babel-plugin-add-react-displayname",
+    "lib:babel_plugin_add_react_displayname"
+   ],
+   "sha": "4572fe7367",
+   "subject": "build(ui): Remove display name babel plugins (#84256)",
+   "at": 1738194490000,
+   "chose": []
+  },
+  {
+   "id": "D-337",
+   "title": "Stop using @babel/plugin-transform-react-jsx",
+   "forbid": [
+    "lib:@babel/plugin-transform-react-jsx",
+    "lib:@babel/plugin_transform_react_jsx"
+   ],
+   "sha": "4572fe7367",
+   "subject": "build(ui): Remove display name babel plugins (#84256)",
+   "at": 1738194490000,
+   "chose": []
+  },
+  {
+   "id": "D-340",
+   "title": "Stop using phabricator",
+   "forbid": [
+    "lib:phabricator"
+   ],
+   "sha": "32bddc1d92",
+   "subject": "ref: delete phabricator plugin (#84379)",
+   "at": 1738591551000,
+   "chose": []
+  },
+  {
+   "id": "D-341",
+   "title": "Stop using types-pytz",
+   "forbid": [
+    "lib:types-pytz",
+    "lib:types_pytz"
+   ],
+   "sha": "8864d7177b",
+   "subject": "ref: clean up remaining pytz remnants (#84466)",
+   "at": 1738617637000,
+   "chose": []
+  },
+  {
+   "id": "D-342",
+   "title": "Stop using @sentry/types",
+   "forbid": [
+    "lib:@sentry/types"
+   ],
+   "sha": "190a7ee2a2",
+   "subject": "deps(sdk): Bump Sentry SDK to`9.0.0-alpha.2` (#84602)",
+   "at": 1738844030000,
+   "chose": []
+  },
+  {
+   "id": "D-343",
+   "title": "Stop using @sentry/utils",
+   "forbid": [
+    "lib:@sentry/utils"
+   ],
+   "sha": "190a7ee2a2",
+   "subject": "deps(sdk): Bump Sentry SDK to`9.0.0-alpha.2` (#84602)",
+   "at": 1738844030000,
+   "chose": []
+  },
+  {
+   "id": "D-344",
+   "title": "Stop using intersection-observer",
+   "forbid": [
+    "lib:intersection",
+    "lib:intersection-observer",
+    "lib:intersection_observer"
+   ],
+   "sha": "70498d0dc8",
+   "subject": "feat(ui): Remove intersection-observer polyfill (#87203)",
+   "at": 1742502462000,
+   "chose": []
+  },
+  {
+   "id": "D-345",
+   "title": "Stop using ios-device-list",
+   "forbid": [
+    "lib:ios-device-list",
+    "lib:ios_device_list"
+   ],
+   "sha": "c1ffecf00e",
+   "subject": "chore: Remove iOS-device-list dependency (#87829)",
+   "at": 1743004963000,
+   "chose": []
+  },
+  {
+   "id": "D-346",
+   "title": "Stop using @biomejs/biome",
+   "forbid": [
+    "lib:@biomejs/biome"
+   ],
+   "sha": "6ca3ed5577",
+   "subject": "chore: remove biome (#85552)",
+   "at": 1744858570000,
+   "chose": []
+  },
+  {
+   "id": "D-347",
+   "title": "Stop using react-sparklines",
+   "forbid": [
+    "lib:react-sparklines",
+    "lib:react_sparklines"
+   ],
+   "sha": "0f1a2cdb1e",
+   "subject": "ref(\u2702\ufe0f): remove more unused code (#90301)",
+   "at": 1745516269000,
+   "chose": []
+  },
+  {
+   "id": "D-348",
+   "title": "Stop using babel-gettext-extractor",
+   "forbid": [
+    "lib:babel-gettext-extractor",
+    "lib:babel_gettext_extractor"
+   ],
+   "sha": "60fb05fe16",
+   "subject": "build(ui): Use typescript to build .po translation file (#90560)",
+   "at": 1746635631000,
+   "chose": []
+  },
+  {
+   "id": "D-349",
+   "title": "Stop using u2f-api",
+   "forbid": [
+    "lib:u2f-api",
+    "lib:u2f_api"
+   ],
+   "sha": "8b10fc1065",
+   "subject": "ref(ts): Inline u2f-api types (#91278)",
+   "at": 1746743687000,
+   "chose": []
+  },
+  {
+   "id": "D-350",
+   "title": "Stop using cbor-web",
+   "forbid": [
+    "lib:cbor-web",
+    "lib:cbor_web"
+   ],
+   "sha": "b63c8d6b13",
+   "subject": "feat(webauthn): Upgrade to cbor2 (#91277)",
+   "at": 1746743696000,
+   "chose": []
+  },
+  {
+   "id": "D-351",
+   "title": "Stop using django-pgtrigger",
+   "forbid": [
+    "lib:django-pgtrigger",
+    "lib:django_pgtrigger",
+    "lib:pgtrigger"
+   ],
+   "sha": "3ef0349c01",
+   "subject": "Revert \"ref: install django-pgtrigger (#91253)\"",
+   "at": 1747142969000,
+   "chose": []
+  },
+  {
+   "id": "D-352",
+   "title": "Stop using progressbar2",
+   "forbid": [
+    "lib:progressbar2"
+   ],
+   "sha": "fa418e14bd",
+   "subject": "ref: use click.progressbar instead of progressbar2 (#91960)",
+   "at": 1747763901000,
+   "chose": []
+  },
+  {
+   "id": "D-353",
+   "title": "Stop using python-utils",
+   "forbid": [
+    "lib:python-utils",
+    "lib:python_utils",
+    "lib:utils"
+   ],
+   "sha": "fa418e14bd",
+   "subject": "ref: use click.progressbar instead of progressbar2 (#91960)",
+   "at": 1747763901000,
+   "chose": []
+  },
+  {
+   "id": "D-354",
+   "title": "Stop using @acemarke/react-prod-sourcemaps",
+   "forbid": [
+    "lib:@acemarke/react-prod-sourcemaps",
+    "lib:@acemarke/react_prod_sourcemaps"
+   ],
+   "sha": "5cfb0b355e",
+   "subject": "build(ui): Remove react prod sourcemaps (#92006)",
+   "at": 1747839392000,
+   "chose": []
+  },
+  {
+   "id": "D-360",
+   "title": "Stop using url-loader",
+   "forbid": [
+    "lib:url-loader",
+    "lib:url_loader"
+   ],
+   "sha": "4dd1ec8096",
+   "subject": "ref: remove unused dependencies (#92732)",
+   "at": 1749051894000,
+   "chose": []
+  },
+  {
+   "id": "D-357",
+   "title": "Stop using @react-stately/dnd",
+   "forbid": [
+    "lib:@react-stately/dnd",
+    "lib:@react_stately/dnd"
+   ],
+   "sha": "4dd1ec8096",
+   "subject": "ref: remove unused dependencies (#92732)",
+   "at": 1749051894000,
+   "chose": []
+  },
+  {
+   "id": "D-358",
+   "title": "Stop using @react-stately/menu",
+   "forbid": [
+    "lib:@react-stately/menu",
+    "lib:@react_stately/menu"
+   ],
+   "sha": "4dd1ec8096",
+   "subject": "ref: remove unused dependencies (#92732)",
+   "at": 1749051894000,
+   "chose": []
+  },
+  {
+   "id": "D-359",
+   "title": "Stop using @spotlightjs/spotlight",
+   "forbid": [
+    "lib:@spotlightjs/spotlight"
+   ],
+   "sha": "4dd1ec8096",
+   "subject": "ref: remove unused dependencies (#92732)",
+   "at": 1749051894000,
+   "chose": []
+  },
+  {
+   "id": "D-356",
+   "title": "Stop using @react-aria/dnd",
+   "forbid": [
+    "lib:@react-aria/dnd",
+    "lib:@react_aria/dnd"
+   ],
+   "sha": "4dd1ec8096",
+   "subject": "ref: remove unused dependencies (#92732)",
+   "at": 1749051894000,
+   "chose": []
+  },
+  {
+   "id": "D-355",
+   "title": "Stop using @eslint/eslintrc",
+   "forbid": [
+    "lib:@eslint/eslintrc"
+   ],
+   "sha": "4dd1ec8096",
+   "subject": "ref: remove unused dependencies (#92732)",
+   "at": 1749051894000,
+   "chose": []
+  },
+  {
+   "id": "D-374",
+   "title": "Stop using webpack-remove-empty-scripts",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-remove-empty-scripts",
+    "lib:webpack_remove_empty_scripts"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-361",
+   "title": "Stop using @pmmmwh/react-refresh-webpack-plugin",
+   "forbid": [
+    "lib:@pmmmwh/react-refresh-webpack-plugin",
+    "lib:@pmmmwh/react_refresh_webpack_plugin"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-372",
+   "title": "Stop using webpack-cli",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-cli",
+    "lib:webpack_cli"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-370",
+   "title": "Stop using terser-webpack-plugin",
+   "forbid": [
+    "lib:terser-webpack-plugin",
+    "lib:terser_webpack_plugin"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-363",
+   "title": "Stop using babel-loader",
+   "forbid": [
+    "lib:babel-loader",
+    "lib:babel_loader"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-368",
+   "title": "Stop using lightningcss",
+   "forbid": [
+    "lib:lightningcss"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-371",
+   "title": "Stop using webpack",
+   "forbid": [
+    "lib:webpack"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-367",
+   "title": "Stop using fork-ts-checker-webpack-plugin",
+   "forbid": [
+    "lib:fork-ts-checker-webpack-plugin",
+    "lib:fork_ts_checker_webpack_plugin"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-365",
+   "title": "Stop using copy-webpack-plugin",
+   "forbid": [
+    "lib:copy-webpack-plugin",
+    "lib:copy_webpack_plugin"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-364",
+   "title": "Stop using browserslist",
+   "forbid": [
+    "lib:browserslist"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-373",
+   "title": "Stop using webpack-dev-server",
+   "forbid": [
+    "lib:webpack",
+    "lib:webpack-dev-server",
+    "lib:webpack_dev_server"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-362",
+   "title": "Stop using @rsdoctor/webpack-plugin",
+   "forbid": [
+    "lib:@rsdoctor/webpack-plugin",
+    "lib:@rsdoctor/webpack_plugin"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-366",
+   "title": "Stop using css-minimizer-webpack-plugin",
+   "forbid": [
+    "lib:css-minimizer-webpack-plugin",
+    "lib:css_minimizer_webpack_plugin"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-369",
+   "title": "Stop using mini-css-extract-plugin",
+   "forbid": [
+    "lib:mini-css-extract-plugin",
+    "lib:mini_css_extract_plugin"
+   ],
+   "sha": "76c9b465da",
+   "subject": "build(ui): Remove webpack (#92681)",
+   "at": 1749073768000,
+   "chose": []
+  },
+  {
+   "id": "D-375",
+   "title": "Stop using benchmark",
+   "forbid": [
+    "lib:benchmark"
+   ],
+   "sha": "e3ee1917e1",
+   "subject": "benchmarks: remove benchmark setup (#93647)",
+   "at": 1750104064000,
+   "chose": []
+  },
+  {
+   "id": "D-376",
+   "title": "Stop using tsconfig-paths",
+   "forbid": [
+    "lib:tsconfig",
+    "lib:tsconfig-paths",
+    "lib:tsconfig_paths"
+   ],
+   "sha": "e3ee1917e1",
+   "subject": "benchmarks: remove benchmark setup (#93647)",
+   "at": 1750104064000,
+   "chose": []
+  },
+  {
+   "id": "D-377",
+   "title": "Stop using ts-node",
+   "forbid": [
+    "lib:ts-node",
+    "lib:ts_node"
+   ],
+   "sha": "32c262d9d5",
+   "subject": "deps: drop ts-node (#93723)",
+   "at": 1750182176000,
+   "chose": []
+  },
+  {
+   "id": "D-378",
+   "title": "Stop using flattie",
+   "forbid": [
+    "lib:flattie"
+   ],
+   "sha": "cc2b4472a7",
+   "subject": "feat(aci): automation edit scaffolding (#94595)",
+   "at": 1751316934000,
+   "chose": []
+  },
+  {
+   "id": "D-379",
+   "title": "Stop using deprecated",
+   "forbid": [
+    "lib:deprecated"
+   ],
+   "sha": "47387323e7",
+   "subject": "Revert \"Support Python SDK 3.0.0 (#92011)\" (#94790)",
+   "at": 1751475099000,
+   "chose": []
+  },
+  {
+   "id": "D-381",
+   "title": "Stop using @babel/runtime",
+   "forbid": [
+    "lib:@babel/runtime"
+   ],
+   "sha": "63ede5a1fa",
+   "subject": "test(ui): jest 30 (#93303)",
+   "at": 1752511061000,
+   "chose": []
+  },
+  {
+   "id": "D-380",
+   "title": "Stop using @babel/plugin-transform-runtime",
+   "forbid": [
+    "lib:@babel/plugin-transform-runtime",
+    "lib:@babel/plugin_transform_runtime"
+   ],
+   "sha": "63ede5a1fa",
+   "subject": "test(ui): jest 30 (#93303)",
+   "at": 1752511061000,
+   "chose": []
+  },
+  {
+   "id": "D-382",
+   "title": "Replace mobx-react with mobx-react-lite",
+   "forbid": [
+    "lib:mobx-react",
+    "lib:mobx_react"
+   ],
+   "sha": "f5fae76a5b",
+   "subject": "feat(ui): Switch to mobx-react-lite, upgrade mobx (#97213)",
+   "at": 1754426003000,
+   "chose": [
+    "mobx-react-lite"
+   ]
+  },
+  {
+   "id": "D-383",
+   "title": "Stop using eslint-plugin-simple-import-sort",
+   "forbid": [
+    "lib:eslint-plugin-simple-import-sort",
+    "lib:eslint_plugin_simple_import_sort"
+   ],
+   "sha": "435f7e12c5",
+   "subject": "ref: replace eslint-plugin-simple-import-sort with prettier-plugin-sort-imports (#97578)",
+   "at": 1754985592000,
+   "chose": []
+  },
+  {
+   "id": "D-385",
+   "title": "Stop using opentelemetry-api",
+   "forbid": [
+    "lib:opentelemetry",
+    "lib:opentelemetry-api",
+    "lib:opentelemetry_api"
+   ],
+   "sha": "3fee51cf84",
+   "subject": "Revert \"Dogfood Python SDK 3.0.0a5 (#97664)\"",
+   "at": 1755090822000,
+   "chose": []
+  },
+  {
+   "id": "D-386",
+   "title": "Stop using opentelemetry-sdk",
+   "forbid": [
+    "lib:opentelemetry",
+    "lib:opentelemetry-sdk",
+    "lib:opentelemetry_sdk"
+   ],
+   "sha": "3fee51cf84",
+   "subject": "Revert \"Dogfood Python SDK 3.0.0a5 (#97664)\"",
+   "at": 1755090822000,
+   "chose": []
+  },
+  {
+   "id": "D-388",
+   "title": "Stop using zipp",
+   "forbid": [
+    "lib:zipp"
+   ],
+   "sha": "3fee51cf84",
+   "subject": "Revert \"Dogfood Python SDK 3.0.0a5 (#97664)\"",
+   "at": 1755090822000,
+   "chose": []
+  },
+  {
+   "id": "D-387",
+   "title": "Stop using opentelemetry-semantic-conventions",
+   "forbid": [
+    "lib:opentelemetry",
+    "lib:opentelemetry-semantic-conventions",
+    "lib:opentelemetry_semantic_conventions"
+   ],
+   "sha": "3fee51cf84",
+   "subject": "Revert \"Dogfood Python SDK 3.0.0a5 (#97664)\"",
+   "at": 1755090822000,
+   "chose": []
+  },
+  {
+   "id": "D-384",
+   "title": "Stop using importlib-metadata",
+   "forbid": [
+    "lib:importlib",
+    "lib:importlib-metadata",
+    "lib:importlib_metadata"
+   ],
+   "sha": "3fee51cf84",
+   "subject": "Revert \"Dogfood Python SDK 3.0.0a5 (#97664)\"",
+   "at": 1755090822000,
+   "chose": []
+  },
+  {
+   "id": "D-414",
+   "title": "Stop using h11",
+   "forbid": [
+    "lib:h11"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-426",
+   "title": "Make jsonschema-spec optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-420",
+   "title": "Stop using idna",
+   "forbid": [
+    "lib:idna"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-412",
+   "title": "Stop using grpc-stubs",
+   "forbid": [
+    "lib:grpc-stubs",
+    "lib:grpc_stubs"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-428",
+   "title": "Stop using kombu",
+   "forbid": [
+    "lib:kombu"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-416",
+   "title": "Stop using hpack",
+   "forbid": [
+    "lib:hpack"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-402",
+   "title": "Make click-repl optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-404",
+   "title": "Stop using cssutils",
+   "forbid": [
+    "lib:cssutils"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-407",
+   "title": "Make django-stubs-ext optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-458",
+   "title": "Stop using rsa",
+   "forbid": [
+    "lib:rsa"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-466",
+   "title": "Stop using tomli",
+   "forbid": [
+    "lib:tomli"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-472",
+   "title": "Stop using virtualenv",
+   "forbid": [
+    "lib:virtualenv"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-427",
+   "title": "Make jsonschema-specifications optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-408",
+   "title": "Stop using execnet",
+   "forbid": [
+    "lib:execnet"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-468",
+   "title": "Stop using trio",
+   "forbid": [
+    "lib:trio"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-439",
+   "title": "Stop using parse",
+   "forbid": [
+    "lib:parse"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-400",
+   "title": "Make click-didyoumean optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-430",
+   "title": "Stop using markupsafe",
+   "forbid": [
+    "lib:markupsafe"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-447",
+   "title": "Stop using pyasn1-modules",
+   "forbid": [
+    "lib:pyasn1",
+    "lib:pyasn1-modules",
+    "lib:pyasn1_modules"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-471",
+   "title": "Stop using vine",
+   "forbid": [
+    "lib:vine"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-424",
+   "title": "Stop using jmespath",
+   "forbid": [
+    "lib:jmespath"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-434",
+   "title": "Stop using nodeenv",
+   "forbid": [
+    "lib:nodeenv"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-441",
+   "title": "Stop using pathspec",
+   "forbid": [
+    "lib:pathspec"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-411",
+   "title": "Make google-resumable-media optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-442",
+   "title": "Stop using pep517",
+   "forbid": [
+    "lib:pep517"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-399",
+   "title": "Stop using charset-normalizer",
+   "forbid": [
+    "lib:charset",
+    "lib:charset-normalizer",
+    "lib:charset_normalizer"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-453",
+   "title": "Stop using pyyaml",
+   "forbid": [
+    "lib:pyyaml"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-403",
+   "title": "Stop using coverage",
+   "forbid": [
+    "lib:coverage"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-421",
+   "title": "Stop using inflection",
+   "forbid": [
+    "lib:inflection"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-476",
+   "title": "Stop using wrapt",
+   "forbid": [
+    "lib:wrapt"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-417",
+   "title": "Stop using httpcore",
+   "forbid": [
+    "lib:httpcore"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-433",
+   "title": "Stop using more-itertools",
+   "forbid": [
+    "lib:more-itertools",
+    "lib:more_itertools"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-410",
+   "title": "Stop using filelock",
+   "forbid": [
+    "lib:filelock"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-389",
+   "title": "Stop using amqp",
+   "forbid": [
+    "lib:amqp"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-454",
+   "title": "Stop using referencing",
+   "forbid": [
+    "lib:referencing"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-470",
+   "title": "Stop using uritemplate",
+   "forbid": [
+    "lib:uritemplate"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-418",
+   "title": "Stop using hyperframe",
+   "forbid": [
+    "lib:hyperframe"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-392",
+   "title": "Make attrs optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-423",
+   "title": "Stop using isodate",
+   "forbid": [
+    "lib:isodate"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-429",
+   "title": "Stop using lazy-object-proxy",
+   "forbid": [
+    "lib:lazy-object-proxy",
+    "lib:lazy_object_proxy"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-469",
+   "title": "Stop using trio-websocket",
+   "forbid": [
+    "lib:trio-websocket",
+    "lib:trio_websocket"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-422",
+   "title": "Stop using iniconfig",
+   "forbid": [
+    "lib:iniconfig"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-448",
+   "title": "Stop using pycodestyle",
+   "forbid": [
+    "lib:pycodestyle"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-474",
+   "title": "Stop using werkzeug",
+   "forbid": [
+    "lib:werkzeug"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-461",
+   "title": "Stop using sniffio",
+   "forbid": [
+    "lib:sniffio"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-440",
+   "title": "Stop using pathable",
+   "forbid": [
+    "lib:pathable"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-405",
+   "title": "Stop using distlib",
+   "forbid": [
+    "lib:distlib"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-463",
+   "title": "Stop using soupsieve",
+   "forbid": [
+    "lib:soupsieve"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-436",
+   "title": "Stop using openapi-schema-validator",
+   "forbid": [
+    "lib:openapi-schema-validator",
+    "lib:openapi_schema_validator"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-456",
+   "title": "Make requests-file optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-477",
+   "title": "Stop using wsproto",
+   "forbid": [
+    "lib:wsproto"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-419",
+   "title": "Stop using identify",
+   "forbid": [
+    "lib:identify"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-444",
+   "title": "Stop using pluggy",
+   "forbid": [
+    "lib:pluggy"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-460",
+   "title": "Stop using six",
+   "forbid": [
+    "lib:six"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-396",
+   "title": "Stop using cffi",
+   "forbid": [
+    "lib:cffi"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-462",
+   "title": "Stop using sortedcontainers",
+   "forbid": [
+    "lib:sortedcontainers"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-465",
+   "title": "Stop using tokenize-rt",
+   "forbid": [
+    "lib:tokenize-rt",
+    "lib:tokenize_rt"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-432",
+   "title": "Stop using milksnake",
+   "forbid": [
+    "lib:milksnake"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-438",
+   "title": "Stop using outcome",
+   "forbid": [
+    "lib:outcome"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-394",
+   "title": "Stop using build",
+   "forbid": [
+    "lib:build"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-443",
+   "title": "Stop using platformdirs",
+   "forbid": [
+    "lib:platformdirs"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-415",
+   "title": "Stop using h2",
+   "forbid": [
+    "lib:h2"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-425",
+   "title": "Make jsonschema-path optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-464",
+   "title": "Stop using supervisor",
+   "forbid": [
+    "lib:supervisor"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-395",
+   "title": "Stop using certifi",
+   "forbid": [
+    "lib:certifi"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-390",
+   "title": "Stop using anyio",
+   "forbid": [
+    "lib:anyio"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-459",
+   "title": "Stop using s3transfer",
+   "forbid": [
+    "lib:s3transfer"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-401",
+   "title": "Make click-plugins optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-449",
+   "title": "Stop using pycparser",
+   "forbid": [
+    "lib:pycparser"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-406",
+   "title": "Stop using distro",
+   "forbid": [
+    "lib:distro"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-413",
+   "title": "Stop using grpcio-status",
+   "forbid": [
+    "lib:grpcio-status",
+    "lib:grpcio_status"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-431",
+   "title": "Stop using mccabe",
+   "forbid": [
+    "lib:mccabe"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-452",
+   "title": "Make pytest-metadata optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-455",
+   "title": "Stop using regex",
+   "forbid": [
+    "lib:regex"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-451",
+   "title": "Stop using pysocks",
+   "forbid": [
+    "lib:pysocks"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-397",
+   "title": "Stop using cfgv",
+   "forbid": [
+    "lib:cfgv"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-391",
+   "title": "Make asgiref optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-467",
+   "title": "Stop using tqdm",
+   "forbid": [
+    "lib:tqdm"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-450",
+   "title": "Stop using pyflakes",
+   "forbid": [
+    "lib:pyflakes"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-473",
+   "title": "Stop using wcwidth",
+   "forbid": [
+    "lib:wcwidth"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-437",
+   "title": "Stop using openapi-spec-validator",
+   "forbid": [
+    "lib:openapi-spec-validator",
+    "lib:openapi_spec_validator"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-445",
+   "title": "Stop using prompt-toolkit",
+   "forbid": [
+    "lib:prompt",
+    "lib:prompt-toolkit",
+    "lib:prompt_toolkit"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-457",
+   "title": "Stop using rpds-py",
+   "forbid": [
+    "lib:rpds-py",
+    "lib:rpds_py"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-435",
+   "title": "Make oauthlib optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-475",
+   "title": "Stop using wheel",
+   "forbid": [
+    "lib:wheel"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-393",
+   "title": "Stop using billiard",
+   "forbid": [
+    "lib:billiard"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-446",
+   "title": "Stop using pyasn1",
+   "forbid": [
+    "lib:pyasn1"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-409",
+   "title": "Make fastjsonschema optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-398",
+   "title": "Stop using chardet",
+   "forbid": [
+    "lib:chardet"
+   ],
+   "sha": "56948e2515",
+   "subject": "feat: uv part 3 (cleanup) (#97627)",
+   "at": 1755114657000,
+   "chose": []
+  },
+  {
+   "id": "D-478",
+   "title": "Stop using celery",
+   "forbid": [
+    "lib:celery"
+   ],
+   "sha": "2931923b59",
+   "subject": "chore(tasks) Remove code referencing celery pt4 (#100408)",
+   "at": 1759172359000,
+   "chose": []
+  },
+  {
+   "id": "D-479",
+   "title": "Stop using @react-google-maps/api",
+   "forbid": [
+    "lib:@react-google-maps/api",
+    "lib:@react_google_maps/api"
+   ],
+   "sha": "37152bb23a",
+   "subject": "chore(billing): Cleanup legacy Stripe + billing details code (#105745)",
+   "at": 1767895504000,
+   "chose": []
+  },
+  {
+   "id": "D-480",
+   "title": "Make pyuwsgi optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "18a1524bec",
+   "subject": "chore: migrate from `uwsgi` to `granian` (#107267)",
+   "at": 1769715109000,
+   "chose": []
+  },
+  {
+   "id": "D-482",
+   "title": "Replace sentry-forked-djangorestframework-stubs with django-stubs, djangorestframework-stubs",
+   "forbid": [
+    "lib:sentry-forked-djangorestframework-stubs",
+    "lib:sentry_forked_djangorestframework_stubs"
+   ],
+   "sha": "5b0f2ad7fa",
+   "subject": "ref(typing): Upgrade mypy to 1.19.1 and switch to upstream django-stubs (#107710)",
+   "at": 1770925931000,
+   "chose": [
+    "django-stubs",
+    "djangorestframework-stubs"
+   ]
+  },
+  {
+   "id": "D-481",
+   "title": "Replace sentry-forked-django-stubs with django-stubs",
+   "forbid": [
+    "lib:sentry-forked-django-stubs",
+    "lib:sentry_forked_django_stubs"
+   ],
+   "sha": "5b0f2ad7fa",
+   "subject": "ref(typing): Upgrade mypy to 1.19.1 and switch to upstream django-stubs (#107710)",
+   "at": 1770925931000,
+   "chose": [
+    "django-stubs"
+   ]
+  },
+  {
+   "id": "D-487",
+   "title": "Stop using pyupgrade",
+   "forbid": [
+    "lib:pyupgrade"
+   ],
+   "sha": "d26544689b",
+   "subject": "feat(ci): Migrate `black`, `isort`, `pyupgrade`, and most of `flake8` to `ruff` (#108010)",
+   "at": 1770932380000,
+   "chose": []
+  },
+  {
+   "id": "D-484",
+   "title": "Stop using flake8-bugbear",
+   "forbid": [
+    "lib:flake8-bugbear",
+    "lib:flake8_bugbear"
+   ],
+   "sha": "d26544689b",
+   "subject": "feat(ci): Migrate `black`, `isort`, `pyupgrade`, and most of `flake8` to `ruff` (#108010)",
+   "at": 1770932380000,
+   "chose": []
+  },
+  {
+   "id": "D-485",
+   "title": "Stop using flake8-logging",
+   "forbid": [
+    "lib:flake8-logging",
+    "lib:flake8_logging"
+   ],
+   "sha": "d26544689b",
+   "subject": "feat(ci): Migrate `black`, `isort`, `pyupgrade`, and most of `flake8` to `ruff` (#108010)",
+   "at": 1770932380000,
+   "chose": []
+  },
+  {
+   "id": "D-486",
+   "title": "Stop using isort",
+   "forbid": [
+    "lib:isort"
+   ],
+   "sha": "d26544689b",
+   "subject": "feat(ci): Migrate `black`, `isort`, `pyupgrade`, and most of `flake8` to `ruff` (#108010)",
+   "at": 1770932380000,
+   "chose": []
+  },
+  {
+   "id": "D-483",
+   "title": "Stop using black",
+   "forbid": [
+    "lib:black"
+   ],
+   "sha": "d26544689b",
+   "subject": "feat(ci): Migrate `black`, `isort`, `pyupgrade`, and most of `flake8` to `ruff` (#108010)",
+   "at": 1770932380000,
+   "chose": []
+  },
+  {
+   "id": "D-488",
+   "title": "Stop using react-virtualized",
+   "forbid": [
+    "lib:react-virtualized",
+    "lib:react_virtualized"
+   ],
+   "sha": "2d32bb9636",
+   "subject": "feat(replays): Convert replay console tab to tanstack virtual (#109292)",
+   "at": 1772040107000,
+   "chose": []
+  },
+  {
+   "id": "D-489",
+   "title": "Stop using @codecov/webpack-plugin",
+   "forbid": [
+    "lib:@codecov/webpack-plugin",
+    "lib:@codecov/webpack_plugin"
+   ],
+   "sha": "a417a3e0f1",
+   "subject": "build(ui): Remove codecov bundle analysis (#109342)",
+   "at": 1772049829000,
+   "chose": []
+  },
+  {
+   "id": "D-492",
+   "title": "Replace prettier with oxfmt",
+   "forbid": [
+    "lib:prettier"
+   ],
+   "sha": "3703bd3e21",
+   "subject": "chore(format): replace prettier with oxfmt (#111205)",
+   "at": 1774037845000,
+   "chose": [
+    "oxfmt"
+   ]
+  },
+  {
+   "id": "D-490",
+   "title": "Replace @ianvs/prettier-plugin-sort-imports with oxfmt",
+   "forbid": [
+    "lib:@ianvs/prettier-plugin-sort-imports",
+    "lib:@ianvs/prettier_plugin_sort_imports"
+   ],
+   "sha": "3703bd3e21",
+   "subject": "chore(format): replace prettier with oxfmt (#111205)",
+   "at": 1774037845000,
+   "chose": [
+    "oxfmt"
+   ]
+  },
+  {
+   "id": "D-491",
+   "title": "Replace @prettier/plugin-oxc with oxfmt",
+   "forbid": [
+    "lib:@prettier/plugin-oxc",
+    "lib:@prettier/plugin_oxc"
+   ],
+   "sha": "3703bd3e21",
+   "subject": "chore(format): replace prettier with oxfmt (#111205)",
+   "at": 1774037845000,
+   "chose": [
+    "oxfmt"
+   ]
+  },
+  {
+   "id": "D-493",
+   "title": "Stop using eslint-plugin-sentry",
+   "forbid": [
+    "lib:eslint-plugin-sentry",
+    "lib:eslint_plugin_sentry"
+   ],
+   "sha": "ce286c615a",
+   "subject": "feat(ui): Port eslint-plugin-sentry to this repo (#112081)",
+   "at": 1775149570000,
+   "chose": []
+  },
+  {
+   "id": "D-496",
+   "title": "Stop using @babel/preset-react",
+   "forbid": [
+    "lib:@babel/preset-react",
+    "lib:@babel/preset_react"
+   ],
+   "sha": "0cd628191c",
+   "subject": "feat(ui): migrate jest from babel-jest to @swc/jest (#112895)",
+   "at": 1776204454000,
+   "chose": []
+  },
+  {
+   "id": "D-497",
+   "title": "Stop using @babel/preset-typescript",
+   "forbid": [
+    "lib:@babel/preset-typescript",
+    "lib:@babel/preset_typescript"
+   ],
+   "sha": "0cd628191c",
+   "subject": "feat(ui): migrate jest from babel-jest to @swc/jest (#112895)",
+   "at": 1776204454000,
+   "chose": []
+  },
+  {
+   "id": "D-499",
+   "title": "Stop using babel-jest",
+   "forbid": [
+    "lib:babel-jest",
+    "lib:babel_jest"
+   ],
+   "sha": "0cd628191c",
+   "subject": "feat(ui): migrate jest from babel-jest to @swc/jest (#112895)",
+   "at": 1776204454000,
+   "chose": []
+  },
+  {
+   "id": "D-494",
+   "title": "Stop using @babel/core",
+   "forbid": [
+    "lib:@babel/core"
+   ],
+   "sha": "0cd628191c",
+   "subject": "feat(ui): migrate jest from babel-jest to @swc/jest (#112895)",
+   "at": 1776204454000,
+   "chose": []
+  },
+  {
+   "id": "D-498",
+   "title": "Stop using @emotion/babel-plugin",
+   "forbid": [
+    "lib:@emotion/babel-plugin",
+    "lib:@emotion/babel_plugin"
+   ],
+   "sha": "0cd628191c",
+   "subject": "feat(ui): migrate jest from babel-jest to @swc/jest (#112895)",
+   "at": 1776204454000,
+   "chose": []
+  },
+  {
+   "id": "D-495",
+   "title": "Stop using @babel/preset-env",
+   "forbid": [
+    "lib:@babel/preset-env",
+    "lib:@babel/preset_env"
+   ],
+   "sha": "0cd628191c",
+   "subject": "feat(ui): migrate jest from babel-jest to @swc/jest (#112895)",
+   "at": 1776204454000,
+   "chose": []
+  },
+  {
+   "id": "D-500",
+   "title": "Replace pre-commit with prek",
+   "forbid": [
+    "lib:pre-commit",
+    "lib:pre_commit"
+   ],
+   "sha": "b36052de8b",
+   "subject": "feat(dev): replace pre-commit with prek --quiet (#110808)",
+   "at": 1776719241000,
+   "chose": [
+    "prek"
+   ]
+  },
+  {
+   "id": "D-501",
+   "title": "Stop using jest-junit",
+   "forbid": [
+    "lib:jest-junit",
+    "lib:jest_junit"
+   ],
+   "sha": "8d1d7d72e1",
+   "subject": "test(ui): Drop jest-junit (#114564)",
+   "at": 1777653926000,
+   "chose": []
+  },
+  {
+   "id": "D-502",
+   "title": "Stop using p4python",
+   "forbid": [
+    "lib:p4python"
+   ],
+   "sha": "96029f5e30",
+   "subject": "fix(perforce): Fix the client usage and path settings (#117422)",
+   "at": 1781200710000,
+   "chose": []
+  },
+  {
+   "id": "D-504",
+   "title": "Stop using @volar/typescript",
+   "forbid": [
+    "lib:@volar/typescript"
+   ],
+   "sha": "b9d963f8df",
+   "subject": "ref(mdx): remove mdx typechecking (#119254)",
+   "at": 1783542054000,
+   "chose": []
+  },
+  {
+   "id": "D-503",
+   "title": "Stop using @mdx-js/language-service",
+   "forbid": [
+    "lib:@mdx-js/language-service",
+    "lib:@mdx_js/language_service"
+   ],
+   "sha": "b9d963f8df",
+   "subject": "ref(mdx): remove mdx typechecking (#119254)",
+   "at": 1783542054000,
+   "chose": []
+  },
+  {
+   "id": "D-506",
+   "title": "Stop using @typescript/native-preview",
+   "forbid": [
+    "lib:@typescript/native-preview",
+    "lib:@typescript/native_preview"
+   ],
+   "sha": "344c0ec0ae",
+   "subject": "deps(ui): Support TypeScript 7 side by side (#119249)",
+   "at": 1783615409000,
+   "chose": []
+  },
+  {
+   "id": "D-505",
+   "title": "Stop using @styled/typescript-styled-plugin",
+   "forbid": [
+    "lib:@styled/typescript-styled-plugin",
+    "lib:@styled/typescript_styled_plugin"
+   ],
+   "sha": "344c0ec0ae",
+   "subject": "deps(ui): Support TypeScript 7 side by side (#119249)",
+   "at": 1783615409000,
+   "chose": []
+  },
+  {
+   "id": "D-507",
+   "title": "Stop using process",
+   "forbid": [
+    "lib:process"
+   ],
+   "sha": "377ecd5ed8",
+   "subject": "build(ui): Remove process browser polyfill (#119828)",
+   "at": 1784219763000,
+   "chose": []
+  },
+  {
+   "id": "D-508",
+   "title": "Stop using buffer",
+   "forbid": [
+    "lib:buffer"
+   ],
+   "sha": "8c0622cd91",
+   "subject": "build(ui): Remove unused Node polyfill `buffer` (#119835)",
+   "at": 1784223133000,
+   "chose": []
+  },
+  {
+   "id": "D-509",
+   "title": "Stop using po-catalog-loader",
+   "forbid": [
+    "lib:po-catalog-loader",
+    "lib:po_catalog_loader"
+   ],
+   "sha": "32012af95e",
+   "subject": "build(ui): Upgrade gettext-parser to v9, add local loader (#119848)",
+   "at": 1784233102000,
+   "chose": []
+  },
+  {
+   "id": "D-510",
+   "title": "Make @sentry/profiling-node optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "b00a840b7f",
+   "subject": "deps(ui): Upgrade Sentry Jest environment to v7 (#120083)",
+   "at": 1784568426000,
+   "chose": []
+  },
+  {
+   "id": "D-511",
+   "title": "Replace js-yaml with yaml",
+   "forbid": [
+    "lib:js-yaml",
+    "lib:js_yaml"
+   ],
+   "sha": "15d2625eea",
+   "subject": "deps(api-docs): Replace js-yaml with yaml (#120107)",
+   "at": 1784572680000,
+   "chose": [
+    "yaml"
+   ]
+  },
+  {
+   "id": "D-512",
+   "title": "Stop using scroll-to-element",
+   "forbid": [
+    "lib:scroll",
+    "lib:scroll-to-element",
+    "lib:scroll_to_element"
+   ],
+   "sha": "d8a4437680",
+   "subject": "ref(ui): Remove scroll-to-element (#120523)",
+   "at": 1784846225000,
+   "chose": []
+  },
+  {
+   "id": "D-514",
+   "title": "Stop using pip-tools",
+   "forbid": [
+    "lib:pip-tools",
+    "lib:pip_tools"
+   ],
+   "sha": "8ea191d2d5",
+   "subject": "chore: delete setuptools + pip (#121540)",
+   "at": 1786124494000,
+   "chose": []
+  },
+  {
+   "id": "D-513",
+   "title": "Stop using pip",
+   "forbid": [
+    "lib:pip"
+   ],
+   "sha": "8ea191d2d5",
+   "subject": "chore: delete setuptools + pip (#121540)",
+   "at": 1786124494000,
+   "chose": []
+  },
+  {
+   "id": "D-515",
+   "title": "Stop using setuptools",
+   "forbid": [
+    "lib:setuptools"
+   ],
+   "sha": "8ea191d2d5",
+   "subject": "chore: delete setuptools + pip (#121540)",
+   "at": 1786124494000,
+   "chose": []
+  },
+  {
+   "id": "D-516",
+   "title": "Stop using types-setuptools",
+   "forbid": [
+    "lib:setuptools",
+    "lib:types-setuptools",
+    "lib:types_setuptools"
+   ],
+   "sha": "8ea191d2d5",
+   "subject": "chore: delete setuptools + pip (#121540)",
+   "at": 1786124494000,
+   "chose": []
+  },
+  {
+   "id": "D-517",
+   "title": "Stop using react-mentions",
+   "forbid": [
+    "lib:react-mentions",
+    "lib:react_mentions"
+   ],
+   "sha": "b2c1462b62",
+   "subject": "feat(issues): Remove legacy issue activity editor (#122113)",
+   "at": 1787700611000,
+   "chose": []
+  },
+  {
+   "id": "D-518",
+   "title": "Stop using httpx",
+   "forbid": [
+    "lib:httpx"
+   ],
+   "sha": "9439c59da0",
+   "subject": "ref(apigw): switch from `httpx` to `punkreq` (#122723)",
+   "at": 1788268480000,
+   "chose": []
+  },
+  {
+   "id": "D-522",
+   "title": "Stop using eslint-config-prettier",
+   "forbid": [
+    "lib:eslint-config-prettier",
+    "lib:eslint_config_prettier"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-526",
+   "title": "Stop using eslint-plugin-no-relative-import-paths",
+   "forbid": [
+    "lib:eslint-plugin-no-relative-import-paths",
+    "lib:eslint_plugin_no_relative_import_paths"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-528",
+   "title": "Stop using eslint-plugin-typescript-sort-keys",
+   "forbid": [
+    "lib:eslint-plugin-typescript-sort-keys",
+    "lib:eslint_plugin_typescript_sort_keys"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-523",
+   "title": "Stop using eslint-plugin-boundaries",
+   "forbid": [
+    "lib:eslint-plugin-boundaries",
+    "lib:eslint_plugin_boundaries"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-520",
+   "title": "Stop using @eslint/compat",
+   "forbid": [
+    "lib:@eslint/compat"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-521",
+   "title": "Stop using @eslint/js",
+   "forbid": [
+    "lib:@eslint/js"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-524",
+   "title": "Stop using eslint-plugin-jest",
+   "forbid": [
+    "lib:eslint-plugin-jest",
+    "lib:eslint_plugin_jest"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-525",
+   "title": "Stop using eslint-plugin-mdx",
+   "forbid": [
+    "lib:eslint-plugin-mdx",
+    "lib:eslint_plugin_mdx"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-527",
+   "title": "Stop using eslint-plugin-react-hooks",
+   "forbid": [
+    "lib:eslint-plugin-react-hooks",
+    "lib:eslint_plugin_react_hooks"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-529",
+   "title": "Stop using globals",
+   "forbid": [
+    "lib:globals"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-530",
+   "title": "Stop using typescript-eslint",
+   "forbid": [
+    "lib:typescript-eslint",
+    "lib:typescript_eslint"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-519",
+   "title": "Stop using @emotion/eslint-plugin",
+   "forbid": [
+    "lib:@emotion/eslint-plugin",
+    "lib:@emotion/eslint_plugin"
+   ],
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "at": 1788467704000,
+   "chose": []
+  },
+  {
+   "id": "D-532",
+   "title": "Stop using @typescript-eslint/rule-tester",
+   "forbid": [
+    "lib:@typescript-eslint/rule-tester",
+    "lib:@typescript_eslint/rule_tester"
+   ],
+   "sha": "2450983fe6",
+   "subject": "ref(oxlint): Use native oxlint rules and RuleTester (#124353)",
+   "at": 1789486568000,
+   "chose": []
+  },
+  {
+   "id": "D-531",
+   "title": "Stop using @typescript-eslint/parser",
+   "forbid": [
+    "lib:@typescript-eslint/parser",
+    "lib:@typescript_eslint/parser"
+   ],
+   "sha": "2450983fe6",
+   "subject": "ref(oxlint): Use native oxlint rules and RuleTester (#124353)",
+   "at": 1789486568000,
+   "chose": []
+  },
+  {
+   "id": "D-533",
+   "title": "Stop using @typescript-eslint/utils",
+   "forbid": [
+    "lib:@typescript-eslint/utils",
+    "lib:@typescript_eslint/utils"
+   ],
+   "sha": "2450983fe6",
+   "subject": "ref(oxlint): Use native oxlint rules and RuleTester (#124353)",
+   "at": 1789486568000,
+   "chose": []
+  },
+  {
+   "id": "D-534",
+   "title": "Replace jest-environment-jsdom with @jest/environment-jsdom-abstract, jsdom",
+   "forbid": [
+    "lib:jest-environment-jsdom",
+    "lib:jest_environment_jsdom"
+   ],
+   "sha": "e09a217b66",
+   "subject": "deps(ui): Upgrade Jest, jsdom (#122364)",
+   "at": 1789660763000,
+   "chose": [
+    "@jest/environment-jsdom-abstract",
+    "jsdom"
+   ]
+  },
+  {
+   "id": "D-535",
+   "title": "Stop using openai",
+   "forbid": [
+    "lib:openai"
+   ],
+   "sha": "6564f4dec3",
+   "subject": "ref(deps): Remove unused openai dependency (#125177)",
+   "at": 1790071469000,
+   "chose": []
+  },
+  {
+   "id": "D-539",
+   "title": "Stop using @sentry-internal/rrweb-types",
+   "forbid": [
+    "lib:@sentry-internal/rrweb-types",
+    "lib:@sentry_internal/rrweb_types"
+   ],
+   "sha": "4c33658206",
+   "subject": "ref(security): Bump the rrweb family to the @sentry scope 2.44.0 (#125436)",
+   "at": 1790271253000,
+   "chose": []
+  },
+  {
+   "id": "D-537",
+   "title": "Stop using @sentry-internal/rrweb-player",
+   "forbid": [
+    "lib:@sentry-internal/rrweb-player",
+    "lib:@sentry_internal/rrweb_player"
+   ],
+   "sha": "4c33658206",
+   "subject": "ref(security): Bump the rrweb family to the @sentry scope 2.44.0 (#125436)",
+   "at": 1790271253000,
+   "chose": []
+  },
+  {
+   "id": "D-536",
+   "title": "Stop using @sentry-internal/rrweb",
+   "forbid": [
+    "lib:@sentry-internal/rrweb",
+    "lib:@sentry_internal/rrweb"
+   ],
+   "sha": "4c33658206",
+   "subject": "ref(security): Bump the rrweb family to the @sentry scope 2.44.0 (#125436)",
+   "at": 1790271253000,
+   "chose": []
+  },
+  {
+   "id": "D-538",
+   "title": "Stop using @sentry-internal/rrweb-snapshot",
+   "forbid": [
+    "lib:@sentry-internal/rrweb-snapshot",
+    "lib:@sentry_internal/rrweb_snapshot"
+   ],
+   "sha": "4c33658206",
+   "subject": "ref(security): Bump the rrweb family to the @sentry scope 2.44.0 (#125436)",
+   "at": 1790271253000,
+   "chose": []
+  },
+  {
+   "id": "D-540",
+   "title": "Stop using @sentry/toolbar",
+   "forbid": [
+    "lib:@sentry/toolbar"
+   ],
+   "sha": "cacad7d4b4",
+   "subject": "ref(ui): Remove `@sentry/toolbar` package (#125769)",
+   "at": 1790622827000,
+   "chose": []
+  },
+  {
+   "id": "D-541",
+   "title": "Stop using ansi-to-react",
+   "forbid": [
+    "lib:ansi-to-react",
+    "lib:ansi_to_react"
+   ],
+   "sha": "1769942df2",
+   "subject": "ref(ui): replace ansi-to-react with shared AnsiText component (#126237)",
+   "at": 1790948697000,
+   "chose": []
+  },
+  {
+   "id": "D-543",
+   "title": "Stop using @rspack/dev-server",
+   "forbid": [
+    "lib:@rspack/dev-server",
+    "lib:@rspack/dev_server"
+   ],
+   "sha": "a69d0b97ea",
+   "subject": "build: migrate frontend bundling to Rsbuild (#125476)",
+   "at": 1791278046000,
+   "chose": []
+  },
+  {
+   "id": "D-542",
+   "title": "Stop using @rspack/cli",
+   "forbid": [
+    "lib:@rspack/cli"
+   ],
+   "sha": "a69d0b97ea",
+   "subject": "build: migrate frontend bundling to Rsbuild (#125476)",
+   "at": 1791278046000,
+   "chose": []
+  },
+  {
+   "id": "D-544",
+   "title": "Stop using selfsigned",
+   "forbid": [
+    "lib:selfsigned"
+   ],
+   "sha": "a69d0b97ea",
+   "subject": "build: migrate frontend bundling to Rsbuild (#125476)",
+   "at": 1791278046000,
+   "chose": []
+  },
+  {
+   "id": "D-545",
+   "title": "Replace eslint-plugin-import with eslint-plugin-import-x",
+   "forbid": [
+    "lib:eslint-plugin-import",
+    "lib:eslint_plugin_import"
+   ],
+   "sha": "1ad5552cae",
+   "subject": "ref(lint): replace eslint-plugin with eslint-plugin-x (#126903)",
+   "at": 1791479846000,
+   "chose": [
+    "eslint-plugin-import-x"
+   ]
+  },
+  {
+   "id": "D-547",
+   "title": "Stop using @sentry-internal/gs-app",
+   "forbid": [
+    "lib:@sentry-internal/gs-app",
+    "lib:@sentry_internal/gs_app"
+   ],
+   "sha": "4db28f9acc",
+   "subject": "ref(frontend): Resolve app imports through workspace dependencies (#127031)",
+   "at": 1791795791000,
+   "chose": []
+  },
+  {
+   "id": "D-546",
+   "title": "Stop using @sentry-internal/app",
+   "forbid": [
+    "lib:@sentry-internal/app",
+    "lib:@sentry_internal/app"
+   ],
+   "sha": "4db28f9acc",
+   "subject": "ref(frontend): Resolve app imports through workspace dependencies (#127031)",
+   "at": 1791795791000,
+   "chose": []
+  },
+  {
+   "id": "D-548",
+   "title": "Make @figma/code-connect optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "dad6637b8c",
+   "subject": "build(frontend): Run Figma Code Connect on demand (#127121)",
+   "at": 1792007113000,
+   "chose": []
+  },
+  {
+   "id": "D-552",
+   "title": "Stop using @jest/types",
+   "forbid": [
+    "lib:@jest/types"
+   ],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": []
+  },
+  {
+   "id": "D-551",
+   "title": "Stop using @jest/test-result",
+   "forbid": [
+    "lib:@jest/test-result",
+    "lib:@jest/test_result"
+   ],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": []
+  },
+  {
+   "id": "D-553",
+   "title": "Stop using @sentry/jest-environment",
+   "forbid": [
+    "lib:@sentry/jest-environment",
+    "lib:@sentry/jest_environment"
+   ],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": []
+  },
+  {
+   "id": "D-549",
+   "title": "Make @emotion/css optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": []
+  },
+  {
+   "id": "D-550",
+   "title": "Stop using @emotion/server",
+   "forbid": [
+    "lib:@emotion/server"
+   ],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": []
+  },
+  {
+   "id": "D-560",
+   "title": "Stop using playwright",
+   "forbid": [
+    "lib:playwright"
+   ],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": []
+  },
+  {
+   "id": "D-558",
+   "title": "Stop using jest-fail-on-console",
+   "forbid": [
+    "lib:jest-fail-on-console",
+    "lib:jest_fail_on_console"
+   ],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": []
+  },
+  {
+   "id": "D-556",
+   "title": "Stop using jest-canvas-mock",
+   "forbid": [
+    "lib:jest-canvas-mock",
+    "lib:jest_canvas_mock"
+   ],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": []
+  },
+  {
+   "id": "D-554",
+   "title": "Make @sentry/node optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": [
+    "sentry-test"
+   ]
+  },
+  {
+   "id": "D-557",
+   "title": "Stop using jest-environment-node",
+   "forbid": [
+    "lib:jest-environment-node",
+    "lib:jest_environment_node"
+   ],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": []
+  },
+  {
+   "id": "D-559",
+   "title": "Stop using jest-resolve",
+   "forbid": [
+    "lib:jest-resolve",
+    "lib:jest_resolve"
+   ],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": []
+  },
+  {
+   "id": "D-555",
+   "title": "Stop using @swc-contrib/mut-cjs-exports",
+   "forbid": [
+    "lib:@swc-contrib/mut-cjs-exports",
+    "lib:@swc_contrib/mut_cjs_exports"
+   ],
+   "sha": "2c72ecdf19",
+   "subject": "ref(tests): Share test tooling across workspace packages (#127153)",
+   "at": 1792052124000,
+   "chose": []
+  }
+ ]
+}

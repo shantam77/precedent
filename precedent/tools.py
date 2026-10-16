@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from . import config, db
-from .scan import MANIFEST, forbid_tokens
+from .scan import JS_EXT, MANIFEST, forbid_tokens
 
 VERDICT = {"human": "deny", "documented": "deny", "agent": "ask", "historical": "ask", "observed": "note"}
 RANK = {"ok": 0, "note": 1, "ask": 2, "deny": 3}
@@ -88,11 +88,11 @@ def violates(token, path, added):
         elif token[4:] in sys.stdlib_module_names:  # a dropped backport ('typing', 'enum'): importing it is fine now
             return False
         else:
-            # imports and JS require/import; plus the module as a quoted string ('drf_yasg' in INSTALLED_APPS) but only
-            # for module-like names with an underscore: plain words ('wheel', 'extensions') gave false alarms in replay
-            pat = rf"^\s*(?:import|from)\s+{name}\b|(?:\brequire\(|\bfrom|\bimport\s*\(?)\s*[\"']{name}[\"'/]"
-            if "_" in token:
-                pat += rf"|[\"']{name}(?:\.[\w.]+)?[\"']"
+            # JS/TS: only the quoted specifier counts ('import Redis from "./redis"' names a binding, not the package).
+            # Python: import x / from x, plus 'x_y' as a quoted string (INSTALLED_APPS); plain words gave false alarms
+            py, js = rf"^\s*(?:import|from)\s+{name}\b", rf"(?:\brequire\(|\bfrom|\bimport\s*\(?)\s*[\"']{name}[\"'/]"
+            pat = js if path.endswith(JS_EXT) else (py + (rf"|[\"']{name}(?:\.[\w.]+)?[\"']" if "_" in token else "")
+                                                     + ("" if path.endswith((".py", ".pyi")) else "|" + js))
         return re.search(pat, added, re.I | re.M) is not None
     return token in added
 

@@ -69,6 +69,7 @@ def main():
     ap.add_argument("repo")
     ap.add_argument("--cut", default="2024-01-01")
     ap.add_argument("--graph", default="replay")
+    ap.add_argument("--max-res", type=int, default=0, help="test at most N guarded decisions (random, seed 7) for resurrection")
     a = ap.parse_args()
     repo = str(Path(a.repo).resolve())
     config.GRAPH, config.REPO = a.graph, repo
@@ -103,6 +104,9 @@ def main():
 
     # 3. resurrections of removed libraries, from the real deleted lines
     res = []
+    if a.max_res and len(guarded) > a.max_res:  # huge repos: each test scans the whole history with git log -G
+        import random
+        guarded = random.Random(7).sample(guarded, a.max_res)
     for did, title, forbid, sha in guarded:
         names = [f.removeprefix("lib:") for f in forbid if f.startswith("lib:")]
         pat = "|".join(re.escape(n) for n in names)
@@ -141,7 +145,8 @@ def main():
         f["kind"] = "reversal (library came back later)" if f["decision"] in reversed_ids else "false alarm"
     held = [i for i, _, _, _ in mined if i not in reversed_ids]
     report = {
-        "repo": Path(repo).name, "cut": a.cut, "graph_at_cut": stats, "guarded_decisions": len(guarded),
+        "repo": Path(repo).name, "cut": a.cut, "graph_at_cut": stats, "guarded_decisions": stats["guarded_decisions"],
+        "resurrection_sample": a.max_res or None,
         "decisions_at_cut": len(mined), "decisions_still_true_at_head": len(held),
         "reversed_decisions": sorted(reversed_ids, key=lambda i: int(i[2:])),
         "replayed_commits": n_commits, "replayed_file_changes": n_files, "commit_verdicts": dict(verdicts),

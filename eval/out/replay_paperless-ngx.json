@@ -1,0 +1,739 @@
+{
+ "repo": "paperless-ngx",
+ "cut": "2024-01-01",
+ "graph_at_cut": {
+  "repo": "replay_paperless-ngx",
+  "files": 1566,
+  "components": 30,
+  "depends_on": 47,
+  "libraries": 219,
+  "manifest_events": 104,
+  "format_migrations_skipped": 2,
+  "decisions": 72,
+  "guarded_decisions": 27,
+  "observed_only": 44,
+  "people": 298,
+  "knows": 340,
+  "notes": 16,
+  "rules": 12,
+  "seconds": 11.7,
+  "llm_tokens": 0
+ },
+ "guarded_decisions": 27,
+ "decisions_at_cut": 72,
+ "decisions_still_true_at_head": 72,
+ "reversed_decisions": [],
+ "replayed_commits": 3465,
+ "replayed_file_changes": 14359,
+ "commit_verdicts": {
+  "ok": 3464,
+  "ask": 1
+ },
+ "flag_rate_commits": 0.0003,
+ "flagged_commits_false_alarm": 1,
+ "flagged_commits_reversal": 0,
+ "decisions": [
+  {
+   "id": "D-4",
+   "title": "Stop using typing (the backport: the standard library has it)",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-61",
+   "title": "Stop using @cypress/schematic",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-66",
+   "title": "Make cryptography optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-70",
+   "title": "Stop using reportlab",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-56",
+   "title": "Stop using backports-zoneinfo",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-15",
+   "title": "Stop using pexpect",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-60",
+   "title": "Replace django-ipware with python-ipware",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-28",
+   "title": "Stop using pdftotext",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-25",
+   "title": "Make filemagic optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-16",
+   "title": "Stop using pickleshare",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using pyflakes",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-10",
+   "title": "Stop using backcall",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-12",
+   "title": "Stop using ipython-genutils",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using jasmine-core",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-19",
+   "title": "Stop using traitlets",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-72",
+   "title": "Stop using ng2-pdf-viewer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-43",
+   "title": "Replace psycopg2-binary with psycopg2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-33",
+   "title": "Stop using @angular/animations",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-45",
+   "title": "Stop using watchgod",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-64",
+   "title": "Replace tika with tika-client",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-63",
+   "title": "Make numpy optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-51",
+   "title": "Stop using tslint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-18",
+   "title": "Stop using ptyprocess",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-21",
+   "title": "Stop using brotli",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-46",
+   "title": "Stop using django-q",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using django-crispy-forms",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-1",
+   "title": "Stop using djangorestframework-filters",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-30",
+   "title": "Stop using ng-bootstrap",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-47",
+   "title": "Stop using fuzzywuzzy",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-24",
+   "title": "Stop using ipython",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-67",
+   "title": "Make pdfminer-six optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-49",
+   "title": "Stop using sphinx-rtd-theme",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-36",
+   "title": "Replace karma with @angular-builders/jest, jest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-2",
+   "title": "Stop using django-suit",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-55",
+   "title": "Stop using tox",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-5",
+   "title": "Stop using djangodav",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-29",
+   "title": "Stop using pyhamcrest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using pyocr",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-32",
+   "title": "Stop using sortedcontainers",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-57",
+   "title": "Stop using importlib-resources",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-69",
+   "title": "Make pillow optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-35",
+   "title": "Stop using jasmine-spec-reporter",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-58",
+   "title": "Stop using zipp",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using jedi",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-20",
+   "title": "Stop using sphinxcontrib-websupport",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-53",
+   "title": "Stop using pycodestyle",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-59",
+   "title": "Stop using coveralls",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-44",
+   "title": "Stop using chardet",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-62",
+   "title": "Stop using cypress",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-50",
+   "title": "Stop using codelyzer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-39",
+   "title": "Replace karma-jasmine with @angular-builders/jest, jest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-3",
+   "title": "Stop using pep8",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-17",
+   "title": "Stop using prompt-toolkit",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using flake8",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-65",
+   "title": "Make httpx optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-52",
+   "title": "Stop using myst-parser",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-40",
+   "title": "Replace karma-jasmine-html-reporter with @angular-builders/jest, jest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-37",
+   "title": "Replace karma-chrome-launcher with @angular-builders/jest, jest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-41",
+   "title": "Stop using ngx-infinite-scroll",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-14",
+   "title": "Stop using parso",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-68",
+   "title": "Make pikepdf optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-38",
+   "title": "Replace karma-coverage-istanbul-reporter with @angular-builders/jest, jest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-71",
+   "title": "Stop using scipy",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-54",
+   "title": "Stop using sphinx-autobuild",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-27",
+   "title": "Stop using importlib-metadata",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-48",
+   "title": "Stop using sphinx",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using decorator",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-6",
+   "title": "Stop using django-flat-responsive",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-23",
+   "title": "Stop using djangoql",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-31",
+   "title": "Stop using ngx-bootstrap",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-8",
+   "title": "Stop using mccabe",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-42",
+   "title": "Stop using protractor",
+   "guarded": true,
+   "still_true_at_head": true
+  }
+ ],
+ "flags": [
+  {
+   "sha": "01b21377af",
+   "subject": "Chore: Use a local http server instead of external to reduce flakiness (#11916)",
+   "path": "pyproject.toml",
+   "decision": "D-64",
+   "title": "Replace tika with tika-client",
+   "token": "lib:tika",
+   "line": "\"tika: Tests requiring Tika service\",",
+   "verdict": "ask",
+   "kind": "false alarm"
+  }
+ ],
+ "resurrections": [
+  {
+   "decision": "D-2",
+   "title": "Stop using django-suit",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "django-suit>=0.2.23"
+  },
+  {
+   "decision": "D-3",
+   "title": "Stop using pep8",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "pep8"
+  },
+  {
+   "decision": "D-5",
+   "title": "Stop using djangodav",
+   "edits": 4,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "djangodav==0.0.1b26"
+  },
+  {
+   "decision": "D-6",
+   "title": "Stop using django-flat-responsive",
+   "edits": 4,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "django-flat-responsive = \"*\""
+  },
+  {
+   "decision": "D-20",
+   "title": "Stop using sphinxcontrib-websupport",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "sphinxcontrib-websupport = \"*\""
+  },
+  {
+   "decision": "D-30",
+   "title": "Stop using ng-bootstrap",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"ng-bootstrap\": \"^0.46.0\","
+  },
+  {
+   "decision": "D-31",
+   "title": "Stop using ngx-bootstrap",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"ngx-bootstrap\": \"^8.0.0\","
+  },
+  {
+   "decision": "D-34",
+   "title": "Stop using jasmine-core",
+   "edits": 4,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 3,
+   "example": "frameworks: ['jasmine', '@angular-devkit/build-angular'],"
+  },
+  {
+   "decision": "D-35",
+   "title": "Stop using jasmine-spec-reporter",
+   "edits": 5,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 3,
+   "example": "frameworks: ['jasmine', '@angular-devkit/build-angular'],"
+  },
+  {
+   "decision": "D-36",
+   "title": "Replace karma with @angular-builders/jest, jest",
+   "edits": 4,
+   "caught": 1,
+   "missed_comment_only": 1,
+   "missed_real": 2,
+   "example": "\"builder\": \"@angular-devkit/build-angular:karma\","
+  },
+  {
+   "decision": "D-37",
+   "title": "Replace karma-chrome-launcher with @angular-builders/jest, jest",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "require('karma-chrome-launcher'),"
+  },
+  {
+   "decision": "D-38",
+   "title": "Replace karma-coverage-istanbul-reporter with @angular-builders/jest, jest",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "require('karma-coverage-istanbul-reporter'),"
+  },
+  {
+   "decision": "D-39",
+   "title": "Replace karma-jasmine with @angular-builders/jest, jest",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "require('karma-jasmine'),"
+  },
+  {
+   "decision": "D-40",
+   "title": "Replace karma-jasmine-html-reporter with @angular-builders/jest, jest",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "require('karma-jasmine-html-reporter'),"
+  },
+  {
+   "decision": "D-41",
+   "title": "Stop using ngx-infinite-scroll",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"ngx-infinite-scroll\": \"^13.0.1\","
+  },
+  {
+   "decision": "D-42",
+   "title": "Stop using protractor",
+   "edits": 6,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"builder\": \"@angular-devkit/build-angular:protractor\","
+  },
+  {
+   "decision": "D-43",
+   "title": "Replace psycopg2-binary with psycopg2",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "psycopg2-binary = \"*\""
+  },
+  {
+   "decision": "D-50",
+   "title": "Stop using codelyzer",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"codelyzer\": \"^6.0.2\","
+  },
+  {
+   "decision": "D-51",
+   "title": "Stop using tslint",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"tslint\": \"~6.1.3\","
+  },
+  {
+   "decision": "D-52",
+   "title": "Stop using myst-parser",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "myst-parser = \"*\""
+  },
+  {
+   "decision": "D-53",
+   "title": "Stop using pycodestyle",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "pycodestyle = \"*\""
+  },
+  {
+   "decision": "D-54",
+   "title": "Stop using sphinx-autobuild",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "sphinx-autobuild = \"*\""
+  },
+  {
+   "decision": "D-55",
+   "title": "Stop using tox",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "tox = \"*\""
+  },
+  {
+   "decision": "D-60",
+   "title": "Replace django-ipware with python-ipware",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "django-ipware = \"*\""
+  },
+  {
+   "decision": "D-61",
+   "title": "Stop using @cypress/schematic",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"builder\": \"@cypress/schematic:cypress\","
+  },
+  {
+   "decision": "D-62",
+   "title": "Stop using cypress",
+   "edits": 13,
+   "caught": 2,
+   "missed_comment_only": 8,
+   "missed_real": 3,
+   "example": "\"builder\": \"@cypress/schematic:cypress\","
+  },
+  {
+   "decision": "D-64",
+   "title": "Replace tika with tika-client",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "tika = \"*\""
+  }
+ ],
+ "resurrection_edits": 86,
+ "resurrection_caught": 44,
+ "resurrection_missed_comment_only": 9,
+ "resurrection_missed_real": 33,
+ "decisions_with_resurrection_tested": 27,
+ "decisions_caught": 27,
+ "check_ms_p50": 11.17,
+ "check_ms_p95": 128.21,
+ "read_context_files": 1420,
+ "read_context_nonempty": 454,
+ "read_context_avg_tokens_when_shown": 96,
+ "seconds": 764.4
+}
