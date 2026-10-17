@@ -9,7 +9,7 @@ in a graph shared by many people and many harnesses.
 
 **Measured on 7 real repositories** (NetBox, mitmproxy, paperless-ngx, Wagtail, Outline, Saleor, Sentry):
 cold start with **0 LLM tokens** on all of them (Sentry: 112k commits in 8 min) · mined decisions **96% precise** (115/120 audited) ·
-**0 false alarms on 18,242 real later commits** · **220/221** removed-library decisions caught when their code is put back ·
+**8 false alarms in 45,240 real later commits (0.02%)** · **259/261** removed-library decisions caught when their code is put back ·
 **agent A/B:** asked for a library the team removed on purpose, Claude Code put it back in **6/9 tasks without Precedent, 0/9 with it** ·
 8 concurrent agents with injected mistakes: **0** unauthorized changes · `check()` **2.5 ms flat** up to 80k files.
 

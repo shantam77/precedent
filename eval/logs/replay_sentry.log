@@ -1,1 +1,91 @@
 graph as of 2025-06-01: 362 decisions, 199 guarded (375.2 s)
+{
+ "repo": "sentry",
+ "cut": "2025-06-01",
+ "guarded_decisions": 199,
+ "resurrection_sample": 40,
+ "decisions_at_cut": 362,
+ "decisions_still_true_at_head": 356,
+ "reversed_decisions": [
+  "D-228",
+  "D-285",
+  "D-286",
+  "D-323",
+  "D-329",
+  "D-356"
+ ],
+ "replayed_commits": 26998,
+ "replayed_file_changes": 156745,
+ "commit_verdicts": {
+  "ok": 26987,
+  "ask": 11
+ },
+ "flag_rate_commits": 0.0004,
+ "flagged_commits_false_alarm": 8,
+ "flagged_commits_reversal": 3,
+ "resurrection_edits": 164,
+ "resurrection_caught": 125,
+ "resurrection_missed_comment_only": 1,
+ "resurrection_missed_real": 38,
+ "decisions_with_resurrection_tested": 40,
+ "decisions_caught": 39,
+ "check_ms_p50": 85.52,
+ "check_ms_p95": 211.63,
+ "read_context_files": 1500,
+ "read_context_nonempty": 890,
+ "read_context_avg_tokens_when_shown": 202,
+ "seconds": 40697.0
+}
+FLAG ask [false alarm] 4f28a58450 src/social_auth/migrations/0003_social_auth_json_field.py D-62 lib:social_auth | ("social_auth", "0001_squashed_0002_default_auto_field"), | ref: use django JSONField instead of social_auth JSONField (#94629)
+FLAG ask [false alarm] b7854c52e0 static/app/components/core/layout/composition.mdx D-225 lib:react-aria | import {mergeProps} from 'react-aria'; | core: implement render props on Flex, Grid and Container (#96743)
+FLAG ask [reversal (library came back later)] 5b0f2ad7fa pyproject.toml D-285 lib:django-stubs | "django-stubs>=5.2.9", | ref(typing): Upgrade mypy to 1.19.1 and switch to upstream django-stub
+FLAG ask [reversal (library came back later)] 3703bd3e21 pyproject.toml D-285 lib:django-stubs | "django-stubs>=5.2.9", | chore(format): replace prettier with oxfmt (#111205)
+FLAG ask [false alarm] 5825bec48c tests/social_auth/test_utils.py D-62 lib:social_auth | from social_auth.backends import SocialAuthBackend | feat(users): Enforce account suspension across all auth paths (#114349
+FLAG ask [false alarm] 5cfc9f1fcb pyproject.toml D-62 lib:social_auth | "social_auth", | ref(mypy): Make strong typing the default (#114719)
+FLAG ask [false alarm] 91886c26a6 .sentry-refactor-tasks/conventions/no-derived-state.detect.sh D-339 lib:@typescript-eslint/parser | import parser from '@typescript-eslint/parser'; | chore: Add a convention/refactoring script with 3 js examples (#118466
+FLAG ask [false alarm] 10e8a5c29b src/social_auth/migrations/0001_squashed_0003_social_auth_json_field.py D-62 lib:social_auth | ("social_auth", "0001_squashed_0002_default_auto_field"), | ref(migrations): Squash migrations across all apps (#118135)
+FLAG ask [false alarm] 0116f5002a .sentry-refactor-tasks/conventions/no-deprecated-callsite.detect.sh D-338 lib:@typescript-eslint/eslint-plugin | import plugin from '@typescript-eslint/eslint-plugin'; | chore: Create conventions to report under documents @deprecated symbol
+FLAG ask [false alarm] bbee733653 static/oxlint/eslintPluginSentry/noDefaultExports.spec.ts D-339 lib:@typescript-eslint/parser | import parser from '@typescript-eslint/parser'; | build(ui): Migrate JavaScript linting to Oxlint (#121598)
+FLAG ask [false alarm] bbee733653 static/oxlint/eslintPluginSentry/noRedundantDefaultArgument.spec.ts D-339 lib:@typescript-eslint/parser | import parser from '@typescript-eslint/parser'; | build(ui): Migrate JavaScript linting to Oxlint (#121598)
+FLAG ask [false alarm] bbee733653 static/oxlint/eslintPluginSentry/package.json D-339 lib:@typescript-eslint/parser | "@typescript-eslint/parser": "8.58.0", | build(ui): Migrate JavaScript linting to Oxlint (#121598)
+FLAG ask [reversal (library came back later)] 4db28f9acc static/app/package.json D-323 lib:moment | "moment": "2.31.0", | ref(frontend): Resolve app imports through workspace dependencies (#12
+RES D-148 2/3 (missed real 1) Stop using react-lottie | "react-lottie": "^1.2.3",
+RES D-62 6/6 (missed real 0) Stop using django-social-auth | 'django-social-auth>=0.7.28,<0.8.0',
+RES D-179 2/3 (missed real 1) Stop using @sentry/chartcuterie | "@sentry/chartcuterie": "^0.5.0",
+RES D-309 2/3 (missed real 1) Stop using webpack-hook-plugin | "webpack-hook-plugin": "^1.0.7",
+RES D-18 4/4 (missed real 0) Stop using pynliner | 'pynliner>=0.4.0,<0.6.0',
+RES D-34 1/2 (missed real 1) Stop using flot | "flot": "^0.8.0-alpha",
+RES D-233 3/4 (missed real 1) Stop using react-hotkeys-hook | "react-hotkeys-hook": "^3.4.6",
+RES D-45 9/9 (missed real 0) Stop using nydus | 'nydus>=0.11.0,<0.12.0',
+RES D-166 2/4 (missed real 2) Stop using algoliasearch | "algoliasearch": "^3.32.0",
+RES D-267 4/5 (missed real 1) Replace rrweb-player with @sentry-internal/rrweb-player | "rrweb-player": "^0.7.13",
+RES D-25 2/2 (missed real 0) Stop using browser-sync | var browserSync = require("browser-sync"),
+RES D-218 2/3 (missed real 1) Stop using wink-jaro-distance | "wink-jaro-distance": "^2.0.0",
+RES D-95 13/18 (missed real 5) Stop using raven | raven>=6.0.0,<=6.4.0
+RES D-15 2/2 (missed real 0) Stop using sourcemap | 'sourcemap>=0.1.7,<0.2.0',
+RES D-38 1/2 (missed real 1) Stop using jsx-loader | "jsx-loader": "^0.13.2",
+RES D-193 1/2 (missed real 1) Stop using tsconfig-paths-webpack-plugin | "tsconfig-paths-webpack-plugin": "^3.2.0",
+RES D-187 2/2 (missed real 0) Stop using object.fromentries | "object.fromentries": "^2.0.0",
+RES D-32 2/2 (missed real 0) Stop using gulp-cached | gp_cached = require("gulp-cached"),
+RES D-115 1/2 (missed real 1) Replace babel-runtime with @babel/runtime | "babel-runtime": "^6.26.0",
+RES D-43 2/2 (missed real 0) Stop using sync-exec | "sync-exec": "^0.5.0",
+RES D-243 2/3 (missed real 1) Stop using @wojtekmaj/enzyme-adapter-react-17 | "@wojtekmaj/enzyme-adapter-react-17": "0.6.7",
+RES D-188 4/5 (missed real 1) Stop using reflexbox | "@types/reflexbox": "^4.0.2",
+RES D-27 1/1 (missed real 0) Stop using fluxxor | "fluxxor": "^1.5.2",
+RES D-262 1/2 (missed real 1) Stop using assert | "assert": "^2.0.0",
+RES D-53 2/2 (missed real 0) Stop using gulp-concat | gp_concat = require("gulp-concat"),
+RES D-104 0/1 (missed real 1) Stop using geoip | geoip_path = getattr(settings, "GEOIP_PATH", None)
+RES D-303 7/7 (missed real 0) Stop using prop-types | "prop-types": "^15.8.1",
+RES D-301 3/8 (missed real 4) Stop using python-memcached | # TODO: once pymemcache is validated, remove python-memcached
+RES D-348 2/2 (missed real 0) Stop using types-pytz | types-pytz==2022.1.2
+RES D-328 2/3 (missed real 1) Stop using @sentry-internal/react-inspector | "@sentry-internal/react-inspector": "6.0.1-4",
+RES D-265 1/3 (missed real 2) Stop using size-limit | - uses: getsentry/size-limit-action@7be9865310d295ad211da9a8464332288d60d837 # v5
+RES D-315 1/2 (missed real 1) Stop using babel-plugin-transform-react-remove-prop-types | "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+RES D-360 3/3 (missed real 0) Stop using progressbar2 | progressbar2>=3.41.0
+RES D-357 3/4 (missed real 1) Stop using u2f-api | "u2f-api": "1.0.10",
+RES D-103 20/21 (missed real 1) Stop using react-icon-base | "react-icon-base": "^2.0.4",
+RES D-17 2/2 (missed real 0) Replace httpagentparser with ua-parser | 'httpagentparser>=1.6.0,<1.7.0',
+RES D-244 4/8 (missed real 4) Stop using enzyme | "@types/enzyme": "^3.10.12",
+RES D-56 2/2 (missed real 0) Stop using gulp-util | gp_util = require("gulp-util"),
+RES D-133 1/3 (missed real 2) Stop using @sentry/typescript | "@sentry/typescript": "^5.3.0",
+RES D-338 1/2 (missed real 1) Replace @typescript-eslint/eslint-plugin with typescript-esl | "@typescript-eslint/eslint-plugin": "^8.8.1",

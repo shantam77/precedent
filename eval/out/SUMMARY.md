@@ -20,8 +20,9 @@
 | wagtail | 2024-01-01 | 4,159 | 0 | 2 | 46/46 | 98/132 | 96/104 | 27.78 ms | 975/1500 | 58 |
 | outline | 2024-01-01 | 4,645 | 0 | 0 | 40/40 | 108/199 | 167/169 | 20.66 ms | 978/1500 | 57 |
 | saleor | 2024-01-01 | 1,615 | 0 | 0 | 40/40 | 692/753 | 293/293 | 32.87 ms | 899/1500 | 119 |
+| sentry | 2025-06-01 | 26,998 | 8 | 3 | 39/40 | 125/164 | 356/362 | 85.52 ms | 890/1500 | 202 |
 
-Total: 18,242 real commits replayed, 0 false-alarm commits.
+Total: 45,240 real commits replayed, 8 false-alarm commits.
 
 ## Agent A/B (headless Claude Code, Haiku 4.5)
 

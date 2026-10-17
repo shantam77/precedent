@@ -1,0 +1,2736 @@
+{
+ "repo": "sentry",
+ "cut": "2025-06-01",
+ "graph_at_cut": {
+  "repo": "replay_sentry2",
+  "files": 21739,
+  "components": 192,
+  "depends_on": 1887,
+  "libraries": 842,
+  "manifest_events": 772,
+  "format_migrations_skipped": 0,
+  "decisions": 362,
+  "guarded_decisions": 199,
+  "observed_only": 155,
+  "people": 830,
+  "knows": 5175,
+  "notes": 362,
+  "rules": 6,
+  "seconds": 375.2,
+  "llm_tokens": 0
+ },
+ "guarded_decisions": 199,
+ "resurrection_sample": 40,
+ "decisions_at_cut": 362,
+ "decisions_still_true_at_head": 356,
+ "reversed_decisions": [
+  "D-228",
+  "D-285",
+  "D-286",
+  "D-323",
+  "D-329",
+  "D-356"
+ ],
+ "replayed_commits": 26998,
+ "replayed_file_changes": 156745,
+ "commit_verdicts": {
+  "ok": 26987,
+  "ask": 11
+ },
+ "flag_rate_commits": 0.0004,
+ "flagged_commits_false_alarm": 8,
+ "flagged_commits_reversal": 3,
+ "decisions": [
+  {
+   "id": "D-297",
+   "title": "Stop using backports-zoneinfo",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-268",
+   "title": "Stop using react-document-title",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-162",
+   "title": "Stop using querystring-parser",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-231",
+   "title": "Make uwsgi optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-39",
+   "title": "Stop using docutils",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-92",
+   "title": "Replace react-lazy-load with react-lazyload",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-310",
+   "title": "Stop using react-select-event",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-32",
+   "title": "Stop using gulp-cached",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-275",
+   "title": "Stop using @react-types/numberfield",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-115",
+   "title": "Replace babel-runtime with @babel/runtime",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-64",
+   "title": "Stop using progressbar",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-132",
+   "title": "Stop using batching-kafka-consumer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-185",
+   "title": "Stop using optimize-css-assets-webpack-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-243",
+   "title": "Stop using @wojtekmaj/enzyme-adapter-react-17",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-193",
+   "title": "Stop using tsconfig-paths-webpack-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-10",
+   "title": "Stop using recess",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-72",
+   "title": "Stop using karma-sinon",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-69",
+   "title": "Stop using karma-chai",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-79",
+   "title": "Stop using webpack-livereload-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-130",
+   "title": "Stop using django-templatetag-sugar",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-131",
+   "title": "Stop using ts-jest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-55",
+   "title": "Stop using gulp-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-9",
+   "title": "Stop using connect",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-189",
+   "title": "Replace @emotion/core with @emotion/css",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-95",
+   "title": "Stop using raven",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-324",
+   "title": "Stop using annotated-types",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-29",
+   "title": "Stop using uglify-js",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-282",
+   "title": "Stop using stylelint-config-prettier",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-50",
+   "title": "Stop using selectize",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-52",
+   "title": "Stop using gulp-clean",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-276",
+   "title": "Stop using @react-types/radio",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-48",
+   "title": "Stop using react-datepicker",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-305",
+   "title": "Stop using focus-visible",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-218",
+   "title": "Stop using wink-jaro-distance",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-347",
+   "title": "Stop using phabricator",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-2",
+   "title": "Stop using uuid (the backport: the standard library has it)",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-150",
+   "title": "Stop using node-libs-browser",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-31",
+   "title": "Stop using source-map",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-247",
+   "title": "Stop using avro",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-207",
+   "title": "Stop using clean-webpack-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-75",
+   "title": "Stop using south",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-21",
+   "title": "Stop using django-static-compiler",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-290",
+   "title": "Stop using multidict",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-250",
+   "title": "Stop using @storybook/addon-actions",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-86",
+   "title": "Stop using react-addons-test-utils",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-249",
+   "title": "Stop using @storybook/addon-a11y",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-188",
+   "title": "Stop using reflexbox",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-28",
+   "title": "Stop using gulp-livereload",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-54",
+   "title": "Stop using gulp-less",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-173",
+   "title": "Stop using @storybook/addon-info",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-23",
+   "title": "Stop using bower",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-352",
+   "title": "Stop using ios-device-list",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-37",
+   "title": "Stop using jsx",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-62",
+   "title": "Stop using django-social-auth",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-221",
+   "title": "Stop using requirements-parser",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-238",
+   "title": "Make pytest-forked optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-158",
+   "title": "Stop using babel",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-202",
+   "title": "Stop using file-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-119",
+   "title": "Stop using sinon",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-195",
+   "title": "Stop using @webpack-cli/serve",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-270",
+   "title": "Stop using react-inspector",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-58",
+   "title": "Stop using markdown",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-113",
+   "title": "Replace babel-preset-latest with @babel/preset-env, @babel/preset-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-273",
+   "title": "Replace typescript-styled-plugin with @styled/typescript-styled-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-114",
+   "title": "Replace babel-preset-react with @babel/preset-env, @babel/preset-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-338",
+   "title": "Replace @typescript-eslint/eslint-plugin with typescript-eslint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-8",
+   "title": "Stop using eventlet",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-36",
+   "title": "Stop using gulp-uglify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-296",
+   "title": "Make docker-pycreds optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-196",
+   "title": "Stop using react-select-legacy",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-217",
+   "title": "Stop using speed-measure-webpack-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-42",
+   "title": "Stop using sphinx",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-318",
+   "title": "Stop using @sentry/integrations",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-350",
+   "title": "Stop using @sentry/utils",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-197",
+   "title": "Stop using @emotion/babel-preset-css-prop",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-15",
+   "title": "Stop using sourcemap",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-215",
+   "title": "Stop using jest-circus",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-263",
+   "title": "Stop using colors",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-141",
+   "title": "Stop using lodash-webpack-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-353",
+   "title": "Stop using @biomejs/biome",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-326",
+   "title": "Stop using @sentry/babel-plugin-component-annotate",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-20",
+   "title": "Stop using phantomjs",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-279",
+   "title": "Stop using pyright",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-208",
+   "title": "Stop using bootstrap",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-105",
+   "title": "Stop using babel-plugin-add-module-exports",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-179",
+   "title": "Stop using @sentry/chartcuterie",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-35",
+   "title": "Stop using gulp-rename",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-110",
+   "title": "Stop using babel-plugin-transform-object-rest-spread",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-261",
+   "title": "Stop using storybook-dark-mode",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-333",
+   "title": "Stop using croniter",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-288",
+   "title": "Stop using aiosignal",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-351",
+   "title": "Stop using intersection-observer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-66",
+   "title": "Stop using node-zopfli",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-87",
+   "title": "Stop using react-addons-pure-render-mixin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-80",
+   "title": "Stop using symsynd",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-138",
+   "title": "Stop using django-jsonfield",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-46",
+   "title": "Stop using jshint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-12",
+   "title": "Stop using django-compressor",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-204",
+   "title": "Stop using webpack-manifest-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-294",
+   "title": "Stop using decorator",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-89",
+   "title": "Stop using jest-glamor-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-213",
+   "title": "Stop using stylelint-processor-styled-components",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-91",
+   "title": "Stop using @percy-io/react-percy-storybook",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-331",
+   "title": "Stop using pegjs-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-278",
+   "title": "Stop using types-freezegun",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-61",
+   "title": "Stop using django-paging",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-126",
+   "title": "Stop using casscache",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-219",
+   "title": "Replace sentry-flake8 with flake8",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-152",
+   "title": "Stop using cached-property",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-312",
+   "title": "Stop using tocbot",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-337",
+   "title": "Stop using eslint-config-sentry-app",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-298",
+   "title": "Stop using dictpath",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-135",
+   "title": "Stop using autopep8",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-144",
+   "title": "Stop using babel-plugin-emotion",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-49",
+   "title": "Stop using react-day-picker",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-118",
+   "title": "Stop using chai",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-222",
+   "title": "Stop using django-picklefield",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-201",
+   "title": "Stop using @babel/plugin-proposal-class-properties",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-136",
+   "title": "Stop using configparser (the backport: the standard library has it)",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-257",
+   "title": "Stop using @storybook/manager-webpack5",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-142",
+   "title": "Replace beautifulsoup with beautifulsoup4",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-349",
+   "title": "Stop using @sentry/types",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-232",
+   "title": "Stop using pako",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-177",
+   "title": "Make pytest-html optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-14",
+   "title": "Stop using django-social-auth-trello",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-100",
+   "title": "Stop using json-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-344",
+   "title": "Stop using @babel/plugin-transform-react-jsx",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-314",
+   "title": "Stop using react-test-renderer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-289",
+   "title": "Stop using frozenlist",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-45",
+   "title": "Stop using nydus",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-236",
+   "title": "Stop using typing-inspect",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-155",
+   "title": "Stop using strict-rfc3339",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-85",
+   "title": "Stop using enzyme-adapter-react-15",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-65",
+   "title": "Stop using django-recaptcha",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-214",
+   "title": "Stop using babel-eslint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-322",
+   "title": "Stop using pylibmc",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-5",
+   "title": "Stop using raven2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-121",
+   "title": "Stop using betamax",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-342",
+   "title": "Make email-reply-parser optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-168",
+   "title": "Stop using @babel/plugin-syntax-dynamic-import",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-166",
+   "title": "Stop using algoliasearch",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-254",
+   "title": "Stop using @storybook/addon-storysource",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-336",
+   "title": "Stop using websocket-client",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-237",
+   "title": "Stop using py",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-361",
+   "title": "Stop using python-utils",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-220",
+   "title": "Stop using before-after",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-145",
+   "title": "Stop using grid-emotion",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-212",
+   "title": "Stop using stylelint-config-styled-components",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-104",
+   "title": "Stop using geoip",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-341",
+   "title": "Stop using eslint-plugin-prettier",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-227",
+   "title": "Stop using typed-ast",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-265",
+   "title": "Stop using size-limit",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-57",
+   "title": "Stop using gulp-watch",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-301",
+   "title": "Stop using python-memcached",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-163",
+   "title": "Stop using @sentry/apm",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-59",
+   "title": "Stop using logan",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-43",
+   "title": "Stop using sync-exec",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-317",
+   "title": "Stop using crypto-js",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-334",
+   "title": "Stop using types-croniter",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-116",
+   "title": "Stop using idx",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-147",
+   "title": "Stop using @babel/plugin-proposal-optional-chaining",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-94",
+   "title": "Stop using @percy-io/percy-storybook",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-56",
+   "title": "Stop using gulp-util",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-13",
+   "title": "Stop using django-indexer",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-319",
+   "title": "Stop using babel-plugin-dynamic-import-node",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-170",
+   "title": "Stop using functools32",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-154",
+   "title": "Stop using babel-core",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-235",
+   "title": "Stop using libcst",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-262",
+   "title": "Stop using assert",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-44",
+   "title": "Stop using django-statsd-mozilla",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-178",
+   "title": "Stop using setproctitle",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-255",
+   "title": "Stop using @storybook/addons",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-123",
+   "title": "Make psycopg2 optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-355",
+   "title": "Stop using babel-gettext-extractor",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-234",
+   "title": "Stop using @sentry/replay",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-180",
+   "title": "Stop using clipboard",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-271",
+   "title": "Stop using util",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-139",
+   "title": "Stop using @babel/polyfill",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-127",
+   "title": "Stop using cqlsh",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-137",
+   "title": "Make msgpack-python optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-101",
+   "title": "Stop using extract-text-webpack-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-300",
+   "title": "Make types-urllib3 optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-274",
+   "title": "Stop using @react-types/menu",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-78",
+   "title": "Stop using karma-webpack",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-120",
+   "title": "Stop using sinon-chai",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-161",
+   "title": "Stop using sentry-dreamy-components",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-157",
+   "title": "Stop using eslint-plugin-emotion",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-148",
+   "title": "Stop using react-lottie",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-25",
+   "title": "Stop using browser-sync",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-159",
+   "title": "Stop using ts-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-47",
+   "title": "Stop using jsxhint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-97",
+   "title": "Stop using eslint-import-resolver-webpack",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-98",
+   "title": "Stop using eslint-plugin-getsentry",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-253",
+   "title": "Stop using @storybook/addon-links",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-343",
+   "title": "Stop using react-autosize-textarea",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-6",
+   "title": "Stop using python-daemon",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-313",
+   "title": "Stop using @testing-library/react-hooks",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-191",
+   "title": "Stop using emotion-theming",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-167",
+   "title": "Stop using @babel/plugin-proposal-object-rest-spread",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-281",
+   "title": "Stop using postcss-syntax",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-68",
+   "title": "Stop using karma",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-226",
+   "title": "Stop using react-resize-panel",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-240",
+   "title": "Stop using zipp",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-198",
+   "title": "Stop using react-bootstrap",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-256",
+   "title": "Stop using @storybook/builder-webpack5",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-172",
+   "title": "Stop using ipaddress (the backport: the standard library has it)",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-320",
+   "title": "Stop using jest-sentry-environment",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-323",
+   "title": "Stop using moment",
+   "guarded": true,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-245",
+   "title": "Stop using regenerator-runtime",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-284",
+   "title": "Stop using freezegun",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-309",
+   "title": "Stop using webpack-hook-plugin",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-205",
+   "title": "Stop using enzyme-to-json",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-209",
+   "title": "Stop using jquery",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-51",
+   "title": "Stop using gulp",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-60",
+   "title": "Stop using gunicorn",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-203",
+   "title": "Stop using django-manifest-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-3",
+   "title": "Stop using django-haystack",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-299",
+   "title": "Stop using pyrsistent",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-346",
+   "title": "Stop using babel-plugin-add-react-displayname",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-124",
+   "title": "Stop using blist",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-82",
+   "title": "Stop using phantomjs-prebuilt",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-228",
+   "title": "Make @sentry/rrweb optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-327",
+   "title": "Stop using grpc-interceptor",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-164",
+   "title": "Stop using percy",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-74",
+   "title": "Stop using django-debug-toolbar",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-76",
+   "title": "Stop using underscore",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-293",
+   "title": "Stop using @sentry-internal/feedback",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-246",
+   "title": "Make pytest-timeout optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-329",
+   "title": "Make react-router optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-340",
+   "title": "Stop using eslint-plugin-no-lookahead-lookbehind-regexp",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-41",
+   "title": "Stop using pygments",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-360",
+   "title": "Stop using progressbar2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-77",
+   "title": "Stop using karma-sourcemap-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-67",
+   "title": "Stop using django-bitfield",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-295",
+   "title": "Stop using pyopenssl",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-241",
+   "title": "Stop using exam",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-325",
+   "title": "Make pydantic-core optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-252",
+   "title": "Stop using @storybook/addon-essentials",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-292",
+   "title": "Stop using planout",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-99",
+   "title": "Stop using raven-js",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-210",
+   "title": "Stop using react-keydown",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-151",
+   "title": "Stop using loremipsum",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-248",
+   "title": "Stop using prism-sentry",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-107",
+   "title": "Stop using babel-plugin-syntax-dynamic-import",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-269",
+   "title": "Stop using copy-text-to-clipboard",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-38",
+   "title": "Stop using jsx-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-133",
+   "title": "Stop using @sentry/typescript",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-93",
+   "title": "Stop using select2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-264",
+   "title": "Stop using @size-limit/preset-small-lib",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-106",
+   "title": "Stop using babel-plugin-idx",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-143",
+   "title": "Stop using python-openid",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-223",
+   "title": "Make brotlipy optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-345",
+   "title": "Stop using @babel/plugin-transform-react-jsx-source",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-160",
+   "title": "Replace react-pose with framer-motion",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-18",
+   "title": "Stop using pynliner",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-362",
+   "title": "Stop using @acemarke/react-prod-sourcemaps",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-311",
+   "title": "Stop using pytz",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-175",
+   "title": "Stop using @storybook/addon-options",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-103",
+   "title": "Stop using react-icon-base",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-90",
+   "title": "Stop using react-sticky",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-229",
+   "title": "Make uwsgi-dogstatsd-plugin optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-186",
+   "title": "Stop using webpack-fix-style-only-entries",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-96",
+   "title": "Stop using eslint-config-sentry-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-149",
+   "title": "Stop using semaphore",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-194",
+   "title": "Stop using source-map-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-81",
+   "title": "Stop using libsourcemap",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-24",
+   "title": "Stop using bootstrap-datetimepicker",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-192",
+   "title": "Stop using enzyme-adapter-react-16",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-53",
+   "title": "Stop using gulp-concat",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-108",
+   "title": "Stop using babel-plugin-transform-class-properties",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-88",
+   "title": "Make history optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-183",
+   "title": "Stop using svgo-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-211",
+   "title": "Stop using dataclasses (the backport: the standard library has it)",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-286",
+   "title": "Replace djangorestframework-stubs with sentry-forked-djangorestframework-stubs",
+   "guarded": true,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-156",
+   "title": "Stop using react-hot-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-1",
+   "title": "Stop using pygooglechart",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-112",
+   "title": "Stop using babel-polyfill",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-259",
+   "title": "Stop using @storybook/router",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-171",
+   "title": "Stop using futures",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-267",
+   "title": "Replace rrweb-player with @sentry-internal/rrweb-player",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-306",
+   "title": "Stop using @fullstory/babel-plugin-annotate-react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-277",
+   "title": "Stop using toml",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-200",
+   "title": "Stop using django-sudo",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-321",
+   "title": "Stop using async-generator",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-216",
+   "title": "Stop using csstype",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-348",
+   "title": "Stop using types-pytz",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-339",
+   "title": "Replace @typescript-eslint/parser with typescript-eslint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-233",
+   "title": "Stop using react-hotkeys-hook",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-134",
+   "title": "Stop using react-addons-css-transition-group",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-111",
+   "title": "Replace babel-plugin-transform-runtime with @babel/plugin-transform-runtime",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-19",
+   "title": "Stop using mocha-phantomjs",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-266",
+   "title": "Replace rrweb with @sentry-internal/rrweb, @sentry-internal/rrweb-player",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-33",
+   "title": "Stop using django-celery",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-358",
+   "title": "Stop using cbor-web",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-70",
+   "title": "Stop using karma-mocha",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-117",
+   "title": "Stop using funcy",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-354",
+   "title": "Stop using react-sparklines",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-17",
+   "title": "Replace httpagentparser with ua-parser",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-128",
+   "title": "Stop using awesome-typescript-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-239",
+   "title": "Stop using importlib-resources",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-283",
+   "title": "Stop using @visual-snapshot/jest",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-125",
+   "title": "Stop using cassandra-driver",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-181",
+   "title": "Stop using svg-sprite-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-27",
+   "title": "Stop using fluxxor",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-359",
+   "title": "Stop using django-pgtrigger",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-109",
+   "title": "Stop using babel-plugin-transform-decorators-legacy",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-199",
+   "title": "Stop using shellcheck-py",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-190",
+   "title": "Replace emotion with @emotion/css, @emotion/react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-22",
+   "title": "Stop using gulp-webpack",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-335",
+   "title": "Stop using @monaco-editor/react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-251",
+   "title": "Stop using @storybook/addon-docs",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-102",
+   "title": "Stop using webpack-dev-middleware",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-169",
+   "title": "Stop using enum34",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-7",
+   "title": "Stop using django-kombu",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-285",
+   "title": "Replace django-stubs with sentry-forked-django-stubs, sentry-forked-djangorestframework-stubs",
+   "guarded": true,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-84",
+   "title": "Stop using react-addons-update",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-16",
+   "title": "Stop using gevent",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-146",
+   "title": "Make react-emotion optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-356",
+   "title": "Make @sentry/browser optional (removed from required dependencies)",
+   "guarded": false,
+   "still_true_at_head": false
+  },
+  {
+   "id": "D-224",
+   "title": "Stop using ansicolor",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-165",
+   "title": "Stop using @size-limit/preset-app",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-176",
+   "title": "Stop using qrcode",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-11",
+   "title": "Stop using hogan.js",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-307",
+   "title": "Stop using async-timeout",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-187",
+   "title": "Stop using object.fromentries",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-26",
+   "title": "Stop using eonasdan-bootstrap-datetimepicker",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-280",
+   "title": "Stop using postcss-jsx",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-40",
+   "title": "Stop using jinja2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-174",
+   "title": "Stop using @storybook/addon-knobs",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-308",
+   "title": "Stop using types-pyopenssl",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-304",
+   "title": "Stop using exceptiongroup",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-153",
+   "title": "Stop using oauth2",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-244",
+   "title": "Stop using enzyme",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-34",
+   "title": "Stop using flot",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-30",
+   "title": "Stop using imports-loader",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-129",
+   "title": "Stop using tslint",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-330",
+   "title": "Replace pegjs with peggy",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-184",
+   "title": "Stop using parseurl",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-357",
+   "title": "Stop using u2f-api",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-272",
+   "title": "Stop using natsort",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-242",
+   "title": "Stop using mock",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-73",
+   "title": "Stop using mocha",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-4",
+   "title": "Stop using whoosh",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-303",
+   "title": "Stop using prop-types",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-225",
+   "title": "Replace react-aria with @react-aria/button, @react-aria/focus",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-182",
+   "title": "Stop using svgo",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-287",
+   "title": "Stop using aiohttp",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-316",
+   "title": "Stop using crypto-browserify",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-206",
+   "title": "Stop using create-react-class",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-140",
+   "title": "Stop using babel-plugin-lodash",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-302",
+   "title": "Stop using @sentry/tracing",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-71",
+   "title": "Stop using karma-phantomjs-launcher",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-63",
+   "title": "Stop using ipaddr",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-230",
+   "title": "Stop using @babel/plugin-proposal-decorators",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-332",
+   "title": "Stop using pyparsing",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-83",
+   "title": "Stop using react-code-input",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-328",
+   "title": "Stop using @sentry-internal/react-inspector",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-291",
+   "title": "Stop using yarl",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-315",
+   "title": "Stop using babel-plugin-transform-react-remove-prop-types",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-260",
+   "title": "Stop using @storybook/theming",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-258",
+   "title": "Stop using @storybook/react",
+   "guarded": true,
+   "still_true_at_head": true
+  },
+  {
+   "id": "D-122",
+   "title": "Stop using babel-plugin-transform-builtin-extend",
+   "guarded": true,
+   "still_true_at_head": true
+  }
+ ],
+ "flags": [
+  {
+   "sha": "4f28a58450",
+   "subject": "ref: use django JSONField instead of social_auth JSONField (#94629)",
+   "path": "src/social_auth/migrations/0003_social_auth_json_field.py",
+   "decision": "D-62",
+   "title": "Stop using django-social-auth",
+   "token": "lib:social_auth",
+   "line": "(\"social_auth\", \"0001_squashed_0002_default_auto_field\"),",
+   "verdict": "ask",
+   "kind": "false alarm"
+  },
+  {
+   "sha": "b7854c52e0",
+   "subject": "core: implement render props on Flex, Grid and Container (#96743)",
+   "path": "static/app/components/core/layout/composition.mdx",
+   "decision": "D-225",
+   "title": "Replace react-aria with @react-aria/button, @react-aria/focus",
+   "token": "lib:react-aria",
+   "line": "import {mergeProps} from 'react-aria';",
+   "verdict": "ask",
+   "kind": "false alarm"
+  },
+  {
+   "sha": "5b0f2ad7fa",
+   "subject": "ref(typing): Upgrade mypy to 1.19.1 and switch to upstream django-stubs (#107710)",
+   "path": "pyproject.toml",
+   "decision": "D-285",
+   "title": "Replace django-stubs with sentry-forked-django-stubs, sentry-forked-djangorestframework-stubs",
+   "token": "lib:django-stubs",
+   "line": "\"django-stubs>=5.2.9\",",
+   "verdict": "ask",
+   "kind": "reversal (library came back later)"
+  },
+  {
+   "sha": "3703bd3e21",
+   "subject": "chore(format): replace prettier with oxfmt (#111205)",
+   "path": "pyproject.toml",
+   "decision": "D-285",
+   "title": "Replace django-stubs with sentry-forked-django-stubs, sentry-forked-djangorestframework-stubs",
+   "token": "lib:django-stubs",
+   "line": "\"django-stubs>=5.2.9\",",
+   "verdict": "ask",
+   "kind": "reversal (library came back later)"
+  },
+  {
+   "sha": "5825bec48c",
+   "subject": "feat(users): Enforce account suspension across all auth paths (#114349)",
+   "path": "tests/social_auth/test_utils.py",
+   "decision": "D-62",
+   "title": "Stop using django-social-auth",
+   "token": "lib:social_auth",
+   "line": "from social_auth.backends import SocialAuthBackend",
+   "verdict": "ask",
+   "kind": "false alarm"
+  },
+  {
+   "sha": "5cfc9f1fcb",
+   "subject": "ref(mypy): Make strong typing the default (#114719)",
+   "path": "pyproject.toml",
+   "decision": "D-62",
+   "title": "Stop using django-social-auth",
+   "token": "lib:social_auth",
+   "line": "\"social_auth\",",
+   "verdict": "ask",
+   "kind": "false alarm"
+  },
+  {
+   "sha": "91886c26a6",
+   "subject": "chore: Add a convention/refactoring script with 3 js examples (#118466)",
+   "path": ".sentry-refactor-tasks/conventions/no-derived-state.detect.sh",
+   "decision": "D-339",
+   "title": "Replace @typescript-eslint/parser with typescript-eslint",
+   "token": "lib:@typescript-eslint/parser",
+   "line": "import parser from '@typescript-eslint/parser';",
+   "verdict": "ask",
+   "kind": "false alarm"
+  },
+  {
+   "sha": "10e8a5c29b",
+   "subject": "ref(migrations): Squash migrations across all apps (#118135)",
+   "path": "src/social_auth/migrations/0001_squashed_0003_social_auth_json_field.py",
+   "decision": "D-62",
+   "title": "Stop using django-social-auth",
+   "token": "lib:social_auth",
+   "line": "(\"social_auth\", \"0001_squashed_0002_default_auto_field\"),",
+   "verdict": "ask",
+   "kind": "false alarm"
+  },
+  {
+   "sha": "0116f5002a",
+   "subject": "chore: Create conventions to report under documents @deprecated symbols, @deprecated callsites (#119325)",
+   "path": ".sentry-refactor-tasks/conventions/no-deprecated-callsite.detect.sh",
+   "decision": "D-338",
+   "title": "Replace @typescript-eslint/eslint-plugin with typescript-eslint",
+   "token": "lib:@typescript-eslint/eslint-plugin",
+   "line": "import plugin from '@typescript-eslint/eslint-plugin';",
+   "verdict": "ask",
+   "kind": "false alarm"
+  },
+  {
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "path": "static/oxlint/eslintPluginSentry/noDefaultExports.spec.ts",
+   "decision": "D-339",
+   "title": "Replace @typescript-eslint/parser with typescript-eslint",
+   "token": "lib:@typescript-eslint/parser",
+   "line": "import parser from '@typescript-eslint/parser';",
+   "verdict": "ask",
+   "kind": "false alarm"
+  },
+  {
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "path": "static/oxlint/eslintPluginSentry/noRedundantDefaultArgument.spec.ts",
+   "decision": "D-339",
+   "title": "Replace @typescript-eslint/parser with typescript-eslint",
+   "token": "lib:@typescript-eslint/parser",
+   "line": "import parser from '@typescript-eslint/parser';",
+   "verdict": "ask",
+   "kind": "false alarm"
+  },
+  {
+   "sha": "bbee733653",
+   "subject": "build(ui): Migrate JavaScript linting to Oxlint (#121598)",
+   "path": "static/oxlint/eslintPluginSentry/package.json",
+   "decision": "D-339",
+   "title": "Replace @typescript-eslint/parser with typescript-eslint",
+   "token": "lib:@typescript-eslint/parser",
+   "line": "\"@typescript-eslint/parser\": \"8.58.0\",",
+   "verdict": "ask",
+   "kind": "false alarm"
+  },
+  {
+   "sha": "4db28f9acc",
+   "subject": "ref(frontend): Resolve app imports through workspace dependencies (#127031)",
+   "path": "static/app/package.json",
+   "decision": "D-323",
+   "title": "Stop using moment",
+   "token": "lib:moment",
+   "line": "\"moment\": \"2.31.0\",",
+   "verdict": "ask",
+   "kind": "reversal (library came back later)"
+  }
+ ],
+ "resurrections": [
+  {
+   "decision": "D-148",
+   "title": "Stop using react-lottie",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"react-lottie\": \"^1.2.3\","
+  },
+  {
+   "decision": "D-62",
+   "title": "Stop using django-social-auth",
+   "edits": 6,
+   "caught": 6,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "'django-social-auth>=0.7.28,<0.8.0',"
+  },
+  {
+   "decision": "D-179",
+   "title": "Stop using @sentry/chartcuterie",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"@sentry/chartcuterie\": \"^0.5.0\","
+  },
+  {
+   "decision": "D-309",
+   "title": "Stop using webpack-hook-plugin",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"webpack-hook-plugin\": \"^1.0.7\","
+  },
+  {
+   "decision": "D-18",
+   "title": "Stop using pynliner",
+   "edits": 4,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "'pynliner>=0.4.0,<0.6.0',"
+  },
+  {
+   "decision": "D-34",
+   "title": "Stop using flot",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"flot\": \"^0.8.0-alpha\","
+  },
+  {
+   "decision": "D-233",
+   "title": "Stop using react-hotkeys-hook",
+   "edits": 4,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"react-hotkeys-hook\": \"^3.4.6\","
+  },
+  {
+   "decision": "D-45",
+   "title": "Stop using nydus",
+   "edits": 9,
+   "caught": 9,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "'nydus>=0.11.0,<0.12.0',"
+  },
+  {
+   "decision": "D-166",
+   "title": "Stop using algoliasearch",
+   "edits": 4,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"algoliasearch\": \"^3.32.0\","
+  },
+  {
+   "decision": "D-267",
+   "title": "Replace rrweb-player with @sentry-internal/rrweb-player",
+   "edits": 5,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"rrweb-player\": \"^0.7.13\","
+  },
+  {
+   "decision": "D-25",
+   "title": "Stop using browser-sync",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "var browserSync = require(\"browser-sync\"),"
+  },
+  {
+   "decision": "D-218",
+   "title": "Stop using wink-jaro-distance",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"wink-jaro-distance\": \"^2.0.0\","
+  },
+  {
+   "decision": "D-95",
+   "title": "Stop using raven",
+   "edits": 18,
+   "caught": 13,
+   "missed_comment_only": 0,
+   "missed_real": 5,
+   "example": "raven>=6.0.0,<=6.4.0"
+  },
+  {
+   "decision": "D-15",
+   "title": "Stop using sourcemap",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "'sourcemap>=0.1.7,<0.2.0',"
+  },
+  {
+   "decision": "D-38",
+   "title": "Stop using jsx-loader",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"jsx-loader\": \"^0.13.2\","
+  },
+  {
+   "decision": "D-193",
+   "title": "Stop using tsconfig-paths-webpack-plugin",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"tsconfig-paths-webpack-plugin\": \"^3.2.0\","
+  },
+  {
+   "decision": "D-187",
+   "title": "Stop using object.fromentries",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"object.fromentries\": \"^2.0.0\","
+  },
+  {
+   "decision": "D-32",
+   "title": "Stop using gulp-cached",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "gp_cached = require(\"gulp-cached\"),"
+  },
+  {
+   "decision": "D-115",
+   "title": "Replace babel-runtime with @babel/runtime",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"babel-runtime\": \"^6.26.0\","
+  },
+  {
+   "decision": "D-43",
+   "title": "Stop using sync-exec",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"sync-exec\": \"^0.5.0\","
+  },
+  {
+   "decision": "D-243",
+   "title": "Stop using @wojtekmaj/enzyme-adapter-react-17",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"@wojtekmaj/enzyme-adapter-react-17\": \"0.6.7\","
+  },
+  {
+   "decision": "D-188",
+   "title": "Stop using reflexbox",
+   "edits": 5,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"@types/reflexbox\": \"^4.0.2\","
+  },
+  {
+   "decision": "D-27",
+   "title": "Stop using fluxxor",
+   "edits": 1,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"fluxxor\": \"^1.5.2\","
+  },
+  {
+   "decision": "D-262",
+   "title": "Stop using assert",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"assert\": \"^2.0.0\","
+  },
+  {
+   "decision": "D-53",
+   "title": "Stop using gulp-concat",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "gp_concat = require(\"gulp-concat\"),"
+  },
+  {
+   "decision": "D-104",
+   "title": "Stop using geoip",
+   "edits": 1,
+   "caught": 0,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "geoip_path = getattr(settings, \"GEOIP_PATH\", None)"
+  },
+  {
+   "decision": "D-303",
+   "title": "Stop using prop-types",
+   "edits": 7,
+   "caught": 7,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "\"prop-types\": \"^15.8.1\","
+  },
+  {
+   "decision": "D-301",
+   "title": "Stop using python-memcached",
+   "edits": 8,
+   "caught": 3,
+   "missed_comment_only": 1,
+   "missed_real": 4,
+   "example": "# TODO: once pymemcache is validated, remove python-memcached"
+  },
+  {
+   "decision": "D-348",
+   "title": "Stop using types-pytz",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "types-pytz==2022.1.2"
+  },
+  {
+   "decision": "D-328",
+   "title": "Stop using @sentry-internal/react-inspector",
+   "edits": 3,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"@sentry-internal/react-inspector\": \"6.0.1-4\","
+  },
+  {
+   "decision": "D-265",
+   "title": "Stop using size-limit",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "- uses: getsentry/size-limit-action@7be9865310d295ad211da9a8464332288d60d837 # v5"
+  },
+  {
+   "decision": "D-315",
+   "title": "Stop using babel-plugin-transform-react-remove-prop-types",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"babel-plugin-transform-react-remove-prop-types\": \"^0.4.24\","
+  },
+  {
+   "decision": "D-360",
+   "title": "Stop using progressbar2",
+   "edits": 3,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "progressbar2>=3.41.0"
+  },
+  {
+   "decision": "D-357",
+   "title": "Stop using u2f-api",
+   "edits": 4,
+   "caught": 3,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"u2f-api\": \"1.0.10\","
+  },
+  {
+   "decision": "D-103",
+   "title": "Stop using react-icon-base",
+   "edits": 21,
+   "caught": 20,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"react-icon-base\": \"^2.0.4\","
+  },
+  {
+   "decision": "D-17",
+   "title": "Replace httpagentparser with ua-parser",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "'httpagentparser>=1.6.0,<1.7.0',"
+  },
+  {
+   "decision": "D-244",
+   "title": "Stop using enzyme",
+   "edits": 8,
+   "caught": 4,
+   "missed_comment_only": 0,
+   "missed_real": 4,
+   "example": "\"@types/enzyme\": \"^3.10.12\","
+  },
+  {
+   "decision": "D-56",
+   "title": "Stop using gulp-util",
+   "edits": 2,
+   "caught": 2,
+   "missed_comment_only": 0,
+   "missed_real": 0,
+   "example": "gp_util = require(\"gulp-util\"),"
+  },
+  {
+   "decision": "D-133",
+   "title": "Stop using @sentry/typescript",
+   "edits": 3,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 2,
+   "example": "\"@sentry/typescript\": \"^5.3.0\","
+  },
+  {
+   "decision": "D-338",
+   "title": "Replace @typescript-eslint/eslint-plugin with typescript-eslint",
+   "edits": 2,
+   "caught": 1,
+   "missed_comment_only": 0,
+   "missed_real": 1,
+   "example": "\"@typescript-eslint/eslint-plugin\": \"^8.8.1\","
+  }
+ ],
+ "resurrection_edits": 164,
+ "resurrection_caught": 125,
+ "resurrection_missed_comment_only": 1,
+ "resurrection_missed_real": 38,
+ "decisions_with_resurrection_tested": 40,
+ "decisions_caught": 39,
+ "check_ms_p50": 85.52,
+ "check_ms_p95": 211.63,
+ "read_context_files": 1500,
+ "read_context_nonempty": 890,
+ "read_context_avg_tokens_when_shown": 202,
+ "seconds": 40697.0
+}

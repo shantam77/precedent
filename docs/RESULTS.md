@@ -11,8 +11,8 @@ Synthetic data (volume and concurrency): [`sim/world.py`](../sim/world.py).
 |---|---|
 | Does cold start work on any repo, with no docs? | **Yes, on all 7.** 0 LLM tokens. NetBox 11 s, Saleor 38 s, Sentry (112k commits, 21.7k files) 8 min. Every decision cites its commit |
 | Are the mined decisions real? | **115/120 (96%)** of a random sample (20 enforced decisions per repo, 6 repos) are deliberate removals with the right commit ([labels](../eval/out/precision_labels.json), labelled by Claude: spot-check them) |
-| Is the guard noisy on real work? | **0 false alarms on 18,242 real commits** replayed from 6 repositories (final code). The 7 asks were all real reversals (the library came back later). Two false-alarm bugs were found by these replays and fixed tonight (E2) |
-| Does it catch real regressions? | Putting back the real code deleted when a library was dropped: **220/221 decisions caught** (1,140/1,428 edits); **98%** of decisions mined at the cut were still true at HEAD (746/765) |
+| Is the guard noisy on real work? | **8 false-alarm commits in 45,240 real commits (0.02%)** replayed from 7 repositories: 0 in six of them, 8 in Sentry (one in-repo-package bug + lint-tooling edge cases, see E2). 10 asks were real reversals (the library came back later). Two other false-alarm bugs were found by these replays and fixed (E2) |
+| Does it catch real regressions? | Putting back the real code deleted when a library was dropped: **259/261 decisions caught** (1,265/1,592 edits); **98%** of decisions mined at the cut were still true at HEAD (1,102/1,127) |
 | Does a real agent behave differently with it? | **A/B, 12 tasks × 2 arms, headless Claude Code (Haiku 4.5), 6 repos:** when the prompt names a library the team removed on purpose, the agent reintroduced it in **6/9 without** Precedent and **0/9 with** it (all 6 cited the decision and asked, or used the replacement). Unnamed tasks: 0/3 in both arms. 24 runs, **$1.78**; the with-Precedent runs used 17% fewer input tokens |
 | Many agents on one graph? | 8 agents + 2 humans, 1,128 agent ops with injected mistakes: **0 unexpected outcomes, 0 protected changes without a human, 0 deletions, 39 lost races answered "stale"** |
 | Tokens? | The Read hook adds context to **9% (NetBox) to 65% (Wagtail, Outline)** of the files people touched, **~50-120 tokens** each time, and each decision only once per session. Edits that break nothing add **0** tokens (the hook says nothing). Repos with many mined JS/tooling decisions get context more often: a place to tune (e.g. hide `observed` ones) |
@@ -65,10 +65,9 @@ automatically: a **reversal** if the library is back in a manifest at HEAD (aski
 | wagtail | 2024-01-01 | 4,159 | 0 | 2 | 46/46 | 98/132 | 96/104 | 27.78 ms | 975/1500 | 58 |
 | outline | 2024-01-01 | 4,645 | 0 | 0 | 40/40 | 108/199 | 167/169 | 20.66 ms | 978/1500 | 57 |
 | saleor | 2024-01-01 | 1,615 | 0 | 0 | 40/40 | 692/753 | 293/293 | 32.87 ms | 899/1500 | 119 |
+| sentry | 2025-06-01 | 26,998 | 8 | 3 | 39/40 | 125/164 | 356/362 | 85.52 ms | 890/1500 | 202 |
 
-Total: 18,242 real commits replayed, 0 false-alarm commits.
-
-Outline and Saleor: resurrection tested on a random sample of 40 guarded decisions (`--max-res 40`). Sentry (cut 2025-06-01, 26,998 commits after the cut) is still running; its row is added when it finishes.
+Outline and Saleor: resurrection tested on a random sample of 40 guarded decisions (`--max-res 40`). Sentry: cut 2025-06-01, 40 sampled. Its **8 false-alarm commits** (of 26,998) have two causes: (1) 4× `social_auth`: Sentry removed the `django-social-auth` dependency but keeps its own copy in `src/social_auth`, so importing the in-repo package is flagged (fix to do: no forbid when the repo has its own top-level package of that name); (2) 4× `@typescript-eslint/*` re-added in an .mdx doc, a shell script, and a nested lint-plugin package (docs/tooling edge cases).
 
 Found and fixed during this round:
 - paperless-ngx v1: **1 false alarm** in 3,465 commits: a pytest marker line `"tika: Tests requiring Tika service"` in
