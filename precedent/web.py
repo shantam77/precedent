@@ -29,7 +29,7 @@ from . import config, db, mcp_server as m
 STATIC = Path(__file__).parent / "static"
 QUERIES = Path(__file__).parent / "queries"
 REPO_URL = os.getenv("PRECEDENT_REPO_URL", "https://github.com/mitmproxy/mitmproxy")
-MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
+MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini-2025-08-07")
 PORT = int(os.getenv("PORT", "8000"))
 MAX_TURNS = 6
 PER_IP_PER_HOUR = int(os.getenv("CHAT_PER_IP_PER_HOUR", "20"))
@@ -87,9 +87,19 @@ async def graph(request: Request):
 # ---------------------------------------------------------------- chat: the model sees only our MCP tools
 
 SYSTEM = (f"You answer questions about the {REPO_URL} codebase using Precedent, its decision graph in FalkorDB. "
-          "Use the tools for every fact; never answer from memory. Decisions have ids like D-32: always cite them, "
-          "with the commit they came from when the tool gives one. Components are folders like 'web' or "
-          "'mitmproxy'. If a tool returns nothing useful, try another one (search, why, query). Keep answers short.")
+          "Use the tools for every fact and never answer from memory. "
+          "Which tool: a library name (reactify, mock) -> why(library). A decision id (D-32) -> why(id), which gives the "
+          "reason, date and source commit. 'Can I add/use X in file Y?' -> check(path, new_text) with the code line, e.g. "
+          "check('test/mitmproxy/test_x.py', 'import mock'). 'What breaks if I change C?' -> impact(C). "
+          "'Who knows C?' -> who_knows(C). A topic -> search(a few keywords). Components are folders like 'web', "
+          "'mitmproxy', 'test/mitmproxy/proxy'. Never pass as_of unless the user names a date. "
+          "query(cypher) is read-only Cypher. Schema: (:Decision {id,title,rationale,status,trust,valid_from,source})"
+          "-[:ABOUT]->(:Component {name}) or (:Repo); (:Decision)-[:CHOSE|REJECTED]->(:Library {name}); "
+          "(:Decision)-[:EVIDENCED_BY]->(:Commit {sha,at,subject,author}); (:File {path})-[:IN]->(:Component); "
+          "(:Component)-[:DEPENDS_ON]->(:Component); (:Component)-[:USES]->(:Library); "
+          "(:Person {name})-[:KNOWS {commits,last}]->(:Component). Times are epoch ms. "
+          "Give one complete, short answer in markdown: the facts, decision ids, commit and date. "
+          "Do not ask the user follow-up questions or offer to fetch more.")
 
 
 def cypher_for(name, args):

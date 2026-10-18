@@ -252,7 +252,7 @@ def why(target, as_of=None):
 
 
 def search(text):
-    q = " ".join(re.findall(r"\w+", text))
+    q = "|".join(re.findall(r"\w+", text))  # any word matches (the index ranks by relevance); a space would require all of them
     rows = db.read(db.q("search"), q=q) if q else []
     if not rows:
         return f"No decisions match '{text}'."

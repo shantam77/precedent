@@ -19,14 +19,23 @@ cold start with **0 LLM tokens** on all of them (Sentry: 112k commits in 8 min) 
 
 ## Live demo
 
-A public deployment on the **mitmproxy** repository (built at commit `77355977`, from its code and git history only):
+**https://precedent-production-818e.up.railway.app/**
+
+Precedent is meant to be used **with a coding agent**: installed in a repo, its hooks check every edit the agent
+makes against the graph, and the agent calls its MCP tools itself. The demo page is a window into the same graph,
+and its MCP endpoint lets you plug your own agent into it (read-only, no authentication):
+
+```bash
+claude mcp add --transport http precedent https://precedent-production-818e.up.railway.app/mcp
+```
+
+It runs on the **mitmproxy** repository (built at commit `77355977`, from its code and git history only):
 
 - **Graph view.** Every component, decision, library and the top people, live from FalkorDB. Click a decision to see
   why it was made and the commit it came from.
 - **Agent panel.** Ask a question and a model answers using **only Precedent's MCP tools**, called through the
   public MCP endpoint. Each tool call is shown with the Cypher behind it, and the nodes it touched light up in the graph.
-- **MCP endpoint** (read-only tools, stateless Streamable HTTP). Add it to your own agent:
-  `claude mcp add --transport http precedent https://<demo-host>/mcp`
+- **MCP endpoint** at `/mcp`: 8 read-only tools over stateless Streamable HTTP, no authentication.
 
 Run the same thing locally (one container: FalkorDB plus the server, the graph is built on first boot):
 

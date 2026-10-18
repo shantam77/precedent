@@ -8,6 +8,7 @@ const md = (s) => marked.parse(esc(s));
 let data, nodes, edges, net, byId = {}, chat = [];
 
 $("mcpurl").textContent = location.origin + "/mcp";
+$("cmd").textContent = `claude mcp add --transport http precedent ${location.origin}/mcp`;
 $("copy").onclick = () => navigator.clipboard.writeText(`claude mcp add --transport http precedent ${location.origin}/mcp`);
 $("legend").innerHTML = Object.entries(COLORS).map(([k, c]) => `<span><i style="background:${c}"></i>${k}</span>`).join("")
   + `<span><i style="background:${EDGE.CHOSE}"></i>chose</span><span><i style="background:${EDGE.REJECTED}"></i>rejected</span>`;

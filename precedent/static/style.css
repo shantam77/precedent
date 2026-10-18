@@ -47,3 +47,5 @@ details.call .lab { padding: 4px 10px 0; color: var(--muted); font-size: 11px; t
   main { flex-direction: column; } #left { flex: none; height: 55%; } #right { min-width: 0; flex: 1; border-left: 0; border-top: 1px solid var(--line); }
   .mcp { display: none; } #find { width: 180px; } #legend { display: none; } #detail { width: calc(100% - 24px); }
 }
+.note { color: var(--text) !important; }
+pre.cmd { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; white-space: pre-wrap; word-break: break-all; margin: 0 0 12px; }
