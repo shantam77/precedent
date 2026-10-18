@@ -1,6 +1,7 @@
-// Active decisions that govern a component: the ones ABOUT it, plus repo-wide ones ABOUT the Repo. Runs on every edit check.
-// Anchor on the component first and walk with WITH: as one pattern FalkorDB starts from all decisions (24 ms vs 0.6 ms).
-// The two halves use different names inside the [ | ] lists: FalkorDB returns [] when they share one.
+// All the decisions that apply to a component right now.
+// That means the ones about this component plus the ones about the whole repo. This runs on every edit an agent makes.
+// We find the component first and then walk to its decisions, because starting from all decisions is about 40x slower.
+// The two halves use different names inside the [ | ] lists because FalkorDB returns an empty list when they share one.
 MATCH (x:Component) WHERE x.name = $component
 WITH x MATCH (x)<-[:ABOUT]-(d:Decision) WHERE d.status = 'active'
 RETURN d.id AS id, d.title AS title, d.rationale AS rationale, d.trust AS trust, d.version AS version,

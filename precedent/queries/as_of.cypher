@@ -1,5 +1,5 @@
-// Decisions that were in force at time $t: started by then and not ended by then (no valid_to = still in force).
-// Repo-wide decisions always count; '*' means every component.
+// Which decisions were in force on a given date.
+// A decision counts if it had started by then and hadn't ended yet. Repo-wide decisions always count.
 MATCH (d:Decision)-[:ABOUT]->(x)
 WHERE d.valid_from <= $t
   AND (d.valid_to IS NULL OR d.valid_to > $t)

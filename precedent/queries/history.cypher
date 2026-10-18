@@ -1,5 +1,5 @@
-// The graph's own change log: every write since $since, newest first, without the changes made by my own session.
-// collect() keeps one row per change even when it touches several decisions.
+// Show what changed in the graph since a given time, newest first.
+// Changes from my own session are left out, and each change stays one row even if it touched several decisions.
 MATCH (s:Session)-[:MADE]->(ch:Change)
 WHERE ch.at>= $since AND s.id <> $exclude
 OPTIONAL MATCH (ch)-[:ON]->(d:Decision)
