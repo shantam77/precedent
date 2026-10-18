@@ -1,0 +1,4 @@
+falkordb==1.7.1
+mcp==2.3.0
+pyyaml==6.0.3
+pytest
