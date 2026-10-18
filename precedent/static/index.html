@@ -26,8 +26,12 @@
   <section id="right">
     <div id="log">
       <div class="intro">
-        <p>Ask about mitmproxy's history. The model can only use Precedent's MCP tools: every answer below comes
-          from Cypher on the graph, and you can see each call.</p>
+        <p class="note"><b>Precedent is made to run inside your coding agent</b> (Claude Code, Cursor, any MCP client).
+          There, hooks check every edit against this graph and the agent calls these tools by itself. This page is a
+          window into the same graph. Connect your agent (read-only, no sign-in needed):</p>
+        <pre class="cmd" id="cmd"></pre>
+        <p>Or ask here. The model can only use Precedent's MCP tools, so every answer comes from Cypher on the graph,
+          and you can see each call.</p>
         <div id="chips"></div>
       </div>
     </div>
