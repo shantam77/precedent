@@ -39,7 +39,8 @@ async function load() {
   })));
   net = new vis.Network($("graph"), { nodes, edges }, {
     physics: { solver: "forceAtlas2Based", forceAtlas2Based: { gravitationalConstant: -60, springLength: 90, avoidOverlap: 0.4 },
-      stabilization: { iterations: 400 } },
+      stabilization: { iterations: 150 } },
+    layout: { improvedLayout: false },  // the default pre-layout pass took ~2.5 s on this graph
     interaction: { hover: true, tooltipDelay: 150, hideEdgesOnDrag: true },
   });
   net.once("stabilizationIterationsDone", () => { net.setOptions({ physics: false }); $("stats").textContent = summary; });
