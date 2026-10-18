@@ -27,16 +27,16 @@ flowchart LR
         code["code + git history"]
     end
     subgraph falkor["FalkorDB"]
-        graph[("decision graph<br/>one graph per repo")]
+        dg[("decision graph<br/>one graph per repo")]
     end
     subgraph agent["Your coding agent (Claude Code, Cursor, ...)"]
         hooks["hooks<br/>check every edit"]
         mcp["MCP tools<br/>why · impact · who_knows · record"]
     end
-    code -- "precedent init<br/>(0 LLM tokens)" --> graph
-    hooks -- "Cypher" --> graph
-    mcp -- "Cypher (reads + safe writes)" --> graph
-    commit["git pre-commit"] -- "Cypher" --> graph
+    code -- "precedent init<br/>(0 LLM tokens)" --> dg
+    hooks -- "Cypher" --> dg
+    mcp -- "Cypher (reads + safe writes)" --> dg
+    commit["git pre-commit"] -- "Cypher" --> dg
 ```
 
 1. **`precedent init`** reads the repo (folders, imports, git log, every version of the manifests) and builds the graph. No AI calls.
