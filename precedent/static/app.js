@@ -10,8 +10,15 @@ let data, nodes, edges, net, byId = {}, chat = [];
 $("mcpurl").textContent = location.origin + "/mcp";
 if ($("cmd")) $("cmd").textContent = `claude mcp add --transport http precedent ${location.origin}/mcp`;
 $("copy").onclick = () => navigator.clipboard.writeText(`claude mcp add --transport http precedent ${location.origin}/mcp`);
-$("legend").innerHTML = Object.entries(COLORS).map(([k, c]) => `<span><i style="background:${c}"></i>${k}</span>`).join("")
-  + `<span><i style="background:${EDGE.CHOSE}"></i>chose</span><span><i style="background:${EDGE.REJECTED}"></i>rejected</span>`;
+const KINDS = {
+  component: "A part of the code: a folder of the repo. Size = number of files.",
+  decision: "A choice the team made, mined from git history (e.g. 'Stop using mock'), with the commit it came from.",
+  library: "A package the code uses or used. Red arrow = a decision rejected it, green = chose it.",
+  person: "A top committer of a component (from git log).",
+  repo: "The whole repository. Decisions about it apply to every file.",
+};
+$("edges").innerHTML = `<span><i style="background:${EDGE.CHOSE}"></i>chose</span><span><i style="background:${EDGE.REJECTED}"></i>rejected</span>`
+  + `<span><i style="background:${EDGE.DEPENDS_ON}"></i>imports</span>`;
 
 async function load() {
   data = await (await fetch("/api/graph")).json();
@@ -38,6 +45,7 @@ async function load() {
   net.once("stabilizationIterationsDone", () => { net.setOptions({ physics: false }); $("stats").textContent = summary; });
   net.on("click", (e) => (e.nodes.length ? show(e.nodes[0]) : ($("detail").hidden = true)));
   const count = (k) => data.nodes.filter((n) => n.kind === k).length;
+  kinds();
   $("stats").textContent = "laying out the graph…";
   const summary = `${count("component")} components · ${count("decision")} decisions · ${count("library")} libraries · ${count("person")} people · ${data.edges.length} relationships · live from FalkorDB`;
 }
@@ -77,12 +85,29 @@ function idsIn(text, args) {
   return ids;
 }
 
-$("find").addEventListener("keydown", (e) => {
-  if (e.key !== "Enter") return;
-  const q = e.target.value.trim().toLowerCase(); if (!q) return;
-  const hit = data.nodes.filter((n) => n.id.toLowerCase() === q || n.label.toLowerCase() === q);
-  focus((hit.length ? hit : data.nodes.filter((n) => n.label.toLowerCase().includes(q) || (n.props.title || "").toLowerCase().includes(q))).map((n) => n.id).slice(0, 30));
-});
+// One button per node type: shows what it means, highlights all of them, and lists them in a dropdown.
+function kinds() {
+  $("kinds").innerHTML = Object.keys(KINDS).map((k) => `<button data-k="${k}"><i style="background:${COLORS[k]}"></i>${k}
+    <small>${data.nodes.filter((n) => n.kind === k).length}</small></button>`).join("");
+  $("kinds").onclick = (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    const k = b.dataset.k, on = !b.classList.contains("on");
+    document.querySelectorAll("#kinds button").forEach((x) => x.classList.remove("on"));
+    $("pick").hidden = !on;
+    if (!on) { net.unselectAll(); net.fit({ animation: { duration: 500 } }); return; }
+    b.classList.add("on");
+    $("kinddesc").textContent = KINDS[k];
+    const list = data.nodes.filter((n) => n.kind === k)
+      .sort((a, z) => (k === "decision" ? +a.id.slice(2) - +z.id.slice(2) : a.label.localeCompare(z.label)));
+    $("list").innerHTML = `<option value="">Pick one of ${list.length}…</option>` + list.map((n) =>
+      `<option value="${esc(n.id)}">${esc(k === "decision" ? `${n.id} · ${n.props.title}` : n.label)}</option>`).join("");
+    const ids = list.map((n) => n.id);
+    net.selectNodes(ids);
+    if (k !== "repo") net.fit({ nodes: ids, animation: { duration: 600 } });
+    else focus(ids);
+  };
+  $("list").onchange = (e) => e.target.value && focus([e.target.value]);
+}
 
 const CHIPS = [
   "Why did mitmproxy stop using reactify?",

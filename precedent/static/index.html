@@ -10,15 +10,16 @@
 </head>
 <body>
 <header>
-  <div class="brand"><b>Precedent</b> <span>the decision graph of <a id="repo" target="_blank" rel="noopener"></a>, on FalkorDB</span></div>
+  <div class="brand"><b>Precedent</b> <span class="live">● LIVE</span> <span>a live FalkorDB graph of <a id="repo" target="_blank" rel="noopener"></a>, built from its code and git history</span></div>
   <div class="mcp">MCP: <code id="mcpurl"></code> <button id="copy">copy</button></div>
 </header>
 <main>
   <section id="left">
     <div id="graph"></div>
     <div id="tools">
-      <input id="find" placeholder="Find a node: D-32, web, reactify…" autocomplete="off">
-      <div id="legend"></div>
+      <div id="kinds"></div>
+      <div id="pick" hidden><div id="kinddesc"></div><select id="list"></select></div>
+      <div id="edges"></div>
     </div>
     <div id="detail" hidden></div>
     <div id="stats"></div>
