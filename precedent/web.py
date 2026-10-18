@@ -98,8 +98,14 @@ SYSTEM = (f"You answer questions about the {REPO_URL} codebase using Precedent, 
           "(:Decision)-[:EVIDENCED_BY]->(:Commit {sha,at,subject,author}); (:File {path})-[:IN]->(:Component); "
           "(:Component)-[:DEPENDS_ON]->(:Component); (:Component)-[:USES]->(:Library); "
           "(:Person {name})-[:KNOWS {commits,last}]->(:Component). Times are epoch ms. "
+          "As soon as a tool result has the decision, its reason and commit, stop calling tools and answer. "
           "Give one complete, short answer in markdown: the facts, decision ids, commit and date. "
           "Do not ask the user follow-up questions or offer to fetch more.")
+
+
+LIBRARY = ("// tools.why(): is it a library? which decisions chose or rejected it?\n"
+           "MATCH (l:Library {name: $n}) OPTIONAL MATCH (d:Decision)-[r:CHOSE|REJECTED]->(l)\n"
+           "RETURN l.why, l.present, l.since, l.added_in, collect(d.id)")
 
 
 def cypher_for(name, args):
@@ -109,7 +115,9 @@ def cypher_for(name, args):
     if name == "query":
         return args.get("cypher", "")
     if name == "why":
-        files = ["as_of"] if args.get("as_of") else ["lineage"] if re.fullmatch(r"[DP]-\d+", args.get("target", "")) else ["search"]
+        if not args.get("as_of") and not re.fullmatch(r"[DP]-\d+", args.get("target", "")):
+            return LIBRARY + "\n\n// not a library? then a word search:\n" + (QUERIES / "search.cypher").read_text(encoding="utf-8").strip()
+        files = ["as_of"] if args.get("as_of") else ["lineage"]
     return "\n\n".join((QUERIES / f"{f}.cypher").read_text(encoding="utf-8").strip() for f in files or [])
 
 
@@ -148,10 +156,12 @@ async def chat(request: Request):
                                                        "parameters": t.input_schema}}
                      for t in (await mcp.list_tools()).tools]
             msgs = [{"role": "system", "content": SYSTEM}] + history
-            for _ in range(MAX_TURNS):
+            for turn in range(MAX_TURNS):
+                last = turn == MAX_TURNS - 1  # the last round must answer with what it has
                 r = await http.post("https://api.openai.com/v1/chat/completions",
                                     headers={"Authorization": f"Bearer {key}"},
-                                    json={"model": MODEL, "messages": msgs, "tools": tools, "reasoning_effort": "low"})
+                                    json={"model": MODEL, "messages": msgs, "tools": tools, "reasoning_effort": "low",
+                                          "tool_choice": "none" if last else "auto"})
                 if r.status_code != 200:
                     yield out(t="error", text=f"Model error {r.status_code}: {r.text[:300]}")
                     return
@@ -171,7 +181,7 @@ async def chat(request: Request):
                     text = "\n".join(getattr(c, "text", "") for c in res.content)[:6000]
                     yield out(t="result", name=name, text=text)
                     msgs.append({"role": "tool", "tool_call_id": call["id"], "content": text})
-            yield out(t="answer", text="(stopped after 6 tool rounds)")
+
 
     return StreamingResponse(run(), media_type="application/x-ndjson")
 
