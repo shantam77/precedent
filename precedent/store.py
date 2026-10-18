@@ -43,7 +43,7 @@ def policy(actor, op, target=None, want_trust=None):
     op: record | supersede | retire | amend | approve | revert"""
     if op == "record":
         if actor.kind == "agent" and want_trust in ("documented", "human"):
-            return "approval"          # an agent can't promote its own claim to a deny-level rule
+            return "approval"
         return "apply"
     if op in ("supersede", "retire"):
         if target["locked"]:
@@ -54,11 +54,11 @@ def policy(actor, op, target=None, want_trust=None):
     if op == "amend":
         if actor.kind == "human" or target["actor"] == actor.email or TRUST.index(target["trust"]) <= TRUST.index("agent"):
             return "apply"
-        return "refuse: you can only amend your own or agent-level decisions; use supersede to propose a change"
+        return "refuse: you can only amend your own decisions"
     if op == "approve":
         if actor.kind == "human":
             return "apply"
-        return "refuse: only a human can approve (the harness must ask the user)"
+        return "refuse: only a human can approve"
     return "refuse: unknown operation"
 
 

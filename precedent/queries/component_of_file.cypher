@@ -1,2 +1,4 @@
-// Which component a file belongs to (files created after the scan fall back to the longest folder prefix in Python).
-MATCH (f:File {path: $path})-[:IN]->(c:Component) RETURN c.name
+// Which component (folder group) a file belongs to. No row for a file the scan never saw: tools.component_of() then uses the longest matching folder.
+MATCH (f:File {path: $path})-[i:IN]->(c:Component)
+
+return c.name as name

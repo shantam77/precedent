@@ -1,5 +1,5 @@
-// What depends on this component, up to 3 hops, over dependencies that are still current (no valid_to),
-// with the active decisions and the top person who knows each dependent.
+// What could break if $component changes: components that import it, up to 3 hops away over current dependencies,
+// with the active decisions on each one. Nearest first.
 MATCH p = (dep:Component)-[:DEPENDS_ON*1..3]->(:Component {name: $component})
 WHERE all(r IN relationships(p) WHERE r.valid_to IS NULL)
 WITH dep, min(length(p)) AS hops

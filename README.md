@@ -15,7 +15,7 @@ cold start with **0 LLM tokens** on all of them (Sentry: 112k commits in 8 min) 
 
 - Plan and design reasoning: [docs/PLAN.md](docs/PLAN.md)
 - Measured results (real repo + synthetic volume): [docs/RESULTS.md](docs/RESULTS.md)
-- AI usage disclosure: [AI_USAGE.md](AI_USAGE.md)
+- AI usage disclosure: [AI_USAGE.md](AI_USAGE.md) (built with Claude Code as a coding assistant; the core queries and write policy are hand-written)
 
 ## Why
 
@@ -55,6 +55,31 @@ python -m precedent --graph repo revert C-12 "wrong call"
 
 ## Graph model
 
+```mermaid
+graph LR
+    Person -- "KNOWS {commits, last}" --> Component
+    Person -- MEMBER_OF --> Team
+    Team -- OWNS --> Component
+    File -- IN --> Component
+    File -- HAS_NOTE --> Note
+    Component -- "DEPENDS_ON {imports}" --> Component
+    Component -- "USES {files}" --> Library
+    Decision -- ABOUT --> Component
+    Decision -- ABOUT --> Repo
+    Decision -- CHOSE --> Library
+    Decision -- REJECTED --> Library
+    Decision -- EVIDENCED_BY --> Commit
+    Decision -- "SUPERSEDES {at}" --> Decision
+    Decision -- "PROPOSES {op, expected_version}" --> Decision
+    Person -- RAN --> Session
+    Session -- MADE --> Change
+    Change -- ON --> Decision
+    Session -- EDITED --> File
+    Session -- "FLAGGED {verdict}" --> Decision
+```
+
+Every node with its properties:
+
 ```
 (:Repo)                           (:Component {name})<-[:IN]-(:File {path})-[:HAS_NOTE]->(:Note {line, kind, text})
 (:Component)-[:DEPENDS_ON {imports, valid_from, valid_to?}]->(:Component)
@@ -72,6 +97,26 @@ python -m precedent --graph repo revert C-12 "wrong call"
 
 Decision `status`: `active | proposed | superseded | retired | rejected | reverted | applied`. Open intervals are a
 **missing** `valid_to` (FalkorDB stores no nulls). Times are epoch ms.
+
+## How the agent's decisions come from the graph
+
+A real case from the mitmproxy graph: an agent adds `import reactify` to a file under `web/`.
+
+```mermaid
+sequenceDiagram
+    participant A as Coding agent (Claude Code)
+    participant H as Precedent hook
+    participant G as FalkorDB
+    A->>H: Edit web/src/js/app.tsx (adds import reactify)
+    H->>G: component_of_file("web/src/js/app.tsx") → web
+    H->>G: governing("web") → D-32 "Replace reactify with react-dom", REJECTED reactify, historical
+    H-->>A: ask: D-32 forbids reactify (since 2016-02-28, commit cbb068edaa)
+    A->>G: why("reactify") · who_knows("web") · impact("web")  (MCP tools)
+    Note over A,G: the human says no → the agent uses react-dom<br/>the human says yes → supersede D-32: new Decision, SUPERSEDES, Change logged
+```
+
+Take FalkorDB out and nothing is left: the edit guard, the context an agent reads, and every write
+(check-and-set, proposals, revert, the change log) are Cypher on the graph.
 
 ## The Cypher the product depends on
 
