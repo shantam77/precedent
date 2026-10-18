@@ -17,6 +17,25 @@ cold start with **0 LLM tokens** on all of them (Sentry: 112k commits in 8 min) 
 - Measured results (real repo + synthetic volume): [docs/RESULTS.md](docs/RESULTS.md)
 - AI usage disclosure: [AI_USAGE.md](AI_USAGE.md) (built with Claude Code as a coding assistant; the core queries and write policy are hand-written)
 
+## Live demo
+
+A public deployment on the **mitmproxy** repository (built at commit `77355977`, from its code and git history only):
+
+- **Graph view.** Every component, decision, library and the top people, live from FalkorDB. Click a decision to see
+  why it was made and the commit it came from.
+- **Agent panel.** Ask a question and a model answers using **only Precedent's MCP tools**, called through the
+  public MCP endpoint. Each tool call is shown with the Cypher behind it, and the nodes it touched light up in the graph.
+- **MCP endpoint** (read-only tools, stateless Streamable HTTP). Add it to your own agent:
+  `claude mcp add --transport http precedent https://<demo-host>/mcp`
+
+Run the same thing locally (one container: FalkorDB plus the server, the graph is built on first boot):
+
+```bash
+docker build -t precedent . && docker run -p 8080:8080 -e PORT=8080 -e OPENAI_API_KEY=... precedent
+```
+
+Code: [`precedent/web.py`](precedent/web.py), [`precedent/static/`](precedent/static), [`deploy/start.sh`](deploy/start.sh).
+
 ## Why
 
 Coding agents forget *why* the code is the way it is. Netbox replaced graphene with Strawberry in 2024

@@ -8,7 +8,8 @@ wrote the core graph queries and the write policy myself. Claude Code generated 
 
 - **The problem and the constraints.** Agents silently undo past team decisions. Precedent had to start from zero on
   a real repo (code and git only, no docs, no LLM tokens), let agents write to a graph shared by people and
-  harnesses without overwriting each other, and stay cheap in tokens. No OpenAI.
+  harnesses without overwriting each other, and stay cheap in tokens. Precedent itself calls no LLM; only the
+  chat panel of the public demo uses a model (OpenAI gpt-5-mini), and it can only reach the graph through our MCP tools.
 - **Data and evaluation.** I asked for real public repositories instead of a toy, and later for more of them,
   because one repo was not enough to trust the numbers. That is how the evals grew to 7 repos (NetBox, mitmproxy,
   paperless-ngx, Wagtail, Outline, Saleor, Sentry) and a with/without A/B on real Claude Code runs.

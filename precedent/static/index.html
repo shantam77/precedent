@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Precedent · mitmproxy</title>
+<link rel="stylesheet" href="/static/style.css">
+<script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="brand"><b>Precedent</b> <span>the decision graph of <a id="repo" target="_blank" rel="noopener"></a>, on FalkorDB</span></div>
+  <div class="mcp">MCP: <code id="mcpurl"></code> <button id="copy">copy</button></div>
+</header>
+<main>
+  <section id="left">
+    <div id="graph"></div>
+    <div id="tools">
+      <input id="find" placeholder="Find a node: D-32, web, reactify…" autocomplete="off">
+      <div id="legend"></div>
+    </div>
+    <div id="detail" hidden></div>
+    <div id="stats"></div>
+  </section>
+  <section id="right">
+    <div id="log">
+      <div class="intro">
+        <p>Ask about mitmproxy's history. The model can only use Precedent's MCP tools: every answer below comes
+          from Cypher on the graph, and you can see each call.</p>
+        <div id="chips"></div>
+      </div>
+    </div>
+    <form id="ask"><input id="q" placeholder="Why did mitmproxy stop using reactify?" autocomplete="off"><button>Ask</button></form>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

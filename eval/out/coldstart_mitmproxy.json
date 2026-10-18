@@ -4,17 +4,17 @@
   "files": 1295,
   "components": 25,
   "depends_on": 22,
-  "libraries": 221,
+  "libraries": 220,
   "manifest_events": 138,
   "format_migrations_skipped": 5,
-  "decisions": 119,
-  "guarded_decisions": 63,
+  "decisions": 118,
+  "guarded_decisions": 62,
   "observed_only": 47,
   "people": 602,
   "knows": 470,
   "notes": 8,
   "rules": 1,
-  "seconds": 10.5,
+  "seconds": 20.3,
   "llm_tokens": 0
  },
  "decisions": [
@@ -684,7 +684,7 @@
    "chose": []
   },
   {
-   "id": "D-60",
+   "id": "D-59",
    "title": "Stop using message",
    "forbid": [
     "lib:message"
@@ -695,19 +695,7 @@
    "chose": []
   },
   {
-   "id": "D-59",
-   "title": "Stop using 3-6-0",
-   "forbid": [
-    "lib:3-6-0",
-    "lib:3_6_0"
-   ],
-   "sha": "c5eae9d752",
-   "subject": "drop support for Python 3.6 and 3.7",
-   "at": 1607378798000,
-   "chose": []
-  },
-  {
-   "id": "D-61",
+   "id": "D-60",
    "title": "Stop using pyasn1",
    "forbid": [
     "lib:pyasn1"
@@ -718,7 +706,42 @@
    "chose": []
   },
   {
-   "id": "D-64",
+   "id": "D-74",
+   "title": "Stop using vinyl-buffer",
+   "forbid": [
+    "lib:vinyl-buffer",
+    "lib:vinyl_buffer"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-69",
+   "title": "Stop using envify",
+   "forbid": [
+    "lib:envify"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-71",
+   "title": "Stop using gulp-rename",
+   "forbid": [
+    "lib:gulp-rename",
+    "lib:gulp_rename"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-63",
    "title": "Stop using babel-plugin-transform-class-properties",
    "forbid": [
     "lib:babel-plugin-transform-class-properties",
@@ -730,7 +753,18 @@
    "chose": []
   },
   {
-   "id": "D-62",
+   "id": "D-67",
+   "title": "Stop using babelify",
+   "forbid": [
+    "lib:babelify"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-61",
    "title": "Stop using babel-core",
    "forbid": [
     "lib:babel-core",
@@ -743,157 +777,6 @@
   },
   {
    "id": "D-70",
-   "title": "Stop using envify",
-   "forbid": [
-    "lib:envify"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-72",
-   "title": "Stop using gulp-rename",
-   "forbid": [
-    "lib:gulp-rename",
-    "lib:gulp_rename"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-74",
-   "title": "Stop using uglifyify",
-   "forbid": [
-    "lib:uglifyify"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-77",
-   "title": "Stop using watchify",
-   "forbid": [
-    "lib:watchify"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-65",
-   "title": "Stop using babel-plugin-transform-object-rest-spread",
-   "forbid": [
-    "lib:babel-plugin-transform-object-rest-spread",
-    "lib:babel_plugin_transform_object_rest_spread"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-76",
-   "title": "Stop using vinyl-source-stream",
-   "forbid": [
-    "lib:vinyl-source-stream",
-    "lib:vinyl_source_stream"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-69",
-   "title": "Stop using browserify",
-   "forbid": [
-    "lib:browserify"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-63",
-   "title": "Stop using babel-eslint",
-   "forbid": [
-    "lib:babel-eslint",
-    "lib:babel_eslint"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-73",
-   "title": "Stop using gulp-util",
-   "forbid": [
-    "lib:gulp-util",
-    "lib:gulp_util"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-66",
-   "title": "Stop using babel-preset-es2015",
-   "forbid": [
-    "lib:babel-preset-es2015",
-    "lib:babel_preset_es2015"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-68",
-   "title": "Stop using babelify",
-   "forbid": [
-    "lib:babelify"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-67",
-   "title": "Stop using babel-preset-react",
-   "forbid": [
-    "lib:babel-preset-react",
-    "lib:babel_preset_react"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-75",
-   "title": "Stop using vinyl-buffer",
-   "forbid": [
-    "lib:vinyl-buffer",
-    "lib:vinyl_buffer"
-   ],
-   "sha": "0e9206ceb1",
-   "subject": "switch to esbuild for bundling",
-   "at": 1623254856000,
-   "chose": []
-  },
-  {
-   "id": "D-71",
    "title": "Stop using gulp-eslint",
    "forbid": [
     "lib:gulp-eslint",
@@ -905,19 +788,112 @@
    "chose": []
   },
   {
-   "id": "D-79",
-   "title": "Stop using @babel/preset-env",
+   "id": "D-68",
+   "title": "Stop using browserify",
    "forbid": [
-    "lib:@babel/preset-env",
-    "lib:@babel/preset_env"
+    "lib:browserify"
    ],
-   "sha": "9b119c3dac",
-   "subject": "web: major upgrades",
-   "at": 1629712494000,
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
    "chose": []
   },
   {
-   "id": "D-83",
+   "id": "D-64",
+   "title": "Stop using babel-plugin-transform-object-rest-spread",
+   "forbid": [
+    "lib:babel-plugin-transform-object-rest-spread",
+    "lib:babel_plugin_transform_object_rest_spread"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-75",
+   "title": "Stop using vinyl-source-stream",
+   "forbid": [
+    "lib:vinyl-source-stream",
+    "lib:vinyl_source_stream"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-73",
+   "title": "Stop using uglifyify",
+   "forbid": [
+    "lib:uglifyify"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-72",
+   "title": "Stop using gulp-util",
+   "forbid": [
+    "lib:gulp-util",
+    "lib:gulp_util"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-62",
+   "title": "Stop using babel-eslint",
+   "forbid": [
+    "lib:babel-eslint",
+    "lib:babel_eslint"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-65",
+   "title": "Stop using babel-preset-es2015",
+   "forbid": [
+    "lib:babel-preset-es2015",
+    "lib:babel_preset_es2015"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-66",
+   "title": "Stop using babel-preset-react",
+   "forbid": [
+    "lib:babel-preset-react",
+    "lib:babel_preset_react"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-76",
+   "title": "Stop using watchify",
+   "forbid": [
+    "lib:watchify"
+   ],
+   "sha": "0e9206ceb1",
+   "subject": "switch to esbuild for bundling",
+   "at": 1623254856000,
+   "chose": []
+  },
+  {
+   "id": "D-82",
    "title": "Stop using mock-xmlhttprequest",
    "forbid": [
     "lib:mock-xmlhttprequest",
@@ -929,7 +905,7 @@
    "chose": []
   },
   {
-   "id": "D-84",
+   "id": "D-83",
    "title": "Replace react-codemirror with codemirror",
    "forbid": [
     "lib:react-codemirror",
@@ -943,7 +919,7 @@
    ]
   },
   {
-   "id": "D-85",
+   "id": "D-84",
    "title": "Stop using redux-logger",
    "forbid": [
     "lib:redux-logger",
@@ -955,30 +931,7 @@
    "chose": []
   },
   {
-   "id": "D-82",
-   "title": "Stop using babel-jest",
-   "forbid": [
-    "lib:babel-jest",
-    "lib:babel_jest"
-   ],
-   "sha": "9b119c3dac",
-   "subject": "web: major upgrades",
-   "at": 1629712494000,
-   "chose": []
-  },
-  {
-   "id": "D-78",
-   "title": "Stop using @babel/core",
-   "forbid": [
-    "lib:@babel/core"
-   ],
-   "sha": "9b119c3dac",
-   "subject": "web: major upgrades",
-   "at": 1629712494000,
-   "chose": []
-  },
-  {
-   "id": "D-80",
+   "id": "D-79",
    "title": "Stop using @babel/preset-react",
    "forbid": [
     "lib:@babel/preset-react",
@@ -990,7 +943,19 @@
    "chose": []
   },
   {
-   "id": "D-81",
+   "id": "D-78",
+   "title": "Stop using @babel/preset-env",
+   "forbid": [
+    "lib:@babel/preset-env",
+    "lib:@babel/preset_env"
+   ],
+   "sha": "9b119c3dac",
+   "subject": "web: major upgrades",
+   "at": 1629712494000,
+   "chose": []
+  },
+  {
+   "id": "D-80",
    "title": "Replace @babel/preset-typescript with typescript",
    "forbid": [
     "lib:@babel/preset-typescript",
@@ -1004,7 +969,30 @@
    ]
   },
   {
-   "id": "D-86",
+   "id": "D-77",
+   "title": "Stop using @babel/core",
+   "forbid": [
+    "lib:@babel/core"
+   ],
+   "sha": "9b119c3dac",
+   "subject": "web: major upgrades",
+   "at": 1629712494000,
+   "chose": []
+  },
+  {
+   "id": "D-81",
+   "title": "Stop using babel-jest",
+   "forbid": [
+    "lib:babel-jest",
+    "lib:babel_jest"
+   ],
+   "sha": "9b119c3dac",
+   "subject": "web: major upgrades",
+   "at": 1629712494000,
+   "chose": []
+  },
+  {
+   "id": "D-85",
    "title": "Stop using setuptools",
    "forbid": [
     "lib:setuptools"
@@ -1015,7 +1003,7 @@
    "chose": []
   },
   {
-   "id": "D-87",
+   "id": "D-86",
    "title": "Stop using blinker",
    "forbid": [
     "lib:blinker"
@@ -1026,7 +1014,7 @@
    "chose": []
   },
   {
-   "id": "D-88",
+   "id": "D-87",
    "title": "Stop using mitmproxy-wireguard",
    "forbid": [
     "lib:mitmproxy-wireguard",
@@ -1038,7 +1026,7 @@
    "chose": []
   },
   {
-   "id": "D-89",
+   "id": "D-88",
    "title": "Make aioquic-mitmproxy optional (removed from required dependencies)",
    "forbid": [],
    "sha": "95c5bf9d5d",
@@ -1049,7 +1037,7 @@
    ]
   },
   {
-   "id": "D-91",
+   "id": "D-90",
    "title": "Make redux-thunk optional (removed from required dependencies)",
    "forbid": [],
    "sha": "87d5abd2b0",
@@ -1058,7 +1046,7 @@
    "chose": []
   },
   {
-   "id": "D-90",
+   "id": "D-89",
    "title": "Make redux optional (removed from required dependencies)",
    "forbid": [],
    "sha": "87d5abd2b0",
@@ -1069,7 +1057,7 @@
    ]
   },
   {
-   "id": "D-92",
+   "id": "D-91",
    "title": "Make urwid-mitmproxy optional (removed from required dependencies)",
    "forbid": [],
    "sha": "c46af057de",
@@ -1080,7 +1068,7 @@
    ]
   },
   {
-   "id": "D-93",
+   "id": "D-92",
    "title": "Stop using shallowequal",
    "forbid": [
     "lib:shallowequal"
@@ -1091,7 +1079,7 @@
    "chose": []
   },
   {
-   "id": "D-94",
+   "id": "D-93",
    "title": "Stop using protobuf",
    "forbid": [
     "lib:protobuf"
@@ -1102,7 +1090,25 @@
    "chose": []
   },
   {
+   "id": "D-98",
+   "title": "Make types-werkzeug optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "bdd1827687",
+   "subject": "fix various deprecation warnings (#7687)",
+   "at": 1746294957000,
+   "chose": []
+  },
+  {
    "id": "D-97",
+   "title": "Make types-pyopenssl optional (removed from required dependencies)",
+   "forbid": [],
+   "sha": "bdd1827687",
+   "subject": "fix various deprecation warnings (#7687)",
+   "at": 1746294957000,
+   "chose": []
+  },
+  {
+   "id": "D-96",
    "title": "Stop using types-flask",
    "forbid": [
     "lib:types-flask",
@@ -1114,16 +1120,7 @@
    "chose": []
   },
   {
-   "id": "D-99",
-   "title": "Make types-werkzeug optional (removed from required dependencies)",
-   "forbid": [],
-   "sha": "bdd1827687",
-   "subject": "fix various deprecation warnings (#7687)",
-   "at": 1746294957000,
-   "chose": []
-  },
-  {
-   "id": "D-95",
+   "id": "D-94",
    "title": "Make types-certifi optional (removed from required dependencies)",
    "forbid": [],
    "sha": "bdd1827687",
@@ -1132,7 +1129,7 @@
    "chose": []
   },
   {
-   "id": "D-96",
+   "id": "D-95",
    "title": "Make types-cryptography optional (removed from required dependencies)",
    "forbid": [],
    "sha": "bdd1827687",
@@ -1141,16 +1138,19 @@
    "chose": []
   },
   {
-   "id": "D-98",
-   "title": "Make types-pyopenssl optional (removed from required dependencies)",
-   "forbid": [],
-   "sha": "bdd1827687",
-   "subject": "fix various deprecation warnings (#7687)",
-   "at": 1746294957000,
+   "id": "D-100",
+   "title": "Stop using react-test-renderer",
+   "forbid": [
+    "lib:react-test-renderer",
+    "lib:react_test_renderer"
+   ],
+   "sha": "b49264cfbd",
+   "subject": "web: upgrade dependencies (#7707)",
+   "at": 1747169771000,
    "chose": []
   },
   {
-   "id": "D-100",
+   "id": "D-99",
    "title": "Stop using react-popper",
    "forbid": [
     "lib:react-popper",
@@ -1163,18 +1163,6 @@
   },
   {
    "id": "D-101",
-   "title": "Stop using react-test-renderer",
-   "forbid": [
-    "lib:react-test-renderer",
-    "lib:react_test_renderer"
-   ],
-   "sha": "b49264cfbd",
-   "subject": "web: upgrade dependencies (#7707)",
-   "at": 1747169771000,
-   "chose": []
-  },
-  {
-   "id": "D-102",
    "title": "Stop using prop-types",
    "forbid": [
     "lib:prop-types",
@@ -1186,7 +1174,7 @@
    "chose": []
   },
   {
-   "id": "D-103",
+   "id": "D-102",
    "title": "Stop using passlib",
    "forbid": [
     "lib:passlib"
@@ -1197,7 +1185,7 @@
    "chose": []
   },
   {
-   "id": "D-104",
+   "id": "D-103",
    "title": "Stop using windows-curses",
    "forbid": [
     "lib:windows",
@@ -1210,19 +1198,7 @@
    "chose": []
   },
   {
-   "id": "D-115",
-   "title": "Stop using gulp-sourcemaps",
-   "forbid": [
-    "lib:gulp-sourcemaps",
-    "lib:gulp_sourcemaps"
-   ],
-   "sha": "2607487981",
-   "subject": "Move mitmweb to Vite (#7971)",
-   "at": 1763057151000,
-   "chose": []
-  },
-  {
-   "id": "D-111",
+   "id": "D-110",
    "title": "Stop using gulp-notify",
    "forbid": [
     "lib:gulp-notify",
@@ -1234,100 +1210,7 @@
    "chose": []
   },
   {
-   "id": "D-116",
-   "title": "Stop using stable",
-   "forbid": [
-    "lib:stable"
-   ],
-   "sha": "2607487981",
-   "subject": "Move mitmweb to Vite (#7971)",
-   "at": 1763057151000,
-   "chose": []
-  },
-  {
-   "id": "D-107",
-   "title": "Stop using gulp-clean-css",
-   "forbid": [
-    "lib:gulp-clean-css",
-    "lib:gulp_clean_css"
-   ],
-   "sha": "2607487981",
-   "subject": "Move mitmweb to Vite (#7971)",
-   "at": 1763057151000,
-   "chose": []
-  },
-  {
-   "id": "D-110",
-   "title": "Stop using gulp-livereload",
-   "forbid": [
-    "lib:gulp-livereload",
-    "lib:gulp_livereload"
-   ],
-   "sha": "2607487981",
-   "subject": "Move mitmweb to Vite (#7971)",
-   "at": 1763057151000,
-   "chose": []
-  },
-  {
-   "id": "D-105",
-   "title": "Stop using esbuild",
-   "forbid": [
-    "lib:esbuild"
-   ],
-   "sha": "2607487981",
-   "subject": "Move mitmweb to Vite (#7971)",
-   "at": 1763057151000,
-   "chose": []
-  },
-  {
-   "id": "D-106",
-   "title": "Stop using gulp",
-   "forbid": [
-    "lib:gulp"
-   ],
-   "sha": "2607487981",
-   "subject": "Move mitmweb to Vite (#7971)",
-   "at": 1763057151000,
-   "chose": []
-  },
-  {
    "id": "D-108",
-   "title": "Stop using gulp-esbuild",
-   "forbid": [
-    "lib:gulp-esbuild",
-    "lib:gulp_esbuild"
-   ],
-   "sha": "2607487981",
-   "subject": "Move mitmweb to Vite (#7971)",
-   "at": 1763057151000,
-   "chose": []
-  },
-  {
-   "id": "D-112",
-   "title": "Stop using gulp-peg",
-   "forbid": [
-    "lib:gulp-peg",
-    "lib:gulp_peg"
-   ],
-   "sha": "2607487981",
-   "subject": "Move mitmweb to Vite (#7971)",
-   "at": 1763057151000,
-   "chose": []
-  },
-  {
-   "id": "D-114",
-   "title": "Stop using gulp-replace",
-   "forbid": [
-    "lib:gulp-replace",
-    "lib:gulp_replace"
-   ],
-   "sha": "2607487981",
-   "subject": "Move mitmweb to Vite (#7971)",
-   "at": 1763057151000,
-   "chose": []
-  },
-  {
-   "id": "D-109",
    "title": "Replace gulp-less with less",
    "forbid": [
     "lib:gulp-less",
@@ -1341,7 +1224,101 @@
    ]
   },
   {
+   "id": "D-105",
+   "title": "Stop using gulp",
+   "forbid": [
+    "lib:gulp"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
    "id": "D-113",
+   "title": "Stop using gulp-replace",
+   "forbid": [
+    "lib:gulp-replace",
+    "lib:gulp_replace"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-104",
+   "title": "Stop using esbuild",
+   "forbid": [
+    "lib:esbuild"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-106",
+   "title": "Stop using gulp-clean-css",
+   "forbid": [
+    "lib:gulp-clean-css",
+    "lib:gulp_clean_css"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-107",
+   "title": "Stop using gulp-esbuild",
+   "forbid": [
+    "lib:gulp-esbuild",
+    "lib:gulp_esbuild"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-109",
+   "title": "Stop using gulp-livereload",
+   "forbid": [
+    "lib:gulp-livereload",
+    "lib:gulp_livereload"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-114",
+   "title": "Stop using gulp-sourcemaps",
+   "forbid": [
+    "lib:gulp-sourcemaps",
+    "lib:gulp_sourcemaps"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-111",
+   "title": "Stop using gulp-peg",
+   "forbid": [
+    "lib:gulp-peg",
+    "lib:gulp_peg"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-112",
    "title": "Stop using gulp-plumber",
    "forbid": [
     "lib:gulp-plumber",
@@ -1353,7 +1330,18 @@
    "chose": []
   },
   {
-   "id": "D-117",
+   "id": "D-115",
+   "title": "Stop using stable",
+   "forbid": [
+    "lib:stable"
+   ],
+   "sha": "2607487981",
+   "subject": "Move mitmweb to Vite (#7971)",
+   "at": 1763057151000,
+   "chose": []
+  },
+  {
+   "id": "D-116",
    "title": "Stop using bootstrap",
    "forbid": [
     "lib:bootstrap"
@@ -1364,7 +1352,7 @@
    "chose": []
   },
   {
-   "id": "D-118",
+   "id": "D-117",
    "title": "Stop using msgpack",
    "forbid": [
     "lib:msgpack"
@@ -1375,7 +1363,7 @@
    "chose": []
   },
   {
-   "id": "D-119",
+   "id": "D-118",
    "title": "Stop using zstandard",
    "forbid": [
     "lib:zstandard"

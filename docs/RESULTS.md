@@ -25,7 +25,7 @@ Synthetic data (volume and concurrency): [`sim/world.py`](../sim/world.py).
 | repo | files | components | libraries | decisions | enforced | observed only | people | seconds |
 |---|---|---|---|---|---|---|---|---|
 | netbox | 2,297 | 27 | 152 | 45 | 23 | 21 | 459 | 11.3 |
-| mitmproxy | 1,295 | 25 | 221 | 119 | 63 | 47 | 602 | 10.5 |
+| mitmproxy | 1,295 | 25 | 220 | 118 | 62 | 47 | 602 | 20.3 |
 | paperless-ngx | 1,566 | 30 | 271 | 104 | 46 | 57 | 440 | 14.0 |
 | wagtail | 5,243 | 34 | 241 | 103 | 48 | 44 | 1004 | 18.0 |
 | outline | 2,860 | 51 | 502 | 249 | 127 | 119 | 250 | 18.3 |
