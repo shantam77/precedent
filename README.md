@@ -3,7 +3,7 @@
 **A shared memory of *why* for coding agents, built on FalkorDB.**
 Precedent turns a repo's code and git history into a decision graph, then checks every edit an agent makes against it.
 
-**[Live demo](https://precedent-production-818e.up.railway.app/)** · **Tracks:** Company Brain, Agent Memory and Coordination · Built for Graph Hacks (WeMakeDevs × FalkorDB)
+**[Live demo](https://precedent-production-818e.up.railway.app/)** · **[Demo video](https://www.youtube.com/watch?v=idi6LU2OvoM)** · **[Blog post](https://medium.com/@sharma.shantam.321/the-context-your-coding-agent-never-sees-a-decision-graph-with-falkordb-7055fab960cc)** · **Tracks:** Company Brain, Agent Memory and Coordination · Built for Graph Hacks (WeMakeDevs × FalkorDB)
 
 ![The live demo: the mitmproxy decision graph on the left, an agent answering through Precedent's MCP tools on the right](docs/img/live_demo.jpg)
 
@@ -50,34 +50,7 @@ Take FalkorDB out and nothing is left: every check, answer and write is a Cypher
 
 ## The graph
 
-```mermaid
-flowchart LR
-    classDef code fill:#0f3b36,stroke:#2dd4bf,color:#e6e9ee
-    classDef dec fill:#3a2a10,stroke:#f5b942,color:#e6e9ee
-    classDef ppl fill:#1e2a4a,stroke:#7aa2f7,color:#e6e9ee
-    classDef act fill:#2a2238,stroke:#a78bfa,color:#e6e9ee
-
-    subgraph CODE["Code"]
-        File:::code -- IN --> Component:::code
-        Component -- DEPENDS_ON --> Component
-        Component -- USES --> Library:::code
-    end
-    subgraph PEOPLE["People"]
-        Person:::ppl -- KNOWS --> Component
-        Person -- MEMBER_OF --> Team:::ppl
-        Team -- OWNS --> Component
-    end
-    subgraph DECISIONS["Decisions"]
-        Decision:::dec -- ABOUT --> Component
-        Decision -- "CHOSE / REJECTED" --> Library
-        Decision -- EVIDENCED_BY --> Commit:::dec
-        Decision -- SUPERSEDES --> Decision
-    end
-    subgraph ACTIVITY["Activity log"]
-        Session:::act -- MADE --> Change:::act
-        Change -- ON --> Decision
-    end
-```
+![The Precedent graph: Code, People, Decisions and the Activity log, with the relationships between them](docs/img/graph_model.png)
 
 | Node | In plain words | Example (mitmproxy) |
 |---|---|---|

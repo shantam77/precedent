@@ -1,0 +1,91 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- Source for docs/img/graph_model.png (rendered with a headless browser at 1600x880). -->
+<style>
+html, body { margin:0; background:#0e1116; }
+text { font-family: "Segoe UI", system-ui, sans-serif; }
+</style></head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="880" viewBox="0 0 1600 880">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker>
+  </defs>
+  <rect width="1600" height="880" fill="#0e1116"/>
+  <text x="40" y="44" fill="#e6e9ee" font-size="26" font-weight="700">The Precedent graph</text>
+  <text x="40" y="74" fill="#8b95a3" font-size="17">one graph per repo in FalkorDB · built from code and git history · arrows are relationships</text>
+
+  <!-- group boxes -->
+  <g font-size="15" font-weight="700" letter-spacing="2">
+    <rect x="40" y="250" width="440" height="590" rx="18" fill="#0d2623" stroke="#2dd4bf" stroke-opacity=".5"/>
+    <text x="64" y="282" fill="#2dd4bf">CODE</text>
+    <rect x="580" y="110" width="500" height="150" rx="18" fill="#141d33" stroke="#7aa2f7" stroke-opacity=".5"/>
+    <text x="604" y="142" fill="#7aa2f7">PEOPLE</text>
+    <rect x="580" y="300" width="500" height="540" rx="18" fill="#251c0b" stroke="#f5b942" stroke-opacity=".5"/>
+    <text x="604" y="332" fill="#f5b942">DECISIONS</text>
+    <rect x="1180" y="300" width="380" height="540" rx="18" fill="#1d1828" stroke="#a78bfa" stroke-opacity=".5"/>
+    <text x="1204" y="332" fill="#a78bfa">ACTIVITY LOG</text>
+  </g>
+
+  <!-- edges (drawn first) -->
+  <g stroke="#94a3b8" stroke-width="2.2" fill="none" marker-end="url(#a)">
+    <path d="M 190 390 L 300 500"/>                                   <!-- File IN Component -->
+    <path d="M 330 600 L 330 700"/>                                   <!-- Component USES Library -->
+    <path d="M 385 520 C 470 470, 470 600, 392 572"/>                 <!-- DEPENDS_ON self -->
+    <path d="M 760 185 L 900 185"/>                                   <!-- Person MEMBER_OF Team -->
+    <path d="M 640 215 C 590 320, 450 420, 395 500"/>                 <!-- Person KNOWS Component -->
+    <path d="M 960 215 C 960 300, 560 330, 405 520"/>                 <!-- Team OWNS Component -->
+    <path d="M 745 545 L 410 545"/>                                   <!-- Decision ABOUT Component -->
+    <path d="M 830 600 L 830 700"/>                                   <!-- Decision EVIDENCED_BY Commit -->
+    <path d="M 905 520 C 1010 470, 1010 620, 912 590"/>               <!-- SUPERSEDES self -->
+    <path d="M 1370 600 L 1370 700"/>                                 <!-- Session MADE Change -->
+    <path d="M 1285 735 C 1150 735, 1040 600, 912 552"/>              <!-- Change ON Decision -->
+  </g>
+  <path d="M 760 590 C 650 680, 480 730, 405 745" stroke="#f87171" stroke-width="2.6" fill="none" marker-end="url(#ar)"/>  <!-- REJECTED -->
+  <path d="M 770 605 C 680 720, 500 770, 405 770" stroke="#4ade80" stroke-width="2.6" fill="none" marker-end="url(#a)"/>   <!-- CHOSE -->
+
+  <!-- edge labels -->
+  <g font-size="14" font-weight="600">
+    <g fill="#cbd5e1">
+      <text x="200" y="455">IN</text>
+      <text x="342" y="660">USES</text>
+      <text x="452" y="500">DEPENDS_ON</text>
+      <text x="790" y="175">MEMBER_OF</text>
+      <text x="505" y="345">KNOWS</text>
+      <text x="700" y="290">OWNS</text>
+      <text x="560" y="535">ABOUT</text>
+      <text x="842" y="660">EVIDENCED_BY</text>
+      <text x="985" y="510">SUPERSEDES</text>
+      <text x="1382" y="660">MADE</text>
+      <text x="1110" y="715">ON</text>
+    </g>
+    <text x="560" y="672" fill="#f87171">REJECTED</text>
+    <text x="560" y="752" fill="#4ade80">CHOSE</text>
+  </g>
+
+  <!-- nodes -->
+  <g font-size="19" font-weight="700" text-anchor="middle">
+    <rect x="100" y="345" width="130" height="50" rx="12" fill="#0f3b36" stroke="#2dd4bf" stroke-width="2"/><text x="165" y="377" fill="#e6e9ee">File</text>
+    <rect x="255" y="495" width="155" height="56" rx="12" fill="#0f3b36" stroke="#2dd4bf" stroke-width="2.5"/><text x="332" y="530" fill="#e6e9ee">Component</text>
+    <rect x="260" y="705" width="145" height="56" rx="12" fill="#0f3b36" stroke="#2dd4bf" stroke-width="2"/><text x="332" y="740" fill="#e6e9ee">Library</text>
+    <rect x="620" y="160" width="140" height="52" rx="12" fill="#1e2a4a" stroke="#7aa2f7" stroke-width="2"/><text x="690" y="193" fill="#e6e9ee">Person</text>
+    <rect x="900" y="160" width="130" height="52" rx="12" fill="#1e2a4a" stroke="#7aa2f7" stroke-width="2"/><text x="965" y="193" fill="#e6e9ee">Team</text>
+    <rect x="745" y="510" width="160" height="60" rx="12" fill="#3a2a10" stroke="#f5b942" stroke-width="3"/><text x="825" y="547" fill="#f5b942" font-size="21">Decision</text>
+    <rect x="760" y="705" width="140" height="52" rx="12" fill="#3a2a10" stroke="#f5b942" stroke-width="2"/><text x="830" y="738" fill="#e6e9ee">Commit</text>
+    <rect x="1290" y="545" width="160" height="52" rx="12" fill="#2a2238" stroke="#a78bfa" stroke-width="2"/><text x="1370" y="578" fill="#e6e9ee">Session</text>
+    <rect x="1290" y="705" width="160" height="52" rx="12" fill="#2a2238" stroke="#a78bfa" stroke-width="2"/><text x="1370" y="738" fill="#e6e9ee">Change</text>
+  </g>
+
+  <!-- tiny examples under nodes -->
+  <g font-size="14" fill="#8b95a3" text-anchor="middle">
+    <text x="165" y="335">web/src/js/app.tsx</text>
+    <text x="332" y="573">web/</text>
+    <text x="332" y="783">reactify · react-dom</text>
+    <text x="760" y="234">Maximilian</text>
+    <text x="825" y="592">D-32 "Replace reactify"</text>
+    <text x="830" y="779">cbb068e · 2016</text>
+    <text x="1370" y="526">an agent's session</text>
+    <text x="1370" y="779">"recorded D-56"</text>
+  </g>
+</svg>
+</body></html>
